@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel IPA Bedelia - Acceso Rápido</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app" class="grid-container">
+        <header class="header">
+            <div class="logo-section">
+                <img src="https://www.anep.edu.uy/sites/default/files/images/logos/marca-2019/anep-color.png" alt="ANEP Logo" class="brand-logo">
+                <span class="divider"></span>
+                <h1>Panel IPA</h1>
+            </div>
+            <nav class="top-nav">
+                <a href="https://ipa.cfe.edu.uy/index.php/doe" target="_blank" class="nav-item">DOE</a>
+                <a href="https://www.anep.edu.uy/centros" target="_blank" class="nav-item">Centros</a>
+                <a href="https://www.anep.edu.uy/agenda" target="_blank" class="nav-item">Agenda</a>
+            </nav>
+        </header>
+
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <div class="nav-group">
+                    <h3>Institucional</h3>
+                    <a href="#" class="side-item active">Inicio</a>
+                    <a href="https://ipa.cfe.edu.uy/index.php/bedelia" target="_blank" class="side-item">Bedelía</a>
+                    <a href="https://sge.cfe.edu.uy/" target="_blank" class="side-item">SGE</a>
+                </div>
+                <div class="nav-group">
+                    <h3>Recursos</h3>
+                    <a href="https://moodle.cfe.edu.uy/" target="_blank" class="side-item">Moodle</a>
+                    <a href="https://www.anep.edu.uy/resoluciones" target="_blank" class="side-item">Resoluciones</a>
+                    <a href="https://www.anep.edu.uy/llamados" target="_blank" class="side-item">Llamados</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section class="welcome-banner">
+                <h2>Bienvenido a Bedelía del IPA</h2>
+                <p>Acceso rápido a la información elemental del instituto y ANEP.</p>
+            </section>
+            
+            <div class="quick-access-grid" id="quick-links">
+                <!-- Links will be populated by main.js -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Instituto de Profesores Artigas (IPA) - Referencia ANEP</p>
+                <div class="social-links">
+                    <span>Montevideo, Uruguay</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
