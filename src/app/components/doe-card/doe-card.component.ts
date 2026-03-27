@@ -68,17 +68,18 @@ import { CommonModule } from '@angular/common';
       gap: 4px;
     }
     .email-link {
-      color: var(--primary-color, #004a8e);
+      color: var(--primary-color);
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: color 0.2s;
+      transition: all 0.2s ease-in-out;
       word-break: break-all;
       overflow-wrap: anywhere;
     }
     .email-link:hover {
       text-decoration: underline;
-      color: var(--primary-dark, #003366);
+      color: var(--doe-name-color);
+      font-weight: 600;
     }
     .email-link i {
       margin-right: 4px;
