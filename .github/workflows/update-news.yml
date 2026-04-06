@@ -8,6 +8,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       
@@ -23,6 +25,11 @@ jobs:
       - name: Run extraction script
         run: npm run extract:news
         
+      - name: Verify generated files
+        run: |
+          ls -lh public/data/*.json
+          cat public/data/news.json | head -n 20
+          
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'

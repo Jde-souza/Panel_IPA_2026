@@ -9,7 +9,7 @@ const sites = [
   { name: 'CFE', url: 'https://www.cfe.edu.uy/', type: 'cfe' },
   { name: 'DGEIP', url: 'https://www.dgeip.edu.uy/documentos/2025/portal/index.html', baseUrl: 'https://www.dgeip.edu.uy/', type: 'dgeip' },
   { name: 'DGES', url: 'https://www.dges.edu.uy/', type: 'dges' },
-  { name: 'UTU', url: 'https://www.utu.edu.uy/', type: 'utu' },
+  { name: 'UTU', url: 'https://www.utu.edu.uy/feed/', type: 'utu' },
   { name: 'CEIBAL', url: 'https://ceibal.edu.uy/institucional/articulos/', type: 'ceibal' }
 ];
 
@@ -101,12 +101,12 @@ async function fetchFromSite(site) {
         }
       });
     } else if (site.type === 'dges') {
-      $('a.position-relative, .views-row').each((i, el) => {
-        const title = $(el).find('h2, .title, a').first().text().trim();
+      $('a.position-relative, .views-row, a.text-decoration-none').each((i, el) => {
+        const title = $(el).find('h2, .title, a').first().text().trim() || $(el).text().trim();
         const link = $(el).find('a').attr('href') || $(el).attr('href');
         const img = $(el).find('img').attr('src');
         
-        if (title && link && title.length > 10) {
+        if (title && link && title.length > 8) {
           newsItems.push({
             title,
             url: resolveUrl(base, link),
@@ -117,16 +117,22 @@ async function fetchFromSite(site) {
         }
       });
     } else if (site.type === 'utu') {
-      $('article, .views-row').each((i, el) => {
-        const title = $(el).find('h2, h3, .title, a').first().text().trim();
-        const link = $(el).find('a').attr('href') || $(el).attr('href');
-        const img = $(el).find('img').attr('src');
+      // Parse RSS Feed
+      const $xml = cheerio.load(response.data, { xmlMode: true });
+      $xml('item').each((i, el) => {
+        const title = $xml(el).find('title').text().trim();
+        const link = $xml(el).find('link').text().trim();
         
-        if (title && link && title.length > 15) {
+        // Try to find image in description or content
+        const content = $xml(el).find('content\\:encoded, description').text();
+        const imgMatch = content.match(/src="([^"]+\.(?:jpg|jpeg|png|webp|gif)[^"]*)"/i);
+        const img = imgMatch ? imgMatch[1] : null;
+
+        if (title && link) {
           newsItems.push({
             title,
-            url: resolveUrl(base, link),
-            imageUrl: resolveUrl(base, img),
+            url: link,
+            imageUrl: img,
             source: 'UTU',
             date: new Date().toLocaleDateString()
           });
@@ -219,12 +225,23 @@ async function fetchLlamados() {
 }
 
 async function extractNews() {
+  console.log('Starting news and llamados extraction...');
+  
+  // Ensure data directory exists
+  const dataDir = path.join(process.cwd(), 'public', 'data');
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+
   const results = await Promise.allSettled(sites.map(fetchFromSite));
   
   let allNews = [];
-  results.forEach(result => {
+  results.forEach((result, index) => {
     if (result.status === 'fulfilled') {
+      console.log(`Successfully fetched ${result.value.length} items from ${sites[index].name}`);
       allNews = allNews.concat(result.value);
+    } else {
+      console.error(`Failed to fetch from ${sites[index].name}:`, result.reason);
     }
   });
 
@@ -242,4 +259,7 @@ async function extractNews() {
   console.log(`Successfully saved ${llamados.length} llamados to ${llamadosOutputPath}`);
 }
 
-extractNews();
+extractNews().catch(err => {
+  console.error('Fatal error during extraction:', err);
+  process.exit(1);
+});
