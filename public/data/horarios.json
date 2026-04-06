@@ -15,7 +15,7 @@
         {
           "dia": 3,
           "hora": "18:20-19:00",
-          "info": "Bioquímica\nShablico\nSALON A"
+          "info": "Bioquímica\nShablico\nSALON 103"
         },
         {
           "dia": 4,
@@ -35,7 +35,7 @@
         {
           "dia": 3,
           "hora": "19:00-19:40",
-          "info": "Bioquímica\nShablico\nSALON A"
+          "info": "Bioquímica\nShablico"
         },
         {
           "dia": 4,
@@ -55,7 +55,7 @@
         {
           "dia": 3,
           "hora": "19:40-20:20",
-          "info": "Bioquímica\nShablico\nSALON A"
+          "info": "Bioquímica\nShablico"
         },
         {
           "dia": 4,
@@ -80,7 +80,7 @@
         {
           "dia": 3,
           "hora": "20:20-21:00",
-          "info": "Bioquímica\nShablico\nSALON A"
+          "info": "Bioquímica\nShablico"
         },
         {
           "dia": 4,
@@ -205,7 +205,7 @@
         {
           "dia": 4,
           "hora": "18:20-19:00",
-          "info": "Bioquímica\nShablico\nSALON 11"
+          "info": "Bioquímica\nShablico\nSALON 11\nSOLO POR 26 DE MARZO ANFITEATRO"
         },
         {
           "dia": 1,
@@ -726,7 +726,7 @@
         {
           "dia": 3,
           "hora": "08:00-08:45",
-          "info": "Genética          Harispe              SALON A"
+          "info": "Genética          Harispe              SALON B"
         },
         {
           "dia": 5,
@@ -741,7 +741,7 @@
         {
           "dia": 3,
           "hora": "08:45-09:30",
-          "info": "Genética          Harispe              SALON A"
+          "info": "Genética          Harispe"
         },
         {
           "dia": 5,
@@ -756,7 +756,7 @@
         {
           "dia": 3,
           "hora": "09:30-10:15",
-          "info": "Genética          Harispe              SALON A"
+          "info": "Genética          Harispe"
         },
         {
           "dia": 4,
@@ -776,7 +776,7 @@
         {
           "dia": 3,
           "hora": "10:25-11:10",
-          "info": "Genética          Harispe              SALON A"
+          "info": "Genética          Harispe"
         },
         {
           "dia": 4,
@@ -1082,7 +1082,7 @@
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "Psicología de la Educación\n\nSUM"
+          "info": "Psicología de la Educación\nPappadía\nSUM"
         },
         {
           "dia": 3,
@@ -1107,7 +1107,7 @@
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "Psicología de la Educación"
+          "info": "Psicología de la Educación\nPappadía"
         },
         {
           "dia": 3,
@@ -1132,7 +1132,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "Psicología de la Educación"
+          "info": "Psicología de la Educación\nPappadía"
         },
         {
           "dia": 3,
@@ -1157,7 +1157,7 @@
         {
           "dia": 2,
           "hora": "20:20-21:00",
-          "info": "Psicología de la Educación"
+          "info": "Psicología de la Educación\nPappadía"
         },
         {
           "dia": 3,
@@ -1227,7 +1227,7 @@
         {
           "dia": 1,
           "hora": "22:20-23:00",
-          "info": "Psicología de la Educación\n\nSUM"
+          "info": "Psicología de la Educación\nPappadía\nSUM"
         },
         {
           "dia": 2,
@@ -1252,7 +1252,7 @@
         {
           "dia": 1,
           "hora": "23:00-23:40",
-          "info": "Psicología de la Educación\n\nSUM"
+          "info": "Psicología de la Educación\nPappadía\nSUM"
         },
         {
           "dia": 2,
@@ -2243,11 +2243,6 @@
           "info": "Lengua Extranjera I  Floretta                  SALON 105"
         },
         {
-          "dia": 4,
-          "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa Varela SALON A   /   Ab López SALON B"
-        },
-        {
           "dia": 5,
           "hora": "11:55-12:40",
           "info": "Didáctica Práctica Docente III Aa Varela  SALON 11 / Ab López SALON A"
@@ -2263,13 +2258,18 @@
           "info": "Lengua Extranjera I  Floretta                  SALON 105"
         },
         {
-          "dia": 4,
+          "dia": 5,
           "hora": "12:40-13:25",
           "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
         },
         {
           "dia": 5,
-          "hora": "12:40-13:25",
+          "hora": "13:25-14:10",
+          "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
+        },
+        {
+          "dia": 5,
+          "hora": "14:10-14:55",
           "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
         }
       ],
@@ -2385,11 +2385,6 @@
           "info": "Lengua Extranjera II Floretta"
         },
         {
-          "dia": 4,
-          "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
-        },
-        {
           "dia": 5,
           "hora": "11:55-12:40",
           "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
@@ -2405,13 +2400,18 @@
           "info": "Lengua Extranjera II Floretta"
         },
         {
-          "dia": 4,
+          "dia": 5,
           "hora": "12:40-13:25",
           "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
         },
         {
           "dia": 5,
-          "hora": "12:40-13:25",
+          "hora": "13:25-14:10",
+          "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
+        },
+        {
+          "dia": 5,
+          "hora": "14:10-14:55",
           "info": "Didáctica Práctica Docente III Aa Varela / Ab López"
         }
       ]
@@ -2724,7 +2724,7 @@
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -2734,7 +2734,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 112"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 112                          Da Rosa"
         },
         {
           "dia": 1,
@@ -2744,7 +2744,7 @@
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -2759,7 +2759,7 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nDa Rosa"
         },
         {
           "dia": 1,
@@ -2769,7 +2769,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -2784,7 +2784,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas    Da Rosa"
         },
         {
           "dia": 1,
@@ -2809,7 +2809,7 @@
         {
           "dia": 5,
           "hora": "20:20-21:00",
-          "info": "Imagen 2  Sánchez\nSALON 109"
+          "info": "Imagen 2  Sánchez\nSALON 210"
         },
         {
           "dia": 1,
@@ -2824,7 +2824,7 @@
         {
           "dia": 3,
           "hora": "21:00-21:40",
-          "info": "Imagen 2  Sánchez\nSALON 109"
+          "info": "Imagen 2  Sánchez\nSALON 210"
         },
         {
           "dia": 4,
@@ -3246,7 +3246,7 @@
         {
           "dia": 5,
           "hora": "08:00-08:45",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Caraballo"
         },
         {
           "dia": 1,
@@ -3271,7 +3271,7 @@
         {
           "dia": 5,
           "hora": "08:45-09:30",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD      Caraballo"
         },
         {
           "dia": 1,
@@ -3296,7 +3296,7 @@
         {
           "dia": 5,
           "hora": "09:30-10:15",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD      Caraballo"
         },
         {
           "dia": 1,
@@ -3361,7 +3361,7 @@
         {
           "dia": 3,
           "hora": "11:55-12:40",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD      Caraballo"
         },
         {
           "dia": 4,
@@ -3386,7 +3386,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD     Caraballo"
         },
         {
           "dia": 4,
@@ -3401,7 +3401,7 @@
         {
           "dia": 3,
           "hora": "13:25-14:15",
-          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD        Couste"
+          "info": "TÉCNICAS Y MEDIOS DE LA VISUALIDAD     Caraballo"
         },
         {
           "dia": 4,
@@ -5085,12 +5085,12 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Tecnologías multimediales    Olivera                    SALON  221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Tecnologías multimediales    Olivera                       SALON 221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 3,
@@ -5110,12 +5110,12 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Tecnologías multimediales    Olivera                    SALON  221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Tecnologías multimediales    Olivera                    SALON  221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 3,
@@ -5140,7 +5140,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Tecnologías multimediales    Olivera                    SALON  221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 3,
@@ -5165,7 +5165,7 @@
         {
           "dia": 2,
           "hora": "10:25-11:10",
-          "info": "Tecnologías multimediales    Olivera                    SALON  221"
+          "info": "Tecnologías multimediales                       SALON  221"
         },
         {
           "dia": 3,
@@ -5277,12 +5277,12 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -5297,12 +5297,12 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -5322,7 +5322,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -5342,7 +5342,7 @@
         {
           "dia": 2,
           "hora": "10:25-11:10",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -6397,7 +6397,7 @@
         {
           "dia": 5,
           "hora": "11:55-12:40",
-          "info": "Introducción al campo profesional"
+          "info": "Introducción al campo profesional  Brito"
         },
         {
           "dia": 1,
@@ -6422,7 +6422,7 @@
         {
           "dia": 5,
           "hora": "12:40-13:25",
-          "info": "Introducción al campo profesional"
+          "info": "Introducción al campo profesional  Brito"
         },
         {
           "dia": 1,
@@ -6447,7 +6447,7 @@
         {
           "dia": 5,
           "hora": "13:25-14:10",
-          "info": "Introducción al campo profesional"
+          "info": "Introducción al campo profesional  Brito"
         }
       ]
     },
@@ -6648,7 +6648,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Introducción al campo profesional Olivera"
+          "info": "Introducción al campo profesional"
         },
         {
           "dia": 1,
@@ -6673,7 +6673,7 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Introducción al campo profesional Olivera"
+          "info": "Introducción al campo profesional"
         },
         {
           "dia": 1,
@@ -6698,7 +6698,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Introducción al campo profesional Olivera"
+          "info": "Introducción al campo profesional"
         },
         {
           "dia": 1,
@@ -6827,7 +6827,7 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 225 Brito"
         },
         {
           "dia": 3,
@@ -6842,12 +6842,12 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 225 Brito"
         },
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225      Brito"
         },
         {
           "dia": 3,
@@ -6862,7 +6862,7 @@
         {
           "dia": 5,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab Garrido SALON 224"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab  SALON 224"
         },
         {
           "dia": 1,
@@ -6872,7 +6872,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225                       Brito"
         },
         {
           "dia": 3,
@@ -6887,7 +6887,7 @@
         {
           "dia": 5,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab Garrido SALON 224"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab  SALON 224"
         },
         {
           "dia": 1,
@@ -6897,7 +6897,7 @@
         {
           "dia": 2,
           "hora": "10:25-11:10",
-          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225                       Brito"
         },
         {
           "dia": 3,
@@ -6912,7 +6912,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab Garrido SALON 224"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab  SALON 224"
         },
         {
           "dia": 1,
@@ -6922,7 +6922,7 @@
         {
           "dia": 2,
           "hora": "11:10-11:55",
-          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225"
+          "info": "Sistema educativo Nacional: Políticas Educativas              SALON 225                       Brito"
         },
         {
           "dia": 3,
@@ -6937,7 +6937,7 @@
         {
           "dia": 5,
           "hora": "11:10-11:55",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab Garrido SALON 224"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet SALON 225  / Ab  SALON 224"
         },
         {
           "dia": 1,
@@ -7024,7 +7024,7 @@
         {
           "dia": 5,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab Garrido"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab"
         },
         {
           "dia": 1,
@@ -7049,7 +7049,7 @@
         {
           "dia": 5,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab Garrido"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab"
         },
         {
           "dia": 1,
@@ -7074,7 +7074,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab Garrido"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab"
         },
         {
           "dia": 1,
@@ -7099,7 +7099,7 @@
         {
           "dia": 5,
           "hora": "11:10-11:55",
-          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab Garrido"
+          "info": "Didáctica Práctica Docente  subgrupo Aa Auyuanet  / Ab"
         },
         {
           "dia": 1,
@@ -7465,7 +7465,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 1,
@@ -7490,7 +7490,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 1,
@@ -7510,12 +7510,12 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Pensamiento computacional Olivera\nSALON 228"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 5,
           "hora": "22:20-23:00",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 1,
@@ -7525,12 +7525,12 @@
         {
           "dia": 4,
           "hora": "23:00-23:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 5,
           "hora": "23:00-23:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         }
       ]
     },
@@ -7781,7 +7781,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "SEMINARIO DE DERECHOS HUMANOS\n Benoit"
+          "info": "SEMINARIO DE DERECHOS HUMANOS Garralde"
         },
         {
           "dia": 5,
@@ -7806,7 +7806,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "SEMINARIO DE DERECHOS HUMANOS\n Benoit"
+          "info": "SEMINARIO DE DERECHOS HUMANOS Garralde"
         },
         {
           "dia": 5,
@@ -7905,7 +7905,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Didáctica Práctica Docente II   Garrido\nSALON 7"
+          "info": "Didáctica Práctica Docente II   \nSALON 7"
         },
         {
           "dia": 2,
@@ -7930,7 +7930,7 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -7955,7 +7955,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -7980,7 +7980,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -8082,7 +8082,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Didáctica Práctica Docente II   Garrido\nSALON 7"
+          "info": "Didáctica Práctica Docente II  \nSALON 7"
         },
         {
           "dia": 2,
@@ -8107,7 +8107,7 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -8132,7 +8132,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -8157,7 +8157,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Didáctica Práctica Docente II   Garrido"
+          "info": "Didáctica Práctica Docente II"
         },
         {
           "dia": 2,
@@ -8411,7 +8411,7 @@
         {
           "dia": 5,
           "hora": "08:00-08:45",
-          "info": "Derecho Laboral   Morales                    SALON 3"
+          "info": "Derecho Laboral   Morales                    SALON 107"
         },
         {
           "dia": 1,
@@ -8817,7 +8817,7 @@
         {
           "dia": 3,
           "hora": "21:40-22:20",
-          "info": "Sociología VI  \nSALON 112\nIragola"
+          "info": "Sociología VI  \nSALON \nIragola"
         },
         {
           "dia": 4,
@@ -8842,7 +8842,7 @@
         {
           "dia": 3,
           "hora": "22:20-23:00",
-          "info": "Sociología VI  \nSALON 112\nIragola"
+          "info": "Sociología VI  \nSALON \nIragola"
         },
         {
           "dia": 4,
@@ -9763,7 +9763,7 @@
         {
           "dia": 4,
           "hora": "18:20-19:00",
-          "info": "Introducción al campo profesional Motta"
+          "info": "Introducción al campo profesional Olivera"
         },
         {
           "dia": 5,
@@ -9783,7 +9783,7 @@
         {
           "dia": 4,
           "hora": "19:00-19:40",
-          "info": "Introducción al campo profesional Motta"
+          "info": "Introducción al campo profesional Olivera"
         },
         {
           "dia": 5,
@@ -9808,7 +9808,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Introducción al campo profesional Motta"
+          "info": "Introducción al campo profesional Olivera"
         },
         {
           "dia": 5,
@@ -10360,7 +10360,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri\nSALON 113"
+          "info": "Pedagogía\n\nSALON 113"
         },
         {
           "dia": 2,
@@ -10385,7 +10385,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSALON 113"
         },
         {
           "dia": 2,
@@ -10410,7 +10410,7 @@
         {
           "dia": 1,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -10465,7 +10465,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Pedagogía Pierri\nSALON 108"
+          "info": "Pedagogía \nSALON 108"
         },
         {
           "dia": 5,
@@ -10485,7 +10485,7 @@
         {
           "dia": 4,
           "hora": "23:00-23:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -10537,7 +10537,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -10562,7 +10562,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -10587,7 +10587,7 @@
         {
           "dia": 1,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -10652,7 +10652,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -10677,7 +10677,7 @@
         {
           "dia": 4,
           "hora": "23:00-23:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -10691,12 +10691,12 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Tecnologías multimediales Olivera            SALON 221"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Tecnologías multimediales Olivera                 SALON 221"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 3,
@@ -10716,12 +10716,12 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Tecnologías multimediales Olivera"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Tecnologías multimediales Olivera"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 3,
@@ -10746,7 +10746,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Tecnologías multimediales Olivera"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 3,
@@ -10771,7 +10771,7 @@
         {
           "dia": 2,
           "hora": "10:25-11:10",
-          "info": "Tecnologías multimediales Olivera"
+          "info": "Tecnologías multimediales           SALON 221"
         },
         {
           "dia": 3,
@@ -10791,7 +10791,7 @@
         {
           "dia": 1,
           "hora": "11:10-11:55",
-          "info": "Historia de la música II  Manzino         SALON LEXO"
+          "info": "Historia de la música II  Manzino         SALON 8"
         },
         {
           "dia": 2,
@@ -10801,7 +10801,7 @@
         {
           "dia": 3,
           "hora": "11:10-11:55",
-          "info": "Didáctica Práctica Docente I  subgrupo Aa Calcagno LEXO / Ab Mauttoni SALON 212"
+          "info": "Didáctica Práctica Docente I  subgrupo Aa Calcagno SALON 215 / Ab Mauttoni SALON 212"
         },
         {
           "dia": 4,
@@ -10883,12 +10883,12 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -10903,12 +10903,12 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -10928,7 +10928,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -10948,7 +10948,7 @@
         {
           "dia": 2,
           "hora": "10:25-11:10",
-          "info": "Pensamiento computacional  Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -11152,7 +11152,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Tecnologías multimediales Ferro\nSALON 225 (1er hora)"
+          "info": "Tecnologías multimediales Ferro\nSALON 221 (1er hora)"
         },
         {
           "dia": 3,
@@ -11314,7 +11314,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -11324,7 +11324,7 @@
         {
           "dia": 4,
           "hora": "21:00-21:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 5,
@@ -11339,7 +11339,7 @@
         {
           "dia": 2,
           "hora": "21:40-22:20",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -11349,7 +11349,7 @@
         {
           "dia": 4,
           "hora": "21:40-22:20",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 5,
@@ -11364,7 +11364,7 @@
         {
           "dia": 2,
           "hora": "22:20-23:00",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -11384,7 +11384,7 @@
         {
           "dia": 2,
           "hora": "23:00-23:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -12052,7 +12052,7 @@
         {
           "dia": 2,
           "hora": "12:40-13:25",
-          "info": "Metodología de la Danza Folclórica  García                           SALON 209"
+          "info": "Metodología de la Danza Folclórica  García                           SUM"
         },
         {
           "dia": 3,
@@ -12092,12 +12092,12 @@
         {
           "dia": 2,
           "hora": "14:15-15:00",
-          "info": "Pedagogía\n SALON 201"
+          "info": "Pedagogía Lima\n SALON 4"
         },
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "Metodología de la Danza  Danza Clásica  García                     SALON 208"
+          "info": "Metodología de la Danza  Danza Clásica  García                     SALON SUM"
         },
         {
           "dia": 4,
@@ -12117,7 +12117,7 @@
         {
           "dia": 2,
           "hora": "15:00-15:45",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -12142,7 +12142,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía \n Lima"
         },
         {
           "dia": 3,
@@ -12192,7 +12192,7 @@
         {
           "dia": 4,
           "hora": "17:25-18:10",
-          "info": "Pedagogía \n SALON 225"
+          "info": "Pedagogía \n SALON 9  Lima"
         },
         {
           "dia": 5,
@@ -12212,7 +12212,7 @@
         {
           "dia": 4,
           "hora": "18:10-18:55",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 5,
@@ -12269,7 +12269,7 @@
         {
           "dia": 2,
           "hora": "14:15-15:00",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -12294,7 +12294,7 @@
         {
           "dia": 2,
           "hora": "15:00-15:45",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -12319,7 +12319,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -12379,7 +12379,7 @@
         {
           "dia": 4,
           "hora": "17:25-18:10",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 5,
@@ -12404,7 +12404,7 @@
         {
           "dia": 4,
           "hora": "18:10-18:55",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 5,
@@ -12849,12 +12849,12 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir          SALON 207"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 207 Moreira"
         },
         {
           "dia": 3,
           "hora": "15:55-16:40",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir              SALON 204"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 204 Moreira"
         },
         {
           "dia": 5,
@@ -12869,12 +12869,12 @@
         {
           "dia": 2,
           "hora": "16:40-17:25",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 207 Moreira"
         },
         {
           "dia": 3,
           "hora": "16:40-17:25",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 204 Moreira"
         },
         {
           "dia": 4,
@@ -12894,7 +12894,7 @@
         {
           "dia": 2,
           "hora": "17:25-18:10",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 207 Moreira"
         },
         {
           "dia": 3,
@@ -12914,7 +12914,7 @@
         {
           "dia": 2,
           "hora": "18:10-18:50",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN SALON 207 Moreira"
         },
         {
           "dia": 3,
@@ -12961,7 +12961,7 @@
         {
           "dia": 3,
           "hora": "13:30-14:15",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA Gadea"
         },
         {
           "dia": 4,
@@ -12986,7 +12986,7 @@
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA  Gadea"
         },
         {
           "dia": 4,
@@ -13011,7 +13011,7 @@
         {
           "dia": 3,
           "hora": "15:00-15:45",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA  Gadea"
         },
         {
           "dia": 4,
@@ -13071,7 +13071,7 @@
         {
           "dia": 5,
           "hora": "16:40-17:25",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA  Gadea"
         },
         {
           "dia": 1,
@@ -13096,7 +13096,7 @@
         {
           "dia": 5,
           "hora": "17:25-18:10",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA  Gadea"
         },
         {
           "dia": 1,
@@ -13121,7 +13121,7 @@
         {
           "dia": 5,
           "hora": "18:10-18:50",
-          "info": "MÚSICA Y DANZA"
+          "info": "MÚSICA Y DANZA  Gadea"
         }
       ]
     },
@@ -13809,7 +13809,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Pedagogía \nSALON 104"
+          "info": "Pedagogía \nSALON 104 Da Rosa"
         },
         {
           "dia": 2,
@@ -13834,7 +13834,7 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 2,
@@ -13874,7 +13874,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Pedagogía \nSALON 104"
+          "info": "Pedagogía \nSALON 104 Da Rosa"
         },
         {
           "dia": 5,
@@ -13899,7 +13899,7 @@
         {
           "dia": 4,
           "hora": "20:20-21:00",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 5,
@@ -13924,7 +13924,7 @@
         {
           "dia": 4,
           "hora": "21:00-21:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 5,
@@ -13986,7 +13986,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 2,
@@ -14011,7 +14011,7 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 2,
@@ -14051,7 +14051,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 5,
@@ -14076,7 +14076,7 @@
         {
           "dia": 4,
           "hora": "20:20-21:00",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 5,
@@ -14101,7 +14101,7 @@
         {
           "dia": 4,
           "hora": "21:00-21:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Da Rosa"
         },
         {
           "dia": 5,
@@ -14190,7 +14190,7 @@
         {
           "dia": 3,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa  Rocca     SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 4,
@@ -14215,7 +14215,7 @@
         {
           "dia": 3,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa  Rocca  SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 4,
@@ -14240,7 +14240,7 @@
         {
           "dia": 3,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa Rocca  SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 4,
@@ -14265,7 +14265,7 @@
         {
           "dia": 3,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa  Rocca SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 4,
@@ -14372,7 +14372,7 @@
         {
           "dia": 1,
           "hora": "08:00-08:45",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Garralde"
         },
         {
           "dia": 2,
@@ -14382,7 +14382,7 @@
         {
           "dia": 3,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa Rocca SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 5,
@@ -14392,7 +14392,7 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  Garralde"
         },
         {
           "dia": 2,
@@ -14402,7 +14402,7 @@
         {
           "dia": 3,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa  Rocca SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 5,
@@ -14412,7 +14412,7 @@
         {
           "dia": 1,
           "hora": "09:30-10:15",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  Garralde"
         },
         {
           "dia": 2,
@@ -14422,7 +14422,7 @@
         {
           "dia": 3,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa  Rocca SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 5,
@@ -14442,7 +14442,7 @@
         {
           "dia": 3,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente I subgrupo Aa      SALON 224/ Ab Velázquez SALON 214"
+          "info": "Didáctica Práctica Docente I subgrupo Aa Rocca SALON 224/ Ab Velázquez SALON 214"
         },
         {
           "dia": 5,
@@ -14467,7 +14467,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Garralde"
         },
         {
           "dia": 5,
@@ -14492,7 +14492,7 @@
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Garralde"
         },
         {
           "dia": 5,
@@ -14517,7 +14517,7 @@
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Benoit"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional Garralde"
         },
         {
           "dia": 5,
@@ -14541,7 +14541,7 @@
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "Epistemología I Irisarri\nSALON 106"
+          "info": "Epistemología I Irisarri\nSALON 107"
         },
         {
           "dia": 4,
@@ -14768,7 +14768,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -14793,7 +14793,7 @@
         {
           "dia": 2,
           "hora": "20:20-21:00",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 3,
@@ -14823,7 +14823,7 @@
         {
           "dia": 3,
           "hora": "21:00-21:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 4,
@@ -14848,7 +14848,7 @@
         {
           "dia": 3,
           "hora": "21:40-22:20",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 4,
@@ -14863,7 +14863,7 @@
         {
           "dia": 3,
           "hora": "22:20-23:00",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 4,
@@ -14878,7 +14878,7 @@
         {
           "dia": 3,
           "hora": "23:00-23:40",
-          "info": "Pensamiento computacional Olivera"
+          "info": "Pensamiento computacional"
         },
         {
           "dia": 4,
@@ -14907,7 +14907,7 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 1,
@@ -14927,7 +14927,7 @@
         {
           "dia": 4,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa   Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 1,
@@ -14947,7 +14947,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 1,
@@ -14967,7 +14967,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 5,
@@ -15064,7 +15064,7 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 5,
@@ -15089,7 +15089,7 @@
         {
           "dia": 4,
           "hora": "08:45-09:30",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 5,
@@ -15114,7 +15114,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca  SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 5,
@@ -15139,7 +15139,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente II  subgrupo Aa         SALON 223  /          Ab Regueiro SALON 225"
+          "info": "Didáctica Práctica Docente II  subgrupo Aa  Rocca    SALON 223  /          Ab Regueiro SALON 225"
         },
         {
           "dia": 5,
@@ -15704,12 +15704,12 @@
         {
           "dia": 3,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa Moreira SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa Moreira  SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 1,
@@ -15724,12 +15724,12 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa Moreira  SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa Moreira SALON 213/ Ab Bernassa SALON 222"
         }
       ],
       "sem2": [
@@ -15846,12 +15846,12 @@
         {
           "dia": 3,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa Moreira    SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa  Moreira SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 1,
@@ -15866,12 +15866,12 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa   Moreira  SALON 213/ Ab Bernassa SALON 222"
         },
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Didáctica Práctica Docente III Aa     SALON 213/ Ab Bernassa SALON 222"
+          "info": "Didáctica Práctica Docente III Aa  Moreira SALON 213/ Ab Bernassa SALON 222"
         }
       ]
     },
@@ -15880,7 +15880,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Didáctica Práctica Docente III Bernassa \nSALON 11"
+          "info": "Didáctica Práctica Docente III Bernassa \nSALON 222"
         },
         {
           "dia": 2,
@@ -16549,7 +16549,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Lengua Española 1   Laviano\nSALON 13"
+          "info": "Lengua Española 1   Laviano\nSALON 205"
         },
         {
           "dia": 2,
@@ -16569,12 +16569,12 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Pedagogía\nPierri\nSALON 104"
+          "info": "Pedagogía\nSosa\nSALON 104"
         },
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "Lengua Española 1   Laviano\nSALON 13"
+          "info": "Lengua Española 1   Laviano"
         },
         {
           "dia": 2,
@@ -16594,12 +16594,12 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Lengua Española 1   Laviano\nSALON 13"
+          "info": "Lengua Española 1   Laviano"
         },
         {
           "dia": 2,
@@ -16619,17 +16619,17 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Lengua Española 1   Laviano\nSALON 13"
+          "info": "Lengua Española 1   Laviano"
         },
         {
           "dia": 2,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri\nSALON 104"
+          "info": "Pedagogía\nSosa\nSALON 104"
         },
         {
           "dia": 3,
@@ -16649,7 +16649,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri\nSALON 104"
+          "info": "Pedagogía\nSosa\nSALON 104"
         },
         {
           "dia": 3,
@@ -16746,7 +16746,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 1,
@@ -16771,7 +16771,7 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 1,
@@ -16796,7 +16796,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 1,
@@ -16806,7 +16806,7 @@
         {
           "dia": 2,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 3,
@@ -16831,7 +16831,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\nSosa"
         },
         {
           "dia": 3,
@@ -19002,12 +19002,12 @@
           "info": "De las Primeras Civilizaciones a la Edad Moderna  Priscal"
         },
         {
-          "dia": 3,
+          "dia": 4,
           "hora": "12:40-13:25",
           "info": "Educación y sus transformaciones en la historia  Machado"
         },
         {
-          "dia": 4,
+          "dia": 5,
           "hora": "12:40-13:25",
           "info": "Educación y sus transformaciones en la historia  Machado"
         },
@@ -19022,12 +19022,12 @@
           "info": "De las Primeras Civilizaciones a la Edad Moderna  Priscal"
         },
         {
-          "dia": 3,
+          "dia": 4,
           "hora": "13:25-14:10",
           "info": "Educación y sus transformaciones en la historia  Machado"
         },
         {
-          "dia": 4,
+          "dia": 5,
           "hora": "13:25-14:10",
           "info": "Educación y sus transformaciones en la historia  Machado"
         }
@@ -19038,7 +19038,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "Pedagogía                   SALON 115"
+          "info": "Pedagogía                   SALON 115 Burgues"
         },
         {
           "dia": 2,
@@ -19058,7 +19058,7 @@
         {
           "dia": 1,
           "hora": "13:30-14:15",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -19118,7 +19118,7 @@
         {
           "dia": 3,
           "hora": "15:00-15:45",
-          "info": "Pedagogía                                  SALON 207"
+          "info": "Pedagogía                                  SALON 207 Burgues"
         },
         {
           "dia": 4,
@@ -19138,12 +19138,12 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 115"
+          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 210"
         },
         {
           "dia": 3,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -19163,12 +19163,12 @@
         {
           "dia": 2,
           "hora": "16:40-17:25",
-          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 115"
+          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 210"
         },
         {
           "dia": 3,
           "hora": "16:40-17:25",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -19188,7 +19188,7 @@
         {
           "dia": 2,
           "hora": "17:25-18:10",
-          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 115"
+          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 210"
         },
         {
           "dia": 4,
@@ -19203,7 +19203,7 @@
         {
           "dia": 2,
           "hora": "18:10-18:55",
-          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 115"
+          "info": "De las Primeras Civilizaciones a la Edad Moderna  Devoto                SALON 210"
         },
         {
           "dia": 4,
@@ -19215,7 +19215,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -19240,7 +19240,7 @@
         {
           "dia": 1,
           "hora": "13:30-14:15",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -19300,7 +19300,7 @@
         {
           "dia": 3,
           "hora": "15:00-15:45",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -19325,7 +19325,7 @@
         {
           "dia": 3,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -19350,7 +19350,7 @@
         {
           "dia": 3,
           "hora": "16:40-17:25",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -19409,7 +19409,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "De las Primeras Civilizaciones a la Edad Moderna   Casinelli\nSALON 201"
+          "info": "De las Primeras Civilizaciones a la Edad Moderna   Casinelli\nSALON 201\nSOLO 23 DE MARZO ANFITEATRO"
         },
         {
           "dia": 2,
@@ -19449,7 +19449,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Sociología de la Educación 1: Teoría Sociológica  Troisi\nSALON 201"
+          "info": "Sociología de la Educación 1: Teoría Sociológica  Troisi\nSALON 201\nSOLO 23 DE MARZO ANFITEATRO"
         },
         {
           "dia": 2,
@@ -19539,7 +19539,7 @@
         {
           "dia": 1,
           "hora": "22:20-23:00",
-          "info": "Pedagogía  Isquierdo\nSALON 201"
+          "info": "Pedagogía  Isquierdo\nSALON 201\nSOLO 23 DE MARZO ANFITEATRO"
         },
         {
           "dia": 2,
@@ -19780,7 +19780,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Sociología de la Educación 1: Teoría Sociológica                     Rocha\nSALON 202"
+          "info": "Sociología de la Educación 1: Teoría Sociológica                     Rocha\nSALON 202\nSOLO 23 DE MARZO SALON 211"
         },
         {
           "dia": 3,
@@ -19845,7 +19845,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Epistemología de la Historia y su Enseñanza     Larrobla         \nSALON 202            \nSOLO 20 DE MARZO SALON 210"
+          "info": "Epistemología de la Historia y su Enseñanza     Larrobla         \nSALON 10"
         },
         {
           "dia": 1,
@@ -19875,7 +19875,7 @@
         {
           "dia": 1,
           "hora": "21:00-21:40",
-          "info": "Educación y sus transformaciones en la historia  Cancellara\nSALON 202"
+          "info": "Educación y sus transformaciones en la historia  Cancellara\nSALON 202\nSOLO 23 DE MARZO SALON 211"
         },
         {
           "dia": 2,
@@ -19890,7 +19890,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Lengua Española 1  Laviano\nSALON 202\nSOLO 20 DE MARZO SALON 210"
+          "info": "Lengua Española 1  Laviano\nSALON 10"
         },
         {
           "dia": 1,
@@ -20166,7 +20166,7 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                                                         SALON 203"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                                                         SALON 203 Paleso"
         },
         {
           "dia": 5,
@@ -20191,7 +20191,7 @@
         {
           "dia": 4,
           "hora": "08:45-09:30",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas      Paleso"
         },
         {
           "dia": 5,
@@ -20216,7 +20216,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                    Paleso"
         },
         {
           "dia": 5,
@@ -20241,7 +20241,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas        Paleso"
         },
         {
           "dia": 5,
@@ -20301,7 +20301,7 @@
         {
           "dia": 2,
           "hora": "12:40-13:25",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                   SALON 203"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                   SALON 203 Paleso"
         },
         {
           "dia": 3,
@@ -20321,7 +20321,7 @@
         {
           "dia": 2,
           "hora": "13:25-14:10",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas        Paleso"
         },
         {
           "dia": 3,
@@ -23899,7 +23899,7 @@
         {
           "dia": 4,
           "hora": "18:20-19:00",
-          "info": "Pedagogía\nPierri\nSALON 111"
+          "info": "Pedagogía \n\nSALON 111"
         },
         {
           "dia": 5,
@@ -23919,7 +23919,7 @@
         {
           "dia": 4,
           "hora": "19:00-19:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -23939,7 +23939,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -23959,7 +23959,7 @@
         {
           "dia": 3,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri\nSALON SUM"
+          "info": "Pedagogía\n\nSALON SUM"
         },
         {
           "dia": 4,
@@ -23984,7 +23984,7 @@
         {
           "dia": 3,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 4,
@@ -24091,7 +24091,7 @@
         {
           "dia": 4,
           "hora": "18:20-19:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -24116,7 +24116,7 @@
         {
           "dia": 4,
           "hora": "19:00-19:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -24141,7 +24141,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -24161,7 +24161,7 @@
         {
           "dia": 3,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 4,
@@ -24186,7 +24186,7 @@
         {
           "dia": 3,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 4,
@@ -24196,7 +24196,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -24221,7 +24221,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -24246,7 +24246,7 @@
         {
           "dia": 5,
           "hora": "22:20-23:00",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -24271,7 +24271,7 @@
         {
           "dia": 5,
           "hora": "23:00-23:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         }
       ]
     },
@@ -25338,12 +25338,12 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "GRAMÁTICA ESPAÑOLA III  \nSALON 9"
+          "info": "GRAMÁTICA ESPAÑOLA III Barboza  \nSALON 9"
         },
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "GRAMÁTICA ESPAÑOLA III \nSALON 8"
+          "info": "GRAMÁTICA ESPAÑOLA III Barboza \nSALON 8"
         },
         {
           "dia": 3,
@@ -25363,12 +25363,12 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III Barboza"
         },
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III Barboza"
         },
         {
           "dia": 3,
@@ -25393,7 +25393,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 3,
@@ -25495,12 +25495,12 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 3,
@@ -25520,12 +25520,12 @@
         {
           "dia": 1,
           "hora": "19:00-19:40",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 3,
@@ -25550,7 +25550,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "GRAMÁTICA ESPAÑOLA III"
+          "info": "GRAMÁTICA ESPAÑOLA III  \nBarboza"
         },
         {
           "dia": 3,
@@ -25687,6 +25687,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo             SALON 8"
         },
         {
+          "dia": 3,
+          "hora": "08:00-08:45",
+          "info": "Gramática Española IV Rodríguez           SALON 11"
+        },
+        {
           "dia": 4,
           "hora": "08:00-08:45",
           "info": "Investigación Educativa II  Lockhart                   SALON 10"
@@ -25702,6 +25707,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
+          "dia": 3,
+          "hora": "08:45-09:30",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "08:45-09:30",
           "info": "Investigación Educativa II  Lockhart"
@@ -25717,6 +25727,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
+          "dia": 3,
+          "hora": "09:30-10:15",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "09:30-10:15",
           "info": "Investigación Educativa II  Lockhart"
@@ -25730,11 +25745,6 @@
           "dia": 2,
           "hora": "10:25-11:10",
           "info": "Didáctica Práctica Docente III       Peluffo"
-        },
-        {
-          "dia": 3,
-          "hora": "10:25-11:10",
-          "info": "Gramática Española IV Rodríguez           SALON 10"
         },
         {
           "dia": 4,
@@ -25752,19 +25762,9 @@
           "info": "Estilística y Análisis de Textos - Canepa                               SALON 10"
         },
         {
-          "dia": 2,
-          "hora": "11:10-11:55",
-          "info": "Gramática Española IV Rodríguez                SALON 8"
-        },
-        {
-          "dia": 3,
-          "hora": "11:10-11:55",
-          "info": "Gramática Española IV Rodríguez           SALON 10"
-        },
-        {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Gramática Histórica II - Gonzalez                   SALON 10"
+          "info": "Gramática Histórica II - Gonzalez        SALON 10      ________________           Gramática Española IV Rodríguez            SALON 11"
         },
         {
           "dia": 5,
@@ -25777,19 +25777,9 @@
           "info": "Estilística y Análisis de Textos - Canepa"
         },
         {
-          "dia": 2,
-          "hora": "11:55-12:40",
-          "info": "Gramática Española IV Rodríguez                SALON 2"
-        },
-        {
-          "dia": 3,
-          "hora": "11:55-12:40",
-          "info": "Gramática Española IV Rodríguez           SALON 10"
-        },
-        {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Gramática Histórica II - Gonzalez"
+          "info": "Gramática Histórica II - Gonzalez      ________________       Gramática Española IV Rodríguez"
         },
         {
           "dia": 5,
@@ -25839,6 +25829,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
+          "dia": 3,
+          "hora": "08:00-08:45",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "08:00-08:45",
           "info": "Investigación Educativa II  Lockhart"
@@ -25854,6 +25849,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
+          "dia": 3,
+          "hora": "08:45-09:30",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "08:45-09:30",
           "info": "Investigación Educativa II  Lockhart"
@@ -25869,6 +25869,11 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
+          "dia": 3,
+          "hora": "09:30-10:15",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "09:30-10:15",
           "info": "Investigación Educativa II  Lockhart"
@@ -25884,11 +25889,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "10:25-11:10",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "10:25-11:10",
           "info": "Investigación Educativa II  Lockhart"
@@ -25899,19 +25899,9 @@
           "info": "Lingüística IV               Covas"
         },
         {
-          "dia": 2,
-          "hora": "11:10-11:55",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
-          "dia": 3,
-          "hora": "11:10-11:55",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Lingüística IV         Covas"
+          "info": "Lingüística IV         Covas                            Gramática Española IV Rodríguez"
         },
         {
           "dia": 5,
@@ -25919,19 +25909,9 @@
           "info": "Lingüística IV               Covas"
         },
         {
-          "dia": 2,
-          "hora": "11:55-12:40",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
-          "dia": 3,
-          "hora": "11:55-12:40",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Lingüística IV         Covas"
+          "info": "Lingüística IV         Covas                            Gramática Española IV Rodríguez"
         },
         {
           "dia": 5,
@@ -25980,7 +25960,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Didáctica Práctica Docente III Ba Marichal SALON 222 1ER HORA, 217 2DA HORA/ Bb Peluffo SALON 3"
+          "info": "Didáctica Práctica Docente III Ba Marichal SALON 13/ Bb Peluffo SALON 3"
         },
         {
           "dia": 2,
@@ -27024,7 +27004,7 @@
         {
           "dia": 4,
           "hora": "18:20-19:00",
-          "info": "Pedagogía\nSALON 111"
+          "info": "Pedagogía \nSALON 111"
         },
         {
           "dia": 5,
@@ -27044,7 +27024,7 @@
         {
           "dia": 4,
           "hora": "19:00-19:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía \nSALON 111"
         },
         {
           "dia": 5,
@@ -27064,7 +27044,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Pedagogía"
+          "info": "Pedagogía \nSALON 111"
         },
         {
           "dia": 5,
@@ -27119,7 +27099,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Slón 111"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Salón 111"
         },
         {
           "dia": 1,
@@ -27144,7 +27124,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Slón 111"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Salón 111"
         },
         {
           "dia": 1,
@@ -27164,7 +27144,7 @@
         {
           "dia": 5,
           "hora": "22:20-23:00",
-          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Slón 111"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Salón 111"
         },
         {
           "dia": 1,
@@ -27184,7 +27164,7 @@
         {
           "dia": 5,
           "hora": "23:00-23:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Slón 111"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker Salón 111"
         }
       ],
       "sem2": [
@@ -27311,7 +27291,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -27336,7 +27316,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -27356,7 +27336,7 @@
         {
           "dia": 5,
           "hora": "22:20-23:00",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         },
         {
           "dia": 1,
@@ -27376,7 +27356,7 @@
         {
           "dia": 5,
           "hora": "23:00-23:40",
-          "info": "Sociología de la Educación 1: Teoría Sociológica González"
+          "info": "Sociología de la Educación 1: Teoría Sociológica Crocker"
         }
       ]
     },
@@ -27475,7 +27455,7 @@
         {
           "dia": 1,
           "hora": "11:10-11:55",
-          "info": "Tecnologías multimediales  Olivera                             SALON 228"
+          "info": "Tecnologías multimediales                         SALON 228"
         },
         {
           "dia": 2,
@@ -27500,7 +27480,7 @@
         {
           "dia": 1,
           "hora": "11:55-12:40",
-          "info": "Tecnologías multimediales  Olivera"
+          "info": "Tecnologías multimediales                         SALON 228"
         },
         {
           "dia": 2,
@@ -27525,7 +27505,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "Tecnologías multimediales  Olivera"
+          "info": "Tecnologías multimediales                         SALON 228"
         },
         {
           "dia": 2,
@@ -27545,12 +27525,12 @@
         {
           "dia": 5,
           "hora": "12:40-13:25",
-          "info": "Tecnologías multimediales  Olivera                                               SALON 228"
+          "info": "Tecnologías multimediales                         SALON 228"
         },
         {
           "dia": 1,
           "hora": "13:25-14:10",
-          "info": "Tecnologías multimediales  Olivera"
+          "info": "Tecnologías multimediales                         SALON 228"
         },
         {
           "dia": 2,
@@ -27570,7 +27550,7 @@
         {
           "dia": 5,
           "hora": "13:25-14:10",
-          "info": "Tecnologías multimediales  Olivera"
+          "info": "Tecnologías multimediales                         SALON 228"
         }
       ],
       "sem2": [
@@ -27657,7 +27637,7 @@
         {
           "dia": 1,
           "hora": "11:10-11:55",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         },
         {
           "dia": 3,
@@ -27677,7 +27657,7 @@
         {
           "dia": 1,
           "hora": "11:55-12:40",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         },
         {
           "dia": 3,
@@ -27697,7 +27677,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         },
         {
           "dia": 3,
@@ -27712,12 +27692,12 @@
         {
           "dia": 5,
           "hora": "12:40-13:25",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         },
         {
           "dia": 1,
           "hora": "13:25-14:10",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         },
         {
           "dia": 3,
@@ -27732,7 +27712,7 @@
         {
           "dia": 5,
           "hora": "13:25-14:10",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional Acosta"
         }
       ]
     },
@@ -27746,7 +27726,7 @@
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 3,
@@ -27761,7 +27741,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 1,
@@ -27771,7 +27751,7 @@
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 3,
@@ -27786,7 +27766,7 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 1,
@@ -27811,7 +27791,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 1,
@@ -27856,7 +27836,7 @@
         {
           "dia": 4,
           "hora": "21:00-21:40",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 5,
@@ -27881,7 +27861,7 @@
         {
           "dia": 4,
           "hora": "21:40-22:20",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 5,
@@ -27906,7 +27886,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Aspectos literarios Morás \nSALON 110"
+          "info": "Aspectos literarios  \nSALON 110"
         },
         {
           "dia": 5,
@@ -28483,7 +28463,7 @@
         {
           "dia": 4,
           "hora": "19:00-19:40",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Rodríguez \nSALON 213"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Rodríguez"
         },
         {
           "dia": 5,
@@ -28508,7 +28488,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Rodríguez \nSALON 213"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Rodríguez"
         },
         {
           "dia": 5,
@@ -30220,7 +30200,7 @@
         {
           "dia": 2,
           "hora": "14:15-15:00",
-          "info": "Pedagogía             SALON 201"
+          "info": "Pedagogía             SALON 4  Lima"
         },
         {
           "dia": 3,
@@ -30245,7 +30225,7 @@
         {
           "dia": 2,
           "hora": "15:00-15:45",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -30270,7 +30250,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -30320,7 +30300,7 @@
         {
           "dia": 4,
           "hora": "17:25-18:10",
-          "info": "Pedagogía                                         SALON 225"
+          "info": "Pedagogía                                         SALON 9  Lima"
         },
         {
           "dia": 5,
@@ -30340,7 +30320,7 @@
         {
           "dia": 4,
           "hora": "18:10-18:55",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 5,
@@ -30407,7 +30387,7 @@
         {
           "dia": 2,
           "hora": "14:15-15:00",
-          "info": "Pedagogía \nSALON 201"
+          "info": "Pedagogía \nSALON 201  Lima"
         },
         {
           "dia": 3,
@@ -30432,7 +30412,7 @@
         {
           "dia": 2,
           "hora": "15:00-15:45",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -30457,7 +30437,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 3,
@@ -30517,7 +30497,7 @@
         {
           "dia": 4,
           "hora": "17:25-18:10",
-          "info": "Pedagogía \nSALON 225"
+          "info": "Pedagogía \nSALON 225  Lima"
         },
         {
           "dia": 5,
@@ -30542,7 +30522,7 @@
         {
           "dia": 4,
           "hora": "18:10-18:55",
-          "info": "Pedagogía"
+          "info": "Pedagogía  Lima"
         },
         {
           "dia": 5,
@@ -30636,7 +30616,7 @@
         {
           "dia": 5,
           "hora": "20:20-21:00",
-          "info": "Pedagogía Pierri\nSALON 217"
+          "info": "Pedagogía Sosa\nSALON 217"
         },
         {
           "dia": 1,
@@ -30661,7 +30641,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa\nSALON 217"
         },
         {
           "dia": 1,
@@ -30671,7 +30651,7 @@
         {
           "dia": 2,
           "hora": "21:40-22:20",
-          "info": "Pedagogía Pierri\nSALON 203"
+          "info": "Pedagogía Sosa\nSALON 203"
         },
         {
           "dia": 3,
@@ -30696,7 +30676,7 @@
         {
           "dia": 2,
           "hora": "22:20-23:00",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa\nSALON 203"
         },
         {
           "dia": 3,
@@ -30721,7 +30701,7 @@
         {
           "dia": 2,
           "hora": "23:00-23:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa\nSALON 203"
         },
         {
           "dia": 3,
@@ -30838,7 +30818,7 @@
         {
           "dia": 5,
           "hora": "20:20-21:00",
-          "info": "Pedagogía Pierri\nSALON 217"
+          "info": "Pedagogía Sosa\nSALON 217"
         },
         {
           "dia": 1,
@@ -30863,7 +30843,7 @@
         {
           "dia": 5,
           "hora": "21:00-21:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa\nSALON 217"
         },
         {
           "dia": 1,
@@ -30873,7 +30853,7 @@
         {
           "dia": 2,
           "hora": "21:40-22:20",
-          "info": "Pedagogía Pierri\nSALON 203"
+          "info": "Pedagogía Sosa SALON 203"
         },
         {
           "dia": 3,
@@ -30898,7 +30878,7 @@
         {
           "dia": 2,
           "hora": "22:20-23:00",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa"
         },
         {
           "dia": 3,
@@ -30923,7 +30903,7 @@
         {
           "dia": 2,
           "hora": "23:00-23:40",
-          "info": "Pedagogía Pierri"
+          "info": "Pedagogía Sosa"
         },
         {
           "dia": 3,
@@ -30967,7 +30947,7 @@
         {
           "dia": 1,
           "hora": "09:30-10:15",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                                              SALON 217"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                                              SALON 217 Da Rosa"
         },
         {
           "dia": 2,
@@ -30992,7 +30972,7 @@
         {
           "dia": 1,
           "hora": "10:25-11:10",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas    Da Rosa"
         },
         {
           "dia": 2,
@@ -31032,7 +31012,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 213"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                                     SALON 213 Da Rosa"
         },
         {
           "dia": 5,
@@ -31057,7 +31037,7 @@
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                 Da Rosa"
         },
         {
           "dia": 5,
@@ -31082,7 +31062,7 @@
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                    Da Rosa"
         },
         {
           "dia": 1,
@@ -31102,7 +31082,7 @@
         {
           "dia": 4,
           "hora": "13:25-14:10",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas                                   Da Rosa"
         }
       ],
       "sem2": [
@@ -31580,7 +31560,7 @@
         {
           "dia": 4,
           "hora": "15:55-16:40",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         },
         {
           "dia": 5,
@@ -31605,7 +31585,7 @@
         {
           "dia": 4,
           "hora": "16:40-17:25",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         },
         {
           "dia": 5,
@@ -31625,12 +31605,12 @@
         {
           "dia": 4,
           "hora": "17:25-18:10",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         },
         {
           "dia": 5,
           "hora": "17:25-18:10",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         },
         {
           "dia": 1,
@@ -31645,12 +31625,12 @@
         {
           "dia": 4,
           "hora": "18:10-18:55",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         },
         {
           "dia": 5,
           "hora": "18:10-18:55",
-          "info": "Pensamiento computacional"
+          "info": "Pensamiento computacional  Sáenz"
         }
       ]
     },
@@ -34452,7 +34432,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Pedagogía                          SALON 206"
+          "info": "Pedagogía                          SALON 206 Burgues"
         },
         {
           "dia": 4,
@@ -34477,7 +34457,7 @@
         {
           "dia": 3,
           "hora": "13:30-14:15",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -34517,7 +34497,7 @@
         {
           "dia": 1,
           "hora": "15:00-15:45",
-          "info": "Pedagogía                 SALON 105"
+          "info": "Pedagogía                 SALON 105 Burgues"
         },
         {
           "dia": 2,
@@ -34537,7 +34517,7 @@
         {
           "dia": 1,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -34557,7 +34537,7 @@
         {
           "dia": 1,
           "hora": "16:40-17:25",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -34629,7 +34609,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Pedagogía \nSALON 206"
+          "info": "Pedagogía \nSALON 206 Burgues"
         },
         {
           "dia": 4,
@@ -34654,7 +34634,7 @@
         {
           "dia": 3,
           "hora": "13:30-14:15",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 4,
@@ -34694,7 +34674,7 @@
         {
           "dia": 1,
           "hora": "15:00-15:45",
-          "info": "Pedagogía \nSALON 105"
+          "info": "Pedagogía \nSALON 105 Burgues"
         },
         {
           "dia": 2,
@@ -34719,7 +34699,7 @@
         {
           "dia": 1,
           "hora": "15:55-16:40",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -34744,7 +34724,7 @@
         {
           "dia": 1,
           "hora": "16:40-17:25",
-          "info": "Pedagogía"
+          "info": "Pedagogía Burgues"
         },
         {
           "dia": 2,
@@ -35476,7 +35456,7 @@
         {
           "dia": 1,
           "hora": "21:40-22:20",
-          "info": "Educación y sus transformaciones en la historia  Pierri\nSALON 108"
+          "info": "Educación y sus transformaciones en la historia  \nSALON 108 De Marco"
         },
         {
           "dia": 2,
@@ -35496,12 +35476,12 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Educación y sus transformaciones en la historia  Pierri\nSALON 112"
+          "info": "Educación y sus transformaciones en la historia  \nSALON 112 De Marco"
         },
         {
           "dia": 1,
           "hora": "22:20-23:00",
-          "info": "Educación y sus transformaciones en la historia  Pierri"
+          "info": "Educación y sus transformaciones en la historia  De Marco"
         },
         {
           "dia": 2,
@@ -35521,12 +35501,12 @@
         {
           "dia": 5,
           "hora": "22:20-23:00",
-          "info": "Educación y sus transformaciones en la historia  Pierri"
+          "info": "Educación y sus transformaciones en la historia  De Marco"
         },
         {
           "dia": 1,
           "hora": "23:00-23:40",
-          "info": "Educación y sus transformaciones en la historia  Pierri"
+          "info": "Educación y sus transformaciones en la historia  De Marco"
         },
         {
           "dia": 2,
@@ -35546,7 +35526,7 @@
         {
           "dia": 5,
           "hora": "23:00-23:40",
-          "info": "Educación y sus transformaciones en la historia  Pierri"
+          "info": "Educación y sus transformaciones en la historia  De Marco"
         }
       ]
     },
@@ -37669,7 +37649,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN            SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
         },
         {
           "dia": 2,
@@ -37684,7 +37664,7 @@
         {
           "dia": 1,
           "hora": "13:30-14:15",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
         },
         {
           "dia": 2,
@@ -37699,7 +37679,7 @@
         {
           "dia": 1,
           "hora": "14:15-15:00",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
         },
         {
           "dia": 2,
@@ -37724,7 +37704,7 @@
         {
           "dia": 1,
           "hora": "15:00-15:45",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
         },
         {
           "dia": 2,
@@ -37794,7 +37774,7 @@
         {
           "dia": 3,
           "hora": "17:25-18:10",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN                        SALON 108"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        MIR                SALON 108"
         },
         {
           "dia": 4,
@@ -37814,7 +37794,7 @@
         {
           "dia": 3,
           "hora": "18:10-18:55",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        MIR                SALON 108"
         },
         {
           "dia": 5,
@@ -39366,7 +39346,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri\nSALON 113"
+          "info": "Pedagogía\n\nSALON 113"
         },
         {
           "dia": 2,
@@ -39391,7 +39371,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -39416,7 +39396,7 @@
         {
           "dia": 1,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 2,
@@ -39471,7 +39451,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Pedagogía\nPierri\nSALON 108"
+          "info": "Pedagogía \nSALON 108"
         },
         {
           "dia": 5,
@@ -39491,7 +39471,7 @@
         {
           "dia": 4,
           "hora": "23:00-23:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -39543,7 +39523,7 @@
         {
           "dia": 1,
           "hora": "19:40-20:20",
-          "info": "Pedagogía\nPierri \nSALON 113"
+          "info": "Pedagogía\n\nSALON 113"
         },
         {
           "dia": 2,
@@ -39568,7 +39548,7 @@
         {
           "dia": 1,
           "hora": "20:20-21:00",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\n\nSALON 113"
         },
         {
           "dia": 2,
@@ -39593,7 +39573,7 @@
         {
           "dia": 1,
           "hora": "21:00-21:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía\n\nSALON 113"
         },
         {
           "dia": 2,
@@ -39658,7 +39638,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Pedagogía\nPierri\nSALON 108"
+          "info": "Pedagogía \nSALON 108"
         },
         {
           "dia": 5,
@@ -39683,7 +39663,7 @@
         {
           "dia": 4,
           "hora": "23:00-23:40",
-          "info": "Pedagogía\nPierri"
+          "info": "Pedagogía"
         },
         {
           "dia": 5,
@@ -40058,7 +40038,7 @@
         {
           "dia": 2,
           "hora": "18:20-19:00",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -40073,7 +40053,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 112"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 112                             Da Rosa"
         },
         {
           "dia": 1,
@@ -40083,7 +40063,7 @@
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -40098,7 +40078,7 @@
         {
           "dia": 5,
           "hora": "19:00-19:40",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \n                           Da Rosa"
         },
         {
           "dia": 1,
@@ -40108,7 +40088,7 @@
         {
           "dia": 2,
           "hora": "19:40-20:20",
-          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \nSALON 103                             Da Rosa"
         },
         {
           "dia": 3,
@@ -40123,7 +40103,7 @@
         {
           "dia": 5,
           "hora": "19:40-20:20",
-          "info": "Sistema educativo Nacional: Políticas Educativas"
+          "info": "Sistema educativo Nacional: Políticas Educativas     \n               Da Rosa"
         },
         {
           "dia": 1,
@@ -40785,7 +40765,7 @@
         {
           "dia": 2,
           "hora": "19:00-19:40",
-          "info": "Química Inorgánica 1  Firpo\nLAB QUIM 1"
+          "info": "Química Inorgánica 1  Firpo\nLAB QUIM 2"
         },
         {
           "dia": 3,

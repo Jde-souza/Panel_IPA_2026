@@ -1,4 +1,4 @@
-name: Update News and Llamados
+name: Update Application Data
 
 on:
   schedule:
@@ -24,13 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      - name: Run extraction script
-        run: npm run extract:news
+      - name: Run all extraction scripts
+        run: npm run update:all
         
       - name: Verify generated files
         run: |
           ls -lh public/data/*.json
-          cat public/data/news.json | head -n 20
+          cat public/data/inasistencias.json | head -n 20
           
       - name: Commit and push changes
         run: |
