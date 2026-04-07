@@ -21916,7 +21916,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                     SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                SALON 205"
         },
         {
           "dia": 2,
@@ -21931,7 +21931,7 @@
         {
           "dia": 1,
           "hora": "13:30-14:15",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                SALON 205"
         },
         {
           "dia": 2,
@@ -21951,7 +21951,7 @@
         {
           "dia": 1,
           "hora": "14:15-15:00",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                SALON 205"
         },
         {
           "dia": 2,
@@ -21971,7 +21971,7 @@
         {
           "dia": 1,
           "hora": "15:00-15:45",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                SALON 205"
         },
         {
           "dia": 2,
@@ -22056,7 +22056,7 @@
         {
           "dia": 3,
           "hora": "17:25-18:10",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir                SALON 111"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        Mir             SALON 108"
         },
         {
           "dia": 4,
@@ -22071,7 +22071,7 @@
         {
           "dia": 3,
           "hora": "18:10-18:55",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN Mir"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        Mir             SALON 108"
         },
         {
           "dia": 4,
@@ -25687,11 +25687,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo             SALON 8"
         },
         {
-          "dia": 3,
-          "hora": "08:00-08:45",
-          "info": "Gramática Española IV Rodríguez           SALON 11"
-        },
-        {
           "dia": 4,
           "hora": "08:00-08:45",
           "info": "Investigación Educativa II  Lockhart                   SALON 10"
@@ -25707,11 +25702,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "08:45-09:30",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "08:45-09:30",
           "info": "Investigación Educativa II  Lockhart"
@@ -25727,11 +25717,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "09:30-10:15",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "09:30-10:15",
           "info": "Investigación Educativa II  Lockhart"
@@ -25745,6 +25730,11 @@
           "dia": 2,
           "hora": "10:25-11:10",
           "info": "Didáctica Práctica Docente III       Peluffo"
+        },
+        {
+          "dia": 3,
+          "hora": "10:25-11:10",
+          "info": "Gramática Española IV Rodríguez           SALON 11"
         },
         {
           "dia": 4,
@@ -25762,9 +25752,14 @@
           "info": "Estilística y Análisis de Textos - Canepa                               SALON 10"
         },
         {
+          "dia": 3,
+          "hora": "11:10-11:55",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Gramática Histórica II - Gonzalez        SALON 10      ________________           Gramática Española IV Rodríguez            SALON 11"
+          "info": "Gramática Histórica II - Gonzalez                            SALON 10"
         },
         {
           "dia": 5,
@@ -25777,9 +25772,14 @@
           "info": "Estilística y Análisis de Textos - Canepa"
         },
         {
+          "dia": 3,
+          "hora": "11:55-12:40",
+          "info": "Gramática Española IV Rodríguez"
+        },
+        {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Gramática Histórica II - Gonzalez      ________________       Gramática Española IV Rodríguez"
+          "info": "Gramática Histórica II - Gonzalez                            SALON 10"
         },
         {
           "dia": 5,
@@ -25829,11 +25829,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "08:00-08:45",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "08:00-08:45",
           "info": "Investigación Educativa II  Lockhart"
@@ -25849,11 +25844,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "08:45-09:30",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "08:45-09:30",
           "info": "Investigación Educativa II  Lockhart"
@@ -25869,11 +25859,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "09:30-10:15",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "09:30-10:15",
           "info": "Investigación Educativa II  Lockhart"
@@ -25887,6 +25872,11 @@
           "dia": 2,
           "hora": "10:25-11:10",
           "info": "Didáctica Práctica Docente III       Peluffo"
+        },
+        {
+          "dia": 3,
+          "hora": "10:25-11:10",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
@@ -25897,6 +25887,11 @@
           "dia": 5,
           "hora": "10:25-11:10",
           "info": "Lingüística IV               Covas"
+        },
+        {
+          "dia": 3,
+          "hora": "11:10-11:55",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
@@ -25907,6 +25902,11 @@
           "dia": 5,
           "hora": "11:10-11:55",
           "info": "Lingüística IV               Covas"
+        },
+        {
+          "dia": 3,
+          "hora": "11:55-12:40",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
@@ -37649,7 +37649,7 @@
         {
           "dia": 1,
           "hora": "12:40-13:25",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    Mir       SALON 205"
         },
         {
           "dia": 2,
@@ -37664,7 +37664,7 @@
         {
           "dia": 1,
           "hora": "13:30-14:15",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    Mir       SALON 205"
         },
         {
           "dia": 2,
@@ -37679,7 +37679,7 @@
         {
           "dia": 1,
           "hora": "14:15-15:00",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    Mir       SALON 205"
         },
         {
           "dia": 2,
@@ -37704,7 +37704,7 @@
         {
           "dia": 1,
           "hora": "15:00-15:45",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    MIR        SALON 205"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN    Mir       SALON 205"
         },
         {
           "dia": 2,
@@ -37774,7 +37774,7 @@
         {
           "dia": 3,
           "hora": "17:25-18:10",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        MIR                SALON 108"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        Mir             SALON 108"
         },
         {
           "dia": 4,
@@ -37794,7 +37794,7 @@
         {
           "dia": 3,
           "hora": "18:10-18:55",
-          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        MIR                SALON 108"
+          "info": "EPISTEMOLOGÍA DE LA EDUCACIÓN        Mir             SALON 108"
         },
         {
           "dia": 5,

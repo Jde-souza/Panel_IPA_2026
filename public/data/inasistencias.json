@@ -1051,5 +1051,109 @@
       "Lengua Extranjera I",
       "Solicitud de día por artículo motivo familiar"
     ]
+  },
+  {
+    "timestamp": 46207.41434027778,
+    "email": "darosaa26.26@gmail.com",
+    "nombre": "Margaret Andrea",
+    "apellido": "Da Rosa González",
+    "inicio": "20/3/2026",
+    "fin": "20/4/2026",
+    "grupos": "1ro B Filosofía. 2do B V+química 2do Literatura",
+    "asignaturas": [
+      "Pedagogía y Marco Normativo Políticas Educativas ",
+      "Ultimo seguimoento de acv padecido en octubre de 2024"
+    ]
+  },
+  {
+    "timestamp": 46207.43381944444,
+    "email": "aav1020@gmail.com",
+    "nombre": "Andrés",
+    "apellido": "Álvarez",
+    "inicio": "3/7/2026",
+    "fin": "3/9/2026",
+    "grupos": "4o A - Química",
+    "asignaturas": [
+      "Fisicoquímica I",
+      "Licencia Médica"
+    ]
+  },
+  {
+    "timestamp": 46207.459016203706,
+    "email": "cpisani@docente.ceibal.edu.uy",
+    "nombre": "Claudia",
+    "apellido": "Pisani",
+    "inicio": "3/7/2026",
+    "fin": "3/7/2026",
+    "grupos": "2C Danza",
+    "asignaturas": [
+      "Educación Somática",
+      "Salida didáctica con grupos de la DGES."
+    ]
+  },
+  {
+    "timestamp": 46207.527233796296,
+    "email": "gaston_laborido1@hotmail.com",
+    "nombre": "Gastón",
+    "apellido": "Laborido",
+    "inicio": "3/7/2026",
+    "fin": "3/7/2026",
+    "grupos": "2° C - HISTORIA",
+    "asignaturas": [
+      "América y América Latina hasta 1830",
+      "Consulta médica"
+    ]
+  },
+  {
+    "timestamp": 46207.65777777778,
+    "email": "marianaabeleirabiaus@gmail.com",
+    "nombre": "Mariana",
+    "apellido": "Abeleira",
+    "inicio": "3/7/2026",
+    "fin": "3/7/2026",
+    "grupos": "3ro B nocturno/ Comunicación Visual",
+    "asignaturas": [
+      "Técnicas y Recursos de la Plástica ",
+      "Médica "
+    ]
+  },
+  {
+    "timestamp": 46207.66070601852,
+    "email": "marielarivas2012@gmail.com",
+    "nombre": "Mariela",
+    "apellido": "Rivas",
+    "inicio": "3/8/2026",
+    "fin": "3/8/2026",
+    "grupos": "3ro. Profesorado /  CC. Geográficas e Idioma Español",
+    "asignaturas": [
+      "Epistemología de la Educación",
+      "Art."
+    ]
+  },
+  {
+    "timestamp": 46207.69931712963,
+    "email": "laurabarthedeveras@gmail.com",
+    "nombre": "Laura",
+    "apellido": "Barthe",
+    "inicio": "3/6/2026",
+    "fin": "3/9/2026",
+    "grupos": "3ero, 4to, Derecho_ Soc.",
+    "asignaturas": [
+      "Derecho Privado 2 y Derecho Comercial",
+      "70.4 sí es posible"
+    ]
+  },
+  {
+    "timestamp": 46207.753275462965,
+    "email": "silviacarrettopereira@gmail.com",
+    "nombre": "Silvia Raquel",
+    "apellido": "Carretto Pereira",
+    "inicio": "3/8/2026",
+    "fin": "3/8/2026",
+    "grupos": "2° B Historia y 2°B Educación Musical",
+    "asignaturas": [
+      "SEN: Políticas Educativas",
+      "Sala Docente obligatoria del plan 2013, en Liceo 38 Mdeo. DGES"
+    ]
   }
 ]

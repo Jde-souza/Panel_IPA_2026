@@ -1,0 +1,149 @@
+<section class="portal-header">
+  <div class="container">
+    <h1 class="portal-title">Actualidad Educativa</h1>
+    <p class="portal-subtitle">Novedades de los portales institucionales de ANEP y Plan Ceibal</p>
+  </div>
+</section>
+
+<div class="container mt-8">
+  <!-- Hero News -->
+  <button *ngIf="newsItems.length > 0" class="hero-news glass-card group" (click)="goToNews(newsItems[0].url)"
+    [attr.aria-label]="'Noticia destacada: ' + newsItems[0].title + '. Fuente: ' + newsItems[0].source">
+    <div class="hero-image-container">
+      <img *ngIf="newsItems[0].imageUrl" [src]="newsItems[0].imageUrl" class="hero-image" [alt]="newsItems[0].title">
+      <div *ngIf="!newsItems[0].imageUrl" class="hero-image-placeholder" aria-hidden="true">
+        <i class="fa-solid fa-newspaper text-6xl text-white/20"></i>
+      </div>
+    </div>
+    <div class="hero-content text-left">
+      <div class="news-source-tag secondary" aria-hidden="true">NOTICIA DESTACADA</div>
+      <h2 class="hero-title group-hover:underline decoration-white/30 underline-offset-4">
+        {{ newsItems[0].title }}
+      </h2>
+      <div class="news-meta mt-4 text-white/80">
+        <span class="font-bold">{{ newsItems[0].source }}</span> — {{ newsItems[0].date }}
+      </div>
+      <div class="mt-6">
+        <span class="btn-read-more">LEER MÁS <i class="fa-solid fa-chevron-right ml-2" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </button>
+
+  <!-- News Grid -->
+  <div class="news-grid mt-12">
+    <article *ngFor="let item of institutionalNews.slice(1)" class="news-card group">
+      <button class="w-full text-left" (click)="goToNews(item.url)"
+        [attr.aria-label]="'Noticia: ' + item.title + '. Fuente: ' + item.source">
+        <div class="card-image-container">
+          <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" class="card-image"
+            [alt]="item.title">
+          <div *ngIf="!item.imageUrl" class="card-image-placeholder" aria-hidden="true">
+            <i class="fa-solid fa-image text-3xl text-slate-200"></i>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="news-meta mb-2">
+            <span class="source-label" [ngClass]="item.source.toLowerCase()" aria-hidden="true">{{ item.source }}</span>
+            <span class="date-label">{{ item.date }}</span>
+          </div>
+          <h3 class="card-title group-hover:text-cyan-600 transition-colors">
+            {{ item.title }}
+          </h3>
+        </div>
+      </button>
+    </article>
+  </div>
+
+  <!-- Plan Ceibal Section -->
+  <div *ngIf="ceibalNews.length > 0" class="mt-20 mb-12">
+    <h2 class="section-title">Plan Ceibal</h2>
+    <div class="news-grid mt-8">
+      <article *ngFor="let item of ceibalNews" class="news-card group">
+        <button class="w-full text-left" (click)="goToNews(item.url)"
+          [attr.aria-label]="'Noticia Ceibal: ' + item.title">
+          <div class="card-image-container">
+            <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" class="card-image"
+              [alt]="item.title">
+            <div *ngIf="!item.imageUrl" class="card-image-placeholder" aria-hidden="true">
+              <i class="fa-solid fa-microchip text-3xl text-slate-200"></i>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="news-meta mb-2">
+              <span class="source-label ceibal" aria-hidden="true">CEIBAL</span>
+              <span class="date-label">{{ item.date }}</span>
+            </div>
+            <h3 class="card-title group-hover:text-[#00B2E3] transition-colors">
+              {{ item.title }}
+            </h3>
+          </div>
+        </button>
+      </article>
+    </div>
+  </div>
+
+  <!-- Llamados Section -->
+  <div *ngIf="llamadosDocentes.length > 0 || llamadosNoDocentes.length > 0"
+    class="mt-20 mb-20 section-llamados-container">
+    <h2 class="section-title">Concursos y Llamados (ANEP)</h2>
+    <div class="llamados-columns-grid mt-8">
+
+      <!-- Columna Docentes -->
+      <div class="llamados-column">
+        <div class="column-header">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <h3>Llamados Docentes</h3>
+        </div>
+        <div class="llamados-list">
+          <div *ngFor="let item of llamadosDocentes" class="llamado-item" (click)="goToNews(item.url)">
+            <div class="llamado-content">
+              <span class="llamado-origen">{{ item.origen }}</span>
+              <h4 class="llamado-title">{{ item.title }}</h4>
+              <div class="llamado-footer">
+                <span class="llamado-info" *ngIf="item.info">{{ item.info }}</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-cyan-500/50"></i>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="llamadosDocentes.length === 0" class="empty-column">No hay llamados docentes vigentes en la
+            portada.</div>
+        </div>
+      </div>
+
+      <!-- Columna No Docentes -->
+      <div class="llamados-column">
+        <div class="column-header">
+          <i class="fa-solid fa-gears"></i>
+          <h3>Llamados No Docentes (Gestión)</h3>
+        </div>
+        <div class="llamados-list">
+          <div *ngFor="let item of llamadosNoDocentes" class="llamado-item" (click)="goToNews(item.url)">
+            <div class="llamado-content">
+              <span class="llamado-origen">{{ item.origen }}</span>
+              <h4 class="llamado-title">{{ item.title }}</h4>
+              <div class="llamado-footer">
+                <span class="llamado-info" *ngIf="item.info">{{ item.info }}</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-cyan-500/50"></i>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="llamadosNoDocentes.length === 0" class="empty-column">No hay llamados de gestión vigentes en la
+            portada.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Loading & Empty States -->
+  <div *ngIf="newsItems.length === 0 && !isLoading" class="loading-state" role="status">
+    <i class="fa-solid fa-cloud-moon text-4xl mb-4" aria-hidden="true"></i>
+    <p>No se encontraron noticias recientes.</p>
+    <button class="btn-read-more mt-4" (click)="loadNews()">REINTENTAR</button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-state" role="status" aria-live="polite" aria-label="Cargando noticias">
+    <div class="spinner"></div>
+    <p>Consultando portales institucionales...</p>
+  </div>
+</div>

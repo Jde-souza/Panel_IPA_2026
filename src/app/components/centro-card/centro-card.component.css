@@ -1,0 +1,25 @@
+.card-clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card-clickable:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 24px rgba(0, 174, 239, 0.15);
+}
+
+.copy-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #10b981;
+  color: white;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}

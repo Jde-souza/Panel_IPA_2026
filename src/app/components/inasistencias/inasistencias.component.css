@@ -1,0 +1,37 @@
+.doe-table td { 
+  vertical-align: top;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.search-input {
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.1);
+}
+
+.btn-original:hover {
+  background: #156d35 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 133, 65, 0.3);
+}
+
+.row-today {
+  background-color: rgba(0, 174, 239, 0.05);
+  border-left: 4px solid var(--primary-color);
+}
+
+.badge-today {
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0, 174, 239, 0.3);
+}

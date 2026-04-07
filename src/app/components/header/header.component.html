@@ -1,0 +1,19 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="logo-section">
+    <h1 class="main-title">Panel IPA</h1>
+  </div>
+  <nav class="top-nav">
+    <a routerLink="/doe" class="nav-item"><i class="fa-solid fa-user-group icon-margin" aria-hidden="true"></i> DOE</a>
+    <a routerLink="/centros" class="nav-item"><i class="fa-solid fa-map-location-dot icon-margin"
+        aria-hidden="true"></i> Centros</a>
+    <a routerLink="/agenda" class="nav-item"><i class="fa-solid fa-calendar-check icon-margin" aria-hidden="true"></i>
+      Agenda</a>
+
+    <button class="theme-toggle" (click)="toggleTheme()"
+      [attr.aria-label]="isDark() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'" id="theme-toggle-btn">
+      <span class="toggle-icon" [class.dark]="isDark()">
+        <i [class]="isDark() ? 'fa-solid fa-sun' : 'fa-solid fa-moon'" aria-hidden="true"></i>
+      </span>
+    </button>
+  </nav>
+</header>

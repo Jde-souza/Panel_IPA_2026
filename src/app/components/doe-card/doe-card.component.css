@@ -1,0 +1,43 @@
+.doe-shift-block {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.doe-shift-block:last-child {
+  border-bottom: none;
+}
+
+.doe-shift-badge-row {
+  margin-bottom: 8px;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.email-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  color: var(--doe-name-color);
+  font-weight: 600;
+}
+
+.email-link i {
+  margin-right: 4px;
+  font-size: 0.8rem;
+}
+
+.email-item {
+  display: block;
+}
