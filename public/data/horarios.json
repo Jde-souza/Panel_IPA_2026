@@ -25829,11 +25829,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "08:00-08:45",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "08:00-08:45",
           "info": "Investigación Educativa II  Lockhart"
@@ -25849,11 +25844,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "08:45-09:30",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "08:45-09:30",
           "info": "Investigación Educativa II  Lockhart"
@@ -25869,11 +25859,6 @@
           "info": "Didáctica Práctica Docente III       Peluffo"
         },
         {
-          "dia": 3,
-          "hora": "09:30-10:15",
-          "info": "Gramática Española IV Rodríguez"
-        },
-        {
           "dia": 4,
           "hora": "09:30-10:15",
           "info": "Investigación Educativa II  Lockhart"
@@ -25887,6 +25872,11 @@
           "dia": 2,
           "hora": "10:25-11:10",
           "info": "Didáctica Práctica Docente III       Peluffo"
+        },
+        {
+          "dia": 3,
+          "hora": "10:25-11:10",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
@@ -25897,6 +25887,11 @@
           "dia": 5,
           "hora": "10:25-11:10",
           "info": "Lingüística IV               Covas"
+        },
+        {
+          "dia": 3,
+          "hora": "11:10-11:55",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
@@ -25907,6 +25902,11 @@
           "dia": 5,
           "hora": "11:10-11:55",
           "info": "Lingüística IV               Covas"
+        },
+        {
+          "dia": 3,
+          "hora": "11:55-12:40",
+          "info": "Gramática Española IV Rodríguez"
         },
         {
           "dia": 4,
