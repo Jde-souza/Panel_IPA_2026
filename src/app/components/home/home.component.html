@@ -41,7 +41,7 @@
     <button class="news-hero" (click)="goToNews(newsItems[0].url)" 
             [attr.aria-label]="'Noticia destacada: ' + newsItems[0].title">
       <div class="hero-visual">
-        <img *ngIf="newsItems[0].imageUrl" [src]="newsItems[0].imageUrl" [alt]="newsItems[0].title" loading="eager" decoding="async">
+        <img *ngIf="newsItems[0].imageUrl" [src]="newsItems[0].imageUrl" [alt]="newsItems[0].title" loading="eager" decoding="async" referrerpolicy="no-referrer">
         <div *ngIf="!newsItems[0].imageUrl" class="flex items-center justify-center h-full bg-slate-100">
           <i class="fa-solid fa-newspaper text-6xl text-slate-300"></i>
         </div>
@@ -69,7 +69,7 @@
     <div class="news-portal-grid">
       <button *ngFor="let item of institutionalNews.slice(1, 13)" class="news-portal-card" (click)="goToNews(item.url)">
         <div class="card-visual-wrapper">
-            <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async">
+            <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async" referrerpolicy="no-referrer">
           <div *ngIf="!item.imageUrl" class="flex items-center justify-center h-full bg-slate-50">
             <i class="fa-solid fa-image text-3xl text-slate-200"></i>
           </div>
@@ -92,7 +92,7 @@
       <div class="ceibal-grid">
         <button *ngFor="let item of ceibalNews.slice(0, 6)" class="news-portal-card" (click)="goToNews(item.url)">
           <div class="card-visual-wrapper">
-              <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async">
+              <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async" referrerpolicy="no-referrer">
             <div *ngIf="!item.imageUrl" class="flex items-center justify-center h-full bg-slate-50">
               <i class="fa-solid fa-microchip text-3xl text-slate-200"></i>
             </div>
@@ -121,7 +121,11 @@
             <h3>Llamados Docentes</h3>
           </div>
           <div class="llamados-mini-list">
-            <div *ngFor="let item of llamadosDocentes.slice(0, 5)" class="llamado-mini-item" (click)="goToNews(item.url)">
+            <div *ngFor="let item of llamadosDocentes.slice(0, 5)" class="llamado-mini-item focus:outline-none focus:ring-2 focus:ring-sky-500" 
+                 role="link" tabindex="0"
+                 (click)="goToNews(item.url)"
+                 (keydown.enter)="goToNews(item.url)"
+                 (keydown.space)="goToNews(item.url); $event.preventDefault()">
               <div class="llamado-mini-origen">{{ item.origen }}</div>
               <h4 class="llamado-mini-title">{{ item.title }}</h4>
               <div class="flex justify-between items-center mt-2">
@@ -140,7 +144,11 @@
             <h3>Gestión y No Docentes</h3>
           </div>
           <div class="llamados-mini-list">
-            <div *ngFor="let item of llamadosNoDocentes.slice(0, 5)" class="llamado-mini-item" (click)="goToNews(item.url)">
+            <div *ngFor="let item of llamadosNoDocentes.slice(0, 5)" class="llamado-mini-item focus:outline-none focus:ring-2 focus:ring-sky-500" 
+                 role="link" tabindex="0"
+                 (click)="goToNews(item.url)"
+                 (keydown.enter)="goToNews(item.url)"
+                 (keydown.space)="goToNews(item.url); $event.preventDefault()">
               <div class="llamado-mini-origen">{{ item.origen }}</div>
               <h4 class="llamado-mini-title">{{ item.title }}</h4>
               <div class="flex justify-between items-center mt-2">

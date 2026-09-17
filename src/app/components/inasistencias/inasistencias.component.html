@@ -26,10 +26,13 @@
   <!-- Tarjetas de Estadísticas (KPIs) -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
     
-    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all"
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-sky-500"
+         role="button" tabindex="0"
          [style.borderColor]="activeFilter === 'all' ? 'var(--primary-color)' : ''"
          [style.boxShadow]="activeFilter === 'all' ? '0 4px 12px rgba(0, 174, 239, 0.3)' : ''"
-         (click)="setFilter('all')">
+         (click)="setFilter('all')"
+         (keydown.enter)="setFilter('all')"
+         (keydown.space)="setFilter('all'); $event.preventDefault()">
       <div class="w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors"
            style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
         <i class="fa-solid fa-clipboard-list text-3xl"></i>
@@ -40,10 +43,13 @@
       </div>
     </div>
 
-    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group relative overflow-hidden cursor-pointer transition-all"
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group relative overflow-hidden cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-red-500"
+         role="button" tabindex="0"
          [style.borderColor]="activeFilter === 'today' ? '#ef4444' : ''"
          [style.boxShadow]="activeFilter === 'today' ? '0 4px 12px rgba(239, 68, 68, 0.3)' : ''"
-         (click)="setFilter('today')">
+         (click)="setFilter('today')"
+         (keydown.enter)="setFilter('today')"
+         (keydown.space)="setFilter('today'); $event.preventDefault()">
       <!-- Pulso si hay ausentes hoy -->
       <div *ngIf="ausentesHoy > 0" class="absolute top-4 right-4 flex h-3 w-3">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -60,10 +66,13 @@
       </div>
     </div>
 
-    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all"
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-yellow-500"
+         role="button" tabindex="0"
          [style.borderColor]="activeFilter === 'multiple' ? '#b38f00' : ''"
          [style.boxShadow]="activeFilter === 'multiple' ? '0 4px 12px rgba(179, 143, 0, 0.3)' : ''"
-         (click)="setFilter('multiple')">
+         (click)="setFilter('multiple')"
+         (keydown.enter)="setFilter('multiple')"
+         (keydown.space)="setFilter('multiple'); $event.preventDefault()">
       <div class="w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors"
            style="background: rgba(var(--anep-yellow-rgb), 0.15); color: #b38f00">
         <i class="fa-solid fa-calendar-days text-3xl"></i>
@@ -84,11 +93,12 @@
       </span>
       <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterData()" 
              placeholder="Buscar por nombre, apellido o materia..."
+             aria-label="Buscar inasistencias por nombre, apellido o materia"
              class="block w-full pl-10 pr-10 py-3 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all" 
              style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
       <button *ngIf="searchTerm" (click)="searchTerm = ''; filterData()"
         style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: var(--border-color); border: none; color: var(--text-main); cursor: pointer; padding: 2px 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;"
-        title="Limpiar búsqueda">
+        aria-label="Borrar texto de búsqueda" title="Limpiar búsqueda">
         <i class="fa-solid fa-xmark text-xs"></i>
       </button>
     </div>

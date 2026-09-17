@@ -8,12 +8,13 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </span>
       <input type="text" [(ngModel)]="searchText" (ngModelChange)="filterData()"
+        aria-label="Buscar docente por nombre"
         placeholder="Buscar docente por nombre..."
         class="w-full pl-10 pr-10 py-3 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm transition-all"
         style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
       <button *ngIf="searchText" (click)="searchText = ''; filterData()"
         style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: #eee; border: none; color: #333; cursor: pointer; padding: 2px 6px; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;"
-        title="Limpiar búsqueda">
+        aria-label="Borrar texto de búsqueda" title="Limpiar búsqueda">
         <i class="fa-solid fa-xmark" style="font-size: 14px;"></i>
       </button>
     </div>
@@ -24,8 +25,9 @@
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-  <div *ngFor="let item of filteredData" class="glass-card !p-6 hover:!translate-y-[-4px] card-clickable"
-    style="position: relative;" (click)="copyInfo(item)">
+  <div *ngFor="let item of filteredData" class="glass-card !p-6 hover:!translate-y-[-4px] card-clickable focus:outline-none focus:ring-2 focus:ring-sky-500"
+    role="button" tabindex="0"
+    style="position: relative;" (click)="copyInfo(item)" (keydown.enter)="copyInfo(item)" (keydown.space)="copyInfo(item); $event.preventDefault()">
 
     <div *ngIf="activeCopyName() === item.nombre" class="copy-badge fade-in">
       <i class="fa-solid fa-check-double"></i> ¡Copiado!

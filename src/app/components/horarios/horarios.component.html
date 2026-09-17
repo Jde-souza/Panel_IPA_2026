@@ -19,6 +19,7 @@
     
     <div class="w-full md:flex-1 relative">
       <select [(ngModel)]="selectedEsp" (ngModelChange)="onEspChange()"
+              aria-label="Seleccionar Especialidad"
               class="block w-full py-3 px-4 border rounded-2xl focus:ring-2 focus:ring-sky-500 cursor-pointer appearance-none font-medium transition-all"
               style="background: var(--bg-body); color: var(--text-heading); border-color: var(--border-color);">
         <option value="">Selecciona una Especialidad...</option>
@@ -31,6 +32,7 @@
     
     <div class="w-full md:w-64 relative">
       <select [(ngModel)]="selectedGrupo" (ngModelChange)="onGrupoChange()" [disabled]="!selectedEsp"
+              aria-label="Seleccionar Grupo"
               class="block w-full py-3 px-4 border rounded-2xl focus:ring-2 focus:ring-sky-500 cursor-pointer appearance-none font-medium transition-all disabled:opacity-50"
               style="background: var(--bg-body); color: var(--text-heading); border-color: var(--border-color);">
         <option value="">Grupo...</option>
@@ -44,9 +46,10 @@
     </div>
 
     <!-- Toggle Semestre -->
-    <div class="flex rounded-2xl p-1" style="background: var(--bg-body); border: 1px solid var(--border-color);">
+    <div class="flex rounded-2xl p-1" style="background: var(--bg-body); border: 1px solid var(--border-color);" role="group" aria-label="Selección de Semestre">
       <button (click)="onSemestreChange('sem1')" 
-              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap"
+              aria-pressed="semestre === 'sem1'"
+              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-sky-500"
               [class.shadow-sm]="semestre === 'sem1'"
               [class.opacity-60]="semestre !== 'sem1'"
               [style.background]="semestre === 'sem1' ? 'var(--surface)' : 'transparent'"
@@ -54,7 +57,8 @@
         1º Semestre
       </button>
       <button (click)="onSemestreChange('sem2')" 
-              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap"
+              aria-pressed="semestre === 'sem2'"
+              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-sky-500"
               [class.shadow-sm]="semestre === 'sem2'"
               [class.opacity-60]="semestre !== 'sem2'"
               [style.background]="semestre === 'sem2' ? 'var(--surface)' : 'transparent'"
