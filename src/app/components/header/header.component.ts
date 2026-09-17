@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 
@@ -15,10 +15,9 @@ export class HeaderComponent {
 
   isDark = this.themeService.isDark;
 
-  constructor() {
-    window.addEventListener('scroll', () => {
-      this.isScrolled = window.scrollY > 20;
-    });
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 20;
   }
 
   toggleTheme() {
