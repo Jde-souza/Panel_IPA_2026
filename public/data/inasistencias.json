@@ -7545,7 +7545,7 @@
     "apellido": "Picón",
     "inicio": "27/8/2026",
     "fin": "27/9/2026",
-    "grupos": "Literatura 1°C; Español, 1°B, 3° semi; Química, 3°A",
+    "grupos": "1°C Literatura; 1°B Id. Español, 3°Semi y 3°A Química",
     "asignaturas": [
       "Gramática Española I, III, Investigación Educativa (Diseño de proyecto)"
     ]
@@ -7917,7 +7917,7 @@
     "apellido": "Redes Loperena",
     "inicio": "15/9/2026",
     "fin": "16/9/2026",
-    "grupos": "2 B Historia, 2 A Historia y 2 C",
+    "grupos": "2 B Historia, 2 A Historia y 2 C Historia",
     "asignaturas": [
       "Historia de América y de América Latina hasta 1830"
     ]
@@ -7929,7 +7929,7 @@
     "apellido": "Garralde",
     "inicio": "14/9/2026",
     "fin": "18/9/2026",
-    "grupos": "2A FILOSOFÍA 3A Derecho",
+    "grupos": "2A FILOSOFÍA y 3A Derecho",
     "asignaturas": [
       "Marco Normativo/ Semanario de Derechos Humanos"
     ]
@@ -8016,6 +8016,18 @@
     "grupos": "1° D Historia",
     "asignaturas": [
       "La Educación y sus Transformaciones en la Historia"
+    ]
+  },
+  {
+    "timestamp": "17/9/2026 12:33:34",
+    "email": "vezzolianna12@gmail.com",
+    "nombre": "Anna Cristina",
+    "apellido": "Vezzoli",
+    "inicio": "17/9/2026",
+    "fin": "19/9/2026",
+    "grupos": "3° / Italiano.   4°/ Francés ",
+    "asignaturas": [
+      "Lingüística / Aprendizaje reflexivo de un idioma lejano: Alemán"
     ]
   },
   {
