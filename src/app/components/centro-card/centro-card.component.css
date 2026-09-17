@@ -7,7 +7,7 @@
 .card-clickable:hover {
   transform: translateY(-5px);
   border-color: var(--primary-color);
-  box-shadow: 0 8px 24px rgba(0, 174, 239, 0.15);
+  box-shadow: 0 8px 24px rgba(var(--primary-color-rgb), 0.15);
 }
 
 .copy-badge {

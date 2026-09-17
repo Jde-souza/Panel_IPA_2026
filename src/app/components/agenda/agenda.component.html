@@ -32,18 +32,34 @@
     </div>
 
     <div class="flex items-start gap-4">
-      <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0"
-        style="background: rgba(0, 174, 239, 0.1); color: var(--primary-color);">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 transition-colors"
+           [ngStyle]="{'background': item.isTachado ? 'rgba(239, 68, 68, 0.1)' : 'rgba(var(--primary-color-rgb), 0.1)', 
+                      'color': item.isTachado ? '#ef4444' : 'var(--primary-color)'}">
         <i class="fa-solid fa-user-tie text-xl"></i>
       </div>
       <div class="flex-grow min-w-0">
-        <h3 class="text-lg font-bold truncate" [title]="item.nombre" style="color: var(--text-heading)">{{ item.nombre
-          }}</h3>
+        <div class="flex justify-between items-start gap-2">
+          <div class="flex-grow min-w-0 pr-2">
+            <h3 class="text-lg font-bold truncate" [title]="item.nombre" 
+                [ngClass]="{'text-red-500 opacity-90': item.isTachado}"
+                [ngStyle]="{'color': item.isTachado ? '' : 'var(--text-heading)'}">
+              <span [class.line-through]="item.isTachado">{{ item.nombre }}</span>
+            </h3>
+            <span *ngIf="item.isTachado" class="mt-1.5 inline-flex items-center text-[10px] bg-red-100 text-red-700 px-2 py-0.5 rounded-md border border-red-200 no-underline whitespace-nowrap" style="line-height:1.2;">
+              <i class="fa-solid fa-ban mr-1"></i> {{ item.observacion || 'Inactivo' }}
+            </span>
+          </div>
+          <span *ngIf="item.caracter" class="caracter-badge shrink-0" 
+            [class.efectivo]="item.caracter.toLowerCase().includes('ef')"
+            [class.interino]="!item.caracter.toLowerCase().includes('ef')">
+            {{ item.caracter }}
+          </span>
+        </div>
 
         <div class="mt-4 space-y-3">
           <div class="flex items-center gap-3 text-sm group" *ngIf="item.telefono1 || item.telefono2"
             style="color: var(--text-main)">
-            <i class="fa-solid fa-phone w-4" style="color: var(--primary-color)"></i>
+            <i class="fa-solid fa-phone w-4 opacity-50" style="color: var(--primary-color)"></i>
             <div class="flex flex-col">
               <span *ngIf="item.telefono1">{{ item.telefono1 }}</span>
               <span *ngIf="item.telefono2">{{ item.telefono2 }}</span>
@@ -51,10 +67,19 @@
           </div>
 
           <div class="flex items-center gap-3 text-sm group" *ngIf="item.email" style="color: var(--text-main)">
-            <i class="fa-solid fa-envelope w-4" style="color: var(--primary-color)"></i>
-            <span class="truncate" [title]="item.email">{{ item.email }}</span>
+            <i class="fa-solid fa-envelope w-4 opacity-50" style="color: var(--primary-color)"></i>
+            <span class="break-all" [title]="item.email">{{ item.email }}</span>
           </div>
         </div>
+
+        <!-- Botón Abrir Detalles -->
+        <button (click)="openModal(item); $event.stopPropagation()" 
+          class="mt-4 text-xs font-bold flex items-center gap-2 py-2 px-3 rounded-lg transition-all hover-bounce"
+          style="background: rgba(var(--primary-color-rgb), 0.05); color: var(--primary-color)">
+          Ver horarios y detalles
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
       </div>
     </div>
   </div>
@@ -64,4 +89,125 @@
   style="color: var(--text-muted)">
   <i class="fa-solid fa-face-frown text-5xl mb-4 opacity-20"></i>
   <p class="text-lg">No se encontraron docentes con ese nombre.</p>
+</div>
+
+<!-- Modal -->
+<div *ngIf="selectedTeacher" class="modal-overlay fixed inset-0 z-[2000] flex items-center justify-center fade-in bg-black/40 backdrop-blur-sm"
+  (click)="closeModal()" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+  
+  <div #modalContainer tabindex="-1" class="modal-container relative w-full max-w-2xl max-h-[90vh] mx-4 rounded-3xl overflow-hidden glass-card !p-0 shadow-2xl flex flex-col focus:outline-none"
+    (click)="$event.stopPropagation()" style="background: var(--surface);">
+    
+    <!-- Modal Header -->
+    <div class="modal-header px-8 py-6 border-b" style="border-color: var(--border-color); background: var(--bg-body)">
+      <div class="flex justify-between items-start">
+        <div class="flex flex-col gap-1.5">
+          <h3 id="modal-title" class="text-2xl font-bold" 
+              [ngClass]="{'text-red-500 opacity-90': selectedTeacher.isTachado}"
+              [ngStyle]="{'color': selectedTeacher.isTachado ? '' : 'var(--text-heading)'}">
+            <span [class.line-through]="selectedTeacher.isTachado">{{ selectedTeacher.nombre }}</span>
+          </h3>
+          <span *ngIf="selectedTeacher.isTachado" class="inline-flex items-center text-xs font-bold bg-red-100 text-red-700 px-2.5 py-1 rounded-md border border-red-200 w-fit">
+            <i class="fa-solid fa-ban mr-1.5"></i> {{ selectedTeacher.observacion || 'Inactivo' }}
+          </span>
+        </div>
+        <button (click)="closeModal()" aria-label="Cerrar ventana de detalles" class="modal-close-btn w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          style="color: var(--text-muted)">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      
+      <div class="flex items-center gap-3 mt-2">
+        <span *ngIf="selectedTeacher.caracter" class="caracter-badge" 
+          [class.efectivo]="selectedTeacher.caracter.toLowerCase().includes('ef')"
+          [class.interino]="!selectedTeacher.caracter.toLowerCase().includes('ef')">
+          {{ selectedTeacher.caracter }}
+        </span>
+        <div class="flex gap-2">
+           <span *ngFor="let asig of selectedTeacher.asignaturas" class="asignatura-chip !text-[10px] !py-[2px]">
+              {{ asig }}
+           </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body p-8 overflow-y-auto custom-scrollbar">
+
+      <!-- Alerta de Clase Próxima/En curso -->
+      <div *ngIf="nextClassInfo" class="mb-8 p-5 rounded-2xl border" 
+           [ngStyle]="{'background': nextClassInfo.isCurrent ? 'rgba(16, 185, 129, 0.1)' : 'rgba(var(--primary-color-rgb), 0.05)', 
+                       'borderColor': nextClassInfo.isCurrent ? 'rgba(16, 185, 129, 0.3)' : 'rgba(var(--primary-color-rgb), 0.2)'}">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-3 h-3 rounded-full animate-pulse" [ngStyle]="{'backgroundColor': nextClassInfo.isCurrent ? '#10b981' : 'var(--primary-color)'}"></div>
+          <h4 class="font-bold uppercase tracking-wider text-[11px]" [ngStyle]="{'color': nextClassInfo.isCurrent ? '#10b981' : 'var(--primary-color)'}">
+            {{ nextClassInfo.isCurrent ? 'Clase en curso' : 'Siguiente Clase' }}
+          </h4>
+        </div>
+        <div class="flex flex-wrap md:flex-nowrap items-start justify-between gap-3 mb-2">
+          <p class="font-bold text-lg leading-tight flex-1 min-w-[200px] break-words" style="color: var(--text-heading)">
+            {{ nextClassInfo.asignatura || 'Sin Especificar' }}
+          </p>
+          <span class="font-bold py-1 px-3 rounded-lg text-[13px] whitespace-nowrap border shrink-0" 
+            [ngStyle]="{'background': nextClassInfo.isCurrent ? 'rgba(16, 185, 129, 0.1)' : 'rgba(var(--primary-color-rgb), 0.1)', 
+                       'borderColor': nextClassInfo.isCurrent ? 'rgba(16, 185, 129, 0.2)' : 'rgba(var(--primary-color-rgb), 0.2)',
+                       'color': nextClassInfo.isCurrent ? '#10b981' : 'var(--primary-color)'}">
+            <i class="fa-solid fa-door-open mr-1"></i> {{ nextClassInfo.salon !== 'S/D' ? nextClassInfo.salon : 'Salón a Conf.' }}
+          </span>
+        </div>
+        <p class="text-sm opacity-80" style="color: var(--text-main)">
+          {{ getDayName(nextClassInfo.dia) }} de {{ nextClassInfo.hora }} (Cursa en {{ nextClassInfo.grupo }})
+        </p>
+      </div>
+
+      <!-- Otros Grupos y Especialidad (Opcional, resumido) -->
+      <div *ngIf="selectedTeacher.grupos && selectedTeacher.grupos.length > 0" class="mb-6">
+        <h4 class="text-[11px] uppercase font-bold tracking-widest mb-3 opacity-50" style="color: var(--text-main)">Grupos Asignados</h4>
+        <div class="flex flex-wrap gap-2">
+          <span *ngFor="let grp of selectedTeacher.grupos" class="text-[11px] px-2 py-1 rounded-md font-bold" 
+            style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2)">
+            {{ grp }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Grilla completa de la semana -->
+      <div *ngIf="selectedTeacher.horarios && selectedTeacher.horarios.length > 0">
+        <h4 class="text-[11px] uppercase font-bold tracking-widest mb-3 opacity-50" style="color: var(--text-main)">Cronograma Completo</h4>
+        <div class="overflow-hidden rounded-xl border border-opacity-10 shadow-sm" style="border-color: var(--border-color); background: var(--card-bg)">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-opacity-5" style="background-color: var(--bg-light)">
+              <tr>
+                <th class="px-4 py-3 font-bold" style="color: var(--text-muted)">Día / Hora</th>
+                <th class="px-4 py-3 font-bold" style="color: var(--text-muted)">Info</th>
+                <th class="px-4 py-3 font-bold" style="color: var(--text-muted)">Salón</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y" style="border-color: var(--border-color)">
+              <tr *ngFor="let h of selectedTeacher.horarios" class="hover:bg-opacity-5 transition-colors" style="background-color: var(--bg-body)">
+                <td class="px-4 py-3 font-medium text-[13px]">
+                  <div style="color: var(--text-heading)">{{ getDayName(h.dia) }}</div>
+                  <div style="color: var(--text-muted)">{{ h.hora }}</div>
+                </td>
+                <td class="px-4 py-3">
+                  <div class="font-bold" style="color: var(--text-heading)">{{ h.asignatura }}</div>
+                  <div class="text-[11px] font-bold uppercase mt-1" style="color: var(--primary-color)">{{ h.grupo }}</div>
+                </td>
+                <td class="px-4 py-3">
+                  <span class="font-bold py-1 px-2 rounded-md text-[12px]" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+                    {{ h.salon }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div *ngIf="(!selectedTeacher.horarios || selectedTeacher.horarios.length === 0)" class="text-sm italic opacity-50 py-4 text-center" style="color: var(--text-main)">
+        No se registran horarios para este docente.
+      </div>
+      
+    </div>
+  </div>
 </div>

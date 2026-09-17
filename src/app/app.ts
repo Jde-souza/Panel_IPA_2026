@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd, RouterLink, RouterLinkActive } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SidebarComponent, FooterComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, SidebarComponent, FooterComponent],
   template: `
     <div class="grid-container">
       <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -19,6 +19,30 @@ import { filter } from 'rxjs/operators';
         <router-outlet />
       </main>
       <app-footer />
+
+      <!-- Bottom Navigation Bar (solo móvil/tablet) -->
+      <nav class="mobile-bottom-nav" aria-label="Navegación principal móvil">
+        <a routerLink="/home" routerLinkActive="active" aria-label="Inicio">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Inicio</span>
+        </a>
+        <a routerLink="/horarios" routerLinkActive="active" aria-label="Horarios">
+          <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+          <span>Horarios</span>
+        </a>
+        <a routerLink="/inasistencias" routerLinkActive="active" aria-label="Inasistencias">
+          <i class="fa-solid fa-user-slash" aria-hidden="true"></i>
+          <span>Inasist.</span>
+        </a>
+        <a routerLink="/doe" routerLinkActive="active" aria-label="DOE">
+          <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+          <span>DOE</span>
+        </a>
+        <a routerLink="/agenda" routerLinkActive="active" aria-label="Agenda">
+          <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+          <span>Agenda</span>
+        </a>
+      </nav>
 
       <!-- Centralized ARIA Live Region -->
       <div class="sr-only" 

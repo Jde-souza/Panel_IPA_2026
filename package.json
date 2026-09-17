@@ -9,7 +9,9 @@
     "extract:news": "node extract_news.js",
     "extract:inasistencias": "node extract_inasistencias.js",
     "extract:horarios": "node extract_horarios.js",
-    "update:all": "npm run extract:news && npm run extract:inasistencias && npm run extract:horarios"
+    "extract:agenda": "node extract_agenda.js",
+    "extract:examenes": "node extract_examenes.js",
+    "update:all": "npm run extract:news && npm run extract:inasistencias && npm run extract:horarios && npm run extract:agenda && npm run extract:examenes && npm run build"
   },
   "private": true,
   "packageManager": "npm@10.2.4",

@@ -180,7 +180,7 @@ async function fetchLlamados() {
 
     // Keywords for classification
     const docenteKeywords = ['docente', 'aspiraciones', 'elección de horas', 'profesor', 'maestro', 'asignatura', 'perfil'];
-    const noDocenteKeywords = ['no docente', 'gestión', 'administrativo', 'personal de servicio', 'servicios generales', 'pasante', 'becario', 'oficios', 'chofer', 'vidriero', 'mantenimiento'];
+    const noDocenteKeywords = ['no docente', 'gestión', 'administrativ', 'personal de servicio', 'servicios generales', 'pasante', 'becario', 'beca', 'oficios', 'chofer', 'vidriero', 'mantenimiento', 'arquitecto', 'técnico', 'tecnico', 'sanitario', 'eléctric', 'abogado', 'licenciado', 'jefe', 'director', 'tramitación', 'escalafón', 'peón', 'limpieza', 'vigilancia', 'guardia'];
 
     $('.view-llamados table.views-table tbody tr').each((i, el) => {
       const title = $(el).find('td.views-field-title a').text().trim();
@@ -202,7 +202,7 @@ async function fetchLlamados() {
         } else {
           // Verify if it's actually docente
           const isDocente = docenteKeywords.some(key => titleLower.includes(key));
-          if (!isDocente && (titleLower.includes('gestión') || titleLower.includes('administrativo'))) {
+          if (!isDocente && (titleLower.includes('gestión') || titleLower.includes('administrativ'))) {
             category = 'no-docente';
           }
         }

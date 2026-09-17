@@ -1,64 +1,172 @@
-<section class="section-header">
-  <h2>Inasistencias Docentes</h2>
-  <p>Registro actualizado de avisos y solicitudes de inasistencia extraído de la planilla oficial.</p>
-
-  <div class="filter-bar" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-    <div style="position: relative; width: 350px;">
-      <label for="inasistencias-search" class="sr-only">Buscar docente o asignatura</label>
-      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"
-        style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;"></i>
-      <input id="inasistencias-search" type="text" class="search-input" placeholder="Buscar docente o asignatura..."
-        [value]="searchTerm()" (input)="updateSearch($event)"
-        style="width: 100%; text-align: left; padding: 12px 40px; cursor: text; border-radius: 8px; border: 1px solid var(--border-color); background: var(--surface); color: var(--text-main);">
-      <button *ngIf="searchTerm()" (click)="clearSearch()"
-        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: #eee; border: none; color: #333; cursor: pointer; padding: 2px 6px; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px;"
-        title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
-        <i class="fa-solid fa-xmark" aria-hidden="true" style="font-size: 12px;"></i>
-      </button>
-    </div>
-
-    <a href="https://docs.google.com/spreadsheets/d/1VYYStJRPBSwO_7IBVfL60ie4KR-qF7AmTkrKYOZ5Cr4/edit?gid=223638343#gid=223638343"
-      target="_blank" class="btn-original" aria-label="Abrir planilla original (abre en nueva pestaña)"
-      style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: #1d8541; color: white; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;">
-      <i class="fa-solid fa-file-excel" aria-hidden="true"></i>
-      Abrir Planilla Original
-    </a>
-  </div>
-</section>
-
-<div class="table-container fade-in">
-  <table class="doe-table">
-    <thead>
-      <tr>
-        <th scope="col">Docente</th>
-        <th scope="col">Desde</th>
-        <th scope="col">Hasta</th>
-        <th scope="col">Grupos</th>
-        <th scope="col">Asignaturas / Observaciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of filteredInasistencias()" [class.row-today]="isToday(item.inicio, item.fin)">
-        <td style="font-weight: 700; color: var(--primary-color);">
-          {{item.nombre}} {{item.apellido}}
-          <span *ngIf="isToday(item.inicio, item.fin)" class="badge-today">HOY</span>
-        </td>
-        <td>{{item.inicio}}</td>
-        <td>{{item.fin}}</td>
-        <td style="font-size: 0.85rem; color: var(--text-muted);">{{item.grupos}}</td>
-        <td>
-          <div *ngFor="let asig of item.asignaturas" class="info-text" style="margin-bottom: 4px; font-size: 0.9rem;">
-            <i class="fa-solid fa-circle-info" aria-hidden="true"
-              style="font-size: 0.7rem; color: var(--primary-color); opacity: 0.7; margin-right: 5px;"></i> {{asig}}
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="section-header fade-in">
+  <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Inasistencias Docentes</h2>
+  <p style="color: var(--text-muted); margin-top: 8px;">Registro actualizado de avisos y solicitudes de inasistencia.</p>
 </div>
 
-<div *ngIf="filteredInasistencias().length === 0" class="welcome-banner" style="text-align: center; margin-top: 50px;">
-  <i class="fa-solid fa-calendar-xmark"
-    style="font-size: 3rem; color: var(--text-muted); margin-bottom: 20px; display: block;"></i>
-  <p>No se encontraron registros que coincidan con la búsqueda.</p>
+<!-- Estado de Carga -->
+<div *ngIf="isLoading" class="flex justify-center items-center py-20 fade-in">
+  <div class="animate-spin rounded-full h-12 w-12 border-b-2" style="border-color: var(--primary-color);"></div>
+  <span class="ml-3 font-medium" style="color: var(--primary-color);">Cargando registro de inasistencias...</span>
+</div>
+
+<!-- Mensaje de Error -->
+<div *ngIf="error" class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md shadow-sm mb-6 fade-in">
+  <div class="flex">
+    <div class="flex-shrink-0">
+      <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+    </div>
+    <div class="ml-3">
+      <p class="text-sm text-red-700">Hubo un problema al cargar las inasistencias: {{ error }}</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isLoading && !error" class="fade-in">
+  
+  <!-- Tarjetas de Estadísticas (KPIs) -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
+    
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all"
+         [style.borderColor]="activeFilter === 'all' ? 'var(--primary-color)' : ''"
+         [style.boxShadow]="activeFilter === 'all' ? '0 4px 12px rgba(0, 174, 239, 0.3)' : ''"
+         (click)="setFilter('all')">
+      <div class="w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors"
+           style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+        <i class="fa-solid fa-clipboard-list text-3xl"></i>
+      </div>
+      <div class="flex flex-col text-left">
+        <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Total Avisos</p>
+        <p class="text-4xl font-extrabold leading-none" style="color: var(--text-heading);">{{ totalRegistros }}</p>
+      </div>
+    </div>
+
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group relative overflow-hidden cursor-pointer transition-all"
+         [style.borderColor]="activeFilter === 'today' ? '#ef4444' : ''"
+         [style.boxShadow]="activeFilter === 'today' ? '0 4px 12px rgba(239, 68, 68, 0.3)' : ''"
+         (click)="setFilter('today')">
+      <!-- Pulso si hay ausentes hoy -->
+      <div *ngIf="ausentesHoy > 0" class="absolute top-4 right-4 flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+      </div>
+      
+      <div class="w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors"
+           style="background: rgba(239, 68, 68, 0.1); color: #ef4444">
+        <i class="fa-solid fa-user-xmark text-3xl"></i>
+      </div>
+      <div class="flex flex-col text-left">
+        <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Ausentes Hoy</p>
+        <p class="text-4xl font-extrabold leading-none" style="color: var(--text-heading);">{{ ausentesHoy }}</p>
+      </div>
+    </div>
+
+    <div class="glass-card !p-6 flex !flex-row items-center gap-5 group cursor-pointer transition-all"
+         [style.borderColor]="activeFilter === 'multiple' ? '#b38f00' : ''"
+         [style.boxShadow]="activeFilter === 'multiple' ? '0 4px 12px rgba(179, 143, 0, 0.3)' : ''"
+         (click)="setFilter('multiple')">
+      <div class="w-16 h-16 rounded-full flex items-center justify-center shrink-0 transition-colors"
+           style="background: rgba(var(--anep-yellow-rgb), 0.15); color: #b38f00">
+        <i class="fa-solid fa-calendar-days text-3xl"></i>
+      </div>
+      <div class="flex flex-col text-left">
+        <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--text-muted);">Múltiples Días</p>
+        <p class="text-4xl font-extrabold leading-none" style="color: var(--text-heading);">{{ multiplesDias }}</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Buscador -->
+  <div class="glass-card !p-5 mb-8 flex flex-col md:flex-row gap-4 items-center">
+    <div class="relative flex-grow w-full">
+      <span class="absolute inset-y-0 left-0 pl-3 flex items-center" style="color: var(--text-muted)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterData()" 
+             placeholder="Buscar por nombre, apellido o materia..."
+             class="block w-full pl-10 pr-10 py-3 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all" 
+             style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+      <button *ngIf="searchTerm" (click)="searchTerm = ''; filterData()"
+        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: var(--border-color); border: none; color: var(--text-main); cursor: pointer; padding: 2px 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;"
+        title="Limpiar búsqueda">
+        <i class="fa-solid fa-xmark text-xs"></i>
+      </button>
+    </div>
+    
+    <button *ngIf="searchTerm || activeFilter !== 'all'" (click)="searchTerm=''; setFilter('all')" 
+            class="filter-btn flex items-center gap-2 whitespace-nowrap h-[50px]">
+      <i class="fa-solid fa-filter-circle-xmark"></i> Limpiar Filtros
+    </button>
+  </div>
+
+  <!-- Resultados Vacíos -->
+  <div *ngIf="filteredInasistencias.length === 0" class="flex flex-col items-center justify-center py-16 glass-card text-center">
+    <i class="fa-solid fa-file-excel text-5xl mb-4 opacity-20" style="color: var(--text-muted)"></i>
+    <h3 class="text-lg font-bold" style="color: var(--text-heading);">No se encontraron inasistencias</h3>
+    <p class="mt-1" style="color: var(--text-muted);">Intenta con otros términos de búsqueda.</p>
+  </div>
+
+  <!-- Listado de Tarjetas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let ina of filteredInasistencias" class="glass-card !p-0 overflow-hidden flex flex-col group relative" [class.border-red-500]="ina.isToday" [class.border]="ina.isToday">
+      
+      <!-- Card Header -->
+      <div class="px-5 py-4 border-b flex justify-between items-start" style="border-color: var(--border-color); background: var(--bg-light);">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <h4 class="text-lg font-bold" style="color: var(--text-heading);">{{ ina.nombre }} {{ ina.apellido }}</h4>
+            <!-- Badge "Hoy" -->
+            <span *ngIf="ina.isToday" class="px-2 py-0.5 text-[10px] font-bold rounded-md uppercase" 
+                  style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Ausente Hoy</span>
+          </div>
+          <p class="text-xs font-medium" style="color: var(--text-muted);">Registrado: {{ ina.timestamp.split(' ')[0] }}</p>
+        </div>
+      </div>
+
+      <!-- Card Body -->
+      <div class="p-5 flex-grow space-y-4">
+        
+        <!-- Fechas -->
+        <div class="flex items-start">
+          <div class="mt-0.5 w-6 flex justify-center" style="color: var(--primary-color);">
+            <i class="fa-regular fa-calendar"></i>
+          </div>
+          <div class="ml-2">
+            <p class="text-[11px] uppercase tracking-wider font-bold mb-1 opacity-70" style="color: var(--text-muted);">Período de Ausencia</p>
+            <div class="text-sm font-bold" style="color: var(--text-main);">
+              <span>{{ ina.inicio }}</span>
+              <span *ngIf="ina.fin && ina.inicio !== ina.fin"> al {{ ina.fin }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grupos y Asignaturas -->
+        <div class="flex items-start pt-4 border-t" style="border-color: var(--border-color);">
+          <div class="mt-0.5 w-6 flex justify-center opacity-50" style="color: var(--text-muted);">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <div class="ml-2 w-full">
+            <p class="text-[11px] uppercase tracking-wider font-bold mb-2 opacity-70" style="color: var(--text-muted);">Afectaciones</p>
+            
+            <p *ngIf="ina.grupos" class="text-sm font-medium mb-2" style="color: var(--text-main);">
+              <strong>Grupos:</strong> {{ ina.grupos }}
+            </p>
+            
+            <div *ngIf="ina.asignaturas.length > 0" class="flex flex-wrap gap-2 mt-3">
+              <span *ngFor="let asig of ina.asignaturas" class="px-3 py-1.5 text-sm font-bold rounded-lg"
+                    style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color);">
+                {{ asig }}
+              </span>
+            </div>
+            
+            <p *ngIf="!ina.grupos && ina.asignaturas.length === 0" class="text-sm italic opacity-50" style="color: var(--text-muted);">
+              No se especificaron detalles
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
 </div>

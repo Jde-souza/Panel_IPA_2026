@@ -5,6 +5,7 @@ import { CentrosComponent } from './components/centros/centros.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { InasistenciasComponent } from './components/inasistencias/inasistencias.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
+import { ExamenesComponent } from './components/examenes/examenes.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'agenda', component: AgendaComponent },
   { path: 'inasistencias', component: InasistenciasComponent },
   { path: 'horarios', component: HorariosComponent },
+  { path: 'examenes', component: ExamenesComponent },
   { path: '**', redirectTo: 'home' }
 ];

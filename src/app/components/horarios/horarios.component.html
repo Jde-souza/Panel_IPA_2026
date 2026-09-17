@@ -1,188 +1,158 @@
-<section class="section-header">
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-    <div>
-      <h2>Horarios 2026</h2>
-      <p>Consulta horarios, disponibilidad de salones o estado en tiempo real.</p>
-    </div>
-    <div class="view-toggle" role="group" aria-label="Modo de visualización">
-      <button [class.active]="viewMode() === 'grupo'" (click)="viewMode.set('grupo')"
-        [attr.aria-pressed]="viewMode() === 'grupo'">
-        <i class="fa-solid fa-users" aria-hidden="true"></i> Grupos
-      </button>
-      <button [class.active]="viewMode() === 'salon'" (click)="viewMode.set('salon')"
-        [attr.aria-pressed]="viewMode() === 'salon'">
-        <i class="fa-solid fa-door-open" aria-hidden="true"></i> Salones
-      </button>
-      <button [class.active]="viewMode() === 'actividad'" (click)="viewMode.set('actividad')"
-        [attr.aria-pressed]="viewMode() === 'actividad'">
-        <i class="fa-solid fa-bolt" aria-hidden="true"></i> En Vivo
-      </button>
-    </div>
-    <div class="header-actions">
-      <button (click)="clearFilters()" class="btn-clear" [disabled]="!especialidad() && !grupo() && !searchSalon()"
-        aria-label="Limpiar filtros de búsqueda">
-        <i class="fa-solid fa-eraser" aria-hidden="true"></i> Limpiar
-      </button>
-      <a href="https://docs.google.com/spreadsheets/d/1NFHuPEvw9Cns-M9YWtVcfx_Kd6Eo-4r6/edit?rtpof=true&sd=true"
-        target="_blank" class="btn-external" aria-label="Abrir planilla original (abre en nueva pestaña)">
-        <i class="fa-solid fa-file-excel" aria-hidden="true"></i> Planilla Original
-      </a>
-      <div class="semester-toggle" role="group" aria-label="Seleccionar semestre">
-        <button [class.active]="semestre() === 1" (click)="semestre.set(1)" [attr.aria-pressed]="semestre() === 1">1er
-          Semestre</button>
-        <button [class.active]="semestre() === 2" (click)="semestre.set(2)" [attr.aria-pressed]="semestre() === 2">2do
-          Semestre</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="filter-bar" style="margin-top: 25px; display: flex; gap: 20px; flex-wrap: wrap;"
-    *ngIf="viewMode() === 'grupo'">
-    <div class="filter-item">
-      <label for="select-especialidad"
-        style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase;">Especialidad</label>
-      <select id="select-especialidad" [ngModel]="especialidad()" (ngModelChange)="setEspecialidad($event)"
-        class="custom-select">
-        <option *ngFor="let esp of especialidades()" [value]="esp">{{esp}}</option>
-      </select>
-    </div>
-
-    <div class="filter-item">
-      <label for="select-turno"
-        style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase;">Turno</label>
-      <select id="select-turno" [ngModel]="turno()" (ngModelChange)="setTurno($event)" class="custom-select"
-        style="min-width: 120px;">
-        <option value="">Todos</option>
-        <option value="Mañana">Mañana</option>
-        <option value="Tarde">Tarde</option>
-        <option value="Noche">Noche</option>
-      </select>
-    </div>
-
-    <div class="filter-item">
-      <label for="select-grupo"
-        style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase;">Grupo</label>
-      <select id="select-grupo" [ngModel]="grupo()" (ngModelChange)="grupo.set($event)" class="custom-select"
-        [disabled]="!especialidad()" style="min-width: 150px;">
-        <option *ngFor="let g of grupos()" [value]="g">{{g}}</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="filter-bar" style="margin-top: 25px; display: flex; gap: 20px; flex-wrap: wrap;"
-    *ngIf="viewMode() === 'salon'">
-    <div class="filter-item">
-      <label for="select-salon"
-        style="display: block; font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase;">Selecciona
-        un Salón</label>
-      <div style="display: flex; gap: 10px; align-items: center;">
-        <select id="select-salon" [ngModel]="salonSeleccionado()" (ngModelChange)="salonSeleccionado.set($event)"
-          class="custom-select">
-          <option *ngFor="let s of salonesFiltrados()" [value]="s">{{s}}</option>
-        </select>
-        <div class="search-input-wrapper">
-          <i class="fa-solid fa-search" aria-hidden="true"></i>
-          <input type="text" id="input-search-salon" [ngModel]="searchSalon()" (ngModelChange)="searchSalon.set($event)"
-            placeholder="Filtrar salón..." class="salon-search-field" aria-label="Filtrar salones por nombre">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="filter-bar" style="margin-top: 25px; display: flex; gap: 20px; flex-wrap: wrap;"
-    *ngIf="viewMode() === 'actividad'">
-    <div class="live-info" style="flex: 1;">
-      <span class="badge-live"><i class="fa-solid fa-clock"></i> {{currentDayName}} - {{currentTime}}</span>
-      <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.85rem;">Mostrando estado actual de todos los
-        salones registrados.</p>
-    </div>
-
-    <div class="status-toggles" role="group" aria-label="Filtrar por estado">
-      <button [class.active]="statusFilter() === 'todos'" (click)="statusFilter.set('todos')"
-        [attr.aria-pressed]="statusFilter() === 'todos'">Todos</button>
-      <button [class.active]="statusFilter() === 'libres'" (click)="statusFilter.set('libres')" class="btn-free"
-        [attr.aria-pressed]="statusFilter() === 'libres'">Libres</button>
-      <button [class.active]="statusFilter() === 'ocupados'" (click)="statusFilter.set('ocupados')" class="btn-busy"
-        [attr.aria-pressed]="statusFilter() === 'ocupados'">Ocupados</button>
-    </div>
-
-    <div class="search-input-wrapper" style="align-self: flex-end;">
-      <i class="fa-solid fa-search" aria-hidden="true"></i>
-      <input type="text" [ngModel]="searchSalon()" (ngModelChange)="searchSalon.set($event)"
-        placeholder="Buscas un salón?" class="salon-search-field" aria-label="Buscar salón específico">
-    </div>
-  </div>
-</section>
-
-<!-- Vista de Actividad En Vivo -->
-<div class="live-panel fade-in" *ngIf="viewMode() === 'actividad'">
-  <div class="live-grid">
-    <div *ngFor="let s of statusSalones()" class="salon-status-card" [class.is-free]="s.libre">
-      <div class="card-top">
-        <span class="salon-name">{{s.nombre}}</span>
-        <span class="status-badge" [class.free]="s.libre">
-          {{s.libre ? 'LIBRE' : 'OCUPADO'}}
-        </span>
-      </div>
-
-      <div class="card-body">
-        <ng-container *ngIf="!s.libre && s.claseActual as current">
-          <div class="current-class">{{current.materia}}</div>
-          <div class="class-time">{{current.hora}}</div>
-          <div class="next-event">Finaliza en: <strong>{{s.minutosRestantes}} min</strong></div>
-        </ng-container>
-
-        <ng-container *ngIf="s.libre">
-          <div class="free-msg">Disponible para reasignar</div>
-          <div class="next-event" *ngIf="s.proximaClase as next">
-            Próxima: {{next.materia}} ({{next.hora.split('-')[0]}})
-          </div>
-          <div class="next-event" *ngIf="!s.proximaClase">Sin más clases hoy</div>
-        </ng-container>
-      </div>
-    </div>
-  </div>
+<div class="section-header fade-in">
+  <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Horarios 2026</h2>
+  <p style="color: var(--text-muted); margin-top: 8px;">Consulta horarios, disponibilidad de salones o estado en tiempo real.</p>
 </div>
 
-<div class="schedule-wrapper fade-in" *ngIf="viewMode() === 'grupo' ? grupo() : salonSeleccionado()">
-  <div class="table-container shadow-premium">
-    <table class="schedule-table">
-      <thead>
-        <tr>
-          <th class="time-col" scope="col">Hora</th>
-          <th scope="col">Lunes</th>
-          <th scope="col">Martes</th>
-          <th scope="col">Miércoles</th>
-          <th scope="col">Jueves</th>
-          <th scope="col">Viernes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let h of (viewMode() === 'grupo' ? franjasHorarias() : franjasHorariasS())">
-          <td class="time-cell">{{h}}</td>
-          <td *ngFor="let d of [1,2,3,4,5]" class="class-cell">
-            <ng-container *ngIf="(viewMode() === 'grupo' ? getClassInfo(d, h) : getSalonInfo(d, h)) as info">
-              <div class="class-card-inner">
-                <div class="class-text">{{formatInfo(info).materia}}</div>
-                <div class="class-subtext" *ngIf="formatInfo(info).docente">
-                  <i class="fa-solid fa-user-tie" aria-hidden="true"></i> {{formatInfo(info).docente}}
-                </div>
-                <div class="class-venue">
-                  <i class="fa-solid" [class.fa-door-open]="viewMode() === 'grupo'"
-                    [class.fa-users]="viewMode() === 'salon'" aria-hidden="true"></i>
-                  {{viewMode() === 'grupo' ? formatInfo(info).salon : formatInfo(info).grupo}}
+<!-- Carga y Errores -->
+<div *ngIf="isLoading" class="flex justify-center items-center py-20 fade-in">
+  <div class="animate-spin rounded-full h-12 w-12 border-b-2" style="border-color: var(--primary-color);"></div>
+  <span class="ml-3 font-medium" style="color: var(--primary-color);">Cargando planilla de horarios...</span>
+</div>
+
+<div *ngIf="error" class="bg-red-50 border-l-4 border-red-500 p-4 rounded-md shadow-sm mb-6 fade-in">
+  <p class="text-sm text-red-700">Hubo un problema: {{ error }}</p>
+</div>
+
+<div *ngIf="!isLoading && !error" class="fade-in">
+  <!-- Filtros -->
+  <div class="glass-card !p-5 mb-8 flex flex-col md:flex-row gap-4 items-center">
+    
+    <div class="w-full md:flex-1 relative">
+      <select [(ngModel)]="selectedEsp" (ngModelChange)="onEspChange()"
+              class="block w-full py-3 px-4 border rounded-2xl focus:ring-2 focus:ring-sky-500 cursor-pointer appearance-none font-medium transition-all"
+              style="background: var(--bg-body); color: var(--text-heading); border-color: var(--border-color);">
+        <option value="">Selecciona una Especialidad...</option>
+        <option *ngFor="let esp of especialidades" [value]="esp">{{ esp }}</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4" style="color: var(--text-muted);">
+        <i class="fa-solid fa-chevron-down text-xs"></i>
+      </div>
+    </div>
+    
+    <div class="w-full md:w-64 relative">
+      <select [(ngModel)]="selectedGrupo" (ngModelChange)="onGrupoChange()" [disabled]="!selectedEsp"
+              class="block w-full py-3 px-4 border rounded-2xl focus:ring-2 focus:ring-sky-500 cursor-pointer appearance-none font-medium transition-all disabled:opacity-50"
+              style="background: var(--bg-body); color: var(--text-heading); border-color: var(--border-color);">
+        <option value="">Grupo...</option>
+        <optgroup *ngFor="let agrupacion of gruposAgrupados" [label]="agrupacion.turno">
+          <option *ngFor="let g of agrupacion.grupos" [value]="g">{{ g }}</option>
+        </optgroup>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4" style="color: var(--text-muted);">
+        <i class="fa-solid fa-chevron-down text-xs"></i>
+      </div>
+    </div>
+
+    <!-- Toggle Semestre -->
+    <div class="flex rounded-2xl p-1" style="background: var(--bg-body); border: 1px solid var(--border-color);">
+      <button (click)="onSemestreChange('sem1')" 
+              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap"
+              [class.shadow-sm]="semestre === 'sem1'"
+              [class.opacity-60]="semestre !== 'sem1'"
+              [style.background]="semestre === 'sem1' ? 'var(--surface)' : 'transparent'"
+              [style.color]="semestre === 'sem1' ? 'var(--primary-color)' : 'var(--text-muted)'">
+        1º Semestre
+      </button>
+      <button (click)="onSemestreChange('sem2')" 
+              class="px-5 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap"
+              [class.shadow-sm]="semestre === 'sem2'"
+              [class.opacity-60]="semestre !== 'sem2'"
+              [style.background]="semestre === 'sem2' ? 'var(--surface)' : 'transparent'"
+              [style.color]="semestre === 'sem2' ? 'var(--primary-color)' : 'var(--text-muted)'">
+        2º Semestre
+      </button>
+    </div>
+    
+  </div>
+
+  <!-- Contenido Vacío -->
+  <div *ngIf="!selectedEsp || !selectedGrupo" class="flex flex-col items-center justify-center py-20 glass-card text-center">
+    <i class="fa-solid fa-calendar-week text-5xl mb-4 opacity-20" style="color: var(--text-muted)"></i>
+    <h3 class="text-lg font-bold" style="color: var(--text-heading);">Visualizador de Horarios</h3>
+    <p class="mt-1" style="color: var(--text-muted);">Selecciona una especialidad y un grupo para ver la grilla.</p>
+  </div>
+
+  <!-- Contenedor Principal cuando hay datos -->
+  <ng-container *ngIf="selectedEsp && selectedGrupo">
+    
+    <!-- Aviso si no hay horas registradas -->
+    <div *ngIf="horas.length === 0" class="glass-card !p-8 text-center text-sm font-medium" style="color: var(--text-muted);">
+      No hay clases registradas para este grupo en el semestre seleccionado.
+    </div>
+
+    <!-- Grilla para Desktop (Oculta en móviles, bloque lg:block) -->
+    <div *ngIf="horas.length > 0" class="hidden lg:block overflow-hidden rounded-2xl border shadow-sm" style="border-color: var(--border-color); background: var(--surface);">
+      <table class="w-full table-fixed border-collapse">
+        <thead>
+          <tr style="background: var(--bg-light);">
+            <th class="w-24 p-4 border-b border-r text-center font-bold text-xs uppercase tracking-wider" style="border-color: var(--border-color); color: var(--text-muted);">Hora</th>
+            <th *ngFor="let dia of diasNombres" class="p-4 border-b border-r text-center font-bold text-sm uppercase tracking-wider" style="border-color: var(--border-color); color: var(--text-heading);">
+              {{ dia }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hora of horas; let i = index" class="group transition-colors" [style.background]="i % 2 === 0 ? 'var(--surface)' : 'var(--bg-body)'">
+            <td class="p-3 border-b border-r text-center font-bold text-[11px]" style="border-color: var(--border-color); color: var(--primary-color);">
+              {{ hora }}
+            </td>
+            
+            <td *ngFor="let dia of dias" class="p-2 border-b border-r align-top relative" style="border-color: var(--border-color);">
+              <div *ngIf="grilla[hora][dia] && grilla[hora][dia].length > 0" class="space-y-2">
+                <div *ngFor="let clase of grilla[hora][dia]" 
+                     class="p-2 rounded-lg text-xs leading-tight border transition-transform cursor-default"
+                     style="background: rgba(var(--primary-color-rgb), 0.05); border-color: rgba(var(--primary-color-rgb), 0.15);">
+                  
+                  <ng-container *ngFor="let line of formatInfo(clase.info); let isFirst = first">
+                    <div [class.font-bold]="isFirst" 
+                         [style.color]="isFirst ? 'var(--text-heading)' : 'var(--text-muted)'"
+                         [class.text-[11px]]="isFirst"
+                         [class.text-[10px]]="!isFirst"
+                         [class.mt-1]="!isFirst">
+                      {{ line }}
+                    </div>
+                  </ng-container>
                 </div>
               </div>
-            </ng-container>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-<div *ngIf="!grupo()" class="welcome-banner" style="text-align: center; padding: 60px 0;">
-  <i class="fa-solid fa-calendar-days"
-    style="font-size: 4rem; color: var(--primary-color); opacity: 0.2; margin-bottom: 20px; display: block;"></i>
-  <h3>Selecciona una especialidad y grupo</h3>
-  <p>Para visualizar la grilla horaria correspondiente.</p>
+    <!-- Lista para Móviles (Oculta en Desktop, lg:hidden) -->
+    <div *ngIf="horas.length > 0" class="block lg:hidden space-y-6">
+      <div *ngFor="let dia of dias; let i = index">
+        <ng-container *ngIf="getClasesForDay(dia).length > 0">
+          
+          <h4 class="font-bold text-sm uppercase tracking-widest mb-3 pl-2" style="color: var(--text-heading); border-left: 3px solid var(--primary-color);">
+            {{ diasNombres[i] }}
+          </h4>
+          
+          <div class="space-y-3">
+            <div *ngFor="let clase of getClasesForDay(dia)" class="glass-card !p-4 flex gap-4 items-center">
+              <div class="flex-shrink-0 w-16 text-center font-bold text-[11px]" style="color: var(--primary-color);">
+                {{ clase.hora }}
+              </div>
+              <div class="w-px h-10" style="background: var(--border-color);"></div>
+              <div class="flex-grow">
+                <ng-container *ngFor="let line of formatInfo(clase.info); let isFirst = first">
+                  <p [class.font-bold]="isFirst" 
+                     [style.color]="isFirst ? 'var(--text-heading)' : 'var(--text-muted)'"
+                     [class.text-sm]="isFirst"
+                     [class.text-xs]="!isFirst"
+                     [class.mt-0.5]="!isFirst">
+                    {{ line }}
+                  </p>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+          
+        </ng-container>
+      </div>
+    </div>
+
+  </ng-container>
 </div>

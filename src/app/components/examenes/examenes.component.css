@@ -1,7 +1,7 @@
 .iframe-container {
   margin-top: 25px;
   width: 100%;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 200px); /* Adjust based on header height */
   min-height: 600px;
   border-radius: var(--radius-lg);
   overflow: hidden;

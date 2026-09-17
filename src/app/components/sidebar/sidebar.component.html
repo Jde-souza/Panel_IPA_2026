@@ -2,6 +2,11 @@
   <div class="sidebar-header">
   </div>
   <nav class="sidebar-nav">
+    <div class="cta-group">
+      <a href="https://sge.cfe.edu.uy/web/login" target="_blank" class="cta-btn primary">SGE</a>
+      <a href="https://ipa.cfe.edu.uy/index.php" target="_blank" class="cta-btn secondary">IPA</a>
+    </div>
+
     <div class="nav-section">
       <span class="section-label">PRINCIPAL</span>
       <a routerLink="/home" routerLinkActive="active" class="nav-link">
@@ -16,6 +21,24 @@
         <i class="fa-solid fa-user-slash"></i>
         <span>Inasistencias</span>
       </a>
+    </div>
+    
+    <div class="nav-section">
+      <span class="section-label">ESTUDIANTES</span>
+      <a routerLink="/examenes" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Calendario de Exámenes</span>
+      </a>
+    </div>
+
+    <div class="nav-section">
+      <span class="section-label">DOCENTES</span>
+      <!-- Links for teachers will go here -->
+    </div>
+
+    <div class="nav-section">
+      <span class="section-label">GESTIÓN</span>
+      <!-- Links for management will go here -->
     </div>
   </nav>
 </aside>

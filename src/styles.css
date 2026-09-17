@@ -3,11 +3,27 @@
 @tailwind utilities;
 
 :root {
-    /* Brand (invariantes) */
-    --primary-color: #00aeef;
-    --gold-accent: #ffb700;
-    --dark-blue: #004a8e;
-    --font-titles: 'Outfit', sans-serif;
+    /* Brand Manual ANEP 2019 (invariantes) */
+    --anep-blue: #003087;    /* Pantone 287 C */
+    --anep-blue-rgb: 0, 48, 135;
+    
+    --anep-cyan: #00aeef;    /* Pantone Process Cyan C */
+    --anep-cyan-rgb: 0, 174, 239;
+    
+    --anep-yellow: #ffcc00;  /* Pantone 1235 C */
+    --anep-yellow-rgb: 255, 204, 0;
+
+    --anep-celeste: #0097D7; /* Uso secundario / Invertido */
+    --anep-celeste-rgb: 0, 151, 215;
+    
+    --primary-color: var(--anep-cyan);
+    --primary-color-rgb: var(--anep-cyan-rgb);
+    
+    --gold-accent: var(--anep-yellow);
+    --dark-blue: #001f5c; 
+    
+    --sidebar-bg: #f8fafc;
+    --font-titles: 'Source Sans Pro', sans-serif;
     --font-body: 'Source Sans Pro', sans-serif;
 
     /* Modo claro (por defecto) */
@@ -24,17 +40,17 @@
     --card-hover-bg: rgba(255, 255, 255, 0.85);
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.4);
-    --shadow: 0 20px 40px -10px rgba(0, 174, 239, 0.2);
-    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.03);
+    --shadow: 0 20px 40px -10px rgba(0, 48, 135, 0.2);
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombras ANEP sobrias */
     --divider-color: #ddd;
-    --h1-gradient-start: #004a8e;
-    --h1-gradient-end: #00aeef;
+    --h1-gradient-start: #001f5c;
+    --h1-gradient-end: #003087;
     --placeholder-hover-bg: #e2e8f0;
-    --doe-name-color: #004a8e;
-    --badge-nocturno-bg: rgba(0, 74, 142, 0.1);
-    --badge-nocturno-color: #004a8e;
-    --badge-diurno-bg: rgba(255, 183, 0, 0.1);
-    --badge-diurno-color: #b88600;
+    --doe-name-color: var(--anep-blue);
+    --badge-nocturno-bg: rgba(0, 48, 135, 0.1);
+    --badge-nocturno-color: var(--anep-blue);
+    --badge-diurno-bg: rgba(255, 204, 0, 0.15);
+    --badge-diurno-color: #b38f00;
 
     /* Toggle button */
     --toggle-bg: #e2e8f0;
@@ -47,6 +63,7 @@
     --text-heading: #f1f5f9;
     --bg-body: #0f172a;
     --bg-light: #1e293b;
+    --sidebar-bg: #0b1222;
     --surface: #1e293b;
     --surface-alt: #253347;
     --border-color: #3b4f6b;
@@ -55,17 +72,22 @@
     --card-hover-bg: rgba(37, 51, 71, 0.95);
     --glass-bg: rgba(15, 23, 42, 0.75);
     --glass-border: rgba(59, 79, 107, 0.5);
-    --shadow: 0 20px 40px -10px rgba(0, 174, 239, 0.15);
+    
+    /* Mantenemos el Cyan vibrante en modo Oscuro para preservar accesibilidad / identidad solicitada */
+    --primary-color: var(--anep-cyan);
+    --primary-color-rgb: var(--anep-cyan-rgb);
+    
+    --shadow: 0 20px 40px -10px rgba(var(--primary-color-rgb), 0.15);
     --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.3);
     --divider-color: #3b4f6b;
     --h1-gradient-start: #38bdf8;
-    --h1-gradient-end: #67e8f9;
+    --h1-gradient-end: var(--anep-celeste);
     --placeholder-hover-bg: #334155;
     --doe-name-color: #38bdf8;
     --badge-nocturno-bg: rgba(56, 189, 248, 0.15);
     --badge-nocturno-color: #38bdf8;
-    --badge-diurno-bg: rgba(251, 191, 36, 0.15);
-    --badge-diurno-color: #fbbf24;
+    --badge-diurno-bg: rgba(255, 204, 0, 0.15);
+    --badge-diurno-color: #fcd34d;
     --toggle-bg: #334155;
     --toggle-fg: #f1f5f9;
 }
@@ -117,6 +139,13 @@ body {
     min-height: 100vh;
 }
 
+/* ================================================
+   BOTTOM NAVIGATION BAR (solo móvil/tablet)
+   ================================================ */
+.mobile-bottom-nav {
+    display: none; /* Oculto en desktop */
+}
+
 /* Header */
 app-header {
     grid-area: header;
@@ -148,8 +177,6 @@ app-header {
     align-items: center;
 }
 
-/* Logo and divider removed */
-
 h1 {
     font-family: var(--font-titles);
     font-size: 2.2rem;
@@ -168,6 +195,8 @@ h1 {
 }
 
 .nav-item {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text-main);
     font-weight: 600;
@@ -175,12 +204,19 @@ h1 {
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
+    height: 100%;
 }
 
 .nav-item:hover {
     color: var(--primary-color);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 4px;
 }
 
 .icon-margin {
@@ -189,7 +225,7 @@ h1 {
     text-align: center;
 }
 
-/* Sidebar */
+/* Sidebar Placeholder (Component styles are in sidebar.component.css) */
 app-sidebar {
     grid-area: sidebar;
     position: sticky;
@@ -197,52 +233,6 @@ app-sidebar {
     height: calc(100vh - 80px);
     overflow-y: auto;
     z-index: 990;
-}
-.sidebar {
-    min-height: 100%;
-    background: var(--surface);
-    border-right: 1px solid var(--border-light);
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.35s ease;
-}
-
-.side-nav .nav-group {
-    margin-bottom: 35px;
-}
-
-.nav-group h3 {
-    font-family: var(--font-titles);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    padding-left: 10px;
-}
-
-.side-item {
-    display: block;
-    text-decoration: none;
-    color: var(--text-main);
-    padding: 12px 15px;
-    border-radius: 12px;
-    margin-bottom: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.side-item:hover {
-    background-color: var(--bg-light);
-    color: var(--primary-color);
-}
-
-.side-item.active {
-    background-color: rgba(0, 174, 239, 0.1);
-    color: var(--primary-color);
-    font-weight: 700;
 }
 
 /* Main Content */
@@ -480,7 +470,7 @@ app-footer {
     box-shadow: 0 4px 12px rgba(0, 174, 239, 0.3);
 }
 
-/* Tables (keeping for fallback or if user wants both) */
+/* Tables */
 .table-container {
     background: var(--card-bg);
     border-radius: 24px;
@@ -535,7 +525,15 @@ app-footer {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Responsividad */
+/* ================================================
+   RESPONSIVIDAD MÓVIL — Sistema de breakpoints:
+   lg: 1024px+ (desktop)
+   md: 768px–1023px (tablet)
+   sm: 600px–767px (móvil grande)
+   xs: <600px (móvil)
+   ================================================ */
+
+/* --- TABLET Y MÓVIL (≤1024px) --- */
 @media (max-width: 1024px) {
     .grid-container {
         grid-template-areas:
@@ -543,28 +541,226 @@ app-footer {
             "main"
             "footer";
         grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr auto;
     }
 
-    .sidebar {
+    /* Sidebar se oculta — los links pasan a la bottom nav */
+    app-sidebar {
+        display: none;
+    }
+
+    /* Header compacto en tablet/móvil */
+    .header {
+        height: 60px;
+        padding: 0 20px;
+        padding-top: env(safe-area-inset-top, 0px);
+    }
+
+    /* Sticky de header se ajusta a la nueva altura */
+    app-header {
+        position: sticky;
+        top: 0;
+    }
+
+    /* Touch targets mínimos 44px en tablet */
+    .filter-btn {
+        padding: 12px 18px;
+        min-height: 44px;
+    }
+
+    .theme-toggle {
+        width: 44px !important;
+        height: 44px !important;
+    }
+
+    /* Contenido principal: espacio inferior para bottom nav */
+    .main-content {
+        padding: 30px;
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 16px));
+    }
+
+    /* Bottom Navigation Bar */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border-color);
+        padding: 6px 0;
+        padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+        justify-content: space-around;
+        align-items: stretch;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.6rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        flex: 1;
+        padding: 6px 4px;
+        min-height: 50px;
+        border-radius: 12px;
+        transition: color 0.25s ease, background 0.25s ease;
+        position: relative;
+    }
+
+    .mobile-bottom-nav a i {
+        font-size: 1.25rem;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .mobile-bottom-nav a.active {
+        color: var(--primary-color);
+    }
+
+    .mobile-bottom-nav a.active i {
+        transform: translateY(-2px) scale(1.1);
+    }
+
+    /* Indicador activo bajo el ícono */
+    .mobile-bottom-nav a.active::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background: var(--primary-color);
+        border-radius: 50%;
+    }
+
+    /* Footer adaptado */
+    .footer-content {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .footer {
+        padding: 20px;
+        padding-bottom: calc(20px + 72px + env(safe-area-inset-bottom, 0px));
+    }
+}
+
+/* --- TABLET MEDIANO (≤768px) --- */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 24px;
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 16px));
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .top-nav {
         display: none;
     }
 }
 
+/* --- MÓVIL (≤600px) --- */
 @media (max-width: 600px) {
-    .header {
-        padding: 0 20px;
+    .main-content {
+        padding: 16px;
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 16px));
+    }
+
+    h1, .main-title {
+        font-size: 1.4rem;
+    }
+
+    .welcome-banner h2 {
+        font-size: 1.6rem;
     }
 
     .top-nav {
         display: none;
     }
 
-    .main-content {
-        padding: 20px;
+    /* Quick access grid en 1 columna */
+    .quick-access-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
-    .welcome-banner h2 {
-        font-size: 1.8rem;
+    /* Tabla DOE: scroll horizontal con aviso visual */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Cards: reducir padding */
+    .glass-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    /* Filter bar en columna */
+    .filter-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ================================================
+   HOVER: Solo en dispositivos con mouse real
+   (evita efectos permanentes en táctil)
+   ================================================ */
+@media (hover: hover) and (pointer: fine) {
+    .glass-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: var(--shadow);
+        border-color: var(--primary-color);
+        background: var(--card-hover-bg);
+    }
+
+    .glass-card:hover .card-icon {
+        transform: scale(1.1);
+    }
+
+    .glass-card:hover .card-arrow {
+        opacity: 1;
+        right: 20px;
+    }
+
+    .doe-card:hover {
+        box-shadow: var(--shadow-card);
+        border-color: var(--primary-color);
+    }
+}
+
+/* En táctil: hover hover animaciones están desactivadas arriba,
+   pero mantenemos estados :active para feedback visual */
+@media (hover: none) {
+    .glass-card:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .mobile-bottom-nav a:active {
+        background: rgba(var(--primary-color-rgb), 0.1);
+        border-radius: 12px;
     }
 }
 

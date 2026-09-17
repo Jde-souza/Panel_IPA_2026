@@ -23,8 +23,44 @@ async function extractHorarios() {
         const results = {};
 
         for (const sheetName of workbook.SheetNames) {
-            if (sheetName.includes('Paquete')) { // 'Optativas' moved to LIST_SHEETS
-                // Formato diferente, omitimos por ahora o manejamos aparte
+            if (sheetName.includes('Paquete')) { // Nueva lógica para procesar paquetes
+                console.log(`Procesando pestaña de paquete: ${sheetName}...`);
+                const sheet = workbook.Sheets[sheetName];
+                const data = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
+                const specialtyData = {};
+                let currentGroup1 = null;
+
+                for (let i = 0; i < data.length; i++) {
+                    const row = data[i];
+                    if (!row || row.length === 0) continue;
+
+                    const col0 = String(row[0]).trim();
+                    
+                    if (col0.toUpperCase().includes('PAQUETE')) {
+                        currentGroup1 = col0;
+                        if (!specialtyData[currentGroup1]) specialtyData[currentGroup1] = { sem1: [], sem2: [] };
+                    }
+                    else if (col0.match(/^[1-5][º°][A-Z]/i) && row[1] === 'L') {
+                        currentGroup1 = col0.match(/^[1-5][º°][A-Z]/i)[0].replace('°', 'º');
+                        if (!specialtyData[currentGroup1]) specialtyData[currentGroup1] = { sem1: [], sem2: [] };
+                    }
+
+                    const timeMatch = col0.match(/^\d{2}:\d{2}/);
+                    if (timeMatch && currentGroup1) {
+                        const hora1 = cleanTimeRange(col0);
+                        for (let day = 1; day <= 5; day++) {
+                            const cellContent = sanitizeText(row[day]);
+                            if (cellContent && String(cellContent).trim().length > 5) {
+                                const classObj = { dia: day, hora: hora1, info: cellContent };
+                                specialtyData[currentGroup1].sem1.push(classObj);
+                                specialtyData[currentGroup1].sem2.push(classObj);
+                            }
+                        }
+                    }
+                }
+                if (Object.keys(specialtyData).length > 0) {
+                    results[sheetName] = specialtyData;
+                }
                 continue;
             }
 
@@ -84,10 +120,11 @@ async function extractHorarios() {
                     const col7 = row[7] ? String(row[7]).trim() : '';
 
                     // Detección de cabecera de grupo (Ej: 1°A o 4ºB)
-                    const groupMatch = col0.match(/^[1-5]º[A-Z]/i);
+                    const groupMatch = col0.match(/^[1-5][º°][A-Z]/i);
                     if (groupMatch && row[1] === 'L') {
-                        currentGroup1 = groupMatch[0];
-                        currentGroup2 = col7.match(/^[1-5]º[A-Z]/i) ? col7.match(/^[1-5]º[A-Z]/i)[0] : currentGroup1;
+                        currentGroup1 = groupMatch[0].replace('°', 'º');
+                        const groupMatch2 = col7.match(/^[1-5][º°][A-Z]/i);
+                        currentGroup2 = groupMatch2 ? groupMatch2[0].replace('°', 'º') : currentGroup1;
                         
                         if (!specialtyData[currentGroup1]) specialtyData[currentGroup1] = { sem1: [], sem2: [] };
                         if (!specialtyData[currentGroup2]) specialtyData[currentGroup2] = { sem1: [], sem2: [] };

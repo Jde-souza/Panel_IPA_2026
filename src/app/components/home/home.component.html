@@ -1,149 +1,166 @@
 <section class="portal-header">
   <div class="container">
-    <h1 class="portal-title">Actualidad Educativa</h1>
-    <p class="portal-subtitle">Novedades de los portales institucionales de ANEP y Plan Ceibal</p>
+    <div class="header-main-row">
+      <i class="fa-solid fa-newspaper"></i>
+      <h1 class="portal-title">Actualidad Educativa</h1>
+    </div>
   </div>
 </section>
 
-<div class="container mt-8">
-  <!-- Hero News -->
-  <button *ngIf="newsItems.length > 0" class="hero-news glass-card group" (click)="goToNews(newsItems[0].url)"
-    [attr.aria-label]="'Noticia destacada: ' + newsItems[0].title + '. Fuente: ' + newsItems[0].source">
-    <div class="hero-image-container">
-      <img *ngIf="newsItems[0].imageUrl" [src]="newsItems[0].imageUrl" class="hero-image" [alt]="newsItems[0].title">
-      <div *ngIf="!newsItems[0].imageUrl" class="hero-image-placeholder" aria-hidden="true">
-        <i class="fa-solid fa-newspaper text-6xl text-white/20"></i>
+<div class="container pb-20">
+  
+  <!-- LOADING STATE: SKELETONS -->
+  <ng-container *ngIf="isLoading">
+    <!-- Hero Skeleton -->
+    <div class="skeleton-hero shimmer">
+      <div class="skeleton-hero-img skeleton"></div>
+      <div class="skeleton-hero-content">
+        <div class="skeleton-line short skeleton"></div>
+        <div class="skeleton-line skeleton" style="height: 40px; margin-bottom: 2rem;"></div>
+        <div class="skeleton-line skeleton"></div>
+        <div class="skeleton-line skeleton"></div>
+        <div class="skeleton-line medium skeleton"></div>
       </div>
     </div>
-    <div class="hero-content text-left">
-      <div class="news-source-tag secondary" aria-hidden="true">NOTICIA DESTACADA</div>
-      <h2 class="hero-title group-hover:underline decoration-white/30 underline-offset-4">
-        {{ newsItems[0].title }}
-      </h2>
-      <div class="news-meta mt-4 text-white/80">
-        <span class="font-bold">{{ newsItems[0].source }}</span> — {{ newsItems[0].date }}
-      </div>
-      <div class="mt-6">
-        <span class="btn-read-more">LEER MÁS <i class="fa-solid fa-chevron-right ml-2" aria-hidden="true"></i></span>
-      </div>
-    </div>
-  </button>
 
-  <!-- News Grid -->
-  <div class="news-grid mt-12">
-    <article *ngFor="let item of institutionalNews.slice(1)" class="news-card group">
-      <button class="w-full text-left" (click)="goToNews(item.url)"
-        [attr.aria-label]="'Noticia: ' + item.title + '. Fuente: ' + item.source">
-        <div class="card-image-container">
-          <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" class="card-image"
-            [alt]="item.title">
-          <div *ngIf="!item.imageUrl" class="card-image-placeholder" aria-hidden="true">
+    <!-- Grid Skeleton -->
+    <div class="skeleton-grid">
+      <div *ngFor="let i of [1,2,3,4,5,6]" class="skeleton-card">
+        <div class="skeleton-card-img skeleton"></div>
+        <div class="skeleton-line short skeleton"></div>
+        <div class="skeleton-line skeleton"></div>
+        <div class="skeleton-line medium skeleton"></div>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- DATA READY STATE -->
+  <ng-container *ngIf="!isLoading && newsItems.length > 0">
+    
+    <!-- Hero News (ANEP Portal Style: 70/30 Split) -->
+    <button class="news-hero" (click)="goToNews(newsItems[0].url)" 
+            [attr.aria-label]="'Noticia destacada: ' + newsItems[0].title">
+      <div class="hero-visual">
+        <img *ngIf="newsItems[0].imageUrl" [src]="newsItems[0].imageUrl" [alt]="newsItems[0].title" loading="eager" decoding="async">
+        <div *ngIf="!newsItems[0].imageUrl" class="flex items-center justify-center h-full bg-slate-100">
+          <i class="fa-solid fa-newspaper text-6xl text-slate-300"></i>
+        </div>
+      </div>
+      <div class="hero-info-box">
+        <div class="flex justify-between items-center mb-4">
+          <div class="hero-tag">NOTICIA DESTACADA</div>
+          <div class="text-[10px] font-bold opacity-80" *ngIf="newsItems[0].date">{{ newsItems[0].date }}</div>
+        </div>
+        <h2 class="hero-title-text">{{ newsItems[0].title }}</h2>
+        <p class="hero-summary" *ngIf="newsItems[0].summary">{{ newsItems[0].summary }}</p>
+        <p class="hero-summary" *ngIf="!newsItems[0].summary">
+          Acceda a la información completa sobre esta novedad institucional en el portal oficial de {{ newsItems[0].source }}.
+        </p>
+        <div class="mt-auto pt-8">
+          <div class="hero-cta">
+            <span>LEER MÁS</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </button>
+
+    <!-- Institutional News Grid (Showing more items from all subsystems) -->
+    <div class="news-portal-grid">
+      <button *ngFor="let item of institutionalNews.slice(1, 13)" class="news-portal-card" (click)="goToNews(item.url)">
+        <div class="card-visual-wrapper">
+            <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async">
+          <div *ngIf="!item.imageUrl" class="flex items-center justify-center h-full bg-slate-50">
             <i class="fa-solid fa-image text-3xl text-slate-200"></i>
           </div>
         </div>
-        <div class="card-body">
-          <div class="news-meta mb-2">
-            <span class="source-label" [ngClass]="item.source.toLowerCase()" aria-hidden="true">{{ item.source }}</span>
-            <span class="date-label">{{ item.date }}</span>
-          </div>
-          <h3 class="card-title group-hover:text-cyan-600 transition-colors">
-            {{ item.title }}
-          </h3>
+        <!-- Source tag and date together -->
+        <div class="card-meta">
+          <span class="card-source-tag" [ngClass]="item.source.toLowerCase()">{{ item.source }}</span>
+          <span class="card-date">{{ item.date }}</span>
         </div>
+        <h3 class="card-title-text">{{ item.title }}</h3>
       </button>
-    </article>
-  </div>
+    </div>
 
-  <!-- Plan Ceibal Section -->
-  <div *ngIf="ceibalNews.length > 0" class="mt-20 mb-12">
-    <h2 class="section-title">Plan Ceibal</h2>
-    <div class="news-grid mt-8">
-      <article *ngFor="let item of ceibalNews" class="news-card group">
-        <button class="w-full text-left" (click)="goToNews(item.url)"
-          [attr.aria-label]="'Noticia Ceibal: ' + item.title">
-          <div class="card-image-container">
-            <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" class="card-image"
-              [alt]="item.title">
-            <div *ngIf="!item.imageUrl" class="card-image-placeholder" aria-hidden="true">
+    <!-- Plan Ceibal Section (Showing more items) -->
+    <div *ngIf="ceibalNews.length > 0" class="mt-20">
+      <div class="portal-section-header">
+        <i class="fa-solid fa-microchip text-2xl text-[#00B2E3]"></i>
+        <h2>Plan Ceibal</h2>
+      </div>
+      <div class="ceibal-grid">
+        <button *ngFor="let item of ceibalNews.slice(0, 6)" class="news-portal-card" (click)="goToNews(item.url)">
+          <div class="card-visual-wrapper">
+              <img *ngIf="item.imageUrl" [src]="item.imageUrl" (error)="item.imageUrl = undefined" [alt]="item.title" loading="lazy" decoding="async">
+            <div *ngIf="!item.imageUrl" class="flex items-center justify-center h-full bg-slate-50">
               <i class="fa-solid fa-microchip text-3xl text-slate-200"></i>
             </div>
           </div>
-          <div class="card-body">
-            <div class="news-meta mb-2">
-              <span class="source-label ceibal" aria-hidden="true">CEIBAL</span>
-              <span class="date-label">{{ item.date }}</span>
-            </div>
-            <h3 class="card-title group-hover:text-[#00B2E3] transition-colors">
-              {{ item.title }}
-            </h3>
+          <div class="card-meta">
+            <span class="card-source-tag ceibal">CEIBAL</span>
+            <span class="card-date">{{ item.date }}</span>
           </div>
+          <h3 class="card-title-text">{{ item.title }}</h3>
         </button>
-      </article>
+      </div>
     </div>
-  </div>
 
-  <!-- Llamados Section -->
-  <div *ngIf="llamadosDocentes.length > 0 || llamadosNoDocentes.length > 0"
-    class="mt-20 mb-20 section-llamados-container">
-    <h2 class="section-title">Concursos y Llamados (ANEP)</h2>
-    <div class="llamados-columns-grid mt-8">
-
-      <!-- Columna Docentes -->
-      <div class="llamados-column">
-        <div class="column-header">
-          <i class="fa-solid fa-chalkboard-user"></i>
-          <h3>Llamados Docentes</h3>
-        </div>
-        <div class="llamados-list">
-          <div *ngFor="let item of llamadosDocentes" class="llamado-item" (click)="goToNews(item.url)">
-            <div class="llamado-content">
-              <span class="llamado-origen">{{ item.origen }}</span>
-              <h4 class="llamado-title">{{ item.title }}</h4>
-              <div class="llamado-footer">
-                <span class="llamado-info" *ngIf="item.info">{{ item.info }}</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-cyan-500/50"></i>
+    <!-- Concursos y Llamados (ANEP) -->
+    <div *ngIf="llamadosDocentes.length > 0 || llamadosNoDocentes.length > 0" class="mt-20">
+      <div class="portal-section-header">
+        <i class="fa-solid fa-bullhorn text-2xl text-[#0097D7]"></i>
+        <h2>Concursos y Llamados</h2>
+      </div>
+      
+      <div class="llamados-portal-grid">
+        <!-- Columna Docentes -->
+        <div class="llamados-card">
+          <div class="llamados-card-header">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <h3>Llamados Docentes</h3>
+          </div>
+          <div class="llamados-mini-list">
+            <div *ngFor="let item of llamadosDocentes.slice(0, 5)" class="llamado-mini-item" (click)="goToNews(item.url)">
+              <div class="llamado-mini-origen">{{ item.origen }}</div>
+              <h4 class="llamado-mini-title">{{ item.title }}</h4>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-[10px] text-cyan-600 font-bold bg-cyan-50 px-2 py-0.5 rounded" *ngIf="item.info">{{ item.info }}</span>
+                <i class="fa-solid fa-external-link text-slate-300 text-xs"></i>
               </div>
             </div>
+            <div *ngIf="llamadosDocentes.length === 0" class="text-center py-8 text-slate-400 italic">No hay llamados vigentes.</div>
           </div>
-          <div *ngIf="llamadosDocentes.length === 0" class="empty-column">No hay llamados docentes vigentes en la
-            portada.</div>
         </div>
-      </div>
 
-      <!-- Columna No Docentes -->
-      <div class="llamados-column">
-        <div class="column-header">
-          <i class="fa-solid fa-gears"></i>
-          <h3>Llamados No Docentes (Gestión)</h3>
-        </div>
-        <div class="llamados-list">
-          <div *ngFor="let item of llamadosNoDocentes" class="llamado-item" (click)="goToNews(item.url)">
-            <div class="llamado-content">
-              <span class="llamado-origen">{{ item.origen }}</span>
-              <h4 class="llamado-title">{{ item.title }}</h4>
-              <div class="llamado-footer">
-                <span class="llamado-info" *ngIf="item.info">{{ item.info }}</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-cyan-500/50"></i>
+        <!-- Columna No Docentes -->
+        <div class="llamados-card">
+          <div class="llamados-card-header">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Gestión y No Docentes</h3>
+          </div>
+          <div class="llamados-mini-list">
+            <div *ngFor="let item of llamadosNoDocentes.slice(0, 5)" class="llamado-mini-item" (click)="goToNews(item.url)">
+              <div class="llamado-mini-origen">{{ item.origen }}</div>
+              <h4 class="llamado-mini-title">{{ item.title }}</h4>
+              <div class="flex justify-between items-center mt-2">
+                <span class="text-[10px] text-cyan-600 font-bold bg-cyan-50 px-2 py-0.5 rounded" *ngIf="item.info">{{ item.info }}</span>
+                <i class="fa-solid fa-external-link text-slate-300 text-xs"></i>
               </div>
             </div>
+            <div *ngIf="llamadosNoDocentes.length === 0" class="text-center py-8 text-slate-400 italic">No hay llamados vigentes.</div>
           </div>
-          <div *ngIf="llamadosNoDocentes.length === 0" class="empty-column">No hay llamados de gestión vigentes en la
-            portada.</div>
         </div>
       </div>
-
     </div>
+
+  </ng-container>
+
+  <!-- Empty & Error States -->
+  <div *ngIf="!isLoading && newsItems.length === 0" class="loading-state">
+    <i class="fa-solid fa-circle-exclamation text-5xl mb-6 text-slate-300"></i>
+    <p class="text-xl font-light mb-8">No se pudieron cargar las noticias del portal.</p>
+    <button class="btn-retry" (click)="loadNews()">REINTENTAR CONEXIÓN</button>
   </div>
 
-  <!-- Loading & Empty States -->
-  <div *ngIf="newsItems.length === 0 && !isLoading" class="loading-state" role="status">
-    <i class="fa-solid fa-cloud-moon text-4xl mb-4" aria-hidden="true"></i>
-    <p>No se encontraron noticias recientes.</p>
-    <button class="btn-read-more mt-4" (click)="loadNews()">REINTENTAR</button>
-  </div>
-
-  <div *ngIf="isLoading" class="loading-state" role="status" aria-live="polite" aria-label="Cargando noticias">
-    <div class="spinner"></div>
-    <p>Consultando portales institucionales...</p>
-  </div>
 </div>

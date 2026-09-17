@@ -149,7 +149,7 @@
 .social-icons a:hover {
   background: var(--primary-color);
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 174, 239, 0.3);
+  box-shadow: 0 10px 20px rgba(var(--primary-color-rgb), 0.3);
 }
 
 /* Internos */

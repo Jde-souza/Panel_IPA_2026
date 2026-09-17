@@ -41,11 +41,26 @@ export interface CentroContacto {
   tipo: string; // IFD, CERP, IPES, etc.
 }
 
+export interface AgendaHorario {
+  dia: number;
+  hora: string;
+  salon: string;
+  grupo: string;
+  asignatura: string;
+}
+
 export interface AgendaItem {
   nombre: string;
   telefono1: string;
   telefono2: string;
   email: string;
+  especialidades?: string[];
+  asignaturas?: string[];
+  caracter?: string;
+  grupos?: string[];
+  isTachado?: boolean;
+  observacion?: string;
+  horarios?: AgendaHorario[];
 }
 
 export interface NewsItem {

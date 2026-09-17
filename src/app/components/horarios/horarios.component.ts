@@ -1,346 +1,157 @@
-import { Component, inject, signal, computed, OnInit } from '@angular/core';
-import { DataService, HorariosRoot, HorarioClase } from '../../data.service';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-interface SalonStatus {
-  nombre: string;
-  libre: boolean;
-  claseActual: { materia: string; hora: string; fin: string } | null;
-  proximaClase: { materia: string; hora: string } | null;
-  minutosRestantes: number;
-}
 
 @Component({
   selector: 'app-horarios',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './horarios.component.html',
-  styleUrl: './horarios.component.css'
+  templateUrl: './horarios.component.html'
 })
 export class HorariosComponent implements OnInit {
-  private dataService = inject(DataService);
+  isLoading = true;
+  error = '';
   
-  allHorarios = signal<HorariosRoot>({});
-  viewMode = signal<'grupo' | 'salon' | 'actividad'>('grupo');
-  semestre = signal<number>(1);
-  especialidad = signal<string>('');
-  grupo = signal<string>('');
-  salonSeleccionado = signal<string>('');
-  searchSalon = signal<string>('');
-  statusFilter = signal<'todos' | 'libres' | 'ocupados'>('todos');
-  turno = signal<string>('');
-
-  especialidades = computed(() => Object.keys(this.allHorarios()));
+  rawData: any = {};
   
-  salones = computed(() => {
-    const data = this.allHorarios();
-    const uniqueSalones = new Set<string>();
-
-    Object.values(data).forEach(esp => {
-      Object.values(esp).forEach(g => {
-        // Extraer de ambos semestres para tener la lista completa del IPA
-        const semKeys: ('sem1' | 'sem2')[] = ['sem1', 'sem2'];
-        semKeys.forEach(semKey => {
-          if (g[semKey]) {
-            g[semKey].forEach((c: HorarioClase) => {
-              let s = this.formatInfo(c.info).salon;
-              if (s && s.length > 2) {
-                // Limpieza: "SOLO 17 DE MARZO SALON 207" -> "SALON 207"
-                s = s.replace(/SOLO \d+ DE [A-Z]+ /i, '').replace(/\//g, '').trim();
-                // Normalizar: "SALON 5"
-                s = s.replace(/\s+/g, ' ');
-                if (s.toLowerCase() !== 'actualidad' && s.length > 2) {
-                  uniqueSalones.add(s.toUpperCase());
-                }
-              }
-            });
-          }
-        });
-      });
-    });
-    return Array.from(uniqueSalones).sort();
-  });
-
-  salonesFiltrados = computed(() => {
-    const s = this.searchSalon().toLowerCase();
-    const list = this.salones();
-    if (!s) return list;
-    return list.filter(name => name.toLowerCase().includes(s));
-  });
-
-  statusSalones = computed<SalonStatus[]>(() => {
-    const data = this.allHorarios();
-    const salonesList = this.salonesFiltrados();
-    const now = new Date();
-    const diaActual = now.getDay(); 
-    const currentTimeStr = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-    const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-    const filter = this.statusFilter();
-
-    const allStatus = salonesList.map(salon => {
-      let claseActual: any = null;
-      let proximaClase: any = null;
-      let minRestantes = 0;
-
-      // Solo procesar clases si es día de semana
-      if (diaActual >= 1 && diaActual <= 5) {
-        const todasLasClases: any[] = [];
-        Object.entries(data).forEach(([espName, esp]) => {
-          Object.entries(esp).forEach(([gName, g]) => {
-            if (g[semKey]) {
-              g[semKey].forEach(c => {
-                 let s = this.formatInfo(c.info).salon;
-                 if (s && s.length > 2) {
-                   s = s.replace(/SOLO \d+ DE [A-Z]+ /i, '').replace(/\//g, '').trim().toUpperCase();
-                   if (s === salon && c.dia === diaActual) {
-                      todasLasClases.push({ ...c, infoParsed: this.formatInfo(c.info), grupo: gName });
-                   }
-                 }
-              });
-            }
-          });
-        });
-
-        todasLasClases.sort((a, b) => a.hora.localeCompare(b.hora));
-
-        todasLasClases.forEach(c => {
-          if (!c.hora || !c.hora.includes('-')) return;
-          const [start, end] = c.hora.split('-');
-          if (!start || !end) return;
-
-          if (currentTimeStr >= start && currentTimeStr <= end) {
-            claseActual = { materia: c.infoParsed.materia, hora: c.hora, fin: end };
-            const timeParts = end.split(':');
-            if (timeParts.length === 2) {
-               const [hEnd, mEnd] = timeParts.map(Number);
-               const totalMinEnd = hEnd * 60 + mEnd;
-               const totalMinNow = now.getHours() * 60 + now.getMinutes();
-               minRestantes = totalMinEnd - totalMinNow;
-            }
-          } else if (currentTimeStr < start && !proximaClase) {
-            proximaClase = { materia: c.infoParsed.materia, hora: c.hora };
-          }
-        });
-      }
-
-      return {
-        nombre: salon,
-        libre: !claseActual,
-        claseActual,
-        proximaClase,
-        minutosRestantes: minRestantes
-      };
-    });
-
-    if (filter === 'libres') return allStatus.filter(s => s.libre);
-    if (filter === 'ocupados') return allStatus.filter(s => !s.libre);
-    return allStatus;
-  });
-
-  grupos = computed(() => {
-    const esp = this.especialidad();
-    const data = this.allHorarios();
-    const shiftFilter = this.turno();
-    if (!esp || !data[esp]) return [];
-
-    let list = Object.keys(data[esp]);
-    
-    if (shiftFilter) {
-      const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-      list = list.filter(gName => {
-        const clases = data[esp][gName][semKey] || [];
-        if (clases.length === 0) return false;
-        
-        // Detectar turno del grupo
-        // Mañana: clases que empiezan antes de las 12:00
-        // Tarde: clases que empiezan entre las 12:00 y las 18:00
-        // Noche: clases que empiezan después de las 18:00
-        const shifts = new Set<string>();
-        clases.forEach(c => {
-          const startStr = c.hora.split('-')[0];
-          if (!startStr) return;
-          const [h] = startStr.split(':').map(Number);
-          if (h < 12) shifts.add('Mañana');
-          else if (h < 18) shifts.add('Tarde');
-          else shifts.add('Noche');
-        });
-
-        return shifts.has(shiftFilter);
-      });
-    }
-
-    return list.sort();
-  });
-
-  franjasHorarias = computed(() => {
-    const esp = this.especialidad();
-    const g = this.grupo();
-    const data = this.allHorarios();
-    if (!esp || !g || !data[esp] || !data[esp][g]) return [];
-    
-    const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-    const clases = data[esp][g][semKey] || [];
-    const franjas = Array.from(new Set(clases.map(c => c.hora)));
-    
-    return franjas.sort((a, b) => a.localeCompare(b));
-  });
-
-  franjasHorariasS = computed(() => {
-    const s = this.salonSeleccionado();
-    const data = this.allHorarios();
-    if (!s) return [];
-    
-    const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-    const franjas = new Set<string>();
-
-    Object.values(data).forEach(esp => {
-      Object.values(esp).forEach(g => {
-        g[semKey].forEach(c => {
-          if (this.formatInfo(c.info).salon === s) {
-            franjas.add(c.hora);
-          }
-        });
-      });
-    });
-    
-    return Array.from(franjas).sort((a, b) => a.localeCompare(b));
-  });
+  especialidades: string[] = [];
+  selectedEsp: string = '';
+  
+  gruposAgrupados: { turno: string, grupos: string[] }[] = [];
+  selectedGrupo: string = '';
+  
+  semestre: 'sem1' | 'sem2' = 'sem1';
+  
+  dias = [1, 2, 3, 4, 5];
+  diasNombres = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+  horas: string[] = [];
+  
+  // grilla[hora][dia] = Array of class objects
+  grilla: { [hora: string]: { [dia: number]: any[] } } = {};
+  
+  clasesList: any[] = []; // Para vista móvil
 
   ngOnInit() {
-    this.dataService.getHorariosData().subscribe({
-      next: (data) => {
-        this.allHorarios.set(data);
-        if (this.especialidades().length > 0) {
-          this.setEspecialidad(this.especialidades()[0]);
-        }
-      },
-      error: (err) => console.error('Error loading horarios:', err)
-    });
+    this.loadData();
   }
 
-  setEspecialidad(esp: string) {
-    this.especialidad.set(esp);
-    const availableGroups = this.grupos();
-    if (availableGroups.length > 0) {
-      this.grupo.set(availableGroups[0]);
+  async loadData() {
+    try {
+      this.isLoading = true;
+      const res = await fetch('/data/horarios.json');
+      if (!res.ok) throw new Error('Error al cargar datos');
+      this.rawData = await res.json();
+      
+      this.especialidades = Object.keys(this.rawData).sort();
+    } catch (e: any) {
+      this.error = e.message;
+    } finally {
+      this.isLoading = false;
+    }
+  }
+
+  onEspChange() {
+    this.selectedGrupo = '';
+    if (this.selectedEsp) {
+      const allGroups = Object.keys(this.rawData[this.selectedEsp]).sort();
+      
+      const turnosMap: { [key: string]: string[] } = {
+        'Mañana': [],
+        'Tarde': [],
+        'Noche': [],
+        'Otros': []
+      };
+
+      allGroups.forEach(g => {
+        const groupData = this.rawData[this.selectedEsp][g];
+        // Collect all hours to determine shift
+        const clases = [...(groupData.sem1 || []), ...(groupData.sem2 || [])];
+        if (clases.length === 0) {
+           turnosMap['Otros'].push(g);
+           return;
+        }
+        
+        // Find earliest hour
+        let earliest = '23:59';
+        clases.forEach((c: any) => {
+          // Extraer la primera parte de la hora (ej: "08:00" de "08:00-08:45")
+          const horaInicio = c.hora ? c.hora.split('-')[0] : null;
+          if (horaInicio && horaInicio.localeCompare(earliest) < 0) {
+            earliest = horaInicio;
+          }
+        });
+        
+        const hourPrefix = parseInt(earliest.split(':')[0], 10);
+        
+        if (hourPrefix < 13) {
+          turnosMap['Mañana'].push(g);
+        } else if (hourPrefix < 18) {
+          turnosMap['Tarde'].push(g);
+        } else {
+          turnosMap['Noche'].push(g);
+        }
+      });
+      
+      this.gruposAgrupados = [
+        { turno: 'Mañana', grupos: turnosMap['Mañana'] },
+        { turno: 'Tarde', grupos: turnosMap['Tarde'] },
+        { turno: 'Noche', grupos: turnosMap['Noche'] },
+        { turno: 'Otros', grupos: turnosMap['Otros'] }
+      ].filter(t => t.grupos.length > 0);
+      
     } else {
-      this.grupo.set('');
+      this.gruposAgrupados = [];
     }
+    this.updateGrilla();
   }
-
-  setTurno(t: string) {
-    this.turno.set(t);
-    // Forzar actualización de grupo si el actual ya no está en la lista filtrada
-    setTimeout(() => {
-      const available = this.grupos();
-      if (available.length > 0 && !available.includes(this.grupo())) {
-        this.grupo.set(available[0]);
-      } else if (available.length === 0) {
-        this.grupo.set('');
-      }
-    });
+  
+  onGrupoChange() {
+    this.updateGrilla();
   }
-
-  clearFilters() {
-    this.searchSalon.set('');
-    this.statusFilter.set('todos');
-    this.turno.set('');
-    if (this.especialidades().length > 0) {
-      this.setEspecialidad(this.especialidades()[0]);
-    }
-    this.semestre.set(1);
+  
+  onSemestreChange(sem: 'sem1' | 'sem2') {
+    this.semestre = sem;
+    this.updateGrilla();
   }
-
-  getClassInfo(dia: number, hora: string): string | null {
-    const esp = this.especialidad();
-    const g = this.grupo();
-    const data = this.allHorarios();
-    if (!esp || !g || !data[esp] || !data[esp][g]) return null;
+  
+  updateGrilla() {
+    this.horas = [];
+    this.grilla = {};
+    this.clasesList = [];
     
-    const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-    const clases = data[esp][g][semKey] || [];
-    const clase = clases.find(c => c.dia === dia && c.hora === hora);
-    return clase ? clase.info : null;
-  }
+    if (!this.selectedEsp || !this.selectedGrupo) return;
+    
+    const groupData = this.rawData[this.selectedEsp][this.selectedGrupo];
+    if (!groupData) return;
 
-  getSalonInfo(dia: number, hora: string): string | null {
-    const s = this.salonSeleccionado();
-    const data = this.allHorarios();
-    if (!s) return null;
+    const clases = groupData[this.semestre] || [];
+    
+    // Lista ordenada para vista móvil
+    this.clasesList = [...clases].sort((a: any, b: any) => {
+      if (a.dia !== b.dia) return a.dia - b.dia;
+      return (a.hora || '').localeCompare(b.hora || '');
+    });
 
-    const semKey = this.semestre() === 1 ? 'sem1' : 'sem2';
-    let foundInfo = '';
-
-    Object.entries(data).some(([espName, esp]) => {
-      return Object.entries(esp).some(([gName, g]) => {
-        const clase = g[semKey].find(c => c.dia === dia && c.hora === hora && this.formatInfo(c.info).salon === s);
-        if (clase) {
-          foundInfo = `${clase.info}\nGrupo: ${gName}`;
-          return true;
-        }
-        return false;
+    const horasSet = new Set<string>();
+    clases.forEach((c: any) => {
+      if (c.hora) horasSet.add(c.hora);
+    });
+    
+    this.horas = Array.from(horasSet).sort();
+    
+    this.horas.forEach(h => {
+      this.grilla[h] = {};
+      this.dias.forEach(d => {
+        this.grilla[h][d] = clases.filter((c: any) => c.hora === h && c.dia === d);
       });
     });
-
-    return foundInfo || null;
+  }
+  
+  formatInfo(info: string): string[] {
+    return info ? info.split('\n').filter(l => l.trim() !== '') : [];
   }
 
-  formatInfo(info: string) {
-    if (!info) return { materia: '', docente: '', salon: '', grupo: '' };
-    const lines = info.split('\n');
-    let grupo = '';
-
-    // Buscar si hay una línea de grupo añadida por getSalonInfo
-    const groupLine = lines.find(l => l.startsWith('Grupo: '));
-    if (groupLine) {
-      grupo = groupLine.replace('Grupo: ', '');
-    }
-
-    // Detección inteligente de salón - MUCHO más estricta para evitar falsos positivos
-    let salon = '';
-    // Buscamos SALON, S. (con punto), o palabras clave específicas
-    // El prefijo S solo se acepta si es palabra completa y va seguido de dígitos
-    const salonMatch = info.match(/\b(SALON|S\.|AULA|LAB|LABORATORIO|SUM|ANFITEATRO|GIMNASIO|BIBLIOTECA)\b\s*([0-9A-Z\-\/]+)/i);
-    
-    // Caso especial para "S" sin punto (solo si es palabra suelta y sigue un número)
-    const sMatch = info.match(/\bS\s+(\d+)\b/i);
-
-    if (salonMatch) {
-      salon = salonMatch[0].replace(/\s+/g, ' ').trim();
-      // Normalizar
-      const prefix = salonMatch[1].toUpperCase();
-      if (prefix === 'S.' || prefix === 'S') {
-        salon = 'SALON ' + salonMatch[2].trim();
-      }
-    } else if (sMatch) {
-      salon = 'SALON ' + sMatch[1].trim();
-    } else if (lines.length > 2) {
-      // Si no hay match de palabra clave pero hay +2 líneas, asumimos que la 3ra es el salón
-      // Si es solo un número, le prefijamos SALON para que el usuario lo encuentre mejor
-      let candidate = lines[2].replace(/\s+/g, ' ').trim();
-      if (/^\d+$/.test(candidate)) {
-        salon = 'SALON ' + candidate;
-      } else {
-        salon = candidate;
-      }
-    }
-
-    return {
-      materia: lines[0] || '',
-      docente: lines[1] || '',
-      salon: salon.trim(),
-      grupo: grupo
-    };
-  }
-
-  get currentTime(): string {
-    const now = new Date();
-    return now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-  }
-
-  get currentDayName(): string {
-    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-    return days[new Date().getDay()];
+  getClasesForDay(dia: number): any[] {
+    return this.clasesList.filter(c => c.dia === dia);
   }
 }

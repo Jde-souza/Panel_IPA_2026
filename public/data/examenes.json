@@ -1,0 +1,1423 @@
+[
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "La educación y sus transformaciones en la Historia",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [
+      "FAGET Gustavo",
+      "LIMA Agustín",
+      "CARRERAS Andrea"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.4583333333333333",
+    "examen": "Informática",
+    "anio": "3°",
+    "plan": "2008",
+    "tribunal": [
+      "GONZÁLEZ Sebastián",
+      "BENÍTEZ Miguel",
+      "MUÑOZ Laura"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.4583333333333333",
+    "examen": "Tecnologías multimediales",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Investigación Educativa",
+    "anio": "3°",
+    "plan": "2008",
+    "tribunal": [
+      "MARSIGLIA Gianina",
+      "MILSTEIN Ariel",
+      "LUZARDO Cecilia"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lengua Extranjera I (Inglés)",
+    "anio": "4°",
+    "plan": "2023",
+    "tribunal": [
+      "BORJAS Celeste",
+      "BARDAS María",
+      "CUSTODIO Germán"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lengua Extranjera II (Inglés)",
+    "anio": "4°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lenguas Extranjeras (Inglés)",
+    "anio": "4°",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Problemas Epistemológicos y Pensamiento Científico",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [
+      "VIEIRA Ana",
+      "DUBOUÉ Ana",
+      "MOREIRA Ángel"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría del Conocimiento y Epistemología",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teorías Pedagógicas",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [
+      "RODRÍGUEZ Soledad",
+      "CORCELET Claudia",
+      "GUILLAMA Graciela"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Observación y Análisis de las Instituciones Educativas",
+    "anio": "1°",
+    "plan": "2008",
+    "tribunal": [
+      "ISQUIERDO Mónica",
+      "RODRÍGUEZ Edh",
+      "TOMEO Ana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Pedagogía II",
+    "anio": "2°",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.4375",
+    "examen": "Astronomía Fundamental y mecánica celeste",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "VIERA Emilio",
+      "ACOSTA Lourdes",
+      "ROLAND Santiago"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.4375",
+    "examen": "Elementos de Astronomía para Geografía",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Psicología de la educación",
+    "anio": "2º",
+    "plan": "2023",
+    "tribunal": [
+      "PALOMBO Fernanda",
+      "BENEDETTI Begoña",
+      "FERNÁNDEZ Leticia"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Psicología del desarrollo",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Legislación y Administración de la Enseñanza",
+    "anio": "3°",
+    "plan": "2008",
+    "tribunal": [
+      "CURBELO Lila",
+      "PALESO Christian",
+      "BRITO Alexandra"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "SEN: Políticas Educativas",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [
+      "AUYUANET Soraya"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lengua Española I",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [
+      "LAMBERT Adriana",
+      "LAVIANO Mónica",
+      "DÍAZ Roxana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lengua Española II",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geografía de los Países Periféricos",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "PÉREZ Inés",
+      "RODRÍGUEZ José",
+      "CORREA Patricia"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geografía Humana",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Imagen I",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "SCAGLIOLA Pablo",
+      "RÍOS Elisa",
+      "CARLE Susana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Imagen IV (Imagen A e Imagen B)",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Filosofía del Derecho",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "BENOIT Carina",
+      "LIMA Nicolás",
+      "PAREDES Pablo"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Sociología del Derecho",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Derecho Penal",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "CARRETTO SIlvia",
+      "VILLAR Gustavo",
+      "SABATOVICH Daniela"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Derecho Público I",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Economía",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "UMPIÉRREZ Mónica",
+      "VACCARI Liliana",
+      "AUYUANET Soraya"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Educación de la voz 2",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "ASUAGA Juan",
+      "CORRALES Carmen",
+      "TAZZI Letizia"
+    ],
+    "salones": "No se encuentra la materia"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lingüística (Literatura)",
+    "anio": "1°",
+    "plan": "2023/2008",
+    "tribunal": [
+      "GOMES María José",
+      "MONTENEGRO Yamila",
+      "CABAKIAN Adriana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lingüística II (Español)",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lingüística III (Español)",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Educación, sociedad y cultura",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [
+      "DOMÍNGUEZ Luis",
+      "DA SILVEIRA Sylvia",
+      "GALVALISI Daniel"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Sociología de la Educación I: Teoría Sociológica",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Sociología de la Educación",
+    "anio": "2°",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Filosofía de la Educación",
+    "anio": "3º",
+    "plan": "2023",
+    "tribunal": [
+      "ARIAS Rafaela",
+      "BERNASSA Juan",
+      "FERNÁNDEZ Marcelo"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geografía física I",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "DE LOS SANTOS Miralba",
+      "PIZARRO Mónica",
+      "ANTONI Mariángeles"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geografía física II",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teorías y Métodos de la Geografía",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "VILELA Maida",
+      "FARÍAS Daniel",
+      "SÁNCHEZ Wilson"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Termodinámica y nociones de electromagnetismo para Astronomía",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [
+      "SUÁREZ Álvaro",
+      "PERINETTI Leticia",
+      "MACHÍN Leonardo"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia del Derecho",
+    "anio": "1º",
+    "plan": "Ref. 2026",
+    "tribunal": [
+      "COITINHO Virginia",
+      "PAREDES Pablo",
+      "MÁRQUEZ Jorge"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia del pensamiento político y social",
+    "anio": "1º",
+    "plan": "Ref. 2026",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Ciencia Política",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Introducción al cálculo",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "ZAPATTINI Annabella",
+      "GONZÁLEZ Facundo",
+      "MILANO Adrián"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Análisis I",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Matemática para Química",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "PINTOS Karina"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Matemática 1 y 2 para Física",
+    "anio": "1º/2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Aspectos Prácticos de la enseñanza del Inglés I",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "DANTAZ Nicolás",
+      "MARCENARO Gabriela",
+      "ALONSO Mercedes"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Aspectos Prácticos de la enseñanza del Inglés II",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Cultura y civilización de los países angloparlantes 2",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "RODRÍGUEZ Aldo",
+      "MOLINARI Cecilia",
+      "CUSTODIO Germán"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Biología Celular",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "SHABLICO Diana",
+      "OLAVE Eugenia",
+      "HARISPE Laura"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Microbiología",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Biología Animal I",
+    "anio": "3º",
+    "plan": "2023",
+    "tribunal": [
+      "VARELA Gabriela",
+      "FERRANDO Gustavo",
+      "BEROCAY Jennifer"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Zoología 1",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Zoología 2",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Diseño III",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "CORA Leonardo",
+      "VERGARA Álbaro",
+      "CABRERA Fernando"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Seminario de Derecho Procesal",
+    "anio": "4º",
+    "plan": "2023",
+    "tribunal": [
+      "MORALES Alejandro",
+      "VILLAR Gustavo",
+      "GALVALISI Daniel"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Derecho Público IV",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "LOMBARDO Soledad"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Derecho laboral",
+    "anio": "3°",
+    "plan": "2008",
+    "tribunal": [
+      "MIERES Patricia",
+      "BARTHE Laura",
+      "VACCARI Liliana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Acústica",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "GONZÁLEZ Gerardo",
+      "MENEGUZZI Miguel",
+      "TELECHEA José"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura Grecolatina (Español y Literatura)",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "MOREIRA Augusto",
+      "DELBENE Lucía",
+      "RODRÍGUEZ Beatriz"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Ética",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "PIASER María",
+      "SORIA Luciana",
+      "BURGUES Christian"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Filosofía teórica",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "NIGRO Guillermo",
+      "MOLINA Miguel",
+      "IRISARRI Martín"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Epistemología",
+    "anio": "2°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Metafísica",
+    "anio": "3º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Gramática Española (Español y Literatura)",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [
+      "CARROCIO Macarena",
+      "TAIBO Marcelo",
+      "CARDOZO Santiago"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría Gramatical II (Español y Literatura)",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría Gramatical III",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Gramática Histórica II",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "BACIGALUPE Fiorella",
+      "PIPPOLO Cristina",
+      "GONZÁLEZ María José"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de las ideas en Latinoamérica",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "SUÁREZ Fernando",
+      "INZAURRALDE Héctor",
+      "CORTI Aníbal"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura iberoamericana 1",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "SANGUINETTI Néstor",
+      "ALBERNAZ Daniel",
+      "GEROLAMI Cecilia"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fundamentos I",
+    "anio": "1°",
+    "plan": "2023",
+    "tribunal": [
+      "COLOMBO Alejo",
+      "CHARBONNIER Diego",
+      "TEJERA Mathias"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geometría y Álgebra Lineal I",
+    "anio": "2º",
+    "plan": "2023",
+    "tribunal": [
+      "BESSONART Lucía",
+      "FRANCO Gustavo",
+      "VASSALLO Julio"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Bioquímica e introducción a la farmacología",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "ORTEGA Andrea",
+      "PILATTI Pierina",
+      "RODRÍGUEZ Álvaro"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Introduccion a la fonetica y fonologia",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "BOYADJI Juan",
+      "BUGNA María Helena",
+      "POMIÉS Sabrina"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fonética y Fonología I",
+    "anio": "2º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fonética y Fonología 3",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría de las Artes Visuales I",
+    "anio": "3°",
+    "plan": "2008",
+    "tribunal": [
+      "BORGES María",
+      "VERGARA Álvaro",
+      "COUSTE Valeria"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Genética",
+    "anio": "2°",
+    "plan": "2023/2008",
+    "tribunal": [
+      "HARISPE Laura",
+      "SHABLICO Diana",
+      "LÓPEZ Silvana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.3958333333333333",
+    "examen": "Botánica 1",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "SUÁREZ Diego",
+      "LEONI Elsa",
+      "CALIXTO Gabriel"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.3958333333333333",
+    "examen": "Botánica 2",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura Uruguaya 2",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "SANGUINETTI Néstor",
+      "ALBERNAZ Daniel",
+      "ALBARADO Juan"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Probabilidad y Estadística",
+    "anio": "3º",
+    "plan": "2023",
+    "tribunal": [
+      "SIERRA Mario",
+      "OLESKER Luciana",
+      "POSADA Juan"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Física para Química",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "BENÍTEZ Verónica",
+      "SIMÓ Marcelo",
+      "SERRÓN Lucía"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de la Historiografía hasta el siglo XVIII (inclusive)",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [
+      "LÓPEZ Guadalupe",
+      "CASSINELLI Marcelo",
+      "LARROBLA Carla"
+    ],
+    "salones": "No se encuentra la materia"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura II (Inglés)",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "FRADE Virginia",
+      "CUSTODIO Germán",
+      "LUCAS María José"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Lingüística II (Inglés)",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura Medieval y Renacentista",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "REVELLO Álvaro",
+      "DELBENE Lucía",
+      "MARRERO Carmela"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Literatura en Lengua Española",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "PANISELLO Claudia",
+      "SACCO Carolina"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geometría y Álgebra Lineal II",
+    "anio": "2º",
+    "plan": "2023",
+    "tribunal": [
+      "VASSALLO Julio",
+      "CHARBONNIER Diego",
+      "FRANCO Gustavo"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fundamentos II",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Geometría",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "ESPANTOSO Fernando",
+      "MAUFINET Jeannine",
+      "DALCÍN Mario"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Topología",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "CASTAGNA Horacio",
+      "MOLFINO Verónica",
+      "BRISSET Jorge"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia Universal II",
+    "anio": "2º",
+    "plan": "1986",
+    "tribunal": [
+      "BRANDON Yanelin",
+      "DEVOTO Marina",
+      "PRISCAL Richard"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Prehistoria e historia antigua",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.5625",
+    "examen": "Historia, Arte y Sociedad en Francia I",
+    "anio": "1º",
+    "plan": "2016",
+    "tribunal": [
+      "LA BUONORA Adriana",
+      "LESSA Soledad",
+      "VANISKOVA Alena"
+    ],
+    "salones": "ACTA MANUAL"
+  },
+  {
+    "dia": "",
+    "hora": "HORA",
+    "examen": "EXAMEN",
+    "anio": "AÑO",
+    "plan": "PLAN",
+    "tribunal": [
+      "TRIBUNAL"
+    ],
+    "salones": "SALONES"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Biología Humana",
+    "anio": "2º",
+    "plan": "2023/2008",
+    "tribunal": [
+      "PEREIRA Carolina",
+      "PERENDONES Alfonso",
+      "MUSSO Daniela"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fisiología Humana",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de la Filosofía Antigua y Medieval",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "CALCAGNO Daniel",
+      "MOREIRA Nicolás",
+      "SALINA Carla"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de la Filosofía medieval",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Metodología de la Investigación Literaria",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [
+      "SOSA Gabriela",
+      "MARTCHENKO Stefan",
+      "VIDAL Yanina"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría Literaria 2",
+    "anio": "2°",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría Literaria 3",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fisicoquímica 1",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "ÁLVAREZ Andrés",
+      "ALVES Claudia",
+      "BENTANCUR Gustavo"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Fisicoquímica 2",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Civilizaciones Actuales y Globalización",
+    "anio": "1º",
+    "plan": "2023",
+    "tribunal": [
+      "ROMERO Líber",
+      "CASSINELLI Marcelo",
+      "XICART Maximiliano"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia Universal III",
+    "anio": "3º",
+    "plan": "1986",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia Universal IV",
+    "anio": "4º",
+    "plan": "1986",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia Contemporánea de 1914 a nuestros días",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia Universal S. XX y XXI",
+    "anio": "4º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de América de 1830 a 1930",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [
+      "REDES Soledad",
+      "BARUSSO Carina",
+      "PERA Silvana"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de América de 1930 a nuestros días",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Prehistoria e Historia de América y del Río de la Plata",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Las Artes Visuales en la Prehistoria e Historia Antigua",
+    "anio": "1º",
+    "plan": "2008",
+    "tribunal": [
+      "LEONE Verónica",
+      "MENÉNDEZ Gonzalo",
+      "ZITO Maximiliano"
+    ],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Las Artes Visuales desde la Edad Media al Barroco",
+    "anio": "2º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de las Artes Visuales en el siglo XX",
+    "anio": "4º",
+    "plan": "2008",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Artes y lenguajes contemporáneos",
+    "anio": "3º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Teoría de las Artes Visuales II",
+    "anio": "4°",
+    "plan": "2008",
+    "tribunal": [
+      "BORGES María",
+      "VERGARA Álvaro",
+      "COUSTE Valeria"
+    ],
+    "salones": ""
+  }
+]

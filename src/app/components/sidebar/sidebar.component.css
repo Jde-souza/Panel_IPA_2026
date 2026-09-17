@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-light);
+  padding: 30px 20px;
 }
 
 .logo-compact {
@@ -22,7 +25,7 @@
   justify-content: center;
   font-weight: 800;
   font-size: 0.8rem;
-  box-shadow: 0 4px 12px rgba(0, 174, 239, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .logo-text {
@@ -30,6 +33,57 @@
   font-size: 1.1rem;
   color: var(--text-heading);
   letter-spacing: -0.5px;
+}
+
+/* Dual CTA Group */
+.cta-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  flex: 1;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+}
+
+/* Primary Color (SGE) */
+.cta-btn.primary {
+  background: linear-gradient(135deg, var(--primary-color), #008fcc);
+  color: white;
+  box-shadow: 0 8px 20px rgba(var(--primary-color-rgb), 0.25);
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(var(--primary-color-rgb), 0.3);
+  filter: brightness(1.05);
+}
+
+/* Secondary Style (IPA) */
+.cta-btn.secondary {
+  background: var(--surface-alt);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+
+.cta-btn.secondary:hover {
+  transform: translateY(-2px);
+  background: var(--surface);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
 }
 
 .nav-section {
@@ -74,13 +128,15 @@
 }
 
 .nav-link.active {
-  background: var(--primary-color);
-  color: white;
-  box-shadow: 0 8px 20px rgba(0, 174, 239, 0.25);
+  background: var(--surface-alt);
+  color: var(--primary-color);
+  box-shadow: none;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 4px 12px 12px 4px; /* Adjusted to emphasize the left border */
 }
 
 .nav-link.active i {
-  color: white;
+  color: var(--primary-color);
 }
 
 .version-tag {
