@@ -397,7 +397,7 @@
     "anio": "1°",
     "plan": "2023",
     "tribunal": [
-      "DOMÍNGUEZ Luis",
+      "BIASSINI Eduardo",
       "DA SILVEIRA Sylvia",
       "GALVALISI Daniel"
     ],
@@ -796,7 +796,7 @@
       "TAIBO Marcelo",
       "CARDOZO Santiago"
     ],
-    "salones": ""
+    "salones": "11"
   },
   {
     "dia": "",
@@ -827,7 +827,7 @@
       "PIPPOLO Cristina",
       "GONZÁLEZ María José"
     ],
-    "salones": ""
+    "salones": "230"
   },
   {
     "dia": "",
@@ -840,7 +840,7 @@
       "INZAURRALDE Héctor",
       "CORTI Aníbal"
     ],
-    "salones": ""
+    "salones": "216"
   },
   {
     "dia": "",
@@ -853,7 +853,7 @@
       "ALBERNAZ Daniel",
       "GEROLAMI Cecilia"
     ],
-    "salones": ""
+    "salones": "224"
   },
   {
     "dia": "",
@@ -866,7 +866,7 @@
       "CHARBONNIER Diego",
       "TEJERA Mathias"
     ],
-    "salones": ""
+    "salones": "OBSERVATORIO"
   },
   {
     "dia": "",
@@ -879,7 +879,7 @@
       "FRANCO Gustavo",
       "VASSALLO Julio"
     ],
-    "salones": ""
+    "salones": "217"
   },
   {
     "dia": "",
@@ -892,7 +892,7 @@
       "PILATTI Pierina",
       "RODRÍGUEZ Álvaro"
     ],
-    "salones": ""
+    "salones": "LAB QUIM 2"
   },
   {
     "dia": "",
@@ -986,6 +986,15 @@
   },
   {
     "dia": "",
+    "hora": "0.3958333333333333",
+    "examen": "Biología Vegetal II",
+    "anio": "4º",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
+  },
+  {
+    "dia": "",
     "hora": "0.375",
     "examen": "Literatura Uruguaya 2",
     "anio": "4º",
@@ -1008,7 +1017,7 @@
       "OLESKER Luciana",
       "POSADA Juan"
     ],
-    "salones": ""
+    "salones": "230"
   },
   {
     "dia": "",
@@ -1047,7 +1056,7 @@
       "CUSTODIO Germán",
       "LUCAS María José"
     ],
-    "salones": ""
+    "salones": "216"
   },
   {
     "dia": "",
@@ -1080,7 +1089,7 @@
       "DELBENE Lucía",
       "MARRERO Carmela"
     ],
-    "salones": ""
+    "salones": "230"
   },
   {
     "dia": "",
@@ -1092,7 +1101,7 @@
       "PANISELLO Claudia",
       "SACCO Carolina"
     ],
-    "salones": ""
+    "salones": "216"
   },
   {
     "dia": "",
@@ -1105,7 +1114,7 @@
       "CHARBONNIER Diego",
       "FRANCO Gustavo"
     ],
-    "salones": ""
+    "salones": "SUM"
   },
   {
     "dia": "",
@@ -1127,7 +1136,7 @@
       "MAUFINET Jeannine",
       "DALCÍN Mario"
     ],
-    "salones": ""
+    "salones": "4"
   },
   {
     "dia": "",
@@ -1140,7 +1149,7 @@
       "MOLFINO Verónica",
       "BRISSET Jorge"
     ],
-    "salones": ""
+    "salones": "LEXO"
   },
   {
     "dia": "",
@@ -1153,7 +1162,7 @@
       "DEVOTO Marina",
       "PRISCAL Richard"
     ],
-    "salones": ""
+    "salones": "ANFITEATRO"
   },
   {
     "dia": "",
@@ -1243,7 +1252,7 @@
       "MARTCHENKO Stefan",
       "VIDAL Yanina"
     ],
-    "salones": ""
+    "salones": "103"
   },
   {
     "dia": "",
@@ -1274,7 +1283,7 @@
       "ALVES Claudia",
       "BENTANCUR Gustavo"
     ],
-    "salones": ""
+    "salones": "223"
   },
   {
     "dia": "",
@@ -1337,14 +1346,23 @@
   {
     "dia": "",
     "hora": "0.375",
-    "examen": "Historia de América de 1830 a 1930",
-    "anio": "3º",
+    "examen": "Historia de América en los siglos XVI, XVII y XVIII (hasta 1830)",
+    "anio": "2°",
     "plan": "2008",
     "tribunal": [
       "REDES Soledad",
       "BARUSSO Carina",
       "PERA Silvana"
     ],
+    "salones": "109"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "Historia de América de 1830 a 1930",
+    "anio": "3º",
+    "plan": "2008",
+    "tribunal": [],
     "salones": ""
   },
   {
@@ -1376,7 +1394,7 @@
       "MENÉNDEZ Gonzalo",
       "ZITO Maximiliano"
     ],
-    "salones": ""
+    "salones": "SUM"
   },
   {
     "dia": "",
@@ -1416,6 +1434,6 @@
       "VERGARA Álvaro",
       "COUSTE Valeria"
     ],
-    "salones": ""
+    "salones": "230"
   }
 ]
