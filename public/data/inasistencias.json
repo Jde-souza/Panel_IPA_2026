@@ -8055,6 +8055,30 @@
     ]
   },
   {
+    "timestamp": "23/9/2026 19:24:01",
+    "email": "ajpicon@gmail.com",
+    "nombre": "Alberto",
+    "apellido": "Picón",
+    "inicio": "23/9/2026",
+    "fin": "23/10/2026",
+    "grupos": "1°C Literatura; 1°B Español; 3°A Química; 3° Español semipresencial",
+    "asignaturas": [
+      "Gramática Española 1; Gramática Española 3; Investigación Educativa"
+    ]
+  },
+  {
+    "timestamp": "23/9/2026 23:43:43",
+    "email": "andrea.aquino1976@gmail.com",
+    "nombre": "Andrea",
+    "apellido": "Aquino",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "2do Ab, 3ro Aa - Literatura ",
+    "asignaturas": [
+      "Didáctica I y Didáctica II"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
