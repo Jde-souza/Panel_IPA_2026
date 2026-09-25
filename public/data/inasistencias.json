@@ -8079,6 +8079,42 @@
     ]
   },
   {
+    "timestamp": "24/9/2026 14:02:08",
+    "email": "gdarosasuarez@gmail.com",
+    "nombre": "Gabriela",
+    "apellido": "da Rosa",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3ro A inglés",
+    "asignaturas": [
+      "Didáctica II"
+    ]
+  },
+  {
+    "timestamp": "24/9/2026 17:30:20",
+    "email": "malenasf@gmail.com",
+    "nombre": "Malena",
+    "apellido": "Sánchez",
+    "inicio": "5/10/2026",
+    "fin": "2/10/2026",
+    "grupos": "2do A matemática y 4to b CV + Esp",
+    "asignaturas": [
+      "Pensamiento computacional e Investigación educativa II"
+    ]
+  },
+  {
+    "timestamp": "24/9/2026 17:31:54",
+    "email": "malenasf@gmail.com",
+    "nombre": "Malena",
+    "apellido": "Sánchez",
+    "inicio": "3/11/2026",
+    "fin": "7/11/2026",
+    "grupos": "2do A matemática y 4to B CV + Español",
+    "asignaturas": [
+      "Pensamiento computacional e Investigación Educativa II"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
