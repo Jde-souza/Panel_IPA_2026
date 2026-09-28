@@ -824,7 +824,7 @@
     "plan": "2008",
     "tribunal": [
       "BACIGALUPE Fiorella",
-      "PIPPOLO Cristina",
+      "MOREIRA Luis Augusto",
       "GONZÁLEZ María José"
     ],
     "salones": "230"
@@ -1099,7 +1099,8 @@
     "plan": "2008",
     "tribunal": [
       "PANISELLO Claudia",
-      "SACCO Carolina"
+      "NÚÑEZ Patricia",
+      "RODRÍGUEZ Claudia"
     ],
     "salones": "216"
   },
@@ -1355,6 +1356,15 @@
       "PERA Silvana"
     ],
     "salones": "109"
+  },
+  {
+    "dia": "",
+    "hora": "0.375",
+    "examen": "AMÉRICA LATINA DE 1830 A COMIENZOS DEL SIGLO XXI",
+    "anio": "3°",
+    "plan": "2023",
+    "tribunal": [],
+    "salones": ""
   },
   {
     "dia": "",
