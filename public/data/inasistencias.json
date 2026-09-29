@@ -8301,7 +8301,7 @@
     "apellido": "Buzó",
     "inicio": "28/9/2026",
     "fin": "30/9/2026",
-    "grupos": "2 y 3 danza ",
+    "grupos": "2 y 3 C Danza ",
     "asignaturas": [
       "Metodología de la danza 2 y 3"
     ]
@@ -8349,9 +8349,153 @@
     "apellido": "Inetti",
     "inicio": "28/9/2026",
     "fin": "2/10/2026",
-    "grupos": "4tob Geografía-Música. Historia-Literatura/ 1ro. A Idioma Español.",
+    "grupos": "4toB Geografía-Música. Historia-Literatura/ 1ro. A Idioma Español.",
     "asignaturas": [
       "Investigación Educativa II, La ed. y sus transf. en la Historia."
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 7:48:18",
+    "email": "anitafortes@gmail.com",
+    "nombre": "Ana",
+    "apellido": "Fortes",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "Examen ",
+    "asignaturas": [
+      "Gal I"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 8:38:46",
+    "email": "biodidactika@gmail.com",
+    "nombre": "Patricia",
+    "apellido": "Kuzma",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "Cs. Biológicas 4ºBa",
+    "asignaturas": [
+      "Didáctica III"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 9:02:43",
+    "email": "ceciliacaraballo.jm@gmail.com",
+    "nombre": "Cecilia",
+    "apellido": "Caraballo",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3ro A Comunicación Visual",
+    "asignaturas": [
+      "Teorías y Medios de la Visualidad."
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 9:04:02",
+    "email": "ceciliacaraballo.jm@gmail.com",
+    "nombre": "Cecilia",
+    "apellido": "Caraballo",
+    "inicio": "2/10/2026",
+    "fin": "2/10/2026",
+    "grupos": "3ro A Comunicación Visual",
+    "asignaturas": [
+      "Teorías y Medios de la visualidad"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 9:42:53",
+    "email": "arqlopezgiordano@gmail.com",
+    "nombre": "Maria José",
+    "apellido": "López Giordano",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "4A Comunicación Visual ",
+    "asignaturas": [
+      "Diseño4"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 10:51:38",
+    "email": "marcelocassinellibalsamo@gmail.com",
+    "nombre": "Marcelo",
+    "apellido": "Cassinelli",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "1ºB_ Historia",
+    "asignaturas": [
+      "Civilizaciones actuales y Globalización"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 10:52:42",
+    "email": "marcelocassinellibalsamo@gmail.com",
+    "nombre": "Marcelo",
+    "apellido": "Cassinelli",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "1ºB",
+    "asignaturas": [
+      "De las Primeras civilizaciones a la Edad Moderna"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 11:54:47",
+    "email": "elenagarcia823@gmail.com",
+    "nombre": "Elena",
+    "apellido": "GARCIA",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3c",
+    "asignaturas": [
+      "Dificultades de aprendizaje"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 12:14:56",
+    "email": "adrigomdir@gmail.com",
+    "nombre": "Adriana",
+    "apellido": "Gómez",
+    "inicio": "2/10/2026",
+    "fin": "2/10/2026",
+    "grupos": "2°DA: Física+Id.Español y 2°DA: Literatura",
+    "asignaturas": [
+      "Pensamiento Computacional"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 12:23:17",
+    "email": "sara29981@gmail.com",
+    "nombre": "Sara",
+    "apellido": "Alvarez",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "2ºB Filosofía/Inglés",
+    "asignaturas": [
+      "Pensamiento computacional"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 14:05:44",
+    "email": "cecilialuzardogz@gmail.com",
+    "nombre": "CECILIA",
+    "apellido": "LUZARDO",
+    "inicio": "2/10/2026",
+    "fin": "2/10/2026",
+    "grupos": "3ERO INGLE- ID. ESP",
+    "asignaturas": [
+      "INVESTIGACION EDUCATIVA I"
+    ]
+  },
+  {
+    "timestamp": "29/9/2026 14:14:05",
+    "email": "mcoccom@gmail.com",
+    "nombre": "Mariana",
+    "apellido": "Cocco",
+    "inicio": "29/9/2026",
+    "fin": "29/9/2026",
+    "grupos": "Optativa ",
+    "asignaturas": [
+      "CINEDUCA"
     ]
   },
   {
