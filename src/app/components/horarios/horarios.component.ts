@@ -65,8 +65,11 @@ export class HorariosComponent implements OnInit {
         }
         
         this.rawData[row.especialidad][row.grupo][s].push({
+          id: row.id,
           dia: parseInt(row.dia, 10),
           hora: row.hora_inicio && row.hora_fin ? `${row.hora_inicio}-${row.hora_fin}` : row.hora_inicio || '',
+          hora_inicio: row.hora_inicio,
+          hora_fin: row.hora_fin,
           materia: row.materia,
           docente: row.docente,
           salon: row.salon
@@ -213,6 +216,7 @@ export class HorariosComponent implements OnInit {
   // --- Modal Logic ---
   showModal = false;
   isSaving = false;
+  editingId: number | null = null;
   newRecord: any = {
     especialidad: '',
     semestre: 'sem1',
@@ -225,14 +229,30 @@ export class HorariosComponent implements OnInit {
     salon: ''
   };
 
-  openModal() {
+  openModal(item?: any) {
     this.showModal = true;
-    this.newRecord = {
-      especialidad: this.selectedEsp || '',
-      semestre: this.semestre,
-      grupo: this.selectedGrupo || '',
-      materia: '', docente: '', dia: '1', hora_inicio: '', hora_fin: '', salon: ''
-    };
+    if (item && item.id) {
+      this.editingId = item.id;
+      this.newRecord = {
+        especialidad: this.selectedEsp || '',
+        semestre: this.semestre,
+        grupo: this.selectedGrupo || '',
+        materia: item.materia || '',
+        docente: item.docente || '',
+        dia: item.dia ? item.dia.toString() : '1',
+        hora_inicio: item.hora_inicio || '',
+        hora_fin: item.hora_fin || '',
+        salon: item.salon || ''
+      };
+    } else {
+      this.editingId = null;
+      this.newRecord = {
+        especialidad: this.selectedEsp || '',
+        semestre: this.semestre,
+        grupo: this.selectedGrupo || '',
+        materia: '', docente: '', dia: '1', hora_inicio: '', hora_fin: '', salon: ''
+      };
+    }
   }
 
   getMateriasForNewRecord(): string[] {
@@ -250,10 +270,15 @@ export class HorariosComponent implements OnInit {
   async saveRecord() {
     try {
       this.isSaving = true;
-      await firstValueFrom(this.dataService.saveHorario(this.newRecord));
+      if (this.editingId) {
+        await firstValueFrom(this.dataService.updateHorario(this.editingId, this.newRecord));
+        this.alertService.success('Horario actualizado exitosamente');
+      } else {
+        await firstValueFrom(this.dataService.saveHorario(this.newRecord));
+        this.alertService.success('Horario guardado exitosamente');
+      }
       
       this.closeModal();
-      this.alertService.success('Horario guardado exitosamente');
       await this.loadData();
       if (this.selectedEsp) this.onEspChange();
     } catch (e: any) {
@@ -261,6 +286,21 @@ export class HorariosComponent implements OnInit {
       this.alertService.error('Error al guardar: ' + e.message);
     } finally {
       this.isSaving = false;
+    }
+  }
+
+  async deleteRecord(id?: number) {
+    if (!id) return;
+    if (confirm('¿Estás seguro de que deseas eliminar este horario?')) {
+      try {
+        await firstValueFrom(this.dataService.deleteHorario(id));
+        this.alertService.success('Horario eliminado exitosamente');
+        await this.loadData();
+        if (this.selectedEsp) this.onEspChange();
+      } catch (e: any) {
+        console.error(e);
+        this.alertService.error('Error al eliminar: ' + e.message);
+      }
     }
   }
 }

@@ -197,4 +197,18 @@ export class ExamenesComponent implements OnInit {
       this.isSaving = false;
     }
   }
+
+  async deleteRecord(id?: number) {
+    if (!id) return;
+    if (confirm('¿Estás seguro de que deseas eliminar este examen?')) {
+      try {
+        await firstValueFrom(this.dataService.deleteExamen(id));
+        this.alertService.success('Examen eliminado exitosamente');
+        await this.loadExamenes();
+      } catch (e: any) {
+        console.error(e);
+        this.alertService.error('Error al eliminar: ' + e.message);
+      }
+    }
+  }
 }

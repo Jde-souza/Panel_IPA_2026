@@ -6,6 +6,7 @@ import { firstValueFrom } from 'rxjs';
 import { AlertService } from '../../services/alert.service';
 
 interface Inasistencia {
+  id?: number;
   timestamp: string;
   email: string;
   nombre: string;
@@ -52,6 +53,7 @@ export class InasistenciasComponent implements OnInit {
       
       // Mapear los datos de la base de datos a la interfaz esperada por el frontend
       const data: Inasistencia[] = (dbData as any[]).map((row: any) => ({
+        id: row.id,
         timestamp: row.marca_temporal || row.timestamp,
         email: row.email,
         nombre: row.nombre,
@@ -159,6 +161,7 @@ export class InasistenciasComponent implements OnInit {
   // --- Modal Logic ---
   showModal = false;
   isSaving = false;
+  editingId: number | null = null;
   newRecord: any = {
     nombre: '',
     apellido: '',
@@ -170,9 +173,24 @@ export class InasistenciasComponent implements OnInit {
     causal: ''
   };
 
-  openModal() {
+  openModal(item?: Inasistencia) {
     this.showModal = true;
-    this.newRecord = { nombre: '', apellido: '', email: '', inicio: '', fin: '', grupos: '', asignaturasStr: '', causal: '' };
+    if (item && item.id) {
+      this.editingId = item.id;
+      this.newRecord = {
+        nombre: item.nombre || '',
+        apellido: item.apellido || '',
+        email: item.email || '',
+        inicio: item.inicio || '',
+        fin: item.fin || '',
+        grupos: item.grupos || '',
+        asignaturasStr: (item.asignaturas || []).join(', '),
+        causal: item.causal || ''
+      };
+    } else {
+      this.editingId = null;
+      this.newRecord = { nombre: '', apellido: '', email: '', inicio: '', fin: '', grupos: '', asignaturasStr: '', causal: '' };
+    }
   }
 
   closeModal() {
@@ -201,16 +219,35 @@ export class InasistenciasComponent implements OnInit {
         marca_temporal: new Date().toISOString()
       };
 
-      await firstValueFrom(this.dataService.saveInasistencia(payload));
+      if (this.editingId) {
+        await firstValueFrom(this.dataService.updateInasistencia(this.editingId, payload));
+        this.alertService.success('Inasistencia actualizada correctamente');
+      } else {
+        await firstValueFrom(this.dataService.saveInasistencia(payload));
+        this.alertService.success('Inasistencia registrada correctamente');
+      }
       
       this.closeModal();
-      this.alertService.success('Inasistencia registrada correctamente');
       await this.loadData(); // Recargar datos
     } catch (e: any) {
       console.error(e);
       this.alertService.error('Error al guardar: ' + e.message);
     } finally {
       this.isSaving = false;
+    }
+  }
+
+  async deleteRecord(id?: number) {
+    if (!id) return;
+    if (confirm('¿Estás seguro de que deseas eliminar este registro de inasistencia?')) {
+      try {
+        await firstValueFrom(this.dataService.deleteInasistencia(id));
+        this.alertService.success('Inasistencia eliminada exitosamente');
+        await this.loadData();
+      } catch (e: any) {
+        console.error(e);
+        this.alertService.error('Error al eliminar: ' + e.message);
+      }
     }
   }
 }

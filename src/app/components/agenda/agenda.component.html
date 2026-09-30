@@ -79,15 +79,24 @@
           </div>
         </div>
 
-        <!-- Botón Abrir Detalles -->
-        <button (click)="openModal(item); $event.stopPropagation()" 
-          class="mt-4 text-xs font-bold flex items-center gap-2 py-2 px-3 rounded-lg transition-all hover-bounce"
-          style="background: rgba(var(--primary-color-rgb), 0.05); color: var(--primary-color)">
-          Ver horarios y detalles
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+        <!-- Botones de Acción -->
+        <div class="mt-4 flex flex-wrap gap-2 justify-between items-center">
+          <button (click)="openModal(item); $event.stopPropagation()" 
+            class="text-xs font-bold flex items-center gap-2 py-2 px-3 rounded-lg transition-all hover-bounce"
+            style="background: rgba(var(--primary-color-rgb), 0.05); color: var(--primary-color)">
+            Ver horarios y detalles
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
 
-      </div>
+          <div class="flex gap-1" (click)="$event.stopPropagation()">
+            <button (click)="openAddModal(item)" class="w-8 h-8 flex items-center justify-center rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-colors shadow-sm" style="color: var(--primary-color);" title="Editar Contacto">
+              <i class="fa-solid fa-pen text-xs"></i>
+            </button>
+            <button (click)="deleteRecord(item.id, $event)" class="w-8 h-8 flex items-center justify-center rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 hover:text-red-500 transition-colors shadow-sm" style="color: var(--text-muted);" title="Eliminar Contacto">
+              <i class="fa-solid fa-trash-can text-xs"></i>
+            </button>
+          </div>
+        </div>
     </div>
   </div>
 </div>
@@ -223,7 +232,7 @@
 <div *ngIf="showAddModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 fade-in" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);">
   <div class="glass-card w-full max-w-2xl !p-0 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
     <div class="px-6 py-4 border-b flex justify-between items-center" style="border-color: var(--border-color); background: var(--bg-light);">
-      <h3 class="text-xl font-bold" style="color: var(--text-heading)">Agregar Contacto Docente</h3>
+      <h3 class="text-xl font-bold" style="color: var(--text-heading)">{{ editingId ? 'Editar' : 'Agregar' }} Contacto Docente</h3>
       <button (click)="closeAddModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors" style="color: var(--text-muted)">
         <i class="fa-solid fa-xmark"></i>
       </button>

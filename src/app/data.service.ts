@@ -50,6 +50,7 @@ export interface AgendaHorario {
 }
 
 export interface AgendaItem {
+  id?: number;
   nombre: string;
   telefono1: string;
   telefono2: string;
@@ -92,6 +93,7 @@ export interface HorariosRoot {
 }
 
 export interface InasistenciaDocente {
+  id?: number;
   timestamp: string;
   nombre: string;
   apellido: string;
@@ -530,6 +532,9 @@ export class DataService {
   updateAgenda(id: string | number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/agenda/${id}`, data);
   }
+  deleteAgenda(id: string | number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/agenda/${id}`);
+  }
 
   getNewsData(): Observable<NewsItem[]> {
     return this.http.get<NewsItem[]>('data/news.json');
@@ -548,6 +553,9 @@ export class DataService {
   updateInasistencia(id: string | number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/inasistencias/${id}`, data);
   }
+  deleteInasistencia(id: string | number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/inasistencias/${id}`);
+  }
 
   getHorariosData(): Observable<any[]> {
     // Retorna la data plana de la base de datos
@@ -559,6 +567,9 @@ export class DataService {
   updateHorario(id: string | number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/horarios/${id}`, data);
   }
+  deleteHorario(id: string | number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/horarios/${id}`);
+  }
 
   getExamenesData(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/examenes`);
@@ -568,6 +579,9 @@ export class DataService {
   }
   updateExamen(id: string | number, data: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/examenes/${id}`, data);
+  }
+  deleteExamen(id: string | number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/examenes/${id}`);
   }
 
   // Configuración

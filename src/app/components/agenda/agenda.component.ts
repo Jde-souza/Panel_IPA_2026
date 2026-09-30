@@ -152,6 +152,7 @@ export class AgendaComponent implements OnInit {
   // --- Add Modal Logic ---
   showAddModal = false;
   isSaving = false;
+  editingId: number | null = null;
   newRecord: any = {
     nombre: '',
     telefono1: '',
@@ -161,11 +162,24 @@ export class AgendaComponent implements OnInit {
     gruposStr: ''
   };
 
-  openAddModal() {
+  openAddModal(itemToEdit?: AgendaItem) {
     this.showAddModal = true;
-    this.newRecord = {
-      nombre: '', telefono1: '', email: '', especialidadesStr: '', asignaturasStr: '', gruposStr: ''
-    };
+    if (itemToEdit && itemToEdit.id) {
+      this.editingId = itemToEdit.id;
+      this.newRecord = {
+        nombre: itemToEdit.nombre || '',
+        telefono1: itemToEdit.telefono1 || '',
+        email: itemToEdit.email || '',
+        especialidadesStr: (itemToEdit.especialidades || []).join(', '),
+        asignaturasStr: (itemToEdit.asignaturas || []).join(', '),
+        gruposStr: (itemToEdit.grupos || []).join(', ')
+      };
+    } else {
+      this.editingId = null;
+      this.newRecord = {
+        nombre: '', telefono1: '', email: '', especialidadesStr: '', asignaturasStr: '', gruposStr: ''
+      };
+    }
   }
 
   closeAddModal() {
@@ -190,18 +204,51 @@ export class AgendaComponent implements OnInit {
       horarios: []
     };
 
-    this.dataService.saveAgenda(payload).subscribe({
-      next: () => {
-        this.closeAddModal();
-        this.alertService.success('Contacto guardado exitosamente');
-        this.ngOnInit(); // Reload data
-        this.isSaving = false;
-      },
-      error: (err) => {
-        console.error(err);
-        this.alertService.error('Error al guardar: ' + err.message);
-        this.isSaving = false;
-      }
-    });
+    if (this.editingId) {
+      this.dataService.updateAgenda(this.editingId, payload).subscribe({
+        next: () => {
+          this.closeAddModal();
+          this.alertService.success('Contacto actualizado exitosamente');
+          this.ngOnInit(); // Reload data
+          this.isSaving = false;
+        },
+        error: (err) => {
+          console.error(err);
+          this.alertService.error('Error al actualizar: ' + err.message);
+          this.isSaving = false;
+        }
+      });
+    } else {
+      this.dataService.saveAgenda(payload).subscribe({
+        next: () => {
+          this.closeAddModal();
+          this.alertService.success('Contacto guardado exitosamente');
+          this.ngOnInit(); // Reload data
+          this.isSaving = false;
+        },
+        error: (err) => {
+          console.error(err);
+          this.alertService.error('Error al guardar: ' + err.message);
+          this.isSaving = false;
+        }
+      });
+    }
+  }
+
+  deleteRecord(id?: number, event?: Event) {
+    if (event) event.stopPropagation();
+    if (!id) return;
+    if (confirm('¿Estás seguro de que deseas eliminar este contacto?')) {
+      this.dataService.deleteAgenda(id).subscribe({
+        next: () => {
+          this.alertService.success('Contacto eliminado exitosamente');
+          this.ngOnInit();
+        },
+        error: (err) => {
+          console.error(err);
+          this.alertService.error('Error al eliminar: ' + err.message);
+        }
+      });
+    }
   }
 }
