@@ -15,81 +15,137 @@
   <i class="fa-solid fa-circle-notch fa-spin text-4xl" style="color: var(--primary-color)"></i>
 </div>
 
-<div *ngIf="!isLoading" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-  <!-- General Config -->
-  <div class="glass-card flex flex-col h-full">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
-        <i class="fa-solid fa-sliders text-lg"></i>
+<div *ngIf="!isLoading" class="mt-8">
+  <!-- Tabs Navigation -->
+  <div class="flex gap-2 overflow-x-auto pb-4 mb-6" style="border-bottom: 1px solid var(--border-color);">
+    <button (click)="activeTab = 'general'" class="px-5 py-2.5 rounded-t-xl font-bold transition-colors whitespace-nowrap"
+            [ngStyle]="activeTab === 'general' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
+      <i class="fa-solid fa-sliders mr-2"></i> General
+    </button>
+    <button (click)="activeTab = 'especialidades'" class="px-5 py-2.5 rounded-t-xl font-bold transition-colors whitespace-nowrap"
+            [ngStyle]="activeTab === 'especialidades' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
+      <i class="fa-solid fa-book mr-2"></i> Especialidades
+    </button>
+    <button (click)="activeTab = 'salones'" class="px-5 py-2.5 rounded-t-xl font-bold transition-colors whitespace-nowrap"
+            [ngStyle]="activeTab === 'salones' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
+      <i class="fa-solid fa-door-open mr-2"></i> Salones
+    </button>
+  </div>
+
+  <!-- Tab: General -->
+  <div *ngIf="activeTab === 'general'" class="fade-in space-y-8">
+    <div class="glass-card">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+          <i class="fa-solid fa-calendar-days text-lg"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold" style="color: var(--text-heading)">Configuración Principal</h3>
+          <p class="text-sm mt-1" style="color: var(--text-muted)">Parámetros base para listados y horarios.</p>
+        </div>
       </div>
-      <h3 class="text-xl font-bold" style="color: var(--text-heading)">General</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-bold mb-2" style="color: var(--text-main)">Año Lectivo Actual</label>
+          <input type="text" [(ngModel)]="config.anoLectivo" 
+                 class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                 style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-2" style="color: var(--text-main)">Semestre Actual</label>
+          <select [(ngModel)]="config.semestreActual"
+                  class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all appearance-none"
+                  style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+            <option value="sem1">Primer Semestre (1)</option>
+            <option value="sem2">Segundo Semestre (2)</option>
+          </select>
+        </div>
+      </div>
     </div>
-    
-    <div class="space-y-6 flex-grow">
-      <div>
-        <label class="block text-sm font-bold mb-2" style="color: var(--text-main)">Año Lectivo Actual</label>
-        <input type="text" [(ngModel)]="config.anoLectivo" 
-               class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
-               style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-        <p class="text-xs mt-1" style="color: var(--text-muted)">Usado por defecto en listados y exportaciones.</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Planes de Estudio -->
+      <div class="glass-card flex flex-col h-full">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold" style="color: var(--text-heading)">Planes de Estudio</h3>
+        </div>
+        
+        <div class="flex-grow flex flex-col">
+          <p class="text-sm mb-3" style="color: var(--text-muted)">Ingresa un plan por línea (ej: Plan 2023). Disponibles al agregar Exámenes.</p>
+          <textarea [(ngModel)]="config.planes" rows="6"
+                    class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none flex-grow custom-scrollbar"
+                    style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);"></textarea>
+        </div>
       </div>
 
-      <div>
-        <label class="block text-sm font-bold mb-2" style="color: var(--text-main)">Semestre Actual</label>
-        <select [(ngModel)]="config.semestreActual"
-                class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all appearance-none"
-                style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-          <option value="sem1">Primer Semestre (1)</option>
-          <option value="sem2">Segundo Semestre (2)</option>
-        </select>
-        <p class="text-xs mt-1" style="color: var(--text-muted)">Determina qué horarios se muestran por defecto.</p>
+      <!-- Causales de Inasistencia -->
+      <div class="glass-card flex flex-col h-full">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+            <i class="fa-solid fa-user-slash text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold" style="color: var(--text-heading)">Causales de Inasistencia</h3>
+        </div>
+        
+        <div class="flex-grow flex flex-col">
+          <p class="text-sm mb-3" style="color: var(--text-muted)">Ingresa un causal por línea (ej: Art. 70).</p>
+          <textarea [(ngModel)]="config.causales" rows="6"
+                    class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none flex-grow custom-scrollbar"
+                    style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);"></textarea>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Especialidades -->
-  <div class="glass-card flex flex-col h-full lg:col-span-2">
-    <div class="flex justify-between items-start mb-6">
+  <!-- Tab: Especialidades -->
+  <div *ngIf="activeTab === 'especialidades'" class="fade-in glass-card flex flex-col min-h-[60vh]">
+    <div class="flex justify-between items-start mb-6 border-b pb-4" style="border-color: var(--border-color)">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
           <i class="fa-solid fa-book text-lg"></i>
         </div>
         <div>
           <h3 class="text-xl font-bold" style="color: var(--text-heading)">Especialidades y Materias</h3>
-          <p class="text-sm mt-1" style="color: var(--text-muted)">Categorías y subcategorías de estudio.</p>
+          <p class="text-sm mt-1" style="color: var(--text-muted)">Administra las categorías de estudio.</p>
         </div>
       </div>
-      <button (click)="openEspModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--surface); color: var(--primary-color); border: 1px solid var(--border-color);">
+      <button (click)="openEspModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--primary-color); color: white;">
         <i class="fa-solid fa-plus"></i> Nueva Especialidad
       </button>
     </div>
     
     <div class="flex-grow flex flex-col">
-      <div *ngIf="especialidades.length === 0" class="py-8 text-center" style="color: var(--text-muted)">
-        <i class="fa-solid fa-folder-open text-3xl opacity-30 mb-2"></i>
-        <p>No hay especialidades registradas.</p>
+      <div *ngIf="especialidades.length === 0" class="py-16 text-center" style="color: var(--text-muted)">
+        <i class="fa-solid fa-folder-open text-5xl opacity-20 mb-4"></i>
+        <p class="text-lg font-medium">No hay especialidades registradas.</p>
       </div>
 
-      <div *ngIf="especialidades.length > 0" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div *ngIf="especialidades.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div *ngFor="let esp of especialidades; let i = index" 
-             class="border rounded-xl p-4 transition-all hover:-translate-y-1 cursor-pointer group"
+             class="border rounded-2xl p-5 transition-all hover:shadow-lg cursor-pointer group relative overflow-hidden"
              style="border-color: var(--border-color); background: var(--bg-body);"
              (click)="openEspModal(i)">
-          <div class="flex justify-between items-start mb-2">
-            <h4 class="font-bold text-lg" style="color: var(--text-heading)">{{ esp.nombre }}</h4>
-            <button (click)="deleteEspecialidad(i, $event)" class="w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500">
-              <i class="fa-solid fa-trash-can"></i>
+          
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ esp.nombre }}</h4>
+            <button (click)="deleteEspecialidad(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500 shadow-sm bg-white border" style="border-color: var(--border-color)">
+              <i class="fa-solid fa-trash-can text-xs"></i>
             </button>
           </div>
-          <div class="flex flex-wrap gap-1.5 mt-2">
-            <span *ngFor="let mat of esp.materias | slice:0:3" class="px-2 py-0.5 text-xs rounded bg-gray-200 text-gray-700 font-medium" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
+          <div class="flex flex-wrap gap-2">
+            <span *ngFor="let mat of esp.materias | slice:0:3" class="px-3 py-1 text-xs rounded-lg font-bold" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
               {{ mat }}
             </span>
-            <span *ngIf="esp.materias.length > 3" class="px-2 py-0.5 text-xs rounded bg-gray-200 text-gray-700 font-medium opacity-70" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
+            <span *ngIf="esp.materias.length > 3" class="px-3 py-1 text-xs rounded-lg font-bold opacity-70" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
               +{{ esp.materias.length - 3 }} más
             </span>
             <span *ngIf="esp.materias.length === 0" class="text-xs italic opacity-50" style="color: var(--text-muted)">
-              Sin materias
+              Sin materias asignadas
             </span>
           </div>
         </div>
@@ -97,43 +153,9 @@
     </div>
   </div>
 
-  <!-- Planes de Estudio -->
-  <div class="glass-card flex flex-col h-full">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
-        <i class="fa-solid fa-graduation-cap text-lg"></i>
-      </div>
-      <h3 class="text-xl font-bold" style="color: var(--text-heading)">Planes de Estudio</h3>
-    </div>
-    
-    <div class="flex-grow flex flex-col">
-      <p class="text-sm mb-3" style="color: var(--text-muted)">Ingresa un plan por línea (ej: Plan 2023). Disponibles al agregar Exámenes.</p>
-      <textarea [(ngModel)]="config.planes" rows="6"
-                class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none flex-grow custom-scrollbar"
-                style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);"></textarea>
-    </div>
-  </div>
-
-  <!-- Causales de Inasistencia -->
-  <div class="glass-card flex flex-col h-full">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
-        <i class="fa-solid fa-user-slash text-lg"></i>
-      </div>
-      <h3 class="text-xl font-bold" style="color: var(--text-heading)">Causales de Inasistencia</h3>
-    </div>
-    
-    <div class="flex-grow flex flex-col">
-      <p class="text-sm mb-3" style="color: var(--text-muted)">Ingresa un causal por línea (ej: Art. 70).</p>
-      <textarea [(ngModel)]="config.causales" rows="6"
-                class="w-full px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none flex-grow custom-scrollbar"
-                style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);"></textarea>
-    </div>
-  </div>
-
-  <!-- Salones -->
-  <div class="glass-card flex flex-col h-full lg:col-span-2">
-    <div class="flex justify-between items-start mb-6">
+  <!-- Tab: Salones -->
+  <div *ngIf="activeTab === 'salones'" class="fade-in glass-card flex flex-col min-h-[60vh]">
+    <div class="flex justify-between items-start mb-6 border-b pb-4" style="border-color: var(--border-color)">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
           <i class="fa-solid fa-door-open text-lg"></i>
@@ -143,45 +165,44 @@
           <p class="text-sm mt-1" style="color: var(--text-muted)">Aulas, laboratorios y espacios comunes.</p>
         </div>
       </div>
-      <button (click)="openSalonModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--surface); color: var(--primary-color); border: 1px solid var(--border-color);">
+      <button (click)="openSalonModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--primary-color); color: white;">
         <i class="fa-solid fa-plus"></i> Nuevo Salón
       </button>
     </div>
     
     <div class="flex-grow flex flex-col">
-      <div *ngIf="salones.length === 0" class="py-8 text-center" style="color: var(--text-muted)">
-        <i class="fa-solid fa-door-closed text-3xl opacity-30 mb-2"></i>
-        <p>No hay salones registrados.</p>
+      <div *ngIf="salones.length === 0" class="py-16 text-center" style="color: var(--text-muted)">
+        <i class="fa-solid fa-door-closed text-5xl opacity-20 mb-4"></i>
+        <p class="text-lg font-medium">No hay salones registrados.</p>
       </div>
 
-      <div *ngIf="salones.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div *ngIf="salones.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <div *ngFor="let s of salones; let i = index" 
-             class="border rounded-xl p-4 transition-all hover:-translate-y-1 cursor-pointer group flex flex-col"
+             class="border rounded-2xl p-5 transition-all hover:shadow-lg cursor-pointer group flex flex-col relative overflow-hidden"
              style="border-color: var(--border-color); background: var(--bg-body);"
              (click)="openSalonModal(i)">
           
-          <div class="flex justify-between items-start mb-3">
-            <h4 class="font-bold text-lg" style="color: var(--text-heading)">{{ s.nombre }}</h4>
-            <button (click)="deleteSalon(i, $event)" class="w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500">
-              <i class="fa-solid fa-trash-can"></i>
+          <div class="flex justify-between items-start mb-4">
+            <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ s.nombre }}</h4>
+            <button (click)="deleteSalon(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500 shadow-sm bg-white border" style="border-color: var(--border-color)">
+              <i class="fa-solid fa-trash-can text-xs"></i>
             </button>
           </div>
           
-          <div class="flex-grow space-y-2 text-sm" style="color: var(--text-muted)">
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-layer-group w-4 text-center opacity-70"></i>
-              <span>Piso: {{ s.piso || 'N/D' }}</span>
+          <div class="flex-grow space-y-3 text-sm" style="color: var(--text-muted)">
+            <div class="flex items-center gap-3">
+              <div class="w-6 text-center opacity-50"><i class="fa-solid fa-layer-group"></i></div>
+              <span class="font-medium">Piso: {{ s.piso || 'N/D' }}</span>
             </div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-users w-4 text-center opacity-70"></i>
-              <span>Capacidad: {{ s.capacidad ? s.capacidad + ' pers.' : 'N/D' }}</span>
+            <div class="flex items-center gap-3">
+              <div class="w-6 text-center opacity-50"><i class="fa-solid fa-users"></i></div>
+              <span class="font-medium">Capacidad: {{ s.capacidad ? s.capacidad + ' pers.' : 'N/D' }}</span>
             </div>
-            <div class="flex items-start gap-2" *ngIf="s.recursos">
-              <i class="fa-solid fa-plug w-4 text-center opacity-70 mt-1"></i>
-              <span class="text-xs line-clamp-2 leading-tight">{{ s.recursos }}</span>
+            <div class="flex items-start gap-3 pt-3 border-t" style="border-color: var(--border-color)" *ngIf="s.recursos">
+              <div class="w-6 text-center opacity-50"><i class="fa-solid fa-plug"></i></div>
+              <span class="text-xs line-clamp-2 leading-tight font-medium">{{ s.recursos }}</span>
             </div>
           </div>
-
         </div>
       </div>
     </div>

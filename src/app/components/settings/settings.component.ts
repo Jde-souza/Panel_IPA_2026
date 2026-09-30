@@ -29,6 +29,7 @@ export class SettingsComponent implements OnInit {
 
   isLoading = true;
   isSaving = false;
+  activeTab = 'general';
 
   config = {
     anoLectivo: '2026',
