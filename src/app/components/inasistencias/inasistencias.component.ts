@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../data.service';
+import { firstValueFrom } from 'rxjs';
+import { AlertService } from '../../services/alert.service';
 
 interface Inasistencia {
   timestamp: string;
@@ -12,6 +15,7 @@ interface Inasistencia {
   grupos: string;
   asignaturas: string[];
   isToday?: boolean;
+  causal?: string;
 }
 
 @Component({
@@ -28,6 +32,7 @@ export class InasistenciasComponent implements OnInit {
   error = '';
   searchTerm = '';
   activeFilter: 'all' | 'today' | 'multiple' = 'all';
+  causalesList: string[] = [];
 
   // KPIs
   totalRegistros = 0;
@@ -38,21 +43,39 @@ export class InasistenciasComponent implements OnInit {
     this.loadData();
   }
 
+  private dataService = inject(DataService);
+
   async loadData() {
     try {
       this.isLoading = true;
-      const response = await fetch('/data/inasistencias.json');
-      if (!response.ok) throw new Error('Error al cargar datos');
+      const dbData = await firstValueFrom(this.dataService.getInasistenciasData());
       
-      const data: Inasistencia[] = await response.json();
+      // Mapear los datos de la base de datos a la interfaz esperada por el frontend
+      const data: Inasistencia[] = (dbData as any[]).map((row: any) => ({
+        timestamp: row.marca_temporal || row.timestamp,
+        email: row.email,
+        nombre: row.nombre,
+        apellido: row.apellido,
+        inicio: row.fecha_inicio || row.inicio,
+        fin: row.fecha_fin || row.fin,
+        grupos: row.grupos,
+        causal: row.causal,
+        asignaturas: [row.asignatura1, row.asignatura2, row.asignatura3, row.asignatura4].filter(Boolean)
+      }));
       
-      // Ordenar por fecha más reciente (usando el timestamp original si es posible, o simplemente invirtiendo porque google forms los agrega al final)
-      this.inasistencias = data.reverse();
+      this.inasistencias = data; // Ya vienen ordenados descendentemente desde el backend
       
       this.calculateStats();
       this.filterData();
+
+      // Load config for modal dropdowns
+      const config = await firstValueFrom(this.dataService.getConfiguracion());
+      if (config.causales) {
+        this.causalesList = Array.isArray(config.causales) ? config.causales : config.causales.split('\n').filter(Boolean);
+      }
     } catch (e: any) {
       this.error = e.message;
+      console.error('Error conectando al backend. Asegúrate de tener el servidor corriendo en localhost:3000', e);
     } finally {
       this.isLoading = false;
     }
@@ -131,5 +154,63 @@ export class InasistenciasComponent implements OnInit {
     }
 
     this.filteredInasistencias = filtered;
+  }
+
+  // --- Modal Logic ---
+  showModal = false;
+  isSaving = false;
+  newRecord: any = {
+    nombre: '',
+    apellido: '',
+    email: '',
+    inicio: '',
+    fin: '',
+    grupos: '',
+    asignaturasStr: '', // comma separated input
+    causal: ''
+  };
+
+  openModal() {
+    this.showModal = true;
+    this.newRecord = { nombre: '', apellido: '', email: '', inicio: '', fin: '', grupos: '', asignaturasStr: '', causal: '' };
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+  private alertService = inject(AlertService);
+
+  async saveRecord() {
+    try {
+      this.isSaving = true;
+      const asignaturasArray = this.newRecord.asignaturasStr.split(',').map((s: string) => s.trim()).filter(Boolean);
+      
+      const payload = {
+        nombre: this.newRecord.nombre,
+        apellido: this.newRecord.apellido,
+        email: this.newRecord.email,
+        fecha_inicio: this.newRecord.inicio,
+        fecha_fin: this.newRecord.fin,
+        grupos: this.newRecord.grupos,
+        asignatura1: asignaturasArray[0] || '',
+        asignatura2: asignaturasArray[1] || '',
+        asignatura3: asignaturasArray[2] || '',
+        asignatura4: asignaturasArray[3] || '',
+        causal: this.newRecord.causal,
+        marca_temporal: new Date().toISOString()
+      };
+
+      await firstValueFrom(this.dataService.saveInasistencia(payload));
+      
+      this.closeModal();
+      this.alertService.success('Inasistencia registrada correctamente');
+      await this.loadData(); // Recargar datos
+    } catch (e: any) {
+      console.error(e);
+      this.alertService.error('Error al guardar: ' + e.message);
+    } finally {
+      this.isSaving = false;
+    }
   }
 }

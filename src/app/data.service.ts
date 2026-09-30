@@ -519,8 +519,16 @@ export class DataService {
     return grouped;
   }
 
+  private apiUrl = 'http://localhost:3000/api';
+
   getAgendaData(): Observable<AgendaItem[]> {
-    return this.http.get<AgendaItem[]>('data/agenda.json');
+    return this.http.get<AgendaItem[]>(`${this.apiUrl}/agenda`);
+  }
+  saveAgenda(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/agenda`, data);
+  }
+  updateAgenda(id: string | number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/agenda/${id}`, data);
   }
 
   getNewsData(): Observable<NewsItem[]> {
@@ -532,10 +540,41 @@ export class DataService {
   }
 
   getInasistenciasData(): Observable<InasistenciaDocente[]> {
-    return this.http.get<InasistenciaDocente[]>('data/inasistencias.json');
+    return this.http.get<InasistenciaDocente[]>(`${this.apiUrl}/inasistencias`);
+  }
+  saveInasistencia(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/inasistencias`, data);
+  }
+  updateInasistencia(id: string | number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/inasistencias/${id}`, data);
   }
 
-  getHorariosData(): Observable<HorariosRoot> {
-    return this.http.get<HorariosRoot>('data/horarios.json');
+  getHorariosData(): Observable<any[]> {
+    // Retorna la data plana de la base de datos
+    return this.http.get<any[]>(`${this.apiUrl}/horarios`);
+  }
+  saveHorario(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/horarios`, data);
+  }
+  updateHorario(id: string | number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/horarios/${id}`, data);
+  }
+
+  getExamenesData(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/examenes`);
+  }
+  saveExamen(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/examenes`, data);
+  }
+  updateExamen(id: string | number, data: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/examenes/${id}`, data);
+  }
+
+  // Configuración
+  getConfiguracion(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/configuracion`);
+  }
+  saveConfiguracion(data: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/configuracion`, data);
   }
 }

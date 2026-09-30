@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../data.service';
+import { firstValueFrom } from 'rxjs';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-horarios',
@@ -9,6 +12,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './horarios.component.html'
 })
 export class HorariosComponent implements OnInit {
+  private dataService = inject(DataService);
+
   isLoading = true;
   error = '';
   
@@ -16,6 +21,9 @@ export class HorariosComponent implements OnInit {
   
   especialidades: string[] = [];
   selectedEsp: string = '';
+  
+  configEspecialidades: any[] = [];
+  configSalones: string[] = [];
   
   gruposAgrupados: { turno: string, grupos: string[] }[] = [];
   selectedGrupo: string = '';
@@ -38,13 +46,60 @@ export class HorariosComponent implements OnInit {
   async loadData() {
     try {
       this.isLoading = true;
-      const res = await fetch('/data/horarios.json');
-      if (!res.ok) throw new Error('Error al cargar datos');
-      this.rawData = await res.json();
+      const flatData = await firstValueFrom(this.dataService.getHorariosData());
+      
+      // Reconstruir la estructura esperada: rawData[especialidad][grupo][semestre] = []
+      this.rawData = {};
+      for (const row of flatData) {
+        if (!this.rawData[row.especialidad]) {
+          this.rawData[row.especialidad] = {};
+        }
+        if (!this.rawData[row.especialidad][row.grupo]) {
+          this.rawData[row.especialidad][row.grupo] = { sem1: [], sem2: [] };
+        }
+        
+        // El semestre viene como 'sem1' o 'sem2'
+        const s = row.semestre || 'sem1';
+        if (!this.rawData[row.especialidad][row.grupo][s]) {
+           this.rawData[row.especialidad][row.grupo][s] = [];
+        }
+        
+        this.rawData[row.especialidad][row.grupo][s].push({
+          dia: parseInt(row.dia, 10),
+          hora: row.hora_inicio && row.hora_fin ? `${row.hora_inicio}-${row.hora_fin}` : row.hora_inicio || '',
+          materia: row.materia,
+          docente: row.docente,
+          salon: row.salon
+        });
+      }
       
       this.especialidades = Object.keys(this.rawData).sort();
+
+      // Load Config for form dropdowns
+      const config = await firstValueFrom(this.dataService.getConfiguracion());
+      if (config.especialidades && Array.isArray(config.especialidades)) {
+        this.configEspecialidades = config.especialidades;
+        // Merge with existing ones if not present
+        config.especialidades.forEach((e: any) => {
+          if (!this.especialidades.includes(e.nombre)) {
+            this.especialidades.push(e.nombre);
+          }
+        });
+        this.especialidades.sort();
+      }
+      if (config.salones && Array.isArray(config.salones)) {
+         if (config.salones.length > 0 && typeof config.salones[0] === 'object') {
+           this.configSalones = config.salones.map((s: any) => s.nombre);
+         } else {
+           this.configSalones = config.salones;
+         }
+      } else if (config.salones) {
+         this.configSalones = config.salones.split('\n').filter(Boolean);
+      }
+
     } catch (e: any) {
       this.error = e.message;
+      console.error('Error conectando al backend en localhost:3000', e);
     } finally {
       this.isLoading = false;
     }
@@ -153,5 +208,59 @@ export class HorariosComponent implements OnInit {
 
   getClasesForDay(dia: number): any[] {
     return this.clasesList.filter(c => c.dia === dia);
+  }
+
+  // --- Modal Logic ---
+  showModal = false;
+  isSaving = false;
+  newRecord: any = {
+    especialidad: '',
+    semestre: 'sem1',
+    grupo: '',
+    materia: '',
+    docente: '',
+    dia: '1',
+    hora_inicio: '',
+    hora_fin: '',
+    salon: ''
+  };
+
+  openModal() {
+    this.showModal = true;
+    this.newRecord = {
+      especialidad: this.selectedEsp || '',
+      semestre: this.semestre,
+      grupo: this.selectedGrupo || '',
+      materia: '', docente: '', dia: '1', hora_inicio: '', hora_fin: '', salon: ''
+    };
+  }
+
+  getMateriasForNewRecord(): string[] {
+    if (!this.newRecord.especialidad) return [];
+    const esp = this.configEspecialidades.find(e => e.nombre === this.newRecord.especialidad);
+    return esp ? esp.materias : [];
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+  private alertService = inject(AlertService);
+
+  async saveRecord() {
+    try {
+      this.isSaving = true;
+      await firstValueFrom(this.dataService.saveHorario(this.newRecord));
+      
+      this.closeModal();
+      this.alertService.success('Horario guardado exitosamente');
+      await this.loadData();
+      if (this.selectedEsp) this.onEspChange();
+    } catch (e: any) {
+      console.error(e);
+      this.alertService.error('Error al guardar: ' + e.message);
+    } finally {
+      this.isSaving = false;
+    }
   }
 }

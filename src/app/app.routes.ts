@@ -6,6 +6,7 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { InasistenciasComponent } from './components/inasistencias/inasistencias.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,5 +17,6 @@ export const routes: Routes = [
   { path: 'inasistencias', component: InasistenciasComponent },
   { path: 'horarios', component: HorariosComponent },
   { path: 'examenes', component: ExamenesComponent },
+  { path: 'configuracion', component: SettingsComponent },
   { path: '**', redirectTo: 'home' }
 ];

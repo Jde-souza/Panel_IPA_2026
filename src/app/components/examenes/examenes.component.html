@@ -1,6 +1,11 @@
-<div class="section-header fade-in">
-  <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Dashboard de Exámenes</h2>
-  <p style="color: var(--text-muted); margin-top: 8px;">Consulta las fechas, horarios y tribunales en tiempo real.</p>
+<div class="section-header fade-in flex justify-between items-center flex-wrap gap-4">
+  <div>
+    <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Dashboard de Exámenes</h2>
+    <p style="color: var(--text-muted); margin-top: 8px;">Consulta las fechas, horarios y tribunales en tiempo real.</p>
+  </div>
+  <button (click)="openModal()" class="px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all hover:-translate-y-1" style="background: var(--primary-color); color: white;">
+    <i class="fa-solid fa-plus"></i> Nuevo Examen
+  </button>
 </div>
 
 <!-- Estado de Carga -->
@@ -142,11 +147,14 @@
             <div class="flex items-center font-bold" style="color: var(--primary-color);">
               <i class="fa-regular fa-clock mr-2"></i> {{ ex.hora || 'Sin definir' }}
             </div>
-            <div class="flex gap-2">
+            <div class="flex gap-2 items-center">
               <span *ngIf="ex.anio" class="px-2 py-1 text-[11px] font-bold rounded-md" 
                     style="background: rgba(var(--anep-blue-rgb), 0.1); color: var(--anep-blue); border: 1px solid rgba(var(--anep-blue-rgb), 0.2);">{{ ex.anio }}</span>
               <span *ngIf="ex.plan" class="px-2 py-1 text-[11px] font-bold rounded-md" 
                     style="background: rgba(var(--anep-yellow-rgb), 0.15); color: #b38f00; border: 1px solid rgba(var(--anep-yellow-rgb), 0.3);">P. {{ ex.plan }}</span>
+              <button (click)="openModal(ex)" class="w-7 h-7 flex items-center justify-center rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition-colors shadow-sm ml-1" style="color: var(--primary-color);" title="Editar Examen">
+                <i class="fa-solid fa-pen text-xs"></i>
+              </button>
             </div>
           </div>
 
@@ -184,6 +192,88 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<!-- Modal Glassmorphism para Examen -->
+<div *ngIf="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 fade-in" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);">
+  <div class="glass-card w-full max-w-2xl !p-0 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+    <div class="px-6 py-4 border-b flex justify-between items-center" style="border-color: var(--border-color); background: var(--bg-light);">
+      <h3 class="text-xl font-bold" style="color: var(--text-heading)">{{ editingId ? 'Editar' : 'Agregar' }} Examen</h3>
+      <button (click)="closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors" style="color: var(--text-muted)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <div class="p-6 overflow-y-auto" style="background: var(--bg-body)">
+      <form (ngSubmit)="saveRecord()" #form="ngForm" class="space-y-4">
+        
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Nombre del Examen / Materia</label>
+          <input type="text" [(ngModel)]="newRecord.examen" name="examen" required
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Día (ej: Lunes 15 de Marzo)</label>
+            <input type="text" [(ngModel)]="newRecord.dia" name="dia" required
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Hora (ej: 08:00)</label>
+            <input type="text" [(ngModel)]="newRecord.hora" name="hora" required
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Año</label>
+            <input type="text" [(ngModel)]="newRecord.anio" name="anio" placeholder="Ej: 1er Año"
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Plan</label>
+            <input type="text" [(ngModel)]="newRecord.plan" name="plan" placeholder="Ej: 2023"
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Tribunal (separados por coma)</label>
+          <input type="text" [(ngModel)]="newRecord.tribunalesStr" name="tribunalesStr" placeholder="Docente 1, Docente 2, Docente 3"
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Salones</label>
+          <input type="text" [(ngModel)]="newRecord.salones" name="salones" placeholder="A1, A2"
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div class="pt-4 border-t flex justify-end gap-3 mt-6" style="border-color: var(--border-color)">
+          <button type="button" (click)="closeModal()" class="px-4 py-2 rounded-xl font-bold transition-colors"
+                  style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color)">
+            Cancelar
+          </button>
+          <button type="submit" [disabled]="!form.valid || isSaving" 
+                  class="px-5 py-2 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none"
+                  style="background: var(--primary-color); color: white; min-width: 120px;">
+            <i *ngIf="isSaving" class="fa-solid fa-circle-notch fa-spin"></i>
+            <span *ngIf="!isSaving">Guardar</span>
+            <span *ngIf="isSaving">Guardando...</span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

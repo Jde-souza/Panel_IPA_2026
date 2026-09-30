@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataService, AgendaItem } from '../../data.service';
 import { AccessibilityService } from '../../services/accessibility.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-agenda',
@@ -146,5 +147,61 @@ export class AgendaComponent implements OnInit {
     // 1=Lun, 2=Mar...
     const days = ['', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
     return days[day] || '';
+  }
+
+  // --- Add Modal Logic ---
+  showAddModal = false;
+  isSaving = false;
+  newRecord: any = {
+    nombre: '',
+    telefono1: '',
+    email: '',
+    especialidadesStr: '',
+    asignaturasStr: '',
+    gruposStr: ''
+  };
+
+  openAddModal() {
+    this.showAddModal = true;
+    this.newRecord = {
+      nombre: '', telefono1: '', email: '', especialidadesStr: '', asignaturasStr: '', gruposStr: ''
+    };
+  }
+
+  closeAddModal() {
+    this.showAddModal = false;
+  }
+
+  private alertService = inject(AlertService);
+
+  saveRecord() {
+    this.isSaving = true;
+    const payload = {
+      nombre: this.newRecord.nombre,
+      telefono1: this.newRecord.telefono1,
+      telefono2: '',
+      email: this.newRecord.email,
+      especialidades: this.newRecord.especialidadesStr.split(',').map((s: string) => s.trim()).filter(Boolean),
+      asignaturas: this.newRecord.asignaturasStr.split(',').map((s: string) => s.trim()).filter(Boolean),
+      grupos: this.newRecord.gruposStr.split(',').map((s: string) => s.trim()).filter(Boolean),
+      caracter: '',
+      observacion: '',
+      isTachado: false,
+      horarios: []
+    };
+
+    this.dataService.saveAgenda(payload).subscribe({
+      next: () => {
+        this.closeAddModal();
+        this.alertService.success('Contacto guardado exitosamente');
+        this.ngOnInit(); // Reload data
+        this.isSaving = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.alertService.error('Error al guardar: ' + err.message);
+        this.isSaving = false;
+      }
+    });
   }
 }

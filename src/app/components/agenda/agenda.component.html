@@ -1,26 +1,31 @@
-<div class="section-header">
-  <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Agenda Docente</h2>
-  <p style="color: var(--text-muted); margin-top: 8px;">Directorio de contactos del Instituto de Profesores Artigas.</p>
+<div class="section-header flex justify-between items-start flex-wrap gap-4">
+  <div>
+    <h2 class="text-3xl font-bold" style="color: var(--text-heading)">Agenda Docente</h2>
+    <p style="color: var(--text-muted); margin-top: 8px;">Directorio de contactos del Instituto de Profesores Artigas.</p>
+  </div>
+  <button (click)="openAddModal()" class="px-5 py-2.5 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all hover:-translate-y-1" style="background: var(--primary-color); color: white;">
+    <i class="fa-solid fa-plus"></i> Nuevo Contacto
+  </button>
+</div>
 
-  <div class="mt-8 flex flex-col md:flex-row gap-4 items-center">
-    <div class="relative w-full max-w-md">
-      <span class="absolute inset-y-0 left-0 pl-3 flex items-center" style="color: var(--text-muted)">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </span>
-      <input type="text" [(ngModel)]="searchText" (ngModelChange)="filterData()"
-        aria-label="Buscar docente por nombre"
-        placeholder="Buscar docente por nombre..."
-        class="w-full pl-10 pr-10 py-3 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm transition-all"
-        style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-      <button *ngIf="searchText" (click)="searchText = ''; filterData()"
-        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: #eee; border: none; color: #333; cursor: pointer; padding: 2px 6px; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;"
-        aria-label="Borrar texto de búsqueda" title="Limpiar búsqueda">
-        <i class="fa-solid fa-xmark" style="font-size: 14px;"></i>
-      </button>
-    </div>
-    <div style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">
-      {{ filteredData.length }} registros encontrados
-    </div>
+<div class="mt-8 flex flex-col md:flex-row gap-4 items-center">
+  <div class="relative w-full max-w-md">
+    <span class="absolute inset-y-0 left-0 pl-3 flex items-center" style="color: var(--text-muted)">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+    <input type="text" [(ngModel)]="searchText" (ngModelChange)="filterData()"
+      aria-label="Buscar docente por nombre"
+      placeholder="Buscar docente por nombre o email..."
+      class="w-full pl-10 pr-10 py-3 rounded-2xl border focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent shadow-sm transition-all"
+      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+    <button *ngIf="searchText" (click)="searchText = ''; filterData()"
+      style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: #eee; border: none; color: #333; cursor: pointer; padding: 2px 6px; border-radius: 50%; z-index: 10; display: flex; align-items: center; justify-content: center; width: 22px; height: 22px;"
+      aria-label="Borrar texto de búsqueda" title="Limpiar búsqueda">
+      <i class="fa-solid fa-xmark" style="font-size: 14px;"></i>
+    </button>
+  </div>
+  <div style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">
+    {{ filteredData.length }} registros encontrados
   </div>
 </div>
 
@@ -63,8 +68,8 @@
             style="color: var(--text-main)">
             <i class="fa-solid fa-phone w-4 opacity-50" style="color: var(--primary-color)"></i>
             <div class="flex flex-col">
-              <span *ngIf="item.telefono1">{{ item.telefono1 }}</span>
-              <span *ngIf="item.telefono2">{{ item.telefono2 }}</span>
+               <span *ngIf="item.telefono1">{{ item.telefono1 }}</span>
+               <span *ngIf="item.telefono2">{{ item.telefono2 }}</span>
             </div>
           </div>
 
@@ -210,6 +215,80 @@
         No se registran horarios para este docente.
       </div>
       
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add Nuevo Contacto -->
+<div *ngIf="showAddModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 fade-in" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);">
+  <div class="glass-card w-full max-w-2xl !p-0 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+    <div class="px-6 py-4 border-b flex justify-between items-center" style="border-color: var(--border-color); background: var(--bg-light);">
+      <h3 class="text-xl font-bold" style="color: var(--text-heading)">Agregar Contacto Docente</h3>
+      <button (click)="closeAddModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors" style="color: var(--text-muted)">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <div class="p-6 overflow-y-auto" style="background: var(--bg-body)">
+      <form (ngSubmit)="saveRecord()" #form="ngForm" class="space-y-4">
+        
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Nombre Completo</label>
+          <input type="text" [(ngModel)]="newRecord.nombre" name="nombre" required
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Teléfono</label>
+            <input type="text" [(ngModel)]="newRecord.telefono1" name="telefono1"
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+          <div>
+            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Email</label>
+            <input type="email" [(ngModel)]="newRecord.email" name="email"
+                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Especialidades (separadas por coma)</label>
+          <input type="text" [(ngModel)]="newRecord.especialidadesStr" name="especialidadesStr"
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Asignaturas (separadas por coma)</label>
+          <input type="text" [(ngModel)]="newRecord.asignaturasStr" name="asignaturasStr"
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Grupos (separados por coma)</label>
+          <input type="text" [(ngModel)]="newRecord.gruposStr" name="gruposStr"
+                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        </div>
+
+        <div class="pt-4 border-t flex justify-end gap-3 mt-6" style="border-color: var(--border-color)">
+          <button type="button" (click)="closeAddModal()" class="px-4 py-2 rounded-xl font-bold transition-colors"
+                  style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color)">
+            Cancelar
+          </button>
+          <button type="submit" [disabled]="!form.valid || isSaving" 
+                  class="px-5 py-2 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none"
+                  style="background: var(--primary-color); color: white; min-width: 120px;">
+            <i *ngIf="isSaving" class="fa-solid fa-circle-notch fa-spin"></i>
+            <span *ngIf="!isSaving">Guardar</span>
+            <span *ngIf="isSaving">Guardando...</span>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
