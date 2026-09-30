@@ -1,59 +1,64 @@
-# PanelIpaAngular
+# Panel IPA 2026
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.1.
+Plataforma de gestión e información para el Instituto de Profesores Artigas (IPA), desarrollada con Angular para el frontend y Node.js/Express con SQLite para el backend.
 
-## Development server
+## Características Principales
 
-To start a local development server, run:
+*   **Dashboard de Exámenes:** Consulta y edición de fechas, horarios, tribunales y salones.
+*   **Horarios y Agenda:** Visualización y actualización de horarios de clases y agenda docente.
+*   **Inasistencias:** Registro y visualización de inasistencias docentes.
+*   **Contactos y DOE:** Directorio de contactos institucionales y docentes.
+*   **Gestión (CRUD):** El sistema permite la creación, lectura, actualización (PUT) y eliminación (DELETE) de registros directamente desde la interfaz.
+*   **Scraping y Sincronización:** Scripts de extracción automática de datos desde orígenes oficiales.
 
-```bash
-ng serve
-```
+## Estructura del Proyecto
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+*   **`src/`:** Código fuente de la aplicación Angular (Frontend).
+*   **`backend/`:** Servidor Node.js con Express y base de datos SQLite (`database.sqlite`).
+*   **`extract_*.js`:** Scripts de Node.js encargados de extraer (scrapear) información actualizada.
+*   **`update_all_data.bat`:** Script por lotes que ejecuta todos los extractores de datos de manera secuencial y luego compila la aplicación web.
+*   **`iniciar.bat`:** Script recomendado para levantar simultáneamente el servidor backend y el panel frontend.
 
-## Code scaffolding
+## Requisitos Previos
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+*   Node.js (versión 18 o superior recomendada)
+*   NPM (Node Package Manager)
 
-```bash
-ng generate component component-name
-```
+## Instalación y Ejecución
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1.  **Clonar el repositorio y ubicar la carpeta:**
+    Asegúrate de estar en el directorio del proyecto.
 
-```bash
-ng generate --help
-```
+2.  **Instalar las dependencias:**
+    Tanto en la raíz del proyecto (para Angular y scripts de extracción) como en el backend:
+    ```bash
+    npm install
+    cd backend
+    npm install
+    cd ..
+    ```
 
-## Building
+3.  **Iniciar la aplicación:**
+    Para levantar todo el entorno (servidor y cliente), simplemente ejecuta:
+    ```cmd
+    iniciar.bat
+    ```
+    Alternativamente, puedes levantar el backend y frontend por separado:
+    *   Backend: `cd backend && node server.js` (Corre en http://localhost:3000)
+    *   Frontend: `ng serve` (Corre en http://localhost:4200)
 
-To build the project run:
+4.  **Actualizar Datos:**
+    Si necesitas extraer y sincronizar los datos de scraping más recientes (y recompilar la app para producción), puedes ejecutar:
+    ```cmd
+    update_all_data.bat
+    ```
 
-```bash
-ng build
-```
+## Endpoints del Backend
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El backend expone una API REST con métodos `GET`, `POST`, `PUT` y `DELETE` para los siguientes recursos:
+*   `/api/horarios`
+*   `/api/contactos`
+*   `/api/inasistencias`
+*   `/api/examenes`
+*   `/api/agenda`
+*   `/api/configuracion`
