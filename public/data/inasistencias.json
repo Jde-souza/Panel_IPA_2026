@@ -8589,7 +8589,7 @@
     "apellido": "Rodríguez",
     "inicio": "30/9/2026",
     "fin": "30/9/2026",
-    "grupos": "2C danza",
+    "grupos": "2C Danza",
     "asignaturas": [
       "Metodología 2 Contemporánea"
     ]
@@ -8625,7 +8625,7 @@
     "apellido": "Rostan",
     "inicio": "1/10/2026",
     "fin": "1/10/2026",
-    "grupos": "1 d Historia",
+    "grupos": "1 D Historia",
     "asignaturas": [
       "Introducción al campo profesional"
     ]
@@ -8639,7 +8639,7 @@
     "fin": "1/10/2026",
     "grupos": "2A - Idioma Español",
     "asignaturas": [
-      "GRamática Española II"
+      "Gramática Española II"
     ]
   },
   {
@@ -8688,6 +8688,102 @@
     "grupos": "3ero C y 4to C / Danza",
     "asignaturas": [
       "Creación y puesta en escena II / Metodología de la danza 3"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:25:35",
+    "email": "antejera73@gmail.com",
+    "nombre": "Andrea",
+    "apellido": "Tejera Iriarte",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "4to.Ba Educación Musical",
+    "asignaturas": [
+      "Didáctica III"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:28:27",
+    "email": "gdferrando@gmail.com",
+    "nombre": "Gustavo",
+    "apellido": "Ferrando",
+    "inicio": "1/10/2026",
+    "fin": "1/10/2026",
+    "grupos": "4to. A y 4to. B Ciencias Biológicas",
+    "asignaturas": [
+      "Biología Animal II"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:34:48",
+    "email": "alvezcavanna.mariasoledad@gmail.com",
+    "nombre": "María Soledad",
+    "apellido": "Álvez",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3°A Literatura ",
+    "asignaturas": [
+      "Narrativas Transmedia"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:49:05",
+    "email": "silvanaoliveramateos@gmail.com",
+    "nombre": "Silvana",
+    "apellido": "Olivera",
+    "inicio": "1/10/2026",
+    "fin": "1/10/2026",
+    "grupos": "1B sociología Nocturno ",
+    "asignaturas": [
+      "Introducción al campo profesional"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:49:32",
+    "email": "marianaabeleirabiaus@gmail.com",
+    "nombre": "Mariana",
+    "apellido": "Abeleira",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3roB  Nocturno /  Comunicación Visual",
+    "asignaturas": [
+      "Imagen III"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 16:51:13",
+    "email": "alvarorrd@gmail.com",
+    "nombre": "Álvaro",
+    "apellido": "Rodríguez",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "3A Biología",
+    "asignaturas": [
+      "Filosofía de la educación"
+    ]
+  },
+  {
+    "timestamp": "30/9/2026 22:49:50",
+    "email": "pascual.daniela@gmail.com",
+    "nombre": "Daniela",
+    "apellido": "Pascual",
+    "inicio": "30/9/2026",
+    "fin": "30/9/2026",
+    "grupos": "Visual, Filosofía y Literatura ",
+    "asignaturas": [
+      "Lengua Extranjera 2"
+    ]
+  },
+  {
+    "timestamp": "1/10/2026 0:01:01",
+    "email": "biodidactika@gmail.com",
+    "nombre": "Patricia",
+    "apellido": "Kuzma",
+    "inicio": "1/10/2026",
+    "fin": "1/10/2026",
+    "grupos": "1ºA CS. Biológicas / 3ºB Ciencias Biológicas",
+    "asignaturas": [
+      "Introducción al campo profesional/ Investigación en la enseñanza de las Ciencias Biológicas"
     ]
   },
   {
