@@ -8783,7 +8783,43 @@
     "fin": "1/10/2026",
     "grupos": "1ºA CS. Biológicas / 3ºB Ciencias Biológicas",
     "asignaturas": [
-      "Introducción al campo profesional/ Investigación en la enseñanza de las Ciencias Biológicas"
+      "Int. Camp. Prof. / Inv. en la enseñanza de las Ciencias Biológicas"
+    ]
+  },
+  {
+    "timestamp": "1/10/2026 11:13:55",
+    "email": "andrea.aquino1976@gmail.com",
+    "nombre": "Andrea",
+    "apellido": "Aquino",
+    "inicio": "6/10/2026",
+    "fin": "6/10/2026",
+    "grupos": "3roAa y 2do Ab, Literatura ",
+    "asignaturas": [
+      "Didáctica I y II"
+    ]
+  },
+  {
+    "timestamp": "1/10/2026 12:34:33",
+    "email": "mcoccom@gmail.com",
+    "nombre": "Mariana",
+    "apellido": "Cocco",
+    "inicio": "1/10/2026",
+    "fin": "1/10/2026",
+    "grupos": "Optativa ",
+    "asignaturas": [
+      "CINEDUCA"
+    ]
+  },
+  {
+    "timestamp": "1/10/2026 15:00:41",
+    "email": "rosaurafranca@gmail.com",
+    "nombre": "Rosaurita",
+    "apellido": "Franca",
+    "inicio": "1/10/2026",
+    "fin": "3/10/2026",
+    "grupos": "2do.C Historia ",
+    "asignaturas": [
+      "Pensamiento Computacional"
     ]
   },
   {
