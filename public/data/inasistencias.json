@@ -8823,6 +8823,30 @@
     ]
   },
   {
+    "timestamp": "1/10/2026 16:25:55",
+    "email": "jmpmat1900@gmail.com",
+    "nombre": "Juan",
+    "apellido": "Posada",
+    "inicio": "1/10/2026",
+    "fin": "2/10/2026",
+    "grupos": "1 Física / 2 Física y 3 Matemática",
+    "asignaturas": [
+      "Prob. y EstadÍstica / Cál. de Varias Variables / Prob. y EstadÍstica para Física"
+    ]
+  },
+  {
+    "timestamp": "1/10/2026 18:30:37",
+    "email": "soledadlombardo@gmail.com",
+    "nombre": "Ma. Soledad",
+    "apellido": "LOMBARDO CABRERA",
+    "inicio": "1/10/2026",
+    "fin": "1/10/0026",
+    "grupos": "4B Derecho ",
+    "asignaturas": [
+      "Derecho Comercial"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
