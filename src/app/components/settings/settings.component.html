@@ -22,6 +22,10 @@
             [ngStyle]="activeTab === 'general' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
       <i class="fa-solid fa-sliders mr-2"></i> General
     </button>
+    <button (click)="activeTab = 'materias'" class="px-5 py-2.5 rounded-t-xl font-bold transition-colors whitespace-nowrap"
+            [ngStyle]="activeTab === 'materias' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
+      <i class="fa-solid fa-book-open mr-2"></i> Materias
+    </button>
     <button (click)="activeTab = 'especialidades'" class="px-5 py-2.5 rounded-t-xl font-bold transition-colors whitespace-nowrap"
             [ngStyle]="activeTab === 'especialidades' ? {'background': 'var(--primary-color)', 'color': 'white'} : {'background': 'var(--surface)', 'color': 'var(--text-muted)'}">
       <i class="fa-solid fa-book mr-2"></i> Especialidades
@@ -102,6 +106,49 @@
     </div>
   </div>
 
+  <!-- Tab: Materias -->
+  <div *ngIf="activeTab === 'materias'" class="fade-in glass-card flex flex-col min-h-[60vh]">
+    <div class="flex justify-between items-start mb-6 border-b pb-4" style="border-color: var(--border-color)">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+          <i class="fa-solid fa-book-open text-lg"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold" style="color: var(--text-heading)">Materias Globales</h3>
+          <p class="text-sm mt-1" style="color: var(--text-muted)">Administra el listado de materias que podrán ser vinculadas a las especialidades.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mb-6 flex flex-col sm:flex-row gap-3">
+      <input type="text" [(ngModel)]="nuevaMateriaGlobal" (keydown.enter)="addMateriaGlobal()" placeholder="Escribe el nombre de la nueva materia... (Ej: Sistema Educativo Nacional)"
+             class="flex-grow px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all shadow-sm"
+             style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+      <button (click)="addMateriaGlobal()" class="px-6 py-3 rounded-xl font-bold transition-all shadow-sm hover:-translate-y-0.5 whitespace-nowrap" style="background: var(--primary-color); color: white;">
+        <i class="fa-solid fa-plus mr-2"></i> Agregar Materia
+      </button>
+    </div>
+
+    <div class="flex-grow">
+      <div *ngIf="materiasGlobales.length === 0" class="py-16 text-center" style="color: var(--text-muted)">
+        <i class="fa-solid fa-shapes text-5xl opacity-20 mb-4"></i>
+        <p class="text-lg font-medium">No hay materias registradas en el sistema.</p>
+        <p class="text-sm mt-2 opacity-70">Agrega materias arriba para luego vincularlas a especialidades.</p>
+      </div>
+
+      <div *ngIf="materiasGlobales.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div *ngFor="let mat of materiasGlobales; let i = index" 
+             class="flex justify-between items-center px-4 py-3 border rounded-xl shadow-sm transition-all hover:shadow-md group"
+             style="border-color: var(--border-color); background: var(--surface);">
+          <span class="font-medium text-sm line-clamp-2" style="color: var(--text-main)" [title]="mat">{{ mat }}</span>
+          <button (click)="removeMateriaGlobal(i)" class="w-8 h-8 rounded-full flex items-center justify-center text-red-500 hover:bg-red-500/10 transition-colors ml-3 shrink-0 opacity-0 group-hover:opacity-100">
+            <i class="fa-solid fa-trash-can text-sm"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Tab: Especialidades -->
   <div *ngIf="activeTab === 'especialidades'" class="fade-in glass-card flex flex-col min-h-[60vh]">
     <div class="flex justify-between items-start mb-6 border-b pb-4" style="border-color: var(--border-color)">
@@ -133,7 +180,7 @@
           
           <div class="flex justify-between items-start mb-4">
             <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ esp.nombre }}</h4>
-            <button (click)="deleteEspecialidad(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500 shadow-sm bg-white border" style="border-color: var(--border-color)">
+            <button (click)="deleteEspecialidad(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-500/10 text-red-500 shadow-sm border" style="background: var(--surface); border-color: var(--border-color)">
               <i class="fa-solid fa-trash-can text-xs"></i>
             </button>
           </div>
@@ -184,7 +231,7 @@
           
           <div class="flex justify-between items-start mb-4">
             <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ s.nombre }}</h4>
-            <button (click)="deleteSalon(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-100 text-red-500 shadow-sm bg-white border" style="border-color: var(--border-color)">
+            <button (click)="deleteSalon(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-500/10 text-red-500 shadow-sm border" style="background: var(--surface); border-color: var(--border-color)">
               <i class="fa-solid fa-trash-can text-xs"></i>
             </button>
           </div>
@@ -230,30 +277,38 @@
         </div>
 
         <div class="border-t pt-6" style="border-color: var(--border-color)">
-          <label class="block text-sm font-bold mb-2" style="color: var(--text-main)">Materias (Subcategorías)</label>
+          <div class="flex justify-between items-end mb-3">
+            <label class="block text-sm font-bold" style="color: var(--text-main)">Vincular Materias</label>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-lg" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">{{ currentEsp.materias.length }} seleccionadas</span>
+          </div>
           
-          <div class="flex gap-2 mb-4">
-            <input type="text" [(ngModel)]="newMateria" (keydown.enter)="addMateria()" placeholder="Ej: Genética, Ecología..."
-                   class="flex-grow px-4 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+          <div class="mb-4 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            <input type="text" [(ngModel)]="filtroMateriaEsp" placeholder="Buscar materia para vincular..."
+                   class="w-full pl-10 pr-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all text-sm shadow-sm"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-            <button (click)="addMateria()" class="px-4 py-2 rounded-xl font-bold transition-all shadow-sm" style="background: var(--primary-color); color: white;">
-              <i class="fa-solid fa-plus"></i>
-            </button>
           </div>
 
-          <div class="flex flex-wrap gap-2">
-            <div *ngIf="currentEsp.materias.length === 0" class="w-full text-center py-4 text-sm italic opacity-50" style="color: var(--text-muted)">
-              Aún no has agregado ninguna materia
+          <div class="max-h-64 overflow-y-auto space-y-2 pr-2 custom-scrollbar">
+            <div *ngIf="materiasFiltradas.length === 0" class="text-center py-6 text-sm text-gray-500 italic border border-dashed rounded-xl" style="border-color: var(--border-color)">
+              <i class="fa-solid fa-circle-exclamation mb-2 text-xl opacity-50"></i><br>
+              No se encontraron materias.<br>Ve a la pestaña "Materias" para agregar nuevas.
             </div>
             
-            <div *ngFor="let mat of currentEsp.materias; let idx = index" 
-                 class="flex items-center gap-2 px-3 py-1.5 rounded-lg border group"
-                 style="background: var(--surface); border-color: var(--border-color);">
-              <span class="text-sm font-medium" style="color: var(--text-main)">{{ mat }}</span>
-              <button (click)="removeMateria(idx)" class="w-5 h-5 flex items-center justify-center rounded-full opacity-50 hover:opacity-100 hover:text-red-500 transition-all">
-                <i class="fa-solid fa-xmark text-xs"></i>
-              </button>
-            </div>
+            <label *ngFor="let mat of materiasFiltradas" 
+                   class="flex items-start gap-3 p-3 border rounded-xl cursor-pointer transition-all shadow-sm hover:shadow-md"
+                   [ngClass]="{'border-sky-400 bg-sky-50 hover:bg-sky-50': currentEsp.materias.includes(mat), 'hover:bg-gray-50': !currentEsp.materias.includes(mat)}"
+                   [style.borderColor]="currentEsp.materias.includes(mat) ? 'var(--primary-color)' : 'var(--border-color)'"
+                   [style.background]="currentEsp.materias.includes(mat) ? 'rgba(var(--primary-color-rgb), 0.05)' : 'var(--bg-body)'">
+              <div class="pt-0.5">
+                <input type="checkbox" 
+                       [checked]="currentEsp.materias.includes(mat)"
+                       (change)="toggleMateriaEnEsp(mat)"
+                       class="w-4 h-4 rounded border-gray-300 focus:ring-2 transition-all cursor-pointer"
+                       style="accent-color: var(--primary-color)">
+              </div>
+              <span class="font-medium text-sm leading-tight select-none" style="color: var(--text-main)">{{ mat }}</span>
+            </label>
           </div>
         </div>
 

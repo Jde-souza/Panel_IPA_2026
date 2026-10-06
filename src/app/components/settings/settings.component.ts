@@ -40,12 +40,15 @@ export class SettingsComponent implements OnInit {
 
   especialidades: Especialidad[] = [];
   salones: Salon[] = [];
+  materiasGlobales: string[] = [];
 
   // Modal State para Especialidades
   showEspecialidadModal = false;
   editingEspIndex: number = -1;
   currentEsp: Especialidad = { nombre: '', materias: [] };
   newMateria: string = '';
+  filtroMateriaEsp: string = '';
+  nuevaMateriaGlobal: string = '';
 
   // Modal State para Salones
   showSalonModal = false;
@@ -84,6 +87,18 @@ export class SettingsComponent implements OnInit {
           this.salones = res.salones;
         }
       }
+
+      if (res.materias) {
+        this.materiasGlobales = res.materias;
+      } else {
+        const matSet = new Set<string>();
+        if (this.especialidades) {
+            this.especialidades.forEach(e => {
+                if (e.materias) e.materias.forEach(m => matSet.add(m));
+            });
+        }
+        this.materiasGlobales = Array.from(matSet);
+      }
       
       if (res.planes) this.config.planes = Array.isArray(res.planes) ? res.planes.join('\n') : res.planes;
       if (res.causales) this.config.causales = Array.isArray(res.causales) ? res.causales.join('\n') : res.causales;
@@ -106,7 +121,8 @@ export class SettingsComponent implements OnInit {
         especialidades: this.especialidades,
         salones: this.salones,
         planes: this.config.planes.split('\n').map(s => s.trim()).filter(Boolean),
-        causales: this.config.causales.split('\n').map(s => s.trim()).filter(Boolean)
+        causales: this.config.causales.split('\n').map(s => s.trim()).filter(Boolean),
+        materias: this.materiasGlobales
       };
 
       await firstValueFrom(this.dataService.saveConfiguracion(payload));
@@ -129,6 +145,7 @@ export class SettingsComponent implements OnInit {
       this.currentEsp = { nombre: '', materias: [] };
     }
     this.newMateria = '';
+    this.filtroMateriaEsp = '';
     this.showEspecialidadModal = true;
   }
 
@@ -146,6 +163,39 @@ export class SettingsComponent implements OnInit {
 
   removeMateria(index: number) {
     this.currentEsp.materias.splice(index, 1);
+  }
+
+  toggleMateriaEnEsp(mat: string) {
+    const idx = this.currentEsp.materias.indexOf(mat);
+    if (idx !== -1) {
+      this.currentEsp.materias.splice(idx, 1);
+    } else {
+      this.currentEsp.materias.push(mat);
+    }
+  }
+
+  get materiasFiltradas() {
+    if (!this.filtroMateriaEsp) return this.materiasGlobales;
+    return this.materiasGlobales.filter(m => m.toLowerCase().includes(this.filtroMateriaEsp.toLowerCase()));
+  }
+
+  addMateriaGlobal() {
+    const val = this.nuevaMateriaGlobal.trim();
+    if (val && !this.materiasGlobales.includes(val)) {
+      this.materiasGlobales.push(val);
+      this.nuevaMateriaGlobal = '';
+    }
+  }
+
+  removeMateriaGlobal(index: number) {
+    const mat = this.materiasGlobales[index];
+    if (confirm(`¿Eliminar la materia "${mat}"? Se quitará también de las especialidades que la usen.`)) {
+      this.materiasGlobales.splice(index, 1);
+      this.especialidades.forEach(esp => {
+        const idx = esp.materias.indexOf(mat);
+        if (idx !== -1) esp.materias.splice(idx, 1);
+      });
+    }
   }
 
   saveEspecialidad() {
