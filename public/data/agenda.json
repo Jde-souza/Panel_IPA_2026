@@ -11387,8 +11387,8 @@
       "2ºB"
     ],
     "caracter": "int",
-    "observacion": "lic médica",
-    "isTachado": true,
+    "observacion": "",
+    "isTachado": false,
     "horarios": [
       {
         "dia": 3,

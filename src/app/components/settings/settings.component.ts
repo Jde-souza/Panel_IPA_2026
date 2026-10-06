@@ -35,7 +35,8 @@ export class SettingsComponent implements OnInit {
     anoLectivo: '2026',
     semestreActual: 'sem1',
     planes: '',
-    causales: ''
+    causales: '',
+    pisos: 'Sub suelo\nPlanta baja\nPrimer piso\nSegundo piso'
   };
 
   especialidades: Especialidad[] = [];
@@ -48,6 +49,7 @@ export class SettingsComponent implements OnInit {
   currentEsp: Especialidad = { nombre: '', materias: [] };
   newMateria: string = '';
   filtroMateriaEsp: string = '';
+  showMateriaModal = false;
   nuevaMateriaGlobal: string = '';
 
   // Modal State para Salones
@@ -102,12 +104,23 @@ export class SettingsComponent implements OnInit {
       
       if (res.planes) this.config.planes = Array.isArray(res.planes) ? res.planes.join('\n') : res.planes;
       if (res.causales) this.config.causales = Array.isArray(res.causales) ? res.causales.join('\n') : res.causales;
+      if (res.pisos) this.config.pisos = Array.isArray(res.pisos) ? res.pisos.join('\n') : res.pisos;
       
+      this.sortData();
     } catch (e: any) {
       this.alertService.error('Error al cargar configuración: ' + e.message);
     } finally {
       this.isLoading = false;
     }
+  }
+
+  sortData() {
+    this.materiasGlobales.sort((a, b) => a.localeCompare(b));
+    this.especialidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
+  }
+
+  get opcionesPisos(): string[] {
+    return this.config.pisos.split('\n').map(s => s.trim()).filter(Boolean);
   }
 
   async saveConfig() {
@@ -122,6 +135,7 @@ export class SettingsComponent implements OnInit {
         salones: this.salones,
         planes: this.config.planes.split('\n').map(s => s.trim()).filter(Boolean),
         causales: this.config.causales.split('\n').map(s => s.trim()).filter(Boolean),
+        pisos: this.config.pisos.split('\n').map(s => s.trim()).filter(Boolean),
         materias: this.materiasGlobales
       };
 
@@ -179,11 +193,21 @@ export class SettingsComponent implements OnInit {
     return this.materiasGlobales.filter(m => m.toLowerCase().includes(this.filtroMateriaEsp.toLowerCase()));
   }
 
+  openMateriaModal() {
+    this.nuevaMateriaGlobal = '';
+    this.showMateriaModal = true;
+  }
+
+  closeMateriaModal() {
+    this.showMateriaModal = false;
+  }
+
   addMateriaGlobal() {
     const val = this.nuevaMateriaGlobal.trim();
     if (val && !this.materiasGlobales.includes(val)) {
       this.materiasGlobales.push(val);
-      this.nuevaMateriaGlobal = '';
+      this.sortData();
+      this.closeMateriaModal();
     }
   }
 
@@ -210,6 +234,7 @@ export class SettingsComponent implements OnInit {
       this.especialidades.push({ ...this.currentEsp });
     }
     
+    this.sortData();
     this.closeEspModal();
   }
 
@@ -256,5 +281,24 @@ export class SettingsComponent implements OnInit {
     if (confirm('¿Estás seguro de que deseas eliminar este salón?')) {
       this.salones.splice(index, 1);
     }
+  }
+
+  getPisosUnicos(): string[] {
+    const todosLosPisos = new Set(this.salones.map(s => s.piso || 'Sin Asignar'));
+    const resultado = [...this.opcionesPisos];
+    todosLosPisos.forEach(p => {
+      if (!resultado.includes(p)) resultado.push(p);
+    });
+    if (todosLosPisos.has('Sin Asignar') && !resultado.includes('Sin Asignar')) {
+       resultado.push('Sin Asignar');
+    }
+    return resultado;
+  }
+
+  getSalonesByPiso(piso: string) {
+    if (piso === 'Sin Asignar') {
+      return this.salones.map((s, index) => ({ salon: s, index })).filter(item => !item.salon.piso);
+    }
+    return this.salones.map((s, index) => ({ salon: s, index })).filter(item => item.salon.piso === piso);
   }
 }
