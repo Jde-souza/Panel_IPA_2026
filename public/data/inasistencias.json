@@ -9137,8 +9137,8 @@
   {
     "timestamp": "6/10/2026 19:27:40",
     "email": "cruxcrucis@gmail.com",
-    "nombre": "ANATOLE BENICIO",
-    "apellido": "CRUZ CABRAL",
+    "nombre": "ANATOLE",
+    "apellido": "CRUZ",
     "inicio": "7/10/2026",
     "fin": "20/10/2026",
     "grupos": "1oA Ed. Musical y Química; 1oSP Idioma Español; 1oSP Literatura",
@@ -9156,6 +9156,42 @@
     "grupos": "3ero A Geo + id español",
     "asignaturas": [
       "Filosofia de la educación"
+    ]
+  },
+  {
+    "timestamp": "7/10/2026 8:58:44",
+    "email": "debora.akerman@gmail.com",
+    "nombre": "Débora",
+    "apellido": "Akerman",
+    "inicio": "7/10/2026",
+    "fin": "7/10/2026",
+    "grupos": "2ºC matemática+danza",
+    "asignaturas": [
+      "Pensamiento Computacional"
+    ]
+  },
+  {
+    "timestamp": "7/10/2026 9:08:31",
+    "email": "soraya.auyuanet@gmail.com",
+    "nombre": "Soraya",
+    "apellido": "Auyuanet",
+    "inicio": "7/10/2026",
+    "fin": "7/10/2026",
+    "grupos": "2do C Literatura ",
+    "asignaturas": [
+      "SEN Marco normativo"
+    ]
+  },
+  {
+    "timestamp": "7/10/2026 14:13:45",
+    "email": "maurodevas@gmail.com",
+    "nombre": "Mauricio",
+    "apellido": "De Vasconcellos",
+    "inicio": "7/10/2026",
+    "fin": "7/10/2026",
+    "grupos": "3ero B, inglés , nocturno",
+    "asignaturas": [
+      "Lengua y literatura 1"
     ]
   },
   {
