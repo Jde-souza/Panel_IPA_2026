@@ -9447,6 +9447,42 @@
     ]
   },
   {
+    "timestamp": "12/10/2026 20:26:04",
+    "email": "mechy.alonso@gmail.com",
+    "nombre": "Mercedes",
+    "apellido": "Alonso",
+    "inicio": "13/10/2026",
+    "fin": "13/10/2026",
+    "grupos": "4to ",
+    "asignaturas": [
+      "Lengua Extranjera"
+    ]
+  },
+  {
+    "timestamp": "12/10/2026 23:27:31",
+    "email": "ilusoriat@gmail.com",
+    "nombre": "Luciana",
+    "apellido": "Soria",
+    "inicio": "13/10/2026",
+    "fin": "13/10/2026",
+    "grupos": "2a matutino",
+    "asignaturas": [
+      "Filosofía política"
+    ]
+  },
+  {
+    "timestamp": "12/10/2026 23:58:23",
+    "email": "dlsliteratura@gmail.com",
+    "nombre": "Dinorah",
+    "apellido": "López Soler",
+    "inicio": "13/10/2026",
+    "fin": "13/10/2026",
+    "grupos": "3ero B Literatura",
+    "asignaturas": [
+      "Narrativas Transmedia"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
