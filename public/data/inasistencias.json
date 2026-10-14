@@ -9591,6 +9591,66 @@
     ]
   },
   {
+    "timestamp": "13/10/2026 16:33:23",
+    "email": "akatomeo@gmail.com",
+    "nombre": "Ana",
+    "apellido": "Tomeo",
+    "inicio": "14/10/2026",
+    "fin": "14/10/2026",
+    "grupos": "1D Historia- 1A Matemática",
+    "asignaturas": [
+      "Pedagogía"
+    ]
+  },
+  {
+    "timestamp": "13/10/2026 16:35:33",
+    "email": "akatomeo@gmail.com",
+    "nombre": "Ana",
+    "apellido": "Tomeo",
+    "inicio": "19/10/2026",
+    "fin": "19/10/2026",
+    "grupos": "1D Historia- 1A Derecho ",
+    "asignaturas": [
+      "Pedagogía"
+    ]
+  },
+  {
+    "timestamp": "13/10/2026 17:51:46",
+    "email": "normadiazsosa.prof@gmail.com",
+    "nombre": "Norma",
+    "apellido": "Díaz",
+    "inicio": "13/10/2026",
+    "fin": "13/10/2026",
+    "grupos": "3ero B - inglés",
+    "asignaturas": [
+      "Taller de eescritura académica"
+    ]
+  },
+  {
+    "timestamp": "13/10/2026 21:39:43",
+    "email": "gabrielasosasanmartin@gmail.com",
+    "nombre": "Gabriela",
+    "apellido": "Sosa",
+    "inicio": "14/10/2026",
+    "fin": "14/10/2026",
+    "grupos": "4°A, Literatura",
+    "asignaturas": [
+      "Estética Literaria"
+    ]
+  },
+  {
+    "timestamp": "13/10/2026 21:53:10",
+    "email": "julioelprofe@gmail.com",
+    "nombre": "Julio",
+    "apellido": "Moreira",
+    "inicio": "14/10/2026",
+    "fin": "14/10/2026",
+    "grupos": "4° Filosofía Aa",
+    "asignaturas": [
+      "Didáctica de la filosofía III"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
