@@ -24664,7 +24664,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Lengua Española 2 Prato\nSALON 108"
+          "info": "Lengua Española 2 \nPrato\nSALON 108"
         },
         {
           "dia": 5,
@@ -40742,12 +40742,12 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Lengua y Cultura Inglesa I               \nSALON 113"
+          "info": "Lengua y Cultura Inglesa I     \n Dantaz           \nSALON 113"
         },
         {
           "dia": 5,
           "hora": "08:00-08:45",
-          "info": "Lengua y Cultura Inglesa I   \nSALON 219"
+          "info": "Lengua y Cultura Inglesa I    \n Dantaz \nSALON 219"
         },
         {
           "dia": 1,
@@ -40787,7 +40787,7 @@
         {
           "dia": 3,
           "hora": "09:30-10:15",
-          "info": "Educación y sus transformaciones en la historia\nSALON 115"
+          "info": "Educación y sus transformaciones en la historia\nCARRERAS \nSALON 115"
         },
         {
           "dia": 4,
@@ -40842,7 +40842,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Educación y sus transformaciones en la historia\nSALON 113"
+          "info": "Educación y sus transformaciones en la historia\nCARRERAS \nSALON 113"
         },
         {
           "dia": 5,
@@ -48210,12 +48210,12 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Lengua Española 2 \nSALON 107"
+          "info": "Lengua Española 2 \nSALON 107\nDE LEMA"
         },
         {
           "dia": 5,
           "hora": "09:30-10:15",
-          "info": "Pedagogía \nSALON 105"
+          "info": "Pedagogía \nTOMEO\nSALON 105"
         },
         {
           "dia": 1,
@@ -48255,7 +48255,7 @@
         {
           "dia": 3,
           "hora": "11:10-11:55",
-          "info": "Lengua Española 2 \nSALON 114"
+          "info": "Lengua Española 2 \nSALON 114\nDE LEMA"
         },
         {
           "dia": 4,
@@ -48305,7 +48305,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Pedagogía \nSALON 114"
+          "info": "Pedagogía \nTOMEO\nSALON 114"
         },
         {
           "dia": 4,
@@ -48360,7 +48360,7 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Pedagogía\n\nSALON 110"
+          "info": "Pedagogía\nDOMINGUEZ\nSALON 110"
         },
         {
           "dia": 5,
@@ -48500,7 +48500,7 @@
         {
           "dia": 2,
           "hora": "12:40-13:25",
-          "info": "Pedagogía\n\nSALON 103"
+          "info": "Pedagogía\nDOMINGUEZ\nSALON 103"
         },
         {
           "dia": 3,
@@ -48821,7 +48821,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Fundamentos II \nSALON 108"
+          "info": "Fundamentos II \nTEJERA\nSALON 108"
         },
         {
           "dia": 3,
@@ -48846,7 +48846,7 @@
         {
           "dia": 2,
           "hora": "16:40-17:25",
-          "info": "Fundamentos II"
+          "info": "Fundamentos II   Tejera"
         },
         {
           "dia": 3,
@@ -50259,7 +50259,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "Psicología de la Educación                        SALON 216"
+          "info": "Psicología de la Educación  \nGODOY                      SALON 216"
         },
         {
           "dia": 1,
@@ -50299,7 +50299,7 @@
         {
           "dia": 3,
           "hora": "11:55-12:40",
-          "info": "Psicología de la Educación                           SALON 206"
+          "info": "Psicología de la Educación        \nGODOY                   SALON 206"
         },
         {
           "dia": 4,
@@ -50535,7 +50535,7 @@
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Pensamiento computacional \nSALON 228"
+          "info": "Pensamiento computacional \nAkerman\nSALON 228"
         },
         {
           "dia": 5,
@@ -50580,7 +50580,7 @@
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "Pensamiento computacional \nSALON 228"
+          "info": "Pensamiento computacional\nAkerman\nSALON 228"
         },
         {
           "dia": 4,
@@ -51036,7 +51036,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Análisis I \nSALON 115"
+          "info": "Análisis I \nGUSTAVO FRANCO\nSALON 115"
         },
         {
           "dia": 2,
@@ -51091,7 +51091,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Análisis I \nSALON 114"
+          "info": "Análisis I \nGUSTAVO FRANCO\nSALON 114"
         },
         {
           "dia": 5,
@@ -51246,7 +51246,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Pensamiento computacional      \nSALON 221"
+          "info": "Pensamiento computacional  \nRIJO    \nSALON 221"
         },
         {
           "dia": 1,
@@ -51286,7 +51286,7 @@
         {
           "dia": 3,
           "hora": "19:40-20:20",
-          "info": "Pensamiento computacional      \nSALON 228"
+          "info": "Pensamiento computacional      \nRIJO\nSALON 228"
         },
         {
           "dia": 4,
@@ -51361,7 +51361,7 @@
         {
           "dia": 3,
           "hora": "21:40-22:20",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \n\nSALON 113"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \nMONZON\nSALON 113"
         },
         {
           "dia": 4,
@@ -51371,7 +51371,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \n\nSALON 114"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \nMONZON\nSALON 114"
         },
         {
           "dia": 1,
@@ -51672,7 +51672,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nSALON 115"
+          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nMarcelo  Fernández\nSALON 115"
         },
         {
           "dia": 1,
@@ -51692,7 +51692,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nSALON 115"
+          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nMarcelo  Fernández\nSALON 115"
         },
         {
           "dia": 5,
@@ -53655,7 +53655,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Lengua Española 2  \nSALON 108"
+          "info": "Lengua Española 2\n PRATO  \nSALON 108"
         },
         {
           "dia": 5,
@@ -55375,7 +55375,7 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Lengua Extranjera II\nSALON 10"
+          "info": "Lengua Extranjera II\nBorjas\nSALON 10"
         },
         {
           "dia": 2,
@@ -55490,7 +55490,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Lengua Extranjera II\nSALON 10"
+          "info": "Lengua Extranjera II\nBorjas\nSALON 10"
         },
         {
           "dia": 5,
@@ -55741,7 +55741,7 @@
         {
           "dia": 3,
           "hora": "20:20-21:00",
-          "info": "Lengua Extranjera II\nSALON 13"
+          "info": "Lengua Extranjera II\nSALON 13\nVerdier"
         },
         {
           "dia": 4,
@@ -55796,7 +55796,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Lengua Extranjera II\nSALON 13"
+          "info": "Lengua Extranjera II\nSALON 13\nVerdier"
         },
         {
           "dia": 4,

@@ -137,6 +137,13 @@
     "horarios": [
       {
         "dia": 3,
+        "hora": "14:15-15:00",
+        "salon": "SALON 228",
+        "grupo": "2ºC",
+        "asignatura": "Pensamiento computacional"
+      },
+      {
+        "dia": 3,
         "hora": "15:00-15:45",
         "salon": "S/D",
         "grupo": "2ºC",
@@ -153,6 +160,13 @@
         "dia": 3,
         "hora": "16:40-17:25",
         "salon": "S/D",
+        "grupo": "2ºC",
+        "asignatura": "Pensamiento computacional"
+      },
+      {
+        "dia": 4,
+        "hora": "12:40-13:25",
+        "salon": "SALON 228",
         "grupo": "2ºC",
         "asignatura": "Pensamiento computacional"
       },
@@ -2371,6 +2385,13 @@
       },
       {
         "dia": 1,
+        "hora": "08:45-09:30",
+        "salon": "SALON 10",
+        "grupo": "4ºA",
+        "asignatura": "Lengua Extranjera II"
+      },
+      {
+        "dia": 1,
         "hora": "09:30-10:15",
         "salon": "S/D",
         "grupo": "4ºA",
@@ -2431,6 +2452,13 @@
         "salon": "SALON 10",
         "grupo": "4ºA",
         "asignatura": "Lengua Extranjera I"
+      },
+      {
+        "dia": 3,
+        "hora": "12:40-13:25",
+        "salon": "SALON 10",
+        "grupo": "4ºA",
+        "asignatura": "Lengua Extranjera II"
       },
       {
         "dia": 3,
@@ -3336,7 +3364,7 @@
       {
         "dia": 3,
         "hora": "09:30-10:15",
-        "salon": "S/D",
+        "salon": "SALON 115",
         "grupo": "1ºA",
         "asignatura": "Educación y sus transformaciones en la historia"
       },
@@ -3364,7 +3392,7 @@
       {
         "dia": 4,
         "hora": "11:10-11:55",
-        "salon": "S/D",
+        "salon": "SALON 113",
         "grupo": "1ºA",
         "asignatura": "Educación y sus transformaciones en la historia"
       },
@@ -5571,6 +5599,13 @@
       },
       {
         "dia": 4,
+        "hora": "11:10-11:55",
+        "salon": "SALON 115",
+        "grupo": "3ºA",
+        "asignatura": "FILOSOFÍA DE LA EDUCACIÓN"
+      },
+      {
+        "dia": 4,
         "hora": "12:40-13:25",
         "salon": "S/D",
         "grupo": "3ºA",
@@ -5645,6 +5680,13 @@
         "salon": "S/D",
         "grupo": "1ºE",
         "asignatura": "Psicología del Desarrollo"
+      },
+      {
+        "dia": 5,
+        "hora": "10:25-11:10",
+        "salon": "SALON 115",
+        "grupo": "3ºA",
+        "asignatura": "FILOSOFÍA DE LA EDUCACIÓN"
       },
       {
         "dia": 5,
@@ -6426,6 +6468,13 @@
       },
       {
         "dia": 1,
+        "hora": "18:20-19:00",
+        "salon": "SALON 115",
+        "grupo": "2ºB",
+        "asignatura": "Análisis I"
+      },
+      {
+        "dia": 1,
         "hora": "19:00-19:40",
         "salon": "S/D",
         "grupo": "2ºB",
@@ -6605,6 +6654,13 @@
         "salon": "S/D",
         "grupo": "2ºC",
         "asignatura": "Análisis I Gustavo"
+      },
+      {
+        "dia": 4,
+        "hora": "19:40-20:20",
+        "salon": "SALON 114",
+        "grupo": "2ºB",
+        "asignatura": "Análisis I"
       },
       {
         "dia": 4,
@@ -11392,6 +11448,13 @@
     "horarios": [
       {
         "dia": 3,
+        "hora": "21:40-22:20",
+        "salon": "SALON 113",
+        "grupo": "2ºB",
+        "asignatura": "Sistema educativo Nacional: marco normativo y gestión institucional"
+      },
+      {
+        "dia": 3,
         "hora": "22:20-23:00",
         "salon": "S/D",
         "grupo": "2ºB",
@@ -11401,6 +11464,13 @@
         "dia": 3,
         "hora": "23:00-23:40",
         "salon": "S/D",
+        "grupo": "2ºB",
+        "asignatura": "Sistema educativo Nacional: marco normativo y gestión institucional"
+      },
+      {
+        "dia": 5,
+        "hora": "21:40-22:20",
+        "salon": "SALON 114",
         "grupo": "2ºB",
         "asignatura": "Sistema educativo Nacional: marco normativo y gestión institucional"
       },
@@ -13476,6 +13546,13 @@
     "observacion": "",
     "isTachado": false,
     "horarios": [
+      {
+        "dia": 4,
+        "hora": "19:40-20:20",
+        "salon": "SALON 108",
+        "grupo": "1ºB",
+        "asignatura": "Lengua Española 2"
+      },
       {
         "dia": 4,
         "hora": "20:20-21:00",
