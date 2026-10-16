@@ -1,8 +1,15 @@
 [
   {
+    "title": "Día Mundial de la Alimentación",
+    "url": "https://www.anep.edu.uy/dia-mundial-la-alimentacion",
+    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticia_destacada/public/images/2026/banners_dia_de/octubre/fondo.jpg.webp?h=0c5fa529&itok=WdWpN6Jy",
+    "source": "ANEP",
+    "date": "10/16/2026"
+  },
+  {
     "title": "Instituto Nacional de Evaluación Educativa presentó estudio sobre Centros María Espínola",
     "url": "https://www.anep.edu.uy/instituto-nacional-evaluacion-educativa-presento-estudio-sobre-centros-maria-espinola",
-    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticia_destacada/public/images/2026/noticias/octubre/261014/ined/P.jpg.webp?h=0c5fa529&itok=6l1WSVgF",
+    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261014/ined/P.jpg.webp?h=0c5fa529&itok=Qr_Q4q84",
     "source": "ANEP",
     "date": "10/16/2026"
   },
@@ -24,13 +31,6 @@
     "title": "ANEP declaró de interés educativo Festival Rusia-Uruguay: 13.000 km de descubrimientos",
     "url": "https://www.anep.edu.uy/anep-declaro-interes-educativo-festival-rusia-uruguay-13000-km-descubrimientos",
     "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261014/rusia-uruguay.png.webp?h=0c5fa529&itok=0OIMDs6K",
-    "source": "ANEP",
-    "date": "10/16/2026"
-  },
-  {
-    "title": "Estudiantes y docentes participaron de Taller de Fortalecimiento de las Ciencias Básicas",
-    "url": "https://www.anep.edu.uy/estudiantes-docentes-participaron-taller-fortalecimiento-ciencias-basicas",
-    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261013/ciencias/CIENCIA4.png.webp?h=0c5fa529&itok=VKo1Tqak",
     "source": "ANEP",
     "date": "10/16/2026"
   },
@@ -84,9 +84,9 @@
     "date": "10/16/2026"
   },
   {
-    "title": "La Escuela Rural Nº 52 de Polanco Norte celebró su centenario junto a la comunidad",
-    "url": "https://www.dgeip.edu.uy/prensa/5729/",
-    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5729/portada.jpg",
+    "title": "Día Mundial de la Alimentación",
+    "url": "https://www.dgeip.edu.uy/prensa/5723/",
+    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5723/portada.jpg",
     "source": "DGEIP",
     "date": "10/16/2026"
   },
@@ -147,6 +147,27 @@
     "date": "10/16/2026"
   },
   {
+    "title": "Entrega de lentes a estudiantes de la UNIDAD Nº4 Santiago Vázquez",
+    "url": "https://www.utu.edu.uy/entrega-de-lentes-a-estudiantes-de-la-unidad-no4-santiago-vazquez/",
+    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-15-at-13.43.00.jpeg",
+    "source": "UTU",
+    "date": "10/16/2026"
+  },
+  {
+    "title": "Inspección y Campus Regional Centro: Elección-Designación de Horas Docentes 2026",
+    "url": "https://www.utu.edu.uy/inspeccion-y-campus-regional-centro-eleccion-designacion-de-horas-docentes-2026-30/",
+    "imageUrl": null,
+    "source": "UTU",
+    "date": "10/16/2026"
+  },
+  {
+    "title": "Día Mundial de la Alimentación",
+    "url": "https://www.utu.edu.uy/dia-mundial-de-la-alimentacion/",
+    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/Banner-OCTUBRE-1080-2026.jpg",
+    "source": "UTU",
+    "date": "10/16/2026"
+  },
+  {
     "title": "La gastronomía de frontera fue protagonista en el primer «SIGUE 2026»",
     "url": "https://www.utu.edu.uy/la-gastronomia-de-frontera-fue-protagonista-en-el-primer-sigue-2026/",
     "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-14-at-17.06.11-1-edited.jpeg",
@@ -164,27 +185,6 @@
     "title": "Escuela Agraria La Concordia participará de la Feria Nacional de Clubes de Ciencias con tres proyectos clasificados",
     "url": "https://www.utu.edu.uy/escuela-agraria-la-concordia-participara-de-la-feria-nacional-de-clubes-de-ciencias-con-tres-proyectos-clasificados/",
     "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-14-at-8.32.10-PM-edited.jpeg",
-    "source": "UTU",
-    "date": "10/16/2026"
-  },
-  {
-    "title": "Llamado Abierto a Aspiraciones para integrar un listado para cubrir cargos de Jefe y Ayudante de Internado, interino y/o suplente con 40 horas semanales de labor, para el Departamento de Canelones: Declarar desierto",
-    "url": "https://www.utu.edu.uy/llamado-abierto-a-aspiraciones-para-integrar-un-listado-para-cubrir-cargos-de-jefe-y-ayudante-de-internado-interino-y-o-suplente-con-40-horas-semanales-de-labor-para-el-departamento-de-canelones-de/",
-    "imageUrl": null,
-    "source": "UTU",
-    "date": "10/16/2026"
-  },
-  {
-    "title": "Convocatoria a aspirantes para examen de Instalador Gasista Nivel 1 y Nivel 2",
-    "url": "https://www.utu.edu.uy/convocatoria-a-aspirantes-para-examen-de-instalador-gasista-nivel-1-y-nivel-2/",
-    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/FvsKP39aYAMUMKL-1024x614-1-edited.jpg",
-    "source": "UTU",
-    "date": "10/16/2026"
-  },
-  {
-    "title": "Mucho más que unos lentes: educación, inclusión y oportunidades",
-    "url": "https://www.utu.edu.uy/mucho-mas-que-unos-lentes-educacion-inclusion-y-oportunidades/",
-    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/DSC_0161.jpg",
     "source": "UTU",
     "date": "10/16/2026"
   }
