@@ -9927,6 +9927,30 @@
     ]
   },
   {
+    "timestamp": "19/10/2026 9:40:30",
+    "email": "barbarabuzo.b@gmail.com",
+    "nombre": "Bárbara",
+    "apellido": "Buzo",
+    "inicio": "19/10/2026",
+    "fin": "20/10/2026",
+    "grupos": "Danza 2 y danza 3",
+    "asignaturas": [
+      "Metodología de la danza 2 y 3"
+    ]
+  },
+  {
+    "timestamp": "19/10/2026 11:56:09",
+    "email": "gonzalez.sebastian3@gmail.com",
+    "nombre": "Sebastián",
+    "apellido": "González",
+    "inicio": "19/10/2026",
+    "fin": "19/10/2026",
+    "grupos": "2 do A Derecho y Soc ",
+    "asignaturas": [
+      "Pensamiento computacional"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",

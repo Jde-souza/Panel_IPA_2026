@@ -13519,11 +13519,6 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
-          "dia": 2,
-          "hora": "19:00-19:40",
-          "info": "Educación para la salud  Raimondo\nSALON 10"
-        },
-        {
           "dia": 3,
           "hora": "19:00-19:40",
           "info": "Educación para la salud  Raimondo\nSALON B"
@@ -13534,14 +13529,14 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
+          "dia": 5,
+          "hora": "19:00-19:40",
+          "info": "Educación para la salud  Raimondo\nSALON 215"
+        },
+        {
           "dia": 1,
           "hora": "19:40-20:20",
           "info": "Biología humana  Carolina Pereira"
-        },
-        {
-          "dia": 2,
-          "hora": "19:40-20:20",
-          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 3,
@@ -13554,14 +13549,14 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
+          "dia": 5,
+          "hora": "19:40-20:20",
+          "info": "Educación para la salud  Raimondo"
+        },
+        {
           "dia": 1,
           "hora": "20:20-21:00",
           "info": "Biología humana  Carolina Pereira"
-        },
-        {
-          "dia": 2,
-          "hora": "20:20-21:00",
-          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 3,
@@ -13572,6 +13567,11 @@
           "dia": 4,
           "hora": "20:20-21:00",
           "info": "Biología humana  Carolina Pereira"
+        },
+        {
+          "dia": 5,
+          "hora": "20:20-21:00",
+          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 1,
@@ -45211,7 +45211,7 @@
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente I  subgrupo Aa Rodríguez SALON 223/ Ab Aquino SALON 107"
+          "info": "Didáctica Práctica Docente I  subgrupo Aa Rodríguez SALON 222/ Ab Aquino SALON 223"
         },
         {
           "dia": 3,
