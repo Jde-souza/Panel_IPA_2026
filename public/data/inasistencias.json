@@ -9909,7 +9909,7 @@
     "apellido": "Perendones",
     "inicio": "19/10/2026",
     "fin": "19/10/2026",
-    "grupos": "2 a  1 c",
+    "grupos": "2A y  1A Cs. Biológicas",
     "asignaturas": [
       "Biología Humana / Seres vivos en su ambiente"
     ]
@@ -9921,9 +9921,9 @@
     "apellido": "Luzardo",
     "inicio": "20/10/2026",
     "fin": "20/10/2026",
-    "grupos": "3ero Historia ",
+    "grupos": "3B Historia ",
     "asignaturas": [
-      "Investigación educativa"
+      "Investigación educativa I"
     ]
   },
   {
@@ -9933,7 +9933,7 @@
     "apellido": "Buzo",
     "inicio": "19/10/2026",
     "fin": "20/10/2026",
-    "grupos": "Danza 2 y danza 3",
+    "grupos": "2C Danza  y 3C Danza ",
     "asignaturas": [
       "Metodología de la danza 2 y 3"
     ]
@@ -9948,6 +9948,42 @@
     "grupos": "2 do A Derecho y Soc ",
     "asignaturas": [
       "Pensamiento computacional"
+    ]
+  },
+  {
+    "timestamp": "19/10/2026 16:30:05",
+    "email": "veronica.leone.cotelo@gmail.com",
+    "nombre": "Verónica",
+    "apellido": "Leone",
+    "inicio": "19/10/2026",
+    "fin": "19/10/2026",
+    "grupos": "2o A Historia",
+    "asignaturas": [
+      "Historia de las Expresiones Artísticas"
+    ]
+  },
+  {
+    "timestamp": "19/10/2026 16:51:19",
+    "email": "soraya.auyuanet@gmail.com",
+    "nombre": "Soraya",
+    "apellido": "Auyuanet",
+    "inicio": "19/10/2026",
+    "fin": "19/10/2026",
+    "grupos": "2do C Literatura",
+    "asignaturas": [
+      "SEN Marco Normativo"
+    ]
+  },
+  {
+    "timestamp": "19/10/2026 20:25:21",
+    "email": "daniel.calcagno.m@gmail.com",
+    "nombre": "Daniel",
+    "apellido": "Calcagno",
+    "inicio": "20/10/2026",
+    "fin": "20/10/2026",
+    "grupos": "2do. A Filosofía",
+    "asignaturas": [
+      "Historia de la Filosofía Moderna"
     ]
   },
   {
@@ -9984,6 +10020,18 @@
     "grupos": "1°B Comunicación Visual",
     "asignaturas": [
       "Historia del Arte I"
+    ]
+  },
+  {
+    "timestamp": "",
+    "email": "",
+    "nombre": "Noel",
+    "apellido": "Vidal",
+    "inicio": "19/10/2026",
+    "fin": "19/10/2026",
+    "grupos": "1B Ed. Musical ",
+    "asignaturas": [
+      "ICP"
     ]
   }
 ]
