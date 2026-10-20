@@ -7,6 +7,13 @@
     "date": "10/20/2026"
   },
   {
+    "title": "Fiesta Nacional de la Primavera fue declarada Patrimonio Cultural Inmaterial del Uruguay",
+    "url": "https://www.anep.edu.uy/fiesta-nacional-la-primavera-fue-declarada-patrimonio-cultural-inmaterial-uruguay",
+    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261020/primavera/primavera%201.png.webp?h=0c5fa529&itok=rE_WVEB5",
+    "source": "ANEP",
+    "date": "10/20/2026"
+  },
+  {
     "title": "Referentes brindaron taller de cierre a becarios que cumplieron pasantías en el Codicen",
     "url": "https://www.anep.edu.uy/referentes-brindaron-taller-cierre-becarios-que-cumplieron-pasantias-en-codicen",
     "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261016/pasantes/dest1610.png.webp?h=0c5fa529&itok=aZTnV4iN",
@@ -31,13 +38,6 @@
     "title": "Juegos Deportivos Nacionales: instancias finales definen el pase a competencia internacional",
     "url": "https://www.anep.edu.uy/juegos-deportivos-nacionales-instancias-finales-definen-pase-competencia-internacional",
     "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/octubre/261014/jdn/jdp1.png.webp?h=0c5fa529&itok=o2MiJa32",
-    "source": "ANEP",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "Preinscripción digital Educación Media Básica 2027",
-    "url": "https://www.anep.edu.uy/preinscripcion-digital-educacion-media-basica-2027",
-    "imageUrl": "https://www.anep.edu.uy/sites/default/files/styles/noticias/public/images/2026/noticias/setiembre/260930/Banner%20PREINSCRIPCIO%CC%81N%20WEB%202026.jpg.webp?h=0c5fa529&itok=MWV9t65e",
     "source": "ANEP",
     "date": "10/20/2026"
   },
@@ -70,6 +70,13 @@
     "date": "10/20/2026"
   },
   {
+    "title": "Acto de colación de grado IFD de Florida",
+    "url": "https://www.cfe.edu.uy/index.php/9-novedades/3654-acto-de-colacion-de-grado-ifd-de-florida",
+    "imageUrl": "https://www.cfe.edu.uy/images/cache/thumbs/f2b0754ccf3e67c6046c2a880d2b627b.jpg",
+    "source": "CFE",
+    "date": "10/20/2026"
+  },
+  {
     "title": "1.° Congreso de Investigación Formativa y 30.° Ateneo de Investigación Formativa en el CeRP del Centro",
     "url": "https://www.cfe.edu.uy/index.php/9-novedades/3653-1-congreso-de-investigacion-formativa-y-30-ateneo-de-investigacion-formativa-en-el-cerp-del-centro",
     "imageUrl": "https://www.cfe.edu.uy/images/cache/thumbs/ca187909d677733aacc9a985002162f2.jpg",
@@ -77,23 +84,16 @@
     "date": "10/20/2026"
   },
   {
-    "title": "Coloquio Regional de Biología",
-    "url": "https://www.cfe.edu.uy/index.php/9-novedades/3650-coloquio-regional-de-biologia",
-    "imageUrl": "https://www.cfe.edu.uy/images/cache/thumbs/671ee31825b8790cdbf493106e90510d.jpg",
-    "source": "CFE",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "Día Mundial de Prevención de Cáncer de Mama",
-    "url": "https://www.dgeip.edu.uy/prensa/5724/",
-    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5724/portada.jpg",
+    "title": "La escuela especial Nº 198 celebró el Día Mundial del Bastón Blanco con una jornada de sensibilización e inclusión",
+    "url": "https://www.dgeip.edu.uy/prensa/5732/",
+    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5732/portada.jpg",
     "source": "DGEIP",
     "date": "10/20/2026"
   },
   {
-    "title": "La escuela especial Nº 198 celebró el Día Mundial del Bastón Blanco con una jornada de sensibilización e inclusión",
-    "url": "https://www.dgeip.edu.uy/prensa/5732/",
-    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5732/portada.jpg",
+    "title": "Infancias al Teatro: Más de 1.500 niños accederán a propuestas culturales",
+    "url": "https://www.dgeip.edu.uy/prensa/5733/",
+    "imageUrl": "https://www.dgeip.edu.uy/documentos/galerias/prensa/5733/portada.jpg",
     "source": "DGEIP",
     "date": "10/20/2026"
   },
@@ -133,17 +133,45 @@
     "date": "10/20/2026"
   },
   {
-    "title": "Estudiantes de Sarandí del Yí exploraron el territorio y su patrimonio natural en una salida de campo",
-    "url": "https://www.dges.edu.uy/comunicacion/noticias/estudiantes-sarandi-yi-exploraron-territorio-su-patrimonio-natural-salida-campo",
+    "title": "Estudiantes del Liceo N. º 4 de Salto participaron en la Feria Nacional de Ciencias",
+    "url": "https://www.dges.edu.uy/comunicacion/noticias/estudiantes-liceo-n-o-4-salto-participaron-feria-nacional-ciencias",
     "imageUrl": null,
     "source": "DGES",
     "date": "10/20/2026"
   },
   {
-    "title": "Comenzó a funcionar el aula comedor del Liceo de La Coronilla",
-    "url": "https://www.dges.edu.uy/comunicacion/noticias/comenzo-funcionar-aula-comedor-liceo-coronilla",
+    "title": "Avanza el proyecto para la construcción del Liceo N.º 3 de San Carlos",
+    "url": "https://www.dges.edu.uy/comunicacion/noticias/avanza-proyecto-construccion-liceo-no-3-san-carlos",
     "imageUrl": null,
     "source": "DGES",
+    "date": "10/20/2026"
+  },
+  {
+    "title": "Campus Litoral Sur e Inspección Regional Litoral Sur, comunican acto de Elección-Designación de horas de adscriptos",
+    "url": "https://www.utu.edu.uy/campus-litoral-sur-e-inspeccion-regional-litoral-sur-comunican-acto-de-eleccion-designacion-de-horas-de-adscriptos-16/",
+    "imageUrl": null,
+    "source": "UTU",
+    "date": "10/20/2026"
+  },
+  {
+    "title": "Autorizar la justificación de inasistencias a los funcionarios docentes y referentes de este Subsistema, que acrediten la asistencia a la Muestra interactiva de experiencias de Ampliación del Tiempo Educativo",
+    "url": "https://www.utu.edu.uy/autorizar-la-justificacion-de-inasistencias-a-los-funcionarios-docentes-y-referentes-de-este-subsistema-que-acrediten-la-asistencia-a-la-muestra-interactiva-de-experiencias-de-ampliacion-del-tiempo-e/",
+    "imageUrl": null,
+    "source": "UTU",
+    "date": "10/20/2026"
+  },
+  {
+    "title": "La feria educativa «Caminos: Sembrando Futuros» reunió a distintas escuelas de UTU",
+    "url": "https://www.utu.edu.uy/feria-educativa-reunio-propuestas-de-distintas-escuelas-de-utu/",
+    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/DSC_0430_1-edited.jpg",
+    "source": "UTU",
+    "date": "10/20/2026"
+  },
+  {
+    "title": "La Dirección del Campus Regional de Educación Tecnológica Noreste e Inspección Regional: Acto de elección de cargo - Dirección de Polo Educativo Tecnológico de Rivera",
+    "url": "https://www.utu.edu.uy/la-direccion-del-campus-regional-de-educacion-tecnologica-noreste-e-inspeccion-regional-acto-de-eleccion-de-cargo-direccion-de-polo-educativo-tecnologico-de-rivera/",
+    "imageUrl": null,
+    "source": "UTU",
     "date": "10/20/2026"
   },
   {
@@ -156,34 +184,6 @@
   {
     "title": "Elección Funciones Profesor Referente de Geografía",
     "url": "https://www.utu.edu.uy/eleccion-funciones-profesor-referente-de-geografia/",
-    "imageUrl": null,
-    "source": "UTU",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "Elección Funciones Profesor Referente de Indumentaria Textil",
-    "url": "https://www.utu.edu.uy/eleccion-funciones-profesor-referente-de-indumentaria-textil/",
-    "imageUrl": null,
-    "source": "UTU",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "La Escuela Agraria Guaviyú y el Anexo Quebracho se destacaron en la Expo Rural Paysandú 2026",
-    "url": "https://www.utu.edu.uy/la-escuela-agraria-guaviyu-y-el-anexo-quebracho-se-destacaron-en-la-expo-rural-paysandu-2026/",
-    "imageUrl": "https://www.utu.edu.uy/wp-content/uploads/2026/10/WhatsApp-Image-2026-10-17-at-3.42.02-PM-edited.jpeg",
-    "source": "UTU",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "Llamado a Aspiraciones, a nivel Nacional, para alumnos del Curso Técnico Terciario Nacional y Binacional de Gastronomía para realizar Pasantías Curriculares No Remuneradas en la Escuela Superior de Alta Gastronomía - Parada 12: Ampliación",
-    "url": "https://www.utu.edu.uy/llamado-a-aspiraciones-a-nivel-nacional-para-alumnos-de-curso-tecnico-terciario-nacional-y-binacional-de-gastronomia-para-realizar-pasantias-curriculares-no-remuneradas-en-la-escuela-superior-de-alt-3/",
-    "imageUrl": null,
-    "source": "UTU",
-    "date": "10/20/2026"
-  },
-  {
-    "title": "Declarar de interés institucional el Segundo Congreso Departamental y Primer Congreso Interdepartamental de Adolescencias del Instituto del Niño y Adolescente del Uruguay",
-    "url": "https://www.utu.edu.uy/declarar-de-interes-institucional-el-segundo-congreso-departamental-y-primer-congreso-interdepartamental-de-adolescencias-del-instituto-del-nino-y-adolescente-del-uruguay/",
     "imageUrl": null,
     "source": "UTU",
     "date": "10/20/2026"

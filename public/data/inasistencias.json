@@ -9987,6 +9987,66 @@
     ]
   },
   {
+    "timestamp": "20/10/2026 6:36:51",
+    "email": "gonzalez.sebastian3@gmail.com",
+    "nombre": "Sebastián",
+    "apellido": "González",
+    "inicio": "20/10/2026",
+    "fin": "20/10/2026",
+    "grupos": "2A Com visual + Química/ 2A Derecho y Sociología + 2B Literatura ",
+    "asignaturas": [
+      "Pensamiento Computacional"
+    ]
+  },
+  {
+    "timestamp": "20/10/2026 8:49:28",
+    "email": "opedrozocabrera@gmail.com",
+    "nombre": "Oscar Aníbal",
+    "apellido": "Pedrozo Cabrera",
+    "inicio": "20/10/2026",
+    "fin": "20/10/2026",
+    "grupos": "2do B Literatura ",
+    "asignaturas": [
+      "SEN Marco normativo"
+    ]
+  },
+  {
+    "timestamp": "20/10/2026 9:04:43",
+    "email": "arqlopezgiordano@gmail.com",
+    "nombre": "María José",
+    "apellido": "López Giordano",
+    "inicio": "21/10/2026",
+    "fin": "21/10/2026",
+    "grupos": "4A Comunicación Visual ",
+    "asignaturas": [
+      "Diseño 4"
+    ]
+  },
+  {
+    "timestamp": "20/10/2026 9:59:10",
+    "email": "ceciliamauttoni@gmail.com",
+    "nombre": "Cecilia",
+    "apellido": "Mauttoni",
+    "inicio": "21/10/2026",
+    "fin": "21/10/2026",
+    "grupos": "2°Ab Ed. Musical",
+    "asignaturas": [
+      "Didáctica I"
+    ]
+  },
+  {
+    "timestamp": "20/10/2026 12:14:02",
+    "email": "pabloscagliola@gmail.com",
+    "nombre": "Pablo",
+    "apellido": "Scagliola",
+    "inicio": "29/10/2026",
+    "fin": "29/10/2026",
+    "grupos": "3°A Comunicación Visual",
+    "asignaturas": [
+      "Imagen 3"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
@@ -10032,6 +10092,18 @@
     "grupos": "1B Ed. Musical ",
     "asignaturas": [
       "ICP"
+    ]
+  },
+  {
+    "timestamp": "",
+    "email": "",
+    "nombre": "Claudia",
+    "apellido": "Solís",
+    "inicio": "16/10/2026",
+    "fin": "16/10/2026",
+    "grupos": "1° B Comunicación Visual ",
+    "asignaturas": [
+      "Historia del Arte I"
     ]
   }
 ]
