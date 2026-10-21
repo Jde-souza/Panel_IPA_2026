@@ -239,7 +239,14 @@ export class InasistenciasComponent implements OnInit {
 
   async deleteRecord(id?: number) {
     if (!id) return;
-    if (confirm('¿Estás seguro de que deseas eliminar este registro de inasistencia?')) {
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Inasistencia',
+      message: '¿Estás seguro de que deseas eliminar este registro de inasistencia docente?',
+      confirmText: 'Eliminar registro',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       try {
         await firstValueFrom(this.dataService.deleteInasistencia(id));
         this.alertService.success('Inasistencia eliminada exitosamente');

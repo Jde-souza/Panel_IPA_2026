@@ -200,7 +200,14 @@ export class ExamenesComponent implements OnInit {
 
   async deleteRecord(id?: number) {
     if (!id) return;
-    if (confirm('¿Estás seguro de que deseas eliminar este examen?')) {
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Mesa de Examen',
+      message: '¿Estás seguro de que deseas eliminar este examen? Esta acción no se puede deshacer.',
+      confirmText: 'Eliminar examen',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       try {
         await firstValueFrom(this.dataService.deleteExamen(id));
         this.alertService.success('Examen eliminado exitosamente');

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../../data.service';
@@ -8,6 +8,12 @@ import { firstValueFrom } from 'rxjs';
 export interface Especialidad {
   nombre: string;
   materias: string[];
+}
+
+export interface MateriaGlobal {
+  nombre: string;
+  anios: string[];
+  anio?: string;
 }
 
 export interface Salon {
@@ -23,12 +29,16 @@ export interface Salon {
   imports: [CommonModule, FormsModule],
   templateUrl: './settings.component.html'
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent implements OnInit, OnDestroy {
   private dataService = inject(DataService);
   private alertService = inject(AlertService);
 
   isLoading = true;
   isSaving = false;
+  autoSaveStatus: 'idle' | 'pending' | 'saving' | 'saved' | 'error' = 'idle';
+  lastSavedTime: string = '';
+  private autoSaveTimeout: any = null;
+
   activeTab = 'general';
 
   config = {
@@ -39,9 +49,18 @@ export class SettingsComponent implements OnInit {
     pisos: 'Sub suelo\nPlanta baja\nPrimer piso\nSegundo piso'
   };
 
+  opcionesAniosBase: string[] = [
+    '1º Año',
+    '2º Año',
+    '3º Año',
+    '4º Año'
+  ];
+
+  filtroAnioTab: string = 'Todos';
+
   especialidades: Especialidad[] = [];
   salones: Salon[] = [];
-  materiasGlobales: string[] = [];
+  materiasGlobales: MateriaGlobal[] = [];
 
   // Modal State para Especialidades
   showEspecialidadModal = false;
@@ -49,8 +68,15 @@ export class SettingsComponent implements OnInit {
   currentEsp: Especialidad = { nombre: '', materias: [] };
   newMateria: string = '';
   filtroMateriaEsp: string = '';
+
+  // Modal State para Materias Globales
   showMateriaModal = false;
-  nuevaMateriaGlobal: string = '';
+  editingMateriaIndex: number = -1;
+  currentMateria: MateriaGlobal = {
+    nombre: '',
+    anios: [...this.opcionesAniosBase],
+    anio: 'Todos los años'
+  };
 
   // Modal State para Salones
   showSalonModal = false;
@@ -59,6 +85,42 @@ export class SettingsComponent implements OnInit {
 
   async ngOnInit() {
     await this.loadConfig();
+  }
+
+  ngOnDestroy() {
+    if (this.autoSaveTimeout) {
+      clearTimeout(this.autoSaveTimeout);
+      this.autoSaveTimeout = null;
+      this.saveConfig(true);
+    }
+  }
+
+  normalizeAnios(rawAnios?: string[], rawAnioStr?: string): string[] {
+    if (Array.isArray(rawAnios) && rawAnios.length > 0) {
+      return this.opcionesAniosBase.filter(a => rawAnios.includes(a));
+    }
+    if (rawAnioStr && rawAnioStr !== 'Todos los años') {
+      const matched = this.opcionesAniosBase.filter(a => rawAnioStr.includes(a.replace(' Año', '')));
+      if (matched.length > 0) return matched;
+    }
+    return [...this.opcionesAniosBase];
+  }
+
+  formatAnios(anios: string[]): string {
+    if (!anios || anios.length === 0 || anios.length === this.opcionesAniosBase.length) {
+      return 'Todos los años';
+    }
+    if (anios.length === 1) {
+      return anios[0];
+    }
+    const ordenados = this.opcionesAniosBase.filter(a => anios.includes(a));
+    const numeros = ordenados.map(a => a.replace(' Año', ''));
+    const ult = numeros.pop();
+    return `${numeros.join(', ')} y ${ult} Año`;
+  }
+
+  isTodosLosAnios(anios: string[]): boolean {
+    return Boolean(anios && anios.length === this.opcionesAniosBase.length);
   }
 
   async loadConfig() {
@@ -90,16 +152,34 @@ export class SettingsComponent implements OnInit {
         }
       }
 
-      if (res.materias) {
-        this.materiasGlobales = res.materias;
+      if (res.materias && Array.isArray(res.materias)) {
+        this.materiasGlobales = res.materias.map((m: any) => {
+          if (typeof m === 'string') {
+            return {
+              nombre: m,
+              anios: [...this.opcionesAniosBase],
+              anio: 'Todos los años'
+            };
+          }
+          const aniosNorm = this.normalizeAnios(m.anios, m.anio);
+          return {
+            nombre: m.nombre || '',
+            anios: aniosNorm,
+            anio: this.formatAnios(aniosNorm)
+          };
+        }).filter((m: MateriaGlobal) => Boolean(m.nombre));
       } else {
         const matSet = new Set<string>();
         if (this.especialidades) {
-            this.especialidades.forEach(e => {
-                if (e.materias) e.materias.forEach(m => matSet.add(m));
-            });
+          this.especialidades.forEach(e => {
+            if (e.materias) e.materias.forEach(m => matSet.add(m));
+          });
         }
-        this.materiasGlobales = Array.from(matSet);
+        this.materiasGlobales = Array.from(matSet).map(nombre => ({
+          nombre,
+          anios: [...this.opcionesAniosBase],
+          anio: 'Todos los años'
+        }));
       }
       
       if (res.planes) this.config.planes = Array.isArray(res.planes) ? res.planes.join('\n') : res.planes;
@@ -115,7 +195,7 @@ export class SettingsComponent implements OnInit {
   }
 
   sortData() {
-    this.materiasGlobales.sort((a, b) => a.localeCompare(b));
+    this.materiasGlobales.sort((a, b) => a.nombre.localeCompare(b.nombre));
     this.especialidades.sort((a, b) => a.nombre.localeCompare(b.nombre));
   }
 
@@ -123,9 +203,34 @@ export class SettingsComponent implements OnInit {
     return this.config.pisos.split('\n').map(s => s.trim()).filter(Boolean);
   }
 
-  async saveConfig() {
+  /**
+   * Dispara autoguardado con debounce (ideal para inputs de texto y textareas en General)
+   */
+  onConfigFieldChange() {
+    this.autoSaveStatus = 'pending';
+    if (this.autoSaveTimeout) {
+      clearTimeout(this.autoSaveTimeout);
+    }
+    this.autoSaveTimeout = setTimeout(() => {
+      this.autoSaveTimeout = null;
+      this.saveConfig(true);
+    }, 700);
+  }
+
+  /**
+   * Guarda toda la configuración en el backend.
+   * @param isAutoSave Si es true, actualiza el indicador de autoguardado; solo muestra toast si se pasa customToastMessage.
+   * @param customToastMessage Mensaje opcional para mostrar en toast tras un autoguardado de modal.
+   */
+  async saveConfig(isAutoSave: boolean = false, customToastMessage?: string) {
+    if (this.autoSaveTimeout) {
+      clearTimeout(this.autoSaveTimeout);
+      this.autoSaveTimeout = null;
+    }
+
     try {
       this.isSaving = true;
+      this.autoSaveStatus = 'saving';
       
       // Parse textareas back to arrays
       const payload = {
@@ -140,9 +245,19 @@ export class SettingsComponent implements OnInit {
       };
 
       await firstValueFrom(this.dataService.saveConfiguracion(payload));
-      this.alertService.success('Configuración del sistema guardada con éxito');
+      
+      const now = new Date();
+      this.lastSavedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      this.autoSaveStatus = 'saved';
+
+      if (!isAutoSave) {
+        this.alertService.success('Configuración del sistema guardada con éxito');
+      } else if (customToastMessage) {
+        this.alertService.success(customToastMessage, 2500);
+      }
     } catch (e: any) {
       console.error(e);
+      this.autoSaveStatus = 'error';
       this.alertService.error('Error al guardar configuración: ' + e.message);
     } finally {
       this.isSaving = false;
@@ -179,22 +294,44 @@ export class SettingsComponent implements OnInit {
     this.currentEsp.materias.splice(index, 1);
   }
 
-  toggleMateriaEnEsp(mat: string) {
-    const idx = this.currentEsp.materias.indexOf(mat);
+  toggleMateriaEnEsp(matNombre: string) {
+    const idx = this.currentEsp.materias.indexOf(matNombre);
     if (idx !== -1) {
       this.currentEsp.materias.splice(idx, 1);
     } else {
-      this.currentEsp.materias.push(mat);
+      this.currentEsp.materias.push(matNombre);
     }
   }
 
-  get materiasFiltradas() {
+  get materiasFiltradas(): MateriaGlobal[] {
     if (!this.filtroMateriaEsp) return this.materiasGlobales;
-    return this.materiasGlobales.filter(m => m.toLowerCase().includes(this.filtroMateriaEsp.toLowerCase()));
+    const term = this.filtroMateriaEsp.toLowerCase();
+    return this.materiasGlobales.filter(m =>
+      m.nombre.toLowerCase().includes(term) ||
+      (m.anio && m.anio.toLowerCase().includes(term)) ||
+      (m.anios && m.anios.some(a => a.toLowerCase().includes(term)))
+    );
   }
 
-  openMateriaModal() {
-    this.nuevaMateriaGlobal = '';
+  // --- Modal Logic para Materias Globales ---
+  openMateriaModal(index: number = -1) {
+    if (index >= 0) {
+      this.editingMateriaIndex = index;
+      const mat = this.materiasGlobales[index];
+      const anios = this.normalizeAnios(mat.anios, mat.anio);
+      this.currentMateria = {
+        nombre: mat.nombre,
+        anios: [...anios],
+        anio: this.formatAnios(anios)
+      };
+    } else {
+      this.editingMateriaIndex = -1;
+      this.currentMateria = {
+        nombre: '',
+        anios: [...this.opcionesAniosBase],
+        anio: 'Todos los años'
+      };
+    }
     this.showMateriaModal = true;
   }
 
@@ -202,33 +339,132 @@ export class SettingsComponent implements OnInit {
     this.showMateriaModal = false;
   }
 
-  addMateriaGlobal() {
-    const val = this.nuevaMateriaGlobal.trim();
-    if (val && !this.materiasGlobales.includes(val)) {
-      this.materiasGlobales.push(val);
-      this.sortData();
-      this.closeMateriaModal();
+  toggleAnioMateria(anio: string) {
+    const idx = this.currentMateria.anios.indexOf(anio);
+    if (idx !== -1) {
+      this.currentMateria.anios.splice(idx, 1);
+    } else {
+      this.currentMateria.anios.push(anio);
+      this.currentMateria.anios = this.opcionesAniosBase.filter(a => this.currentMateria.anios.includes(a));
     }
+    this.currentMateria.anio = this.formatAnios(this.currentMateria.anios);
   }
 
-  removeMateriaGlobal(index: number) {
-    const mat = this.materiasGlobales[index];
-    if (confirm(`¿Eliminar la materia "${mat}"? Se quitará también de las especialidades que la usen.`)) {
-      this.materiasGlobales.splice(index, 1);
-      this.especialidades.forEach(esp => {
-        const idx = esp.materias.indexOf(mat);
-        if (idx !== -1) esp.materias.splice(idx, 1);
+  toggleTodosLosAniosMateria() {
+    if (this.isTodosLosAnios(this.currentMateria.anios)) {
+      this.currentMateria.anios = [];
+    } else {
+      this.currentMateria.anios = [...this.opcionesAniosBase];
+    }
+    this.currentMateria.anio = this.formatAnios(this.currentMateria.anios);
+  }
+
+  async saveMateriaGlobal() {
+    const val = this.currentMateria.nombre.trim();
+    if (!val) {
+      this.alertService.warning('La materia debe tener un nombre');
+      return;
+    }
+
+    if (!this.currentMateria.anios || this.currentMateria.anios.length === 0) {
+      this.alertService.warning('Selecciona al menos un año para la materia');
+      return;
+    }
+
+    const aniosOrdenados = this.opcionesAniosBase.filter(a => this.currentMateria.anios.includes(a));
+    const anioLabel = this.formatAnios(aniosOrdenados);
+
+    const duplicate = this.materiasGlobales.some(
+      (m, idx) => idx !== this.editingMateriaIndex && m.nombre.toLowerCase() === val.toLowerCase()
+    );
+
+    if (duplicate) {
+      this.alertService.warning('Ya existe una materia con ese nombre');
+      return;
+    }
+
+    const isEdit = this.editingMateriaIndex >= 0;
+
+    if (isEdit) {
+      const oldName = this.materiasGlobales[this.editingMateriaIndex].nombre;
+      this.materiasGlobales[this.editingMateriaIndex] = {
+        nombre: val,
+        anios: aniosOrdenados,
+        anio: anioLabel
+      };
+
+      // Si cambió el nombre, actualizar referencias en las especialidades
+      if (oldName !== val) {
+        this.especialidades.forEach(esp => {
+          const idx = esp.materias.indexOf(oldName);
+          if (idx !== -1) {
+            esp.materias[idx] = val;
+          }
+        });
+      }
+    } else {
+      this.materiasGlobales.push({
+        nombre: val,
+        anios: aniosOrdenados,
+        anio: anioLabel
       });
     }
+
+    this.sortData();
+    this.closeMateriaModal();
+    await this.saveConfig(true, isEdit ? 'Materia actualizada y guardada' : 'Materia agregada y guardada');
   }
 
-  saveEspecialidad() {
+  async removeMateriaGlobal(index: number, event?: Event) {
+    if (event) event.stopPropagation();
+    const mat = this.materiasGlobales[index];
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Materia',
+      message: `¿Eliminar la materia "${mat.nombre}"? Se quitará también de las especialidades que la usen.`,
+      confirmText: 'Eliminar materia',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
+      this.materiasGlobales.splice(index, 1);
+      this.especialidades.forEach(esp => {
+        const idx = esp.materias.indexOf(mat.nombre);
+        if (idx !== -1) esp.materias.splice(idx, 1);
+      });
+      await this.saveConfig(true, 'Materia eliminada y cambios guardados');
+    }
+  }
+
+  getGruposAniosMaterias(): string[] {
+    return ['1º Año', '2º Año', '3º Año', '4º Año', 'Varios años', 'Todos los años'];
+  }
+
+  getMateriasByGrupoAnio(grupo: string) {
+    return this.materiasGlobales
+      .map((materia, index) => ({ materia, index }))
+      .filter(item => {
+        const anios = item.materia.anios || this.opcionesAniosBase;
+        if (this.filtroAnioTab !== 'Todos' && !anios.includes(this.filtroAnioTab)) {
+          return false;
+        }
+        if (grupo === 'Todos los años') {
+          return anios.length === this.opcionesAniosBase.length;
+        }
+        if (grupo === 'Varios años') {
+          return anios.length > 1 && anios.length < this.opcionesAniosBase.length;
+        }
+        return anios.length === 1 && anios[0] === grupo;
+      });
+  }
+
+  async saveEspecialidad() {
     if (!this.currentEsp.nombre.trim()) {
       this.alertService.warning('La especialidad debe tener un nombre');
       return;
     }
 
-    if (this.editingEspIndex >= 0) {
+    const isEdit = this.editingEspIndex >= 0;
+    if (isEdit) {
       this.especialidades[this.editingEspIndex] = { ...this.currentEsp };
     } else {
       this.especialidades.push({ ...this.currentEsp });
@@ -236,12 +472,22 @@ export class SettingsComponent implements OnInit {
     
     this.sortData();
     this.closeEspModal();
+    await this.saveConfig(true, isEdit ? 'Especialidad actualizada y guardada' : 'Especialidad creada y guardada');
   }
 
-  deleteEspecialidad(index: number, event: Event) {
+  async deleteEspecialidad(index: number, event: Event) {
     event.stopPropagation();
-    if (confirm('¿Estás seguro de que deseas eliminar esta especialidad y todas sus materias?')) {
+    const esp = this.especialidades[index];
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Especialidad',
+      message: `¿Estás seguro de que deseas eliminar la especialidad "${esp.nombre}" y desvincular todas sus materias?`,
+      confirmText: 'Eliminar especialidad',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       this.especialidades.splice(index, 1);
+      await this.saveConfig(true, 'Especialidad eliminada y cambios guardados');
     }
   }
 
@@ -261,25 +507,36 @@ export class SettingsComponent implements OnInit {
     this.showSalonModal = false;
   }
 
-  saveSalon() {
+  async saveSalon() {
     if (!this.currentSalon.nombre.trim()) {
       this.alertService.warning('El salón debe tener un nombre identificador');
       return;
     }
 
-    if (this.editingSalonIndex >= 0) {
+    const isEdit = this.editingSalonIndex >= 0;
+    if (isEdit) {
       this.salones[this.editingSalonIndex] = { ...this.currentSalon };
     } else {
       this.salones.push({ ...this.currentSalon });
     }
     
     this.closeSalonModal();
+    await this.saveConfig(true, isEdit ? 'Salón actualizado y guardado' : 'Salón creado y guardado');
   }
 
-  deleteSalon(index: number, event: Event) {
+  async deleteSalon(index: number, event: Event) {
     event.stopPropagation();
-    if (confirm('¿Estás seguro de que deseas eliminar este salón?')) {
+    const salon = this.salones[index];
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Salón',
+      message: `¿Estás seguro de que deseas eliminar el salón "${salon.nombre}"?`,
+      confirmText: 'Eliminar salón',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       this.salones.splice(index, 1);
+      await this.saveConfig(true, 'Salón eliminado y cambios guardados');
     }
   }
 

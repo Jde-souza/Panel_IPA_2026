@@ -291,7 +291,14 @@ export class HorariosComponent implements OnInit {
 
   async deleteRecord(id?: number) {
     if (!id) return;
-    if (confirm('¿Estás seguro de que deseas eliminar este horario?')) {
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Horario',
+      message: '¿Estás seguro de que deseas eliminar este horario? Esta acción no se puede deshacer.',
+      confirmText: 'Eliminar horario',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       try {
         await firstValueFrom(this.dataService.deleteHorario(id));
         this.alertService.success('Horario eliminado exitosamente');

@@ -12128,7 +12128,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Pedagogía\nSoledad Rodríguez\nSALON 111"
+          "info": "Pedagogía\nSoledad Rodríguez\nSALON 110"
         },
         {
           "dia": 5,
@@ -12988,7 +12988,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente I \nKautcha                         LABORATORIO 1"
+          "info": "Didáctica Práctica Docente I \nKuchta                        LABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13008,7 +13008,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente I \nKautcha                         LABORATORIO 1"
+          "info": "Didáctica Práctica Docente I \nKuchta                        LABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13033,7 +13033,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Didáctica Práctica Docente I \nKautcha                         LABORATORIO 1"
+          "info": "Didáctica Práctica Docente I \nKuchta                         LABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13058,7 +13058,7 @@
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente I \nKautcha                         LABORATORIO 1"
+          "info": "Didáctica Práctica Docente I \nKuchta                         LABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13165,7 +13165,7 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Didáctica Práctica Docente I \nKautcha\nLABORATORIO 1"
+          "info": "Didáctica Práctica Docente I \nKuchta\nLABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13190,7 +13190,7 @@
         {
           "dia": 4,
           "hora": "10:25-11:10",
-          "info": "Didáctica Práctica Docente I \nKautcha"
+          "info": "Didáctica Práctica Docente I \nKuchta\nLABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13215,7 +13215,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Didáctica Práctica Docente I \nKautcha"
+          "info": "Didáctica Práctica Docente I \nKuchta\nLABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13240,7 +13240,7 @@
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Didáctica Práctica Docente I \nKautcha"
+          "info": "Didáctica Práctica Docente I \nKuchta\nLABORATORIO 1"
         },
         {
           "dia": 5,
@@ -13519,11 +13519,6 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
-          "dia": 2,
-          "hora": "19:00-19:40",
-          "info": "Educación para la salud  Raimondo\nSALON 10"
-        },
-        {
           "dia": 3,
           "hora": "19:00-19:40",
           "info": "Educación para la salud  Raimondo\nSALON B"
@@ -13534,14 +13529,14 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
+          "dia": 5,
+          "hora": "19:00-19:40",
+          "info": "Educación para la salud  Raimondo\nSALON 215"
+        },
+        {
           "dia": 1,
           "hora": "19:40-20:20",
           "info": "Biología humana  Carolina Pereira"
-        },
-        {
-          "dia": 2,
-          "hora": "19:40-20:20",
-          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 3,
@@ -13554,14 +13549,14 @@
           "info": "Biología humana  Carolina Pereira"
         },
         {
+          "dia": 5,
+          "hora": "19:40-20:20",
+          "info": "Educación para la salud  Raimondo"
+        },
+        {
           "dia": 1,
           "hora": "20:20-21:00",
           "info": "Biología humana  Carolina Pereira"
-        },
-        {
-          "dia": 2,
-          "hora": "20:20-21:00",
-          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 3,
@@ -13572,6 +13567,11 @@
           "dia": 4,
           "hora": "20:20-21:00",
           "info": "Biología humana  Carolina Pereira"
+        },
+        {
+          "dia": 5,
+          "hora": "20:20-21:00",
+          "info": "Educación para la salud  Raimondo"
         },
         {
           "dia": 1,
@@ -13817,7 +13817,7 @@
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Lectura y escritura académica en Tutorías de pasantías                        LABORATORIO 2"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres\nLAB 2"
         },
         {
           "dia": 3,
@@ -13842,7 +13842,7 @@
         {
           "dia": 2,
           "hora": "08:45-09:30",
-          "info": "Lectura y escritura académica en Tutorías de pasantías"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres"
         },
         {
           "dia": 3,
@@ -13867,7 +13867,7 @@
         {
           "dia": 2,
           "hora": "09:30-10:15",
-          "info": "Lectura y escritura académica en Tutorías de pasantías"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres"
         },
         {
           "dia": 3,
@@ -13927,7 +13927,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Lectura y escritura académica en Tutorías de pasantías                          SALON A"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres \nSALON A"
         },
         {
           "dia": 5,
@@ -13952,7 +13952,7 @@
         {
           "dia": 4,
           "hora": "11:55-12:40",
-          "info": "Lectura y escritura académica en Tutorías de pasantías"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres"
         },
         {
           "dia": 5,
@@ -13977,7 +13977,7 @@
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Lectura y escritura académica en Tutorías de pasantías"
+          "info": "Lectura y escritura académica en Tutorías de pasantías                          Torres"
         },
         {
           "dia": 5,
@@ -24664,7 +24664,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Lengua Española 2 Prato\nSALON 108"
+          "info": "Lengua Española 2 \nPrato\nSALON 108"
         },
         {
           "dia": 5,
@@ -28940,7 +28940,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Filosofía Política Soria\nSALON 225"
+          "info": "Filosofía Política Soria\nSALON 211"
         },
         {
           "dia": 3,
@@ -34174,7 +34174,7 @@
         {
           "dia": 3,
           "hora": "21:00-21:40",
-          "info": "Introducción al campo profesional                Lanza\nSALON 114"
+          "info": "Introducción al campo profesional                Lanza\nSALON 202"
         },
         {
           "dia": 4,
@@ -35195,6 +35195,11 @@
           "info": "América Latina hasta 1830  Laborido"
         },
         {
+          "dia": 3,
+          "hora": "13:30-14:15",
+          "info": "Historia de la expresión artística   Leone                            \nSALA DE OBSERVACION"
+        },
+        {
           "dia": 4,
           "hora": "13:30-14:15",
           "info": "América Latina hasta 1830  Laborido"
@@ -35217,7 +35222,7 @@
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "Historia de la expresión artística  Leone                             \nSALA DE LENGUAS"
+          "info": "Historia de la expresión artística  Leone"
         },
         {
           "dia": 4,
@@ -35303,11 +35308,6 @@
           "dia": 4,
           "hora": "17:25-18:10",
           "info": "Pensamiento computacional                       Franca"
-        },
-        {
-          "dia": 5,
-          "hora": "17:25-18:10",
-          "info": "Historia de la expresión artística   Leone                            \nSALA DE OBSERVACION"
         },
         {
           "dia": 2,
@@ -35618,7 +35618,7 @@
         {
           "dia": 2,
           "hora": "21:00-21:40",
-          "info": "Historia de la expresión artística   Zito                            \nSALON 217\n(SOLO POR 29/9 SALA DE OBSERVACION)"
+          "info": "Historia de la expresión artística   Zito                            \nSALON 217"
         },
         {
           "dia": 3,
@@ -37218,7 +37218,7 @@
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "Historia del Uruguay de 1930 a comienzos del siglo XXI Faget\nSALA DE OBSERVACION"
+          "info": "Historia del Uruguay de 1930 a comienzos del siglo XXI Faget\nSALA DE LENGUA"
         },
         {
           "dia": 4,
@@ -38323,7 +38323,7 @@
         {
           "dia": 2,
           "hora": "21:40-22:20",
-          "info": "Psicología del Desarrollo  Palombo\nSALON 111"
+          "info": "Psicología del Desarrollo  Palombo\nSALON 204"
         },
         {
           "dia": 3,
@@ -40742,12 +40742,12 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Lengua y Cultura Inglesa I               \nSALON 113"
+          "info": "Lengua y Cultura Inglesa I     \n Dantaz           \nSALON 113"
         },
         {
           "dia": 5,
           "hora": "08:00-08:45",
-          "info": "Lengua y Cultura Inglesa I   \nSALON 219"
+          "info": "Lengua y Cultura Inglesa I    \n Dantaz \nSALON 219"
         },
         {
           "dia": 1,
@@ -40787,7 +40787,7 @@
         {
           "dia": 3,
           "hora": "09:30-10:15",
-          "info": "Educación y sus transformaciones en la historia\nSALON 115"
+          "info": "Educación y sus transformaciones en la historia\nCARRERAS \nSALON 115"
         },
         {
           "dia": 4,
@@ -40842,7 +40842,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "Educación y sus transformaciones en la historia\nSALON 113"
+          "info": "Educación y sus transformaciones en la historia\nCARRERAS \nSALON 113"
         },
         {
           "dia": 5,
@@ -45211,7 +45211,7 @@
         {
           "dia": 2,
           "hora": "08:00-08:45",
-          "info": "Didáctica Práctica Docente I  subgrupo Aa Rodríguez SALON 223/ Ab Aquino SALON 107"
+          "info": "Didáctica Práctica Docente I  subgrupo Aa Rodríguez SALON 222/ Ab Aquino SALON 223"
         },
         {
           "dia": 3,
@@ -48210,12 +48210,12 @@
         {
           "dia": 4,
           "hora": "09:30-10:15",
-          "info": "Lengua Española 2 \nSALON 107"
+          "info": "Lengua Española 2 \nSALON 107\nDE LEMA"
         },
         {
           "dia": 5,
           "hora": "09:30-10:15",
-          "info": "Pedagogía \nSALON 105"
+          "info": "Pedagogía \nTOMEO\nSALON 105"
         },
         {
           "dia": 1,
@@ -48255,7 +48255,7 @@
         {
           "dia": 3,
           "hora": "11:10-11:55",
-          "info": "Lengua Española 2 \nSALON 114"
+          "info": "Lengua Española 2 \nSALON 114\nDE LEMA"
         },
         {
           "dia": 4,
@@ -48305,7 +48305,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Pedagogía \nSALON 114"
+          "info": "Pedagogía \nTOMEO\nSALON 114"
         },
         {
           "dia": 4,
@@ -48360,7 +48360,7 @@
         {
           "dia": 4,
           "hora": "08:00-08:45",
-          "info": "Pedagogía\n\nSALON 110"
+          "info": "Pedagogía\nDOMINGUEZ\nSALON 110"
         },
         {
           "dia": 5,
@@ -48500,7 +48500,7 @@
         {
           "dia": 2,
           "hora": "12:40-13:25",
-          "info": "Pedagogía\n\nSALON 103"
+          "info": "Pedagogía\nDOMINGUEZ\nSALON 103"
         },
         {
           "dia": 3,
@@ -48821,7 +48821,7 @@
         {
           "dia": 2,
           "hora": "15:55-16:40",
-          "info": "Fundamentos II \nSALON 108"
+          "info": "Fundamentos II \nTEJERA\nSALON 108"
         },
         {
           "dia": 3,
@@ -48846,7 +48846,7 @@
         {
           "dia": 2,
           "hora": "16:40-17:25",
-          "info": "Fundamentos II"
+          "info": "Fundamentos II   Tejera"
         },
         {
           "dia": 3,
@@ -50259,7 +50259,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "Psicología de la Educación                        SALON 216"
+          "info": "Psicología de la Educación  \nGODOY                      SALON 216"
         },
         {
           "dia": 1,
@@ -50299,7 +50299,7 @@
         {
           "dia": 3,
           "hora": "11:55-12:40",
-          "info": "Psicología de la Educación                           SALON 206"
+          "info": "Psicología de la Educación        \nGODOY                   SALON 206"
         },
         {
           "dia": 4,
@@ -50535,7 +50535,7 @@
         {
           "dia": 4,
           "hora": "12:40-13:25",
-          "info": "Pensamiento computacional \nSALON 228"
+          "info": "Pensamiento computacional \nAkerman\nSALON 228"
         },
         {
           "dia": 5,
@@ -50580,7 +50580,7 @@
         {
           "dia": 3,
           "hora": "14:15-15:00",
-          "info": "Pensamiento computacional \nSALON 228"
+          "info": "Pensamiento computacional\nAkerman\nSALON 228"
         },
         {
           "dia": 4,
@@ -51036,7 +51036,7 @@
         {
           "dia": 1,
           "hora": "18:20-19:00",
-          "info": "Análisis I \nSALON 115"
+          "info": "Análisis I \nGUSTAVO FRANCO\nSALON 115"
         },
         {
           "dia": 2,
@@ -51091,7 +51091,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Análisis I \nSALON 114"
+          "info": "Análisis I \nGUSTAVO FRANCO\nSALON 114"
         },
         {
           "dia": 5,
@@ -51246,7 +51246,7 @@
         {
           "dia": 5,
           "hora": "18:20-19:00",
-          "info": "Pensamiento computacional      \nSALON 221"
+          "info": "Pensamiento computacional  \nRIJO    \nSALON 221"
         },
         {
           "dia": 1,
@@ -51286,7 +51286,7 @@
         {
           "dia": 3,
           "hora": "19:40-20:20",
-          "info": "Pensamiento computacional      \nSALON 228"
+          "info": "Pensamiento computacional      \nRIJO\nSALON 228"
         },
         {
           "dia": 4,
@@ -51361,7 +51361,7 @@
         {
           "dia": 3,
           "hora": "21:40-22:20",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \n\nSALON 113"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \nMONZON\nSALON 113"
         },
         {
           "dia": 4,
@@ -51371,7 +51371,7 @@
         {
           "dia": 5,
           "hora": "21:40-22:20",
-          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \n\nSALON 114"
+          "info": "Sistema educativo Nacional: marco normativo y gestión institucional  \nMONZON\nSALON 114"
         },
         {
           "dia": 1,
@@ -51672,7 +51672,7 @@
         {
           "dia": 5,
           "hora": "10:25-11:10",
-          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nSALON 115"
+          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nMarcelo  Fernández\nSALON 115"
         },
         {
           "dia": 1,
@@ -51692,7 +51692,7 @@
         {
           "dia": 4,
           "hora": "11:10-11:55",
-          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nSALON 115"
+          "info": "FILOSOFÍA DE LA EDUCACIÓN  \nMarcelo  Fernández\nSALON 115"
         },
         {
           "dia": 5,
@@ -53655,7 +53655,7 @@
         {
           "dia": 4,
           "hora": "19:40-20:20",
-          "info": "Lengua Española 2  \nSALON 108"
+          "info": "Lengua Española 2\n PRATO  \nSALON 108"
         },
         {
           "dia": 5,
@@ -55375,7 +55375,7 @@
         {
           "dia": 1,
           "hora": "08:45-09:30",
-          "info": "Lengua Extranjera II\nSALON 10"
+          "info": "Lengua Extranjera II\nBorjas\nSALON 10"
         },
         {
           "dia": 2,
@@ -55490,7 +55490,7 @@
         {
           "dia": 3,
           "hora": "12:40-13:25",
-          "info": "Lengua Extranjera II\nSALON 10"
+          "info": "Lengua Extranjera II\nBorjas\nSALON 10"
         },
         {
           "dia": 5,
@@ -55741,7 +55741,7 @@
         {
           "dia": 3,
           "hora": "20:20-21:00",
-          "info": "Lengua Extranjera II\nSALON 13"
+          "info": "Lengua Extranjera II\nSALON 13\nVerdier"
         },
         {
           "dia": 4,
@@ -55796,7 +55796,7 @@
         {
           "dia": 4,
           "hora": "22:20-23:00",
-          "info": "Lengua Extranjera II\nSALON 13"
+          "info": "Lengua Extranjera II\nSALON 13\nVerdier"
         },
         {
           "dia": 4,

@@ -116,11 +116,11 @@
                   <div class="text-[10px] mt-1" style="color: var(--text-muted)">{{ clase.docente }}</div>
                   <div class="text-[10px] mt-1" style="color: var(--text-muted)">{{ clase.salon }}</div>
 
-                  <div class="absolute top-1 right-1 hidden group-hover:flex gap-1 p-0.5 rounded shadow-sm bg-white border" style="border-color: var(--border-color);">
+                  <div class="absolute top-1 right-1 hidden group-hover:flex gap-1 p-0.5 rounded shadow-sm border" style="background: var(--surface); border-color: var(--border-color);">
                     <button (click)="openModal(clase)" class="w-5 h-5 flex items-center justify-center rounded-sm hover:bg-black/5" style="color: var(--primary-color);" title="Editar">
                       <i class="fa-solid fa-pen text-[9px]"></i>
                     </button>
-                    <button (click)="deleteRecord(clase.id)" class="w-5 h-5 flex items-center justify-center rounded-sm hover:bg-red-50 hover:text-red-500" style="color: var(--text-muted);" title="Eliminar">
+                    <button (click)="deleteRecord(clase.id)" class="w-5 h-5 flex items-center justify-center rounded-sm hover:bg-red-500/10 hover:text-red-500" style="color: var(--text-muted);" title="Eliminar">
                       <i class="fa-solid fa-trash-can text-[9px]"></i>
                     </button>
                   </div>

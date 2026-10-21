@@ -235,10 +235,17 @@ export class AgendaComponent implements OnInit {
     }
   }
 
-  deleteRecord(id?: number, event?: Event) {
+  async deleteRecord(id?: number, event?: Event) {
     if (event) event.stopPropagation();
     if (!id) return;
-    if (confirm('¿Estás seguro de que deseas eliminar este contacto?')) {
+    const confirmed = await this.alertService.confirm({
+      title: 'Eliminar Contacto Docente',
+      message: '¿Estás seguro de que deseas eliminar este contacto de la agenda docente?',
+      confirmText: 'Eliminar contacto',
+      cancelText: 'Cancelar',
+      type: 'danger'
+    });
+    if (confirmed) {
       this.dataService.deleteAgenda(id).subscribe({
         next: () => {
           this.alertService.success('Contacto eliminado exitosamente');
