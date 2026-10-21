@@ -10095,6 +10095,30 @@
     ]
   },
   {
+    "timestamp": "21/10/2026 7:56:31",
+    "email": "jamd250271@gmail.com",
+    "nombre": "Jorge",
+    "apellido": "Márquez",
+    "inicio": "21/10/2026",
+    "fin": "21/10/2026",
+    "grupos": "3° A Derecho",
+    "asignaturas": [
+      "Evolución Histórica de la Terminología Jurídica"
+    ]
+  },
+  {
+    "timestamp": "21/10/2026 9:23:47",
+    "email": "marcelo.fernandez.pavlovich@gmail.com",
+    "nombre": "Marcelo",
+    "apellido": "Fernández Pavlovich",
+    "inicio": "5/11/2026",
+    "fin": "6/11/2026",
+    "grupos": "3A Com. Visual, 3A Matemáticas, 3B Historia, 3B Inglés, 3B Química",
+    "asignaturas": [
+      "Filosofía de la Educación"
+    ]
+  },
+  {
     "timestamp": "",
     "email": "",
     "nombre": "María Inés",
