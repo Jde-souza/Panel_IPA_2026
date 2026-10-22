@@ -199,84 +199,372 @@
   </div>
 </div>
 
-<!-- Modal Glassmorphism para Examen -->
-<div *ngIf="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 fade-in" style="background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);">
-  <div class="glass-card w-full max-w-2xl !p-0 overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+<!-- Modal Glassmorphism para Examen con Desplegables de Catálogo -->
+<div *ngIf="showModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 fade-in" style="background: rgba(0,0,0,0.5); backdrop-filter: blur(6px);">
+  <div class="glass-card w-full max-w-3xl !p-0 overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+    
+    <!-- Modal Header -->
     <div class="px-6 py-4 border-b flex justify-between items-center" style="border-color: var(--border-color); background: var(--bg-light);">
-      <h3 class="text-xl font-bold" style="color: var(--text-heading)">{{ editingId ? 'Editar' : 'Agregar' }} Examen</h3>
-      <button (click)="closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition-colors" style="color: var(--text-muted)">
+      <div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(var(--primary-color-rgb), 0.15); color: var(--primary-color);">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="text-xl font-bold" style="color: var(--text-heading)">{{ editingId ? 'Editar' : 'Agregar' }} Mesa de Examen</h3>
+        </div>
+        <p class="text-xs mt-1" style="color: var(--text-muted)">
+          Seleccione las opciones de los catálogos institucionales o active el modo manual para ingresar valores personalizados.
+        </p>
+      </div>
+      <button (click)="closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" style="color: var(--text-muted)" title="Cerrar modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     
-    <div class="p-6 overflow-y-auto" style="background: var(--bg-body)">
-      <form (ngSubmit)="saveRecord()" #form="ngForm" class="space-y-4">
+    <!-- Modal Body -->
+    <div class="p-6 overflow-y-auto space-y-5" style="background: var(--bg-body)">
+      <form (ngSubmit)="saveRecord()" #form="ngForm" class="space-y-5">
         
-        <div>
-          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Nombre del Examen / Materia</label>
-          <input type="text" [(ngModel)]="newRecord.examen" name="examen" required
-                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Día (ej: Lunes 15 de Marzo)</label>
-            <input type="text" [(ngModel)]="newRecord.dia" name="dia" required
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        <!-- Bloque 1: Asignatura, Año y Plan -->
+        <div class="p-4 rounded-2xl border space-y-4" style="background: var(--surface); border-color: var(--border-color);">
+          <div class="text-xs font-bold uppercase tracking-wider flex items-center gap-2" style="color: var(--primary-color);">
+            <i class="fa-solid fa-book"></i> Asignatura y Plan de Estudios
           </div>
+
+          <!-- Asignatura / Examen -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Hora (ej: 08:00)</label>
-            <input type="text" [(ngModel)]="newRecord.hora" name="hora" required
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="block text-xs font-bold" style="color: var(--text-main)">
+                Nombre del Examen / Asignatura <span class="text-red-500">*</span>
+              </label>
+              <button type="button" (click)="toggleCustom('examen')"
+                      class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1.5 transition">
+                <i class="fa-solid" [ngClass]="customMode['examen'] ? 'fa-list-check' : 'fa-pen-to-square'"></i>
+                <span>{{ customMode['examen'] ? 'Elegir del catálogo (' + materiasList.length + ')' : 'Escribir manual' }}</span>
+              </button>
+            </div>
+
+            <!-- Desplegable Catálogo de Asignaturas -->
+            <div *ngIf="!customMode['examen']" class="relative">
+              <select [ngModel]="newRecord.examen" (ngModelChange)="onMateriaChange($event)" name="examen" required
+                      class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                      style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                <option value="" disabled>-- Seleccione una asignatura del catálogo ({{ materiasList.length }} registradas) --</option>
+                <option *ngFor="let m of materiasList" [value]="m.nombre">
+                  {{ m.nombre }}{{ m.anio ? ' — (' + m.anio + ')' : '' }}
+                </option>
+                <option value="__custom__">✏️ Ingresar otra asignatura no catalogada...</option>
+              </select>
+            </div>
+
+            <!-- Input Libre Asignatura -->
+            <div *ngIf="customMode['examen']" class="relative">
+              <input type="text" [(ngModel)]="newRecord.examen" name="examen" required
+                     placeholder="Nombre completo de la asignatura o mesa de examen..."
+                     class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                     style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+            </div>
+          </div>
+
+          <!-- Año y Plan (2 Columnas) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Año -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">Año Académico</label>
+                <button type="button" (click)="toggleCustom('anio')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['anio'] ? 'fa-list-check' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['anio'] ? 'Lista' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['anio']">
+                <select [(ngModel)]="newRecord.anio" (change)="onSelectCheckCustom('anio', newRecord.anio)" name="anio"
+                        class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Seleccionar Año --</option>
+                  <option *ngFor="let a of aniosList" [value]="a">{{ a }}</option>
+                  <option value="__custom__">✏️ Otro año personalizado...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['anio']">
+                <input type="text" [(ngModel)]="newRecord.anio" name="anio" placeholder="Ej: 1º Año, 2º Año..."
+                       class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+            <!-- Plan de Estudios -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">Plan de Estudios</label>
+                <button type="button" (click)="toggleCustom('plan')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['plan'] ? 'fa-list-check' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['plan'] ? 'Lista' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['plan']">
+                <select [(ngModel)]="newRecord.plan" (change)="onSelectCheckCustom('plan', newRecord.plan)" name="plan"
+                        class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Seleccionar Plan --</option>
+                  <option *ngFor="let p of planesList" [value]="p">Plan {{ p }}</option>
+                  <option value="__custom__">✏️ Otro plan personalizado...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['plan']">
+                <input type="text" [(ngModel)]="newRecord.plan" name="plan" placeholder="Ej: 2023, 2008..."
+                       class="w-full px-3 py-2.5 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Año</label>
-            <input type="text" [(ngModel)]="newRecord.anio" name="anio" placeholder="Ej: 1er Año"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        <!-- Bloque 2: Programación de Fecha, Horario y Salón -->
+        <div class="p-4 rounded-2xl border space-y-4" style="background: var(--surface); border-color: var(--border-color);">
+          <div class="text-xs font-bold uppercase tracking-wider flex items-center gap-2" style="color: var(--primary-color);">
+            <i class="fa-solid fa-clock"></i> Programación de Fecha, Horario y Salón
           </div>
-          <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Plan</label>
-            <input type="text" [(ngModel)]="newRecord.plan" name="plan" placeholder="Ej: 2023"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Día / Fecha -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">Día / Fecha</label>
+                <button type="button" (click)="toggleCustom('dia')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['dia'] ? 'fa-calendar-days' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['dia'] ? 'Selector' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['dia']" class="space-y-1.5">
+                <div class="flex gap-1.5">
+                  <select *ngIf="diasList.length > 0" [(ngModel)]="newRecord.dia" (change)="onSelectCheckCustom('dia', newRecord.dia)" name="dia"
+                          class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                          style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                    <option value="">-- Días Agendados --</option>
+                    <option *ngFor="let d of diasList" [value]="d">{{ d }}</option>
+                    <option value="__custom__">✏️ Ingresar texto libre...</option>
+                  </select>
+                  <input type="date" (change)="onDatePicked($any($event.target).value)"
+                         title="Seleccionar fecha en calendario"
+                         class="px-2 py-1.5 text-xs rounded-xl border cursor-pointer focus:outline-none focus:ring-2 focus:ring-sky-500"
+                         [ngClass]="diasList.length > 0 ? 'w-11 shrink-0' : 'w-full'"
+                         style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                </div>
+                <p *ngIf="newRecord.dia" class="text-[11px] font-medium truncate" style="color: var(--text-muted)">
+                  Fecha: <span class="font-bold text-sky-600 dark:text-sky-400">{{ newRecord.dia }}</span>
+                </p>
+              </div>
+
+              <div *ngIf="customMode['dia']">
+                <input type="text" [(ngModel)]="newRecord.dia" name="dia" placeholder="Ej: Lunes 15 de Marzo"
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+            <!-- Horario -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">Hora de Inicio</label>
+                <button type="button" (click)="toggleCustom('hora')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['hora'] ? 'fa-clock' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['hora'] ? 'Sugerencias' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['hora']">
+                <select [(ngModel)]="newRecord.hora" (change)="onSelectCheckCustom('hora', newRecord.hora)" name="hora"
+                        class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Turno / Hora --</option>
+                  <option *ngFor="let h of horasSugeridas" [value]="h">{{ h }} hs</option>
+                  <option value="__custom__">✏️ Otra hora personalizada...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['hora']">
+                <input type="text" [(ngModel)]="newRecord.hora" name="hora" placeholder="Ej: 08:00"
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+            <!-- Salón -->
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">Salón Asignado</label>
+                <button type="button" (click)="toggleCustom('salones')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['salones'] ? 'fa-door-open' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['salones'] ? 'Por Piso' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['salones']">
+                <select [(ngModel)]="newRecord.salones" (change)="onSelectCheckCustom('salones', newRecord.salones)" name="salones"
+                        class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Seleccionar Salón --</option>
+                  <optgroup *ngFor="let g of salonesByPiso" [label]="g.piso">
+                    <option *ngFor="let s of g.salones" [value]="s.nombre">
+                      Salón {{ s.nombre }}{{ s.capacidad ? ' (' + s.capacidad + 'p)' : '' }}
+                    </option>
+                  </optgroup>
+                  <option value="__custom__">✏️ Múltiples salones u otro...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['salones']">
+                <input type="text" [(ngModel)]="newRecord.salones" name="salones" placeholder="Ej: 201, 202 o A1"
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div>
-          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Tribunal (separados por coma)</label>
-          <input type="text" [(ngModel)]="newRecord.tribunalesStr" name="tribunalesStr" placeholder="Docente 1, Docente 2, Docente 3"
-                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        <!-- Bloque 3: Tribunal Examinador (Directorio Institucional de Docentes) -->
+        <div class="p-4 rounded-2xl border space-y-4" style="background: var(--surface); border-color: var(--border-color);">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider flex items-center gap-2" style="color: var(--primary-color);">
+              <i class="fa-solid fa-users"></i> Tribunal Examinador
+            </div>
+            <p class="text-xs mt-0.5" style="color: var(--text-muted)">
+              Seleccione los miembros del tribunal desde el directorio institucional de docentes ({{ docentesList.length }} registrados) o ingrese nombres manualmente.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Presidente (Tribunal 1) -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">
+                  <i class="fa-solid fa-user-tie text-sky-500 mr-1"></i> Presidente (T1)
+                </label>
+                <button type="button" (click)="toggleCustom('tribunal1')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['tribunal1'] ? 'fa-address-book' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['tribunal1'] ? 'Directorio' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['tribunal1']">
+                <select [(ngModel)]="newRecord.tribunal1" (change)="onSelectCheckCustom('tribunal1', newRecord.tribunal1)" name="tribunal1"
+                        class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Sin asignar --</option>
+                  <option *ngFor="let doc of docentesList" [value]="doc">{{ doc }}</option>
+                  <option value="__custom__">✏️ Escribir otro docente...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['tribunal1']">
+                <input type="text" [(ngModel)]="newRecord.tribunal1" name="tribunal1" placeholder="Nombre del docente..."
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+            <!-- Vocal 1 (Tribunal 2) -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">
+                  <i class="fa-solid fa-user text-indigo-500 mr-1"></i> Vocal 1 (T2)
+                </label>
+                <button type="button" (click)="toggleCustom('tribunal2')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['tribunal2'] ? 'fa-address-book' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['tribunal2'] ? 'Directorio' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['tribunal2']">
+                <select [(ngModel)]="newRecord.tribunal2" (change)="onSelectCheckCustom('tribunal2', newRecord.tribunal2)" name="tribunal2"
+                        class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Sin asignar --</option>
+                  <option *ngFor="let doc of docentesList" [value]="doc">{{ doc }}</option>
+                  <option value="__custom__">✏️ Escribir otro docente...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['tribunal2']">
+                <input type="text" [(ngModel)]="newRecord.tribunal2" name="tribunal2" placeholder="Nombre del docente..."
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+            <!-- Vocal 2 (Tribunal 3) -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-bold" style="color: var(--text-main)">
+                  <i class="fa-solid fa-user text-purple-500 mr-1"></i> Vocal 2 (T3)
+                </label>
+                <button type="button" (click)="toggleCustom('tribunal3')"
+                        class="text-xs font-medium text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-1">
+                  <i class="fa-solid" [ngClass]="customMode['tribunal3'] ? 'fa-address-book' : 'fa-pen-to-square'"></i>
+                  <span>{{ customMode['tribunal3'] ? 'Directorio' : 'Manual' }}</span>
+                </button>
+              </div>
+
+              <div *ngIf="!customMode['tribunal3']">
+                <select [(ngModel)]="newRecord.tribunal3" (change)="onSelectCheckCustom('tribunal3', newRecord.tribunal3)" name="tribunal3"
+                        class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+                  <option value="">-- Sin asignar --</option>
+                  <option *ngFor="let doc of docentesList" [value]="doc">{{ doc }}</option>
+                  <option value="__custom__">✏️ Escribir otro docente...</option>
+                </select>
+              </div>
+
+              <div *ngIf="customMode['tribunal3']">
+                <input type="text" [(ngModel)]="newRecord.tribunal3" name="tribunal3" placeholder="Nombre del docente..."
+                       class="w-full px-3 py-2 text-sm rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+                       style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div>
-          <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Salones</label>
-          <input type="text" [(ngModel)]="newRecord.salones" name="salones" placeholder="A1, A2"
-                 class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                 style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        <!-- Modal Footer -->
+        <div class="pt-4 border-t flex flex-col sm:flex-row justify-between items-center gap-3 mt-6" style="border-color: var(--border-color)">
+          <span class="text-xs" style="color: var(--text-muted)">
+            <i class="fa-solid fa-circle-info text-sky-500 mr-1"></i> Los campos con (*) son obligatorios.
+          </span>
+          <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+            <button type="button" (click)="closeModal()" class="px-4 py-2 rounded-xl font-bold transition-colors text-sm"
+                    style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color)">
+              Cancelar
+            </button>
+            <button type="submit" [disabled]="!newRecord.examen || isSaving" 
+                    class="px-5 py-2 rounded-xl font-bold text-sm flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none shadow-md"
+                    style="background: var(--primary-color); color: white; min-width: 140px;">
+              <i *ngIf="isSaving" class="fa-solid fa-circle-notch fa-spin"></i>
+              <span *ngIf="!isSaving"><i class="fa-solid fa-floppy-disk mr-1.5"></i>Guardar Examen</span>
+              <span *ngIf="isSaving">Guardando...</span>
+            </button>
+          </div>
         </div>
 
-        <div class="pt-4 border-t flex justify-end gap-3 mt-6" style="border-color: var(--border-color)">
-          <button type="button" (click)="closeModal()" class="px-4 py-2 rounded-xl font-bold transition-colors"
-                  style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border-color)">
-            Cancelar
-          </button>
-          <button type="submit" [disabled]="!form.valid || isSaving" 
-                  class="px-5 py-2 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:transform-none"
-                  style="background: var(--primary-color); color: white; min-width: 120px;">
-            <i *ngIf="isSaving" class="fa-solid fa-circle-notch fa-spin"></i>
-            <span *ngIf="!isSaving">Guardar</span>
-            <span *ngIf="isSaving">Guardando...</span>
-          </button>
-        </div>
       </form>
     </div>
+
   </div>
 </div>
