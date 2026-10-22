@@ -921,11 +921,9 @@
           </div>
 
           <!-- Nombre / Número del Salón en Grande -->
-          <div class="my-5">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-[#00aeef] block">
-              Identificación de Aula / Espacio
-            </span>
-            <h2 class="text-4xl md:text-5xl font-black tracking-tight text-[#003087] mt-1">
+          <div class="my-4 w-full">
+            <h2 class="salon-name-title font-black tracking-tight text-[#003087] leading-none text-center"
+                [ngClass]="qrPrintFormat === 'poster' ? 'text-7xl sm:text-8xl md:text-9xl my-4' : 'text-4xl md:text-5xl my-2'">
               {{ s.nombre }}
             </h2>
             <p *ngIf="s.capacidad || s.recursos" class="text-xs font-bold text-slate-600 mt-1.5">

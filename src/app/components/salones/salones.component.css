@@ -7,6 +7,25 @@
   border-color: #cbd5e1;
 }
 
+.poster-card .salon-name-title {
+  font-size: clamp(4.5rem, 15vw, 8rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  color: #003087;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.grid-card .salon-name-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: #003087;
+  word-break: break-word;
+}
+
 @media print {
   /* Ocultar interfaz de navegación cuando se imprime desde el generador de QRs */
   :host ::ng-deep .no-print {
@@ -39,6 +58,15 @@
     padding: 16mm !important;
   }
 
+  .print-mode-poster .poster-card .salon-name-title {
+    font-size: 82pt !important;
+    line-height: 0.92 !important;
+    font-weight: 900 !important;
+    letter-spacing: -3px !important;
+    margin-top: 6mm !important;
+    margin-bottom: 6mm !important;
+  }
+
   .print-mode-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -50,5 +78,12 @@
     break-inside: avoid;
     border: 2px dashed #64748b !important;
     padding: 8mm !important;
+  }
+
+  .print-mode-grid .grid-card .salon-name-title {
+    font-size: 38pt !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    letter-spacing: -1px !important;
   }
 }
