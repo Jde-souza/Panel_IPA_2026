@@ -72,11 +72,12 @@ export class AyudaComponent {
   selectedCategory: HelpCategory = 'todas';
   selectedAudience: HelpAudience = 'todos';
 
-  expandedFaqIds = new Set<string>(['faq-qr-1', 'faq-1', 'faq-2']);
+  expandedFaqIds = new Set<string>(['faq-examenes-desplegables', 'faq-qr-1', 'faq-1', 'faq-2']);
   expandedGuideIds = new Set<string>();
   selectedGuideModal: HelpGuide | null = null;
 
   quickSearchTags: string[] = [
+    'Desplegables Exámenes',
     'Códigos QR Salones',
     'Horario actual salón',
     'Imprimir carteles QR',
@@ -309,9 +310,9 @@ export class AyudaComponent {
     {
       id: 'guia-examenes',
       categoria: 'examenes',
-      audiencia: 'ambos',
+      audiencia: 'consulta',
       titulo: 'Calendario de Exámenes y Tribunales',
-      resumen: 'Búsqueda de fechas de examen por plan de estudios y año, consulta de tribunales y carga de nuevas mesas.',
+      resumen: 'Búsqueda de fechas de examen por plan de estudios y año, consulta de tribunales y salones asignados.',
       icono: 'fa-solid fa-graduation-cap',
       tiempoLectura: '2 min',
       rutaModulo: '/examenes',
@@ -327,11 +328,50 @@ export class AyudaComponent {
           detalle: 'Las mesas se ordenan cronológicamente por día, mostrando la hora exacta, el salón asignado y los tres integrantes del tribunal examinador.'
         },
         {
-          titulo: 'Creá o modificá una mesa de examen (Gestión)',
-          detalle: 'Mediante el botón de agregar/editar examen podés definir fecha, hora, asignatura, año, plan, salón y los docentes del tribunal.'
+          titulo: 'Buscá por Asignatura o por Docente',
+          detalle: 'Escribí el nombre de la materia o el apellido de un docente en la barra de búsqueda para localizar de inmediato el día, la hora y el aula donde se rinde la prueba.'
         }
       ],
       consejo: 'También podés buscar por el apellido de un docente en el buscador de Exámenes para ver todas las mesas donde integra tribunal.'
+    },
+    {
+      id: 'guia-examenes-gestion',
+      categoria: 'examenes',
+      audiencia: 'gestion',
+      titulo: 'Cómo programar Mesas de Examen usando los Desplegables de Catálogo',
+      resumen: 'Guía paso a paso sobre el nuevo formulario con menús desplegables para materias, planes, horarios, salones por piso y tribunales docentes.',
+      icono: 'fa-solid fa-file-pen',
+      tiempoLectura: '3 min',
+      rutaModulo: '/examenes',
+      textoBotonModulo: 'Programar Examen',
+      tags: ['agregar examen', 'desplegables examenes', 'catalogos de examen', 'tribunales', 'materias', 'salones por piso', 'modo manual', 'nuevo examen'],
+      pasos: [
+        {
+          titulo: 'Abrí el modal con "+ Nuevo Examen" o el botón de edición',
+          detalle: 'Hacé clic en el botón "+ Nuevo Examen" de la cabecera del módulo o en el ícono de lápiz de cualquier tarjeta de examen existente.'
+        },
+        {
+          titulo: 'Seleccioná la Asignatura con auto-completado de año',
+          detalle: 'El desplegable lista las 369 materias registradas en el catálogo oficial en orden alfabético. Al seleccionar una asignatura con nivel asignado, el sistema auto-completa el Año Académico sugerido.'
+        },
+        {
+          titulo: 'Elegí Año Académico y Plan de Estudios',
+          detalle: 'Seleccioná el año (1º a 4º Año o combinaciones) y el Plan de Estudios oficial (Plan 2023, Plan 2023 Reformulación 2025, Plan 2008 o Plan 1986).'
+        },
+        {
+          titulo: 'Programá Fecha, Horario de Inicio y Salón',
+          detalle: 'Podés seleccionar una fecha de examen ya agendada o usar el selector de calendario nativo para autocompletar el día en formato natural (ej: "Lunes 15 de Diciembre"). En Hora elegí el turno sugerido (08:00, 13:30, 18:00, etc.) y en Salón seleccioná el aula agrupada según su piso en el edificio.'
+        },
+        {
+          titulo: 'Designá a los 3 integrantes del Tribunal Examinador',
+          detalle: 'Disponés de 3 selectores dedicados: Presidente (T1), Vocal 1 (T2) y Vocal 2 (T3), vinculados al directorio institucional de 154 docentes de la Agenda IPA.'
+        },
+        {
+          titulo: 'Alterná al modo manual libre cuando lo necesites',
+          detalle: 'Si necesitás ingresar una mesa especial, un docente invitado de otro centro o múltiples salones combinados (ej: "201, 202"), tocá el botón "Escribir manual" en la cabecera de cada campo o elegí "✏️ Personalizado..." del menú.'
+        }
+      ],
+      consejo: 'Al editar un examen que ya tenía nombres especiales o fechas no convencionales, el sistema activa automáticamente el modo de texto libre sin alterar tus datos.'
     },
     {
       id: 'guia-agenda-proxima-clase',
@@ -545,6 +585,36 @@ export class AyudaComponent {
       rutaRelacionada: '/home',
       textoRuta: 'Ir al Inicio',
       tags: ['noticias', 'llamados', 'concursos', 'anep', 'cfe', 'inicio']
+    },
+        {
+      id: 'faq-examenes-desplegables',
+      categoria: 'examenes',
+      audiencia: 'gestion',
+      pregunta: '¿Cómo funciona el nuevo formulario con menús desplegables para cargar o editar exámenes?',
+      respuesta: 'El modal de creación/edición de mesas de examen incorpora menús desplegables conectados directamente a la base de datos institucional: catálogo de 369 materias con auto-completado del año lectivo, planes de estudio oficiales, fechas agendadas con selector de calendario, franjas horarias estándar, salones ordenados por piso con capacidad y 3 selectores dedicados para Presidente, Vocal 1 y Vocal 2 conectados al directorio de 154 docentes del instituto.',
+      rutaRelacionada: '/examenes',
+      textoRuta: 'Ver Módulo de Exámenes',
+      tags: ['examenes', 'desplegables', 'catalogos', 'tribunal', 'materias', 'salones', 'agregar examen', 'desplegables examenes']
+    },
+    {
+      id: 'faq-examenes-modo-manual',
+      categoria: 'examenes',
+      audiencia: 'gestion',
+      pregunta: '¿Qué hago si un docente, materia o salón no figura en la lista desplegable del examen?',
+      respuesta: 'Cada campo del modal cuenta con un botón en la esquina superior derecha ("Escribir manual" / "Elegir de lista") y una opción "✏️ Ingresar texto personalizado..." dentro del propio menú. Podés alternar en cualquier momento para escribir nombres libres (por ejemplo, tribunales con profesores invitados de otros centros, exámenes compartidos en varios salones o asignaturas especiales no catalogadas).',
+      rutaRelacionada: '/examenes',
+      textoRuta: 'Gestionar Exámenes',
+      tags: ['modo manual', 'personalizado', 'docente no aparece', 'escribir manual', 'custom', 'examenes']
+    },
+    {
+      id: 'faq-examenes-autocompletado-anio',
+      categoria: 'examenes',
+      audiencia: 'gestion',
+      pregunta: '¿Por qué al elegir una materia en el examen se completa automáticamente el año académico?',
+      respuesta: 'El sistema aprovecha la información del Catálogo Global de Materias cargado en Configuración. Si la asignatura seleccionada tiene un año definido (por ejemplo "3º Año"), el formulario lo sugiere y pre-completa de inmediato para acelerar la carga y evitar inconsistencias en el calendario.',
+      rutaRelacionada: '/examenes',
+      textoRuta: 'Probar en Exámenes',
+      tags: ['autocompletado', 'año', 'materia', 'catalogo global', 'examenes']
     },
     {
       id: 'faq-7',
