@@ -7,25 +7,67 @@
   border-color: #cbd5e1;
 }
 
-.poster-card .salon-name-title {
-  font-size: clamp(4.5rem, 15vw, 8rem);
+/* --- Kicker de Categoría --- */
+.salon-kicker {
+  letter-spacing: 0.25em;
+  font-weight: 800;
+  color: #0284c7;
+}
+
+/* --- Modo Póster en Pantalla --- */
+.poster-card .salon-name-title.type-numeric {
+  font-size: clamp(6.5rem, 24vw, 11rem);
   font-weight: 900;
-  line-height: 0.95;
+  line-height: 0.88;
+  letter-spacing: -4px;
+  color: #003087;
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+
+.poster-card .salon-name-title.type-alphanumeric,
+.poster-card .salon-name-title.type-prefix-number {
+  font-size: clamp(5.5rem, 20vw, 9.5rem);
+  font-weight: 900;
+  line-height: 0.92;
   letter-spacing: -3px;
   color: #003087;
   word-break: break-word;
-  overflow-wrap: anywhere;
 }
 
-.grid-card .salon-name-title {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+.poster-card .salon-name-title.type-text-long {
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
   font-weight: 900;
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -1.5px;
   color: #003087;
   word-break: break-word;
 }
 
+/* --- Modo Grilla en Pantalla --- */
+.grid-card .salon-name-title.type-numeric {
+  font-size: clamp(3rem, 10vw, 4.8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  color: #003087;
+}
+
+.grid-card .salon-name-title.type-alphanumeric,
+.grid-card .salon-name-title.type-prefix-number {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 900;
+  line-height: 0.95;
+  color: #003087;
+}
+
+.grid-card .salon-name-title.type-text-long {
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #003087;
+}
+
+/* --- Impresión A4 de Alta Fidelidad (Print Media) --- */
 @media print {
   /* Ocultar interfaz de navegación cuando se imprime desde el generador de QRs */
   :host ::ng-deep .no-print {
@@ -53,20 +95,50 @@
   .print-mode-poster .poster-card {
     page-break-after: always;
     break-after: page;
-    min-height: 250mm;
-    border: 3px solid #003087 !important;
-    padding: 16mm !important;
+    min-height: 255mm;
+    border: 3.5px solid #003087 !important;
+    padding: 14mm 16mm !important;
   }
 
-  .print-mode-poster .poster-card .salon-name-title {
-    font-size: 82pt !important;
-    line-height: 0.92 !important;
+  .print-mode-poster .poster-card .salon-kicker {
+    font-size: 16pt !important;
+    letter-spacing: 0.28em !important;
+    color: #0077b6 !important;
+    margin-bottom: 2mm !important;
+  }
+
+  /* Solo número: Colosal, hiperlegible a 20 metros por el pasillo */
+  .print-mode-poster .poster-card .salon-name-title.type-numeric {
+    font-size: 105pt !important;
+    line-height: 0.85 !important;
+    letter-spacing: -4px !important;
     font-weight: 900 !important;
-    letter-spacing: -3px !important;
-    margin-top: 6mm !important;
-    margin-bottom: 6mm !important;
+    margin-top: 4mm !important;
+    margin-bottom: 5mm !important;
   }
 
+  /* Número y letra o Salón + Número: Masivo y jerárquico */
+  .print-mode-poster .poster-card .salon-name-title.type-alphanumeric,
+  .print-mode-poster .poster-card .salon-name-title.type-prefix-number {
+    font-size: 92pt !important;
+    line-height: 0.88 !important;
+    letter-spacing: -3px !important;
+    font-weight: 900 !important;
+    margin-top: 4mm !important;
+    margin-bottom: 5mm !important;
+  }
+
+  /* Nombres descriptivos largos: Titular arquitectónico sobrio */
+  .print-mode-poster .poster-card .salon-name-title.type-text-long {
+    font-size: 44pt !important;
+    line-height: 1.05 !important;
+    letter-spacing: -1.5px !important;
+    font-weight: 900 !important;
+    margin-top: 4mm !important;
+    margin-bottom: 5mm !important;
+  }
+
+  /* Grilla compacta recortable */
   .print-mode-grid {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -80,10 +152,22 @@
     padding: 8mm !important;
   }
 
-  .print-mode-grid .grid-card .salon-name-title {
-    font-size: 38pt !important;
-    line-height: 1 !important;
+  .print-mode-grid .grid-card .salon-name-title.type-numeric {
+    font-size: 46pt !important;
+    line-height: 0.9 !important;
     font-weight: 900 !important;
-    letter-spacing: -1px !important;
+  }
+
+  .print-mode-grid .grid-card .salon-name-title.type-alphanumeric,
+  .print-mode-grid .grid-card .salon-name-title.type-prefix-number {
+    font-size: 38pt !important;
+    line-height: 0.95 !important;
+    font-weight: 900 !important;
+  }
+
+  .print-mode-grid .grid-card .salon-name-title.type-text-long {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
   }
 }

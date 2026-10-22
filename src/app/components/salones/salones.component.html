@@ -920,18 +920,36 @@
             </span>
           </div>
 
-          <!-- Nombre / Número del Salón en Grande -->
-          <div class="my-4 w-full">
-            <h2 class="salon-name-title font-black tracking-tight text-[#003087] leading-none text-center"
-                [ngClass]="qrPrintFormat === 'poster' ? 'text-7xl sm:text-8xl md:text-9xl my-4' : 'text-4xl md:text-5xl my-2'">
-              {{ s.nombre }}
-            </h2>
-            <p *ngIf="s.capacidad || s.recursos" class="text-xs font-bold text-slate-600 mt-1.5">
-              <ng-container *ngIf="s.capacidad">Capacidad: {{ s.capacidad }} personas</ng-container>
-              <ng-container *ngIf="s.capacidad && s.recursos"> • </ng-container>
-              <ng-container *ngIf="s.recursos">{{ s.recursos }}</ng-container>
-            </p>
-          </div>
+          <!-- Bloque de Identificación Tipográfica Jerarquizada -->
+          <ng-container *ngIf="parseSalonDisplay(s.nombre) as parsed">
+            <div class="my-3 w-full text-center">
+              <!-- Kicker de categoría sutil si aplica (ej. SALÓN, LABORATORIO, AULA) -->
+              <span *ngIf="parsed.kicker"
+                    class="salon-kicker uppercase font-extrabold tracking-[0.25em] block mb-1"
+                    [ngClass]="qrPrintFormat === 'poster' ? 'text-sm sm:text-base md:text-lg' : 'text-xs'">
+                {{ parsed.kicker }}
+              </span>
+
+              <!-- Número o Nombre Principal Gigante -->
+              <h2 class="salon-name-title font-black tracking-tight text-[#003087] leading-none mx-auto"
+                  [ngClass]="[
+                    qrPrintFormat === 'poster' ? 'poster-title my-2' : 'grid-title my-1',
+                    parsed.tipo === 'numero_puro' ? 'type-numeric' : '',
+                    parsed.tipo === 'numero_letra' ? 'type-alphanumeric' : '',
+                    parsed.tipo === 'prefijo_numero' ? 'type-prefix-number' : '',
+                    parsed.tipo === 'texto_largo' ? 'type-text-long' : ''
+                  ]">
+                {{ parsed.numeroPrincipal }}
+              </h2>
+
+              <!-- Metadatos de Aula (Capacidad y Equipamiento) -->
+              <p *ngIf="s.capacidad || s.recursos" class="text-xs md:text-sm font-bold text-slate-500 mt-2">
+                <ng-container *ngIf="s.capacidad">Capacidad: {{ s.capacidad }} personas</ng-container>
+                <ng-container *ngIf="s.capacidad && s.recursos"> • </ng-container>
+                <ng-container *ngIf="s.recursos">{{ s.recursos }}</ng-container>
+              </p>
+            </div>
+          </ng-container>
 
           <!-- Imagen del Código QR -->
           <div class="p-4 rounded-3xl border-2 border-[#003087]/20 bg-white shadow-sm inline-block my-2">

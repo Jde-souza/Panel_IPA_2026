@@ -41,6 +41,12 @@ export interface ClaseSalon {
   causalInasistencia?: string;
 }
 
+export interface SalonParsedDisplay {
+  tipo: 'numero_puro' | 'numero_letra' | 'prefijo_numero' | 'texto_largo';
+  kicker?: string;
+  numeroPrincipal: string;
+}
+
 export interface SalonLiveStatus {
   salon: SalonInfo;
   enUsoAhora: boolean;
@@ -764,6 +770,34 @@ export class SalonesComponent implements OnInit, OnDestroy {
     } catch {
       this.alertService.error('No se pudo copiar el enlace.', 3500, 'Error');
     }
+  }
+
+  
+  parseSalonDisplay(nombre: string): SalonParsedDisplay {
+    const clean = (nombre || '').trim();
+    if (/^\d+$/.test(clean)) {
+      return { tipo: 'numero_puro', numeroPrincipal: clean };
+    }
+    if (/^\d+\s*[-/]?\s*[A-Za-z](\s+bis)?$/i.test(clean)) {
+      return { tipo: 'numero_letra', numeroPrincipal: clean.toUpperCase() };
+    }
+    const sharedMatch = clean.match(/^(?:salon|salón|aula)\s+(\d+[a-z]?)\s*\/\s*(?:salon|salón|aula)\s+(\d+[a-z]?)$/i);
+    if (sharedMatch) {
+      return { tipo: 'prefijo_numero', kicker: 'SALONES COMPARTIDOS', numeroPrincipal: `${sharedMatch[1]} / ${sharedMatch[2]}` };
+    }
+    const prefixMatch = clean.match(/^(sal[oó]n|aula|laboratorio|lab)\s+(\d+[a-z]?(?:\s*bis)?)$/i);
+    if (prefixMatch) {
+      const rawPrefix = prefixMatch[1].toLowerCase();
+      const kicker = rawPrefix.startsWith('lab') ? 'LABORATORIO' : rawPrefix.startsWith('aula') ? 'AULA' : 'SALÓN';
+      return { tipo: 'prefijo_numero', kicker, numeroPrincipal: prefixMatch[2].toUpperCase() };
+    }
+    const labSpecMatch = clean.match(/^(lab(?:oratorio)?)\s+([a-záéíóú]+)\s*(\d+)?$/i);
+    if (labSpecMatch) {
+      const rama = labSpecMatch[2].toUpperCase();
+      const num = labSpecMatch[3] ? ` ${labSpecMatch[3]}` : '';
+      return { tipo: 'prefijo_numero', kicker: `LABORATORIO DE ${rama}`, numeroPrincipal: (num.trim() || rama) };
+    }
+    return { tipo: 'texto_largo', numeroPrincipal: clean };
   }
 
   private parseMinutes(hhmm: string): number {
