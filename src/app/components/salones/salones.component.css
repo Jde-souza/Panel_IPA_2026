@@ -1,0 +1,54 @@
+.salon-live-card:hover {
+  border-color: var(--primary-color) !important;
+  transform: translateY(-3px);
+}
+
+.qr-printable-card {
+  border-color: #cbd5e1;
+}
+
+@media print {
+  /* Ocultar interfaz de navegación cuando se imprime desde el generador de QRs */
+  :host ::ng-deep .no-print {
+    display: none !important;
+  }
+
+  .qr-modal-backdrop {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .qr-modal-dialog {
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .print-mode-poster .poster-card {
+    page-break-after: always;
+    break-after: page;
+    min-height: 250mm;
+    border: 3px solid #003087 !important;
+    padding: 16mm !important;
+  }
+
+  .print-mode-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8mm !important;
+  }
+
+  .print-mode-grid .grid-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 2px dashed #64748b !important;
+    padding: 8mm !important;
+  }
+}

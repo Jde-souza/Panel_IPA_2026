@@ -147,7 +147,10 @@
             <i class="fa-solid fa-book-open text-lg"></i>
           </div>
           <div>
-            <h3 class="text-xl font-bold" style="color: var(--text-heading)">Materias Globales</h3>
+            <h3 class="text-xl font-bold flex items-center gap-2.5" style="color: var(--text-heading)">
+              Materias Globales
+              <span class="text-xs px-2.5 py-0.5 rounded-full font-bold" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">{{ materiasGlobales.length }}</span>
+            </h3>
             <p class="text-sm mt-1" style="color: var(--text-muted)">Administra el listado de materias por año que podrán ser vinculadas a las especialidades.</p>
           </div>
         </div>
@@ -163,15 +166,24 @@
         </div>
 
         <div *ngIf="materiasGlobales.length > 0" class="space-y-6">
-          <!-- Filtro rápido por Año -->
-          <div class="flex flex-wrap gap-2 pb-2">
-            <button *ngFor="let f of ['Todos', '1º Año', '2º Año', '3º Año', '4º Año']"
-                    (click)="filtroAnioTab = f"
-                    class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border"
-                    [ngStyle]="filtroAnioTab === f ? {'background': 'var(--primary-color)', 'color': 'white', 'border-color': 'var(--primary-color)'} : {'background': 'var(--bg-body)', 'color': 'var(--text-muted)', 'border-color': 'var(--border-color)'}">
-              {{ f === 'Todos' ? 'Todos los niveles' : 'Dictadas en ' + f }}
-            </button>
+          <!-- Buscador y Filtro rápido por Año -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+            <div class="relative w-full md:w-80">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 transform -translate-y-1/2 text-xs" style="color: var(--text-muted)"></i>
+              <input type="text" [(ngModel)]="filtroMateriaGlobal" placeholder="Buscar unidad curricular / materia..."
+                     class="w-full pl-9 pr-4 py-2 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                     style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button *ngFor="let f of ['Todos', '1º Año', '2º Año', '3º Año', '4º Año']"
+                      (click)="filtroAnioTab = f"
+                      class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border"
+                      [ngStyle]="filtroAnioTab === f ? {'background': 'var(--primary-color)', 'color': 'white', 'border-color': 'var(--primary-color)'} : {'background': 'var(--bg-body)', 'color': 'var(--text-muted)', 'border-color': 'var(--border-color)'}">
+                {{ f === 'Todos' ? 'Todos los niveles' : 'Dictadas en ' + f }}
+              </button>
+            </div>
           </div>
+
 
           <ng-container *ngFor="let grupoAnio of getGruposAniosMaterias()">
             <details class="group" [open]="true" *ngIf="getMateriasByGrupoAnio(grupoAnio).length > 0">
@@ -220,7 +232,10 @@
             <i class="fa-solid fa-book text-lg"></i>
           </div>
           <div>
-            <h3 class="text-xl font-bold" style="color: var(--text-heading)">Especialidades y Materias</h3>
+            <h3 class="text-xl font-bold flex items-center gap-2.5" style="color: var(--text-heading)">
+              Especialidades y Materias
+              <span class="text-xs px-2.5 py-0.5 rounded-full font-bold" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">{{ especialidades.length }}</span>
+            </h3>
             <p class="text-sm mt-1" style="color: var(--text-muted)">Administra las categorías de estudio.</p>
           </div>
         </div>
@@ -235,26 +250,35 @@
           <p class="text-lg font-medium">No hay especialidades registradas.</p>
         </div>
 
+        <div *ngIf="especialidades.length > 0" class="mb-6 relative w-full md:w-80">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 transform -translate-y-1/2 text-xs" style="color: var(--text-muted)"></i>
+          <input type="text" [(ngModel)]="filtroEspecialidad" placeholder="Buscar especialidad o materia..."
+                 class="w-full pl-9 pr-4 py-2 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                 style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+        </div>
         <div *ngIf="especialidades.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div *ngFor="let esp of especialidades; let i = index" 
+          <div *ngFor="let item of especialidadesFiltradas; let i = index" 
                class="border rounded-2xl p-5 cursor-pointer group relative overflow-hidden transition-colors hover-border-primary"
                style="border-color: var(--border-color); background: var(--bg-body);"
-               (click)="openEspModal(i)">
+               (click)="openEspModal(item.index)">
             
             <div class="flex justify-between items-start mb-4">
-              <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ esp.nombre }}</h4>
-              <button (click)="deleteEspecialidad(i, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-500/10 text-red-500 shadow-sm border" style="background: var(--surface); border-color: var(--border-color)">
+              <div>
+                <h4 class="font-bold text-xl pr-8" style="color: var(--text-heading)">{{ item.esp.nombre }}</h4>
+                <span class="text-xs font-bold mt-1 inline-block" style="color: var(--primary-color)">{{ item.esp.materias.length }} unidades curriculares</span>
+              </div>
+              <button (click)="deleteEspecialidad(item.index, $event)" class="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors opacity-0 group-hover:opacity-100 hover:bg-red-500/10 text-red-500 shadow-sm border" style="background: var(--surface); border-color: var(--border-color)">
                 <i class="fa-solid fa-trash-can text-xs"></i>
               </button>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span *ngFor="let mat of esp.materias | slice:0:3" class="px-3 py-1 text-xs rounded-lg font-bold" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
+              <span *ngFor="let mat of item.esp.materias | slice:0:3" class="px-3 py-1 text-xs rounded-lg font-bold" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
                 {{ mat }}
               </span>
-              <span *ngIf="esp.materias.length > 3" class="px-3 py-1 text-xs rounded-lg font-bold opacity-70" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
-                +{{ esp.materias.length - 3 }} más
+              <span *ngIf="item.esp.materias.length > 3" class="px-3 py-1 text-xs rounded-lg font-bold opacity-70" style="background: var(--surface); border: 1px solid var(--border-color); color: var(--text-main);">
+                +{{ item.esp.materias.length - 3 }} más
               </span>
-              <span *ngIf="esp.materias.length === 0" class="text-xs italic opacity-50" style="color: var(--text-muted)">
+              <span *ngIf="item.esp.materias.length === 0" class="text-xs italic opacity-50" style="color: var(--text-muted)">
                 Sin materias asignadas
               </span>
             </div>
@@ -265,7 +289,7 @@
 
     <!-- Salones -->
     <div *ngIf="activeTab === 'salones'" class="fade-in rounded-3xl p-6 md:p-8 border shadow-sm flex flex-col min-h-[60vh]" style="background: var(--glass-bg); backdrop-filter: blur(16px); border-color: var(--glass-border);">
-      <div class="flex justify-between items-start mb-6 border-b pb-4" style="border-color: var(--border-color)">
+      <div class="flex justify-between items-start mb-6 border-b pb-4 flex-wrap gap-3" style="border-color: var(--border-color)">
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
             <i class="fa-solid fa-door-open text-lg"></i>
@@ -275,9 +299,14 @@
             <p class="text-sm mt-1" style="color: var(--text-muted)">Aulas, laboratorios y espacios comunes.</p>
           </div>
         </div>
-        <button (click)="openSalonModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--primary-color); color: white;">
-          <i class="fa-solid fa-plus"></i> Nuevo Salón
-        </button>
+        <div class="flex items-center gap-2.5 flex-wrap">
+          <button (click)="openAllQrs()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm border" style="background: var(--surface); color: var(--primary-color); border-color: var(--border-color);">
+            <i class="fa-solid fa-qrcode"></i> Imprimir Carteles QR
+          </button>
+          <button (click)="openSalonModal()" class="px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-sm" style="background: var(--primary-color); color: white;">
+            <i class="fa-solid fa-plus"></i> Nuevo Salón
+          </button>
+        </div>
       </div>
       
       <div class="flex-grow flex flex-col">
@@ -320,6 +349,21 @@
                       <div class="w-6 text-center opacity-50"><i class="fa-solid fa-plug"></i></div>
                       <span class="text-xs line-clamp-2 leading-tight font-medium">{{ item.salon.recursos }}</span>
                     </div>
+                  </div>
+
+                  <div class="mt-4 pt-3 border-t flex items-center justify-between gap-2" style="border-color: var(--border-color)">
+                    <button type="button" (click)="openQrForSalon(item.salon.nombre, $event)"
+                            class="px-3 py-1.5 rounded-lg text-xs font-bold border flex items-center gap-1.5 transition-all hover:opacity-90"
+                            style="background: var(--surface); color: var(--primary-color); border-color: var(--border-color);">
+                      <i class="fa-solid fa-qrcode"></i>
+                      <span>Código QR</span>
+                    </button>
+                    <button type="button" (click)="openLiveSalon(item.salon.nombre, $event)"
+                            class="px-3 py-1.5 rounded-lg text-xs font-bold border flex items-center gap-1.5 transition-all hover:opacity-90"
+                            style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                      <i class="fa-solid fa-bolt text-emerald-500"></i>
+                      <span>En vivo</span>
+                    </button>
                   </div>
                 </div>
               </div>

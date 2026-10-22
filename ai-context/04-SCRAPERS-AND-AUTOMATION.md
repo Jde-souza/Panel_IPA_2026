@@ -35,6 +35,11 @@ El proyecto cuenta con 5 scripts de extracción en Node.js ubicados en la raíz 
 * **Propósito:** Descarga la planilla de mesas de exámenes desde Google Sheets (`.xlsx`), detecta dinámicamente la fila de encabezados y extrae día, hora, asignatura (`examen`), año, plan, hasta 3 miembros de tribunal y salones.
 * **Salida:** `public/data/examenes.json`.
 
+### 1.6. `extract_carreras.js` (`npm run extract:carreras`)
+* **Propósito:** Extrae las **22 especialidades vigentes de Profesor de Educación Media** (Plan 2023 + Reformulaciones 2025) y sus **369 Unidades Curriculares (materias)** organizadas por año (`1º Año` a `4º Año`) y trayecto formativo (`TFEE`, `TFDPP`, `TFE`, `TFLD`, `Optativo`) directamente desde el portal oficial del CFE (`https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado`).
+* **Sincronización:** Además de generar `public/data/carreras.json` (que alimenta también a `extract_horarios.js` para reconocer nombres de asignaturas en celdas de la planilla), actualiza automáticamente la tabla `configuracion` (`especialidades`, `materias`, `planes`) en `backend/database.sqlite`.
+* **Salida:** `public/data/carreras.json` y actualización en `backend/database.sqlite`.
+
 ---
 
 ## 2. Sincronización entre Scrapers (`public/data/*.json`) y SQLite (`backend/database.sqlite`)

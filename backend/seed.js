@@ -11,16 +11,53 @@ async function seed() {
     driver: sqlite3.Database
   });
 
+  console.log('Seeding carreras & materias configuration...');
+  const carrerasFile = path.join(__dirname, '../public/data/carreras.json');
+  if (fs.existsSync(carrerasFile)) {
+    const carrerasData = JSON.parse(fs.readFileSync(carrerasFile, 'utf-8'));
+    await db.exec('BEGIN TRANSACTION');
+    if (Array.isArray(carrerasData.especialidades)) {
+      const espConfig = carrerasData.especialidades.map(e => ({
+        nombre: e.nombre,
+        materias: e.materias || []
+      }));
+      await db.run(`
+        INSERT INTO configuracion (clave, valor) VALUES ('especialidades', ?)
+        ON CONFLICT(clave) DO UPDATE SET valor = excluded.valor
+      `, [JSON.stringify(espConfig)]);
+    }
+    if (Array.isArray(carrerasData.materias)) {
+      await db.run(`
+        INSERT INTO configuracion (clave, valor) VALUES ('materias', ?)
+        ON CONFLICT(clave) DO UPDATE SET valor = excluded.valor
+      `, [JSON.stringify(carrerasData.materias)]);
+    }
+    if (Array.isArray(carrerasData.planes)) {
+      await db.run(`
+        INSERT INTO configuracion (clave, valor) VALUES ('planes', ?)
+        ON CONFLICT(clave) DO UPDATE SET valor = excluded.valor
+      `, [JSON.stringify(carrerasData.planes)]);
+    }
+    await db.exec('COMMIT');
+    console.log('Carreras & Materias configuration seeded!');
+  }
+
   console.log('Seeding horarios...');
   const horariosFile = path.join(__dirname, '../public/data/horarios.json');
   if (fs.existsSync(horariosFile)) {
     const rawData = JSON.parse(fs.readFileSync(horariosFile, 'utf-8'));
     await db.exec('BEGIN TRANSACTION');
+    await db.run('DELETE FROM horarios');
     for (const esp of Object.keys(rawData)) {
       for (const grupo of Object.keys(rawData[esp])) {
         for (const sem of ['sem1', 'sem2']) {
           const clases = rawData[esp][grupo][sem] || [];
           for (const c of clases) {
+            const infoLines = c.info ? String(c.info).split('\n').map(s => s.trim()).filter(Boolean) : [];
+            const materia = c.materia || infoLines[0] || '';
+            const docente = c.docente !== undefined ? c.docente : (infoLines[1] || '');
+            const salon = c.salon !== undefined ? c.salon : (infoLines[2] || '');
+
             await db.run(`
               INSERT INTO horarios (especialidad, semestre, grupo, materia, docente, dia, hora_inicio, hora_fin, salon)
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -28,12 +65,12 @@ async function seed() {
               esp, 
               sem, 
               grupo, 
-              c.materia || '', 
-              c.docente || '', 
+              materia, 
+              docente, 
               c.dia ? c.dia.toString() : '1',
               c.hora ? c.hora.split('-')[0] : '', 
               c.hora ? c.hora.split('-')[1] : '', 
-              c.salon || ''
+              salon
             ]);
           }
         }
@@ -48,6 +85,7 @@ async function seed() {
   if (fs.existsSync(inasistenciasFile)) {
     const data = JSON.parse(fs.readFileSync(inasistenciasFile, 'utf-8'));
     await db.exec('BEGIN TRANSACTION');
+    await db.run('DELETE FROM inasistencias');
     for (const row of data) {
       await db.run(`
         INSERT INTO inasistencias (
@@ -81,6 +119,7 @@ async function seed() {
   if (fs.existsSync(examenesFile)) {
     const data = JSON.parse(fs.readFileSync(examenesFile, 'utf-8'));
     await db.exec('BEGIN TRANSACTION');
+    await db.run('DELETE FROM examenes');
     for (const ex of data) {
       await db.run(`
         INSERT INTO examenes (dia, hora, examen, anio, plan, tribunal1, tribunal2, tribunal3, salones)
@@ -106,6 +145,7 @@ async function seed() {
   if (fs.existsSync(agendaFile)) {
     const data = JSON.parse(fs.readFileSync(agendaFile, 'utf-8'));
     await db.exec('BEGIN TRANSACTION');
+    await db.run('DELETE FROM agenda');
     for (const row of data) {
       await db.run(`
         INSERT INTO agenda (nombre, telefono1, telefono2, email, especialidades, asignaturas, grupos, caracter, observacion, isTachado, horarios)

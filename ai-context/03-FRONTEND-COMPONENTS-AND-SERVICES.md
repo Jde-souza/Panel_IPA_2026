@@ -6,12 +6,14 @@
 | :--- | :--- | :--- |
 | `/home` | `HomeComponent` | Dashboard principal: Accesos rápidos, Noticias de portales educativos y Llamados de ANEP (docentes / no docentes). |
 | `/horarios` | `HorariosComponent` | Consulta de horarios por Especialidad -> Grupo (agrupados por turno Mañana/Tarde/Noche) -> Semestre (`sem1`/`sem2`). Incluye vista de grilla en desktop, lista en móvil y modal CRUD conectado a `configuracion`. |
+| `/salones` y `/salon/:nombre` | `SalonesComponent` | Directorio de salones en tiempo real y vista de escaneo QR para puertas: informa la clase en curso ahora mismo (o estado libre + próxima clase), alerta si el docente registra inasistencia hoy, cronograma diario, grilla semanal ampliada del salón y generador/impresor de carteles QR (formato Póster individual o Grilla recortable). |
 | `/examenes` | `ExamenesComponent` | Dashboard con KPIs de mesas de examen, filtros por texto/plan/año, agrupación por fecha y modal CRUD. |
 | `/inasistencias` | `InasistenciasComponent` | Panel de licencias docentes con KPIs (Total, Ausentes hoy, Múltiples días), filtros rápidos y modal CRUD con causales dinámicas. |
 | `/agenda` | `AgendaComponent` | Buscador de docentes, copiado rápido al portapapeles, modal de detalle con **cálculo en tiempo real de próxima clase / clase en curso** (`calculateNextClass`), y modal CRUD. |
 | `/doe` | `DoeComponent` | Directorio de adscriptos (DOE) agrupados por funcionario con sus respectivos turnos, horarios, especialidades asignadas y correos de bedelía. |
 | `/centros` | `CentrosComponent` | Directorio nacional de centros del CFE (IFD, CeRP, Institutos) con filtro por departamento y búsqueda. |
 | `/configuracion` | `SettingsComponent` | Administración del sistema con navegación vertical por pestañas (`general`, `especialidades`, `materias`, `salones`, `examenes`, `inasistencias`) y paneles laterales (slide-overs). |
+| `/ayuda` | `AyudaComponent` | Centro de Ayuda y Documentación interactivo con buscador en tiempo real, filtros por módulo y perfil (`consulta` / `gestion`), guías paso a paso, preguntas frecuentes (FAQ) e internos del instituto. |
 
 ---
 

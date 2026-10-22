@@ -1,0 +1,4958 @@
+{
+  "fuente": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado",
+  "ultimaActualizacion": "2026-10-22T20:04:33.487Z",
+  "planes": [
+    "2023",
+    "2023 (Reformulación 2025)",
+    "2008",
+    "1986"
+  ],
+  "totalEspecialidades": 22,
+  "totalMateriasUnicas": 369,
+  "especialidades": [
+    {
+      "nombre": "Alemán",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Taller de producción oral",
+        "Lengua y cultura alemana I",
+        "Fonética y Fonología",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Lengua y cultura alemana II",
+        "Lengua y literatura alemana I",
+        "Fonética y fonología II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Didáctica de la lengua alemana y evaluación",
+        "Lengua y cultura alemana III",
+        "Lengua y literatura alemana II",
+        "Lingüística I",
+        "Taller de enseñanza por competencias",
+        "Taller de escritura académica en alemán",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Didáctica de la fonética, fonología y evaluación",
+        "Lengua y cultura alemana IV",
+        "Lengua y literatura alemana III",
+        "Lingüística II",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/2460-aleman",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Taller de producción oral",
+          "Lengua y cultura alemana I",
+          "Fonética y Fonología",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Lengua y cultura alemana II",
+          "Lengua y literatura alemana I",
+          "Fonética y fonología II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Didáctica de la lengua alemana y evaluación",
+          "Lengua y cultura alemana III",
+          "Lengua y literatura alemana II",
+          "Lingüística I",
+          "Taller de enseñanza por competencias",
+          "Taller de escritura académica en alemán"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Didáctica de la fonética, fonología y evaluación",
+          "Lengua y cultura alemana IV",
+          "Lengua y literatura alemana III",
+          "Lingüística II",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Astronomía",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Cálculo diferencial e integral para Astronomía",
+        "Mecánica newtoniana aplicada a la Astronomía",
+        "Astronomía General",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Astronomía Fundamental y Mecánica Celeste",
+        "Termodinámica y nociones de electromagnetismo para Astronomía",
+        "Técnicas instrumentales",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Profundización de estrategias activas en Astronomía",
+        "Física moderna para Astronomía",
+        "Astrofísica solar",
+        "Ciencias Planetarias",
+        "Uso de simuladores y apps. en Astronomía",
+        "Prácticas observacionales",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Metodología de enseñanza para Observatorio Astronómico",
+        "Diseño e implementación de proyectos multidisciplinarios desde el espacio de observatorio",
+        "Astrofísica",
+        "Astronomía moderna y contemporánea",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/223-astronomia",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Cálculo diferencial e integral para Astronomía",
+          "Mecánica newtoniana aplicada a la Astronomía",
+          "Astronomía General",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Astronomía Fundamental y Mecánica Celeste",
+          "Termodinámica y nociones de electromagnetismo para Astronomía",
+          "Técnicas instrumentales",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Profundización de estrategias activas en Astronomía",
+          "Física moderna para Astronomía",
+          "Astrofísica solar",
+          "Ciencias Planetarias",
+          "Uso de simuladores y apps. en Astronomía",
+          "Prácticas observacionales"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Metodología de enseñanza para Observatorio Astronómico",
+          "Diseño e implementación de proyectos multidisciplinarios desde el espacio de observatorio",
+          "Astrofísica",
+          "Astronomía moderna y contemporánea",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Ciencias Biológicas",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Bioquímica",
+        "Biología celular",
+        "Los Seres Vivos en su ambiente",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Biología Humana",
+        "Genética",
+        "Educación para la Salud",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Investigación en la Enseñanza de las Ciencias Biológicas",
+        "Biología Animal I",
+        "Biología Vegetal I",
+        "Ecología",
+        "Lectura y escritura académica en Cs. Experimentales",
+        "Tecnología educativa para la enseñanza de las Cs. Biológicas",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Prácticas de Observación en situaciones especiales de enseñanza",
+        "Biología Animal II",
+        "Biología Vegetal II",
+        "Biología Evolutiva",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/339-ciencias-biologicas",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Bioquímica",
+          "Biología celular",
+          "Los Seres Vivos en su ambiente",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Biología Humana",
+          "Genética",
+          "Educación para la Salud",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Investigación en la Enseñanza de las Ciencias Biológicas",
+          "Biología Animal I",
+          "Biología Vegetal I",
+          "Ecología",
+          "Lectura y escritura académica en Cs. Experimentales",
+          "Tecnología educativa para la enseñanza de las Cs. Biológicas"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Prácticas de Observación en situaciones especiales de enseñanza",
+          "Biología Animal II",
+          "Biología Vegetal II",
+          "Biología Evolutiva",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Ciencias Geográficas",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Teoría y métodos de la geografía",
+        "Dinámicas socioeconómicas globales",
+        "Geografía Física 1. Dinámicas de la biósfera, climatología y biogeografía",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Geografía Humana y Económica",
+        "Cartografía y Sistemas de Información Geográfica",
+        "Geografía Física 2. Hidrología y geomorfología",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Taller cartográfico de apoyo a la práctica",
+        "Geografía del Uruguay I",
+        "Geografía de América Latina",
+        "Geografía del Uruguay II",
+        "Cartografía y SIG aplicado a la docencia",
+        "Análisis estadístico de bases sociales y ambientales",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Taller de apoyo a la Didáctica de las actividades integradoras de campo",
+        "Geografía de los Países Desarrollados",
+        "Geografía de los Países en Desarrollo y PMA",
+        "Seminario de investigación interdisciplinario con énfasis en problemáticas",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/828-geografia",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Teoría y métodos de la geografía",
+          "Dinámicas socioeconómicas globales",
+          "Geografía Física 1. Dinámicas de la biósfera, climatología y biogeografía",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Geografía Humana y Económica",
+          "Cartografía y Sistemas de Información Geográfica",
+          "Geografía Física 2. Hidrología y geomorfología",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Taller cartográfico de apoyo a la práctica",
+          "Geografía del Uruguay I",
+          "Geografía de América Latina",
+          "Geografía del Uruguay II",
+          "Cartografía y SIG aplicado a la docencia",
+          "Análisis estadístico de bases sociales y ambientales"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Taller de apoyo a la Didáctica de las actividades integradoras de campo",
+          "Geografía de los Países Desarrollados",
+          "Geografía de los Países en Desarrollo y PMA",
+          "Seminario de investigación interdisciplinario con énfasis en problemáticas",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Comunicación Visual",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Diseño I",
+        "Imagen I",
+        "Historia del Arte I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Imagen II",
+        "Historia del Arte II",
+        "Diseño II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Gramática del Lenguaje Visual",
+        "Teoría de las Artes",
+        "Imagen III",
+        "Diseño III",
+        "Técnicas y recursos de la plástica",
+        "Técnicas y medios de la visualidad",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Heurística",
+        "Imagen A",
+        "Imagen B",
+        "Diseño IV",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/400-comunicacion-visual",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Diseño I",
+          "Imagen I",
+          "Historia del Arte I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Imagen II",
+          "Historia del Arte II",
+          "Diseño II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Gramática del Lenguaje Visual",
+          "Teoría de las Artes",
+          "Imagen III",
+          "Diseño III",
+          "Técnicas y recursos de la plástica",
+          "Técnicas y medios de la visualidad"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Heurística",
+          "Imagen A",
+          "Imagen B",
+          "Diseño IV",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Danza",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Historia General de las Artes",
+        "Anatomía y Fisiología aplicada a la danza",
+        "Metodologías de las Danzas I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Metodologías de las Danzas II",
+        "Historia y teoría de la danza I",
+        "Educación somática",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Danza e inclusión educativa I",
+        "Metodologías de las Danzas III",
+        "Historia y teoría de la danza II",
+        "Historia y teoría de las danzas de tradición popular",
+        "Expresión corporal",
+        "Música y Danza",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Danza e inclusión educativa II",
+        "Metodologías de las Danzas IV",
+        "Creación y puesta en escena I",
+        "Creación y puesta en escena II",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/515-danza",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Historia General de las Artes",
+          "Anatomía y Fisiología aplicada a la danza",
+          "Metodologías de las Danzas I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Metodologías de las Danzas II",
+          "Historia y teoría de la danza I",
+          "Educación somática",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Danza e inclusión educativa I",
+          "Metodologías de las Danzas III",
+          "Historia y teoría de la danza II",
+          "Historia y teoría de las danzas de tradición popular",
+          "Expresión corporal",
+          "Música y Danza"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Danza e inclusión educativa II",
+          "Metodologías de las Danzas IV",
+          "Creación y puesta en escena I",
+          "Creación y puesta en escena II",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Derecho (2025)",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Derecho Público I",
+        "Conceptos Fundamentales del Derecho",
+        "Historia del Derecho",
+        "Historia del Pensamiento Político y Social",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Derecho Público II. Constitución Nacional y Gobierno Uruguayo",
+        "Derecho Privado I",
+        "Derecho Financiero",
+        "Ciencia Política",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Seminario de análisis y reflexión sobre las prácticas",
+        "Derecho Privado II",
+        "Derecho Internacional Público",
+        "Marco Jurídico de los Derechos Humanos",
+        "Derecho Penal",
+        "Las tecnologías de la Información y el Derecho",
+        "La evolución histórica de la terminología jurídica",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Seminario de Derecho Procesal",
+        "Público III - Administrativo",
+        "Derecho Comercial",
+        "Derecho Laboral",
+        "Filosofía del Derecho",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)",
+        "Principios fundamentales del Derecho",
+        "Sociología I. Abordaje epistemológico. Teoría social",
+        "Sociología II. Organización social y categorías sociales fundamentales",
+        "Sociología III",
+        "Sociología IV",
+        "Seminario de Derechos Humanos",
+        "Sociología V",
+        "Sociología VI"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/3442-derecho-reformulacion-2025",
+      "plan": "2023 (Reformulación 2025)",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Derecho Público I",
+          "Conceptos Fundamentales del Derecho",
+          "Historia del Derecho",
+          "Historia del Pensamiento Político y Social",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Derecho Público II. Constitución Nacional y Gobierno Uruguayo",
+          "Derecho Privado I",
+          "Derecho Financiero",
+          "Ciencia Política",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Seminario de análisis y reflexión sobre las prácticas",
+          "Derecho Privado II",
+          "Derecho Internacional Público",
+          "Marco Jurídico de los Derechos Humanos",
+          "Derecho Penal",
+          "Las tecnologías de la Información y el Derecho",
+          "La evolución histórica de la terminología jurídica"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Seminario de Derecho Procesal",
+          "Público III - Administrativo",
+          "Derecho Comercial",
+          "Derecho Laboral",
+          "Filosofía del Derecho",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Derecho / Sociología",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Derecho Público I",
+        "Conceptos Fundamentales del Derecho",
+        "Historia del Derecho",
+        "Historia del Pensamiento Político y Social",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Derecho Público II. Constitución Nacional y Gobierno Uruguayo",
+        "Derecho Privado I",
+        "Derecho Financiero",
+        "Ciencia Política",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Seminario de análisis y reflexión sobre las prácticas",
+        "Derecho Privado II",
+        "Derecho Internacional Público",
+        "Marco Jurídico de los Derechos Humanos",
+        "Derecho Penal",
+        "Las tecnologías de la Información y el Derecho",
+        "La evolución histórica de la terminología jurídica",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Seminario de Derecho Procesal",
+        "Público III - Administrativo",
+        "Derecho Comercial",
+        "Derecho Laboral",
+        "Filosofía del Derecho",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)",
+        "Principios fundamentales del Derecho",
+        "Sociología I. Abordaje epistemológico. Teoría social",
+        "Sociología II. Organización social y categorías sociales fundamentales",
+        "Sociología III",
+        "Sociología IV",
+        "Seminario de Derechos Humanos",
+        "Sociología V",
+        "Sociología VI"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/589-derecho",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Principios fundamentales del Derecho",
+          "Derecho Público I",
+          "Sociología I. Abordaje epistemológico. Teoría social",
+          "Sociología II. Organización social y categorías sociales fundamentales",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Derecho Privado I",
+          "Derecho Público II. Constitución Nacional y Gobierno Uruguayo",
+          "Sociología III",
+          "Sociología IV",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Seminario de Derechos Humanos",
+          "Derecho Privado II",
+          "Derecho Internacional Público",
+          "Sociología V",
+          "Derecho Penal",
+          "Las tecnologías de la Información y el Derecho",
+          "La evolución histórica de la terminología jurídica"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Seminario de Derecho Procesal",
+          "Derecho Laboral",
+          "Derecho Comercial",
+          "Sociología VI",
+          "Filosofía del Derecho",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Educación Musical",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Solfeo y Acústica",
+        "Organización y Dirección de Coros I",
+        "Historia de la Música I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Historia de la Música II",
+        "Solfeo y Armonía I",
+        "Solfeo y Armonía II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Música e Inclusión Educativa",
+        "Música Latinoamericana",
+        "Organización y Dirección de Coros II",
+        "Historia del Arte",
+        "Expresión corporal",
+        "Música y Danza",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Música y recreación",
+        "Música Uruguaya",
+        "Taller de recreación musical y práctica instrumental",
+        "Organología",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/669-educacion-musical-generacion-2008",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Solfeo y Acústica",
+          "Organización y Dirección de Coros I",
+          "Historia de la Música I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Historia de la Música II",
+          "Solfeo y Armonía I",
+          "Solfeo y Armonía II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Música e Inclusión Educativa",
+          "Música Latinoamericana",
+          "Organización y Dirección de Coros II",
+          "Historia del Arte",
+          "Expresión corporal",
+          "Música y Danza"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Música y recreación",
+          "Música Uruguaya",
+          "Taller de recreación musical y práctica instrumental",
+          "Organología",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Español",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Literatura Grecolatina",
+        "Literatura Medieval y Renacentista",
+        "Gramática Española I",
+        "Latín I",
+        "Latín II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Gramática Española II",
+        "Lingüística I",
+        "Lingüística II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Estilística y Análisis de Textos I",
+        "Lingüística III",
+        "Gramática Española III",
+        "Gramática Histórica I",
+        "Literatura en Lengua Española I",
+        "Literatura en Lengua Española II",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Estilística y Análisis de Textos II",
+        "Gramática Histórica II",
+        "Gramática Española IV",
+        "Lingüística IV",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/731-espanol-generacion-2008",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Literatura Grecolatina",
+          "Literatura Medieval y Renacentista",
+          "Gramática Española I",
+          "Latín I",
+          "Latín II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Gramática Española II",
+          "Lingüística I",
+          "Lingüística II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Estilística y Análisis de Textos I",
+          "Lingüística III",
+          "Gramática Española III",
+          "Gramática Histórica I",
+          "Literatura en Lengua Española I",
+          "Literatura en Lengua Española II"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Estilística y Análisis de Textos II",
+          "Gramática Histórica II",
+          "Gramática Española IV",
+          "Lingüística IV",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Filosofía",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Lógica",
+        "Ética",
+        "Historia de la Filosofía Antigua y Medieval",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Historia de la Filosofía Moderna",
+        "Epistemología",
+        "Filosofía Política",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Profundización en metodologías activas para el aprendizaje de la Filosofía",
+        "Metafísica",
+        "Historia de la Filosofía Contemporánea I - Filosofía analítica",
+        "Historia de la Filosofía Contemporánea II - Fenomenología, hermenéutica y teoría crítica",
+        "Métodos y lenguaje filosóficos",
+        "Creación Filosófica",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Abordajes interdisciplinarios de la Filosofía",
+        "Estética",
+        "Historia de la Filosofía en América Latina",
+        "Historia de la Filosofía en el Uruguay",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/792-filosofia",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Lógica",
+          "Ética",
+          "Historia de la Filosofía Antigua y Medieval",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Historia de la Filosofía Moderna",
+          "Epistemología",
+          "Filosofía Política",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Profundización en metodologías activas para el aprendizaje de la Filosofía",
+          "Metafísica",
+          "Historia de la Filosofía Contemporánea I - Filosofía analítica",
+          "Historia de la Filosofía Contemporánea II - Fenomenología, hermenéutica y teoría crítica",
+          "Métodos y lenguaje filosóficos",
+          "Creación Filosófica"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Abordajes interdisciplinarios de la Filosofía",
+          "Estética",
+          "Historia de la Filosofía en América Latina",
+          "Historia de la Filosofía en el Uruguay",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Física",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Principios de conservación en Mecánica",
+        "Introducción al Cálculo",
+        "Probabilidad y Estadística",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Fundamentos de electromagnetismo",
+        "Sistemas lineales",
+        "Cálculo de varias variables",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Dificultades de aprendizaje en el aula de Física. Estudio de casos",
+        "Introducción al Cálculo vectorial",
+        "Fluidos, Física térmica y Ondas",
+        "Profundización en Física clásica",
+        "Computación y tecnologías en ciencias",
+        "Modelado computacional en Física",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "La naturaleza epistemológica de la Física. Las concepciones e interdisciplinariedad",
+        "Laboratorios de fenómenos clásicos",
+        "Proyecto de Física",
+        "Física moderna y contemporánea",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/794-fisica",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Principios de conservación en Mecánica",
+          "Introducción al Cálculo",
+          "Probabilidad y Estadística",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Fundamentos de electromagnetismo",
+          "Sistemas lineales",
+          "Cálculo de varias variables",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Dificultades de aprendizaje en el aula de Física. Estudio de casos",
+          "Introducción al Cálculo vectorial",
+          "Fluidos, Física térmica y Ondas",
+          "Profundización en Física clásica",
+          "Computación y tecnologías en ciencias",
+          "Modelado computacional en Física"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "La naturaleza epistemológica de la Física. Las concepciones e interdisciplinariedad",
+          "Laboratorios de fenómenos clásicos",
+          "Proyecto de Física",
+          "Física moderna y contemporánea",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Francés",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Fonética y Fonología",
+        "Literatura de la Lengua Francesa I",
+        "Lengua Francesa I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Historia de la cultura y la civilización en Francia y las sociedades francófonas I",
+        "Literatura de la Lengua Francesa II",
+        "Lengua Francesa II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Taller de análisis y producción de materiales didácticos",
+        "Historia de la cultura y civilización en Francés y las sociedades francófonas II",
+        "Literatura de la Lengua Francesa III",
+        "Lengua Francesa III",
+        "Taller de oralidad. Sociedad y cultura contemporánea francesa",
+        "Aprendizaje reflexivo de una lengua lejana: Alemán",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Didáctica de la Fonética y Evaluación",
+        "Literatura de la Lengua Francesa IV",
+        "Lengua Francesa IV",
+        "Lingüística",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/2459-frances",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Fonética y Fonología",
+          "Literatura de la Lengua Francesa I",
+          "Lengua Francesa I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Historia de la cultura y la civilización en Francia y las sociedades francófonas I",
+          "Literatura de la Lengua Francesa II",
+          "Lengua Francesa II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Taller de análisis y producción de materiales didácticos",
+          "Historia de la cultura y civilización en Francés y las sociedades francófonas II",
+          "Literatura de la Lengua Francesa III",
+          "Lengua Francesa III",
+          "Taller de oralidad. Sociedad y cultura contemporánea francesa",
+          "Aprendizaje reflexivo de una lengua lejana: Alemán"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Didáctica de la Fonética y Evaluación",
+          "Literatura de la Lengua Francesa IV",
+          "Lengua Francesa IV",
+          "Lingüística",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Historia",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Epistemología de la Historia y su enseñanza",
+        "Civilizaciones actuales y Globalización",
+        "De las Primeras Civilizaciones a la Edad Moderna",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "América y América Latina hasta 1830",
+        "Historia Universal. Siglos XVII, XVIII, XIX",
+        "Historia de las Expresiones Artísticas",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Historiografía y Filosofía de la Historia",
+        "La región del Río de la Plata hasta 1830",
+        "Historia del Uruguay de 1830 a 1930",
+        "América Latina de 1830 a comienzos del siglo XXI",
+        "Artes y lenguajes contemporáneos",
+        "Historia Local",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Prácticas e Innovaciones en la enseñanza de la Historia y las Ciencias Sociales y Humanas",
+        "Historia del Uruguay de 1930 a comienzos del siglo XXI",
+        "Seminario Taller de Investigación Histórico-Educativa",
+        "Historia Universal S. XX y XXI",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/845-historia",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Epistemología de la Historia y su enseñanza",
+          "Civilizaciones actuales y Globalización",
+          "De las Primeras Civilizaciones a la Edad Moderna",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "América y América Latina hasta 1830",
+          "Historia Universal. Siglos XVII, XVIII, XIX",
+          "Historia de las Expresiones Artísticas",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Historiografía y Filosofía de la Historia",
+          "La región del Río de la Plata hasta 1830",
+          "Historia del Uruguay de 1830 a 1930",
+          "América Latina de 1830 a comienzos del siglo XXI",
+          "Artes y lenguajes contemporáneos",
+          "Historia Local"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Prácticas e Innovaciones en la enseñanza de la Historia y las Ciencias Sociales y Humanas",
+          "Historia del Uruguay de 1930 a comienzos del siglo XXI",
+          "Seminario Taller de Investigación Histórico-Educativa",
+          "Historia Universal S. XX y XXI",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Informática",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Lógica para Informática",
+        "Matemática Discreta",
+        "Programación I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Base de Datos",
+        "Inteligencia Artificial",
+        "Programación II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Metodología de la educación a distancia y REA",
+        "Ingeniería de Software",
+        "Robótica",
+        "Taller integrados de Sistemas",
+        "Ciudadanía Digital",
+        "Desarrollo web",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Proyecto didáctico de extensión: Pensamiento computacional, Programación y Robótica Educativa",
+        "Informática de Soporte",
+        "Sistemas Operativos",
+        "Taller integrador II. Proyecto de desarrollo de aplicaciones y videojuegos",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/913-informatica",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Lógica para Informática",
+          "Matemática Discreta",
+          "Programación I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Base de Datos",
+          "Inteligencia Artificial",
+          "Programación II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Metodología de la educación a distancia y REA",
+          "Ingeniería de Software",
+          "Robótica",
+          "Taller integrados de Sistemas",
+          "Ciudadanía Digital",
+          "Desarrollo web"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Proyecto didáctico de extensión: Pensamiento computacional, Programación y Robótica Educativa",
+          "Informática de Soporte",
+          "Sistemas Operativos",
+          "Taller integrador II. Proyecto de desarrollo de aplicaciones y videojuegos",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Inglés",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Taller de producción oral",
+        "Lengua y Cultura Inglesa I",
+        "Introducción a la Fonética y Fonología",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Lengua y Cultura Inglesa II",
+        "Aspectos Literarios",
+        "Fonética y Fonología I",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Didáctica de la lengua y evaluación",
+        "Lengua y Cultura Inglesa III",
+        "Lengua y Literatura I",
+        "Lingüística I",
+        "Taller de enseñanza por competencias",
+        "Taller de escritura académica en Inglés",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Didáctica de la Fonética y Evaluación",
+        "Lengua y Literatura II",
+        "Lengua y Cultura Inglesa IV",
+        "Lingüística II",
+        "Lengua Extranjera I. Portugués",
+        "Lengua Extranjera II. Portugués",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/920-ingles",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Taller de producción oral",
+          "Lengua y Cultura Inglesa I",
+          "Introducción a la Fonética y Fonología",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Lengua y Cultura Inglesa II",
+          "Aspectos Literarios",
+          "Fonética y Fonología I",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Didáctica de la lengua y evaluación",
+          "Lengua y Cultura Inglesa III",
+          "Lengua y Literatura I",
+          "Lingüística I",
+          "Taller de enseñanza por competencias",
+          "Taller de escritura académica en Inglés"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Didáctica de la Fonética y Evaluación",
+          "Lengua y Literatura II",
+          "Lengua y Cultura Inglesa IV",
+          "Lingüística II",
+          "Lengua Extranjera I. Portugués",
+          "Lengua Extranjera II. Portugués",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Italiano",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Teorías pedagógicas",
+        "Introducción al campo profesional",
+        "Fonética y Fonología",
+        "Geografía de Italia",
+        "Lengua Italiana I",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Lengua Italiana II",
+        "Literatura Italiana I",
+        "Literatura Italiana II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Filosofía de la Educación",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Didáctica Práctica Docente II",
+        "Aprendizaje integrado de lengua a través de contenidos",
+        "Lengua Italiana III",
+        "Literatura Italiana III",
+        "Historia de la Civilización Italiana I",
+        "Artes del espectáculo",
+        "Latín",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Taller de análisis y producción de materiales didácticos",
+        "Lingüística",
+        "Historia de la Civilización Italiana II",
+        "Historia de la Civilización Italiana III",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/949-italiano",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Teorías pedagógicas",
+          "Introducción al campo profesional",
+          "Fonética y Fonología",
+          "Geografía de Italia",
+          "Lengua Italiana I",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Lengua Italiana II",
+          "Literatura Italiana I",
+          "Literatura Italiana II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Filosofía de la Educación",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Didáctica Práctica Docente II",
+          "Aprendizaje integrado de lengua a través de contenidos",
+          "Lengua Italiana III",
+          "Literatura Italiana III",
+          "Historia de la Civilización Italiana I",
+          "Artes del espectáculo",
+          "Latín"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Taller de análisis y producción de materiales didácticos",
+          "Lingüística",
+          "Historia de la Civilización Italiana II",
+          "Historia de la Civilización Italiana III",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Literatura",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Literatura Grecolatina",
+        "Literatura Medieval y Renacentista",
+        "Gramática Española",
+        "Lingüística General",
+        "Corrientes Literarias",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Literatura Española I - Medieval",
+        "Literatura Española II - Del Siglo de Oro a la Ilustración",
+        "Literatura Universal I - Barroco e Ilustración",
+        "Teoría Literaria",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Escritura y texto literario en la educación media",
+        "Literatura Española III - Romanticismo a la actualidad",
+        "Literatura Universal II - Siglo XIX a la actualidad",
+        "Literatura Iberoamericana I",
+        "Literatura Uruguaya I",
+        "Literatura y lenguaje digital",
+        "Narrativa transmedia",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Innovación en educación literaria",
+        "Metodología de la investigación literaria",
+        "Estética Literaria",
+        "Literatura Uruguaya II",
+        "Literatura Iberoamericana II",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/1566-literatura",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Literatura Grecolatina",
+          "Literatura Medieval y Renacentista",
+          "Gramática Española",
+          "Lingüística General",
+          "Corrientes Literarias"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Literatura Española I - Medieval",
+          "Literatura Española II - Del Siglo de Oro a la Ilustración",
+          "Literatura Universal I - Barroco e Ilustración",
+          "Teoría Literaria",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Escritura y texto literario en la educación media",
+          "Literatura Española III - Romanticismo a la actualidad",
+          "Literatura Universal II - Siglo XIX a la actualidad",
+          "Literatura Iberoamericana I",
+          "Literatura Uruguaya I",
+          "Literatura y lenguaje digital",
+          "Narrativa transmedia"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Innovación en educación literaria",
+          "Metodología de la investigación literaria",
+          "Estética Literaria",
+          "Literatura Uruguaya II",
+          "Literatura Iberoamericana II",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Matemática",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Fundamentos de la Matemática I",
+        "Fundamentos de la Matemática II",
+        "Geometría",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Análisis I",
+        "Geometría y Álgebra Lineal I",
+        "Geometría y Álgebra Lineal II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Evolución del pensamiento matemático",
+        "Análisis II",
+        "Probabilidad y Estadística I",
+        "Probabilidad y Estadística II",
+        "Lenguaje en las aplicaciones de la Matemática",
+        "Lenguaje en resolución de problemas",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Estrategias de Aprendizaje y de Enseñanza de la Matemática",
+        "Análisis III",
+        "Profundización",
+        "Introducción a la Topología",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/1412-matematica",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Fundamentos de la Matemática I",
+          "Fundamentos de la Matemática II",
+          "Geometría",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Análisis I",
+          "Geometría y Álgebra Lineal I",
+          "Geometría y Álgebra Lineal II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Evolución del pensamiento matemático",
+          "Análisis II",
+          "Probabilidad y Estadística I",
+          "Probabilidad y Estadística II",
+          "Lenguaje en las aplicaciones de la Matemática",
+          "Lenguaje en resolución de problemas"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Estrategias de Aprendizaje y de Enseñanza de la Matemática",
+          "Análisis III",
+          "Profundización",
+          "Introducción a la Topología",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Portugués",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Taller de producción oral",
+        "Lengua y Cultura Portuguesa",
+        "Introducción a la Fonética y Fonología",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Lengua y Cultura Portuguesa II",
+        "Aspectos Literarios",
+        "Fonética y Fonología I",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Didáctica de la lengua y evaluación",
+        "Lengua y Cultura Portuguesa III",
+        "Lengua y Literatura I",
+        "Lingüística I",
+        "Taller de enseñanza por competencias",
+        "Taller de escritura académica en portugués",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Didáctica de la Fonética y Evaluación",
+        "Lengua y Literatura II",
+        "Lengua y Cultura Portuguesa IV",
+        "Lingüística II",
+        "Lengua Extranjera I. Inglés",
+        "Lengua Extranjera II. Inglés",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/1032-portugues",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Taller de producción oral",
+          "Lengua y Cultura Portuguesa",
+          "Introducción a la Fonética y Fonología",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Lengua y Cultura Portuguesa II",
+          "Aspectos Literarios",
+          "Fonética y Fonología I",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Didáctica de la lengua y evaluación",
+          "Lengua y Cultura Portuguesa III",
+          "Lengua y Literatura I",
+          "Lingüística I",
+          "Taller de enseñanza por competencias",
+          "Taller de escritura académica en portugués"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Didáctica de la Fonética y Evaluación",
+          "Lengua y Literatura II",
+          "Lengua y Cultura Portuguesa IV",
+          "Lingüística II",
+          "Lengua Extranjera I. Inglés",
+          "Lengua Extranjera II. Inglés",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Química",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Matemática para Química",
+        "Física para Química",
+        "Química General I y su enseñanza",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Química experimental dimensión analítica",
+        "Química Orgánica",
+        "Química General II y su Enseñanza",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Análisis y reflexión acerca de prácticas inclusivas vinculadas a la educación en Química",
+        "Química de las Biomoléculas",
+        "Química Inorgánica I",
+        "Química Inorgánica II",
+        "Recursos audiovisuales y modelado computacional en Química",
+        "El Lenguaje de la Química",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Metodología de la investigación en educación y didáctica de la Química",
+        "Fisicoquímica I",
+        "Fisicoquímica II",
+        "Química Ambiental y Toxicológica",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/105-planes-y-programas/plan-2023-profesorado/1142-quimica",
+      "plan": "2023",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Matemática para Química",
+          "Física para Química",
+          "Química General I y su enseñanza",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Química experimental dimensión analítica",
+          "Química Orgánica",
+          "Química General II y su Enseñanza",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Análisis y reflexión acerca de prácticas inclusivas vinculadas a la educación en Química",
+          "Química de las Biomoléculas",
+          "Química Inorgánica I",
+          "Química Inorgánica II",
+          "Recursos audiovisuales y modelado computacional en Química",
+          "El Lenguaje de la Química"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Metodología de la investigación en educación y didáctica de la Química",
+          "Fisicoquímica I",
+          "Fisicoquímica II",
+          "Química Ambiental y Toxicológica",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    },
+    {
+      "nombre": "Sociología (2025)",
+      "materias": [
+        "La Educación y sus transformaciones en la historia",
+        "Teorías pedagógicas",
+        "Desarrollo Humano Integral",
+        "Educación, Sociedad y Cultura",
+        "Introducción al campo profesional",
+        "Procesos sociales contemporáneos",
+        "Teoría social I",
+        "Sociología del trabajo y ocio",
+        "Ciudadanía y DDHH – perspectiva histórica y jurídica",
+        "Lengua Española I",
+        "Lengua Española II",
+        "Sistema Educativo Nacional: Políticas Educativas",
+        "Sistema Educativo Nacional: marco normativo y gestión institucional",
+        "Aprendizaje, neurociencias y procesos socioafectivos",
+        "Didáctica Práctica Docente I",
+        "Teoría social II",
+        "Procesos económicos contemporáneos",
+        "Identidad cultural I",
+        "Identidad cultural II",
+        "Tecnologías multimediales",
+        "Pensamiento computacional",
+        "Problemas epistemológicos y pensamiento científico",
+        "Investigación Educativa Aplicada: diseño de proyectos",
+        "Filosofía de la Educación",
+        "Didáctica Práctica Docente II",
+        "Seminario de Derechos Humanos",
+        "Género, relaciones amorosas y familia",
+        "Teoría social III",
+        "Teoría social IV",
+        "Ciudadanía y DDHH – perspectiva socio-filosófica",
+        "Sociología de la comunicación",
+        "Problemas del discurso sociológicos",
+        "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+        "Didáctica Práctica Docente III",
+        "Seminario de Derecho Procesal",
+        "Sociología latinoamericana y uruguaya",
+        "Teoría de los métodos e investigación social",
+        "Política, Estado y ciudadanía I",
+        "Política, Estado y ciudadanía II",
+        "Lengua Extranjera I",
+        "Lengua Extranjera II",
+        "Unidades curriculares optativas",
+        "Pedagogía",
+        "Psicología del Desarrollo",
+        "Sociología de la Educación 1: Teoría Sociológica",
+        "Taller de Producción Escrita",
+        "Acompañamiento a la Lengua Española",
+        "Psicología de la Educación",
+        "Legislación y Administración de la Enseñanza",
+        "Educación Sexual Integral (Optativa)",
+        "Educación e Inclusión (Optativa)",
+        "Educación en Derechos Humanos (Optativa)",
+        "Lenguaje Audiovisual (Optativa)",
+        "Pedagogía Audiovisual (Optativa)"
+      ],
+      "url": "https://cfe.edu.uy/index.php/carreras/planes-y-programas2/planes-vigentes-para-profesorado/105-planes-y-programas/plan-2023-profesorado/1368-sociologia-reformulacion-2025",
+      "plan": "2023 (Reformulación 2025)",
+      "materiasPorAnio": {
+        "1º Año": [
+          "La Educación y sus transformaciones en la historia",
+          "Teorías pedagógicas",
+          "Desarrollo Humano Integral",
+          "Educación, Sociedad y Cultura",
+          "Introducción al campo profesional",
+          "Procesos sociales contemporáneos",
+          "Teoría social I",
+          "Sociología del trabajo y ocio",
+          "Ciudadanía y DDHH – perspectiva histórica y jurídica",
+          "Lengua Española I",
+          "Lengua Española II"
+        ],
+        "2º Año": [
+          "Sistema Educativo Nacional: Políticas Educativas",
+          "Sistema Educativo Nacional: marco normativo y gestión institucional",
+          "Aprendizaje, neurociencias y procesos socioafectivos",
+          "Didáctica Práctica Docente I",
+          "Teoría social II",
+          "Procesos económicos contemporáneos",
+          "Identidad cultural I",
+          "Identidad cultural II",
+          "Tecnologías multimediales",
+          "Pensamiento computacional"
+        ],
+        "3º Año": [
+          "Problemas epistemológicos y pensamiento científico",
+          "Investigación Educativa Aplicada: diseño de proyectos",
+          "Filosofía de la Educación",
+          "Didáctica Práctica Docente II",
+          "Seminario de Derechos Humanos",
+          "Género, relaciones amorosas y familia",
+          "Teoría social III",
+          "Teoría social IV",
+          "Ciudadanía y DDHH – perspectiva socio-filosófica",
+          "Sociología de la comunicación",
+          "Problemas del discurso sociológicos"
+        ],
+        "4º Año": [
+          "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+          "Didáctica Práctica Docente III",
+          "Seminario de Derecho Procesal",
+          "Sociología latinoamericana y uruguaya",
+          "Teoría de los métodos e investigación social",
+          "Política, Estado y ciudadanía I",
+          "Política, Estado y ciudadanía II",
+          "Lengua Extranjera I",
+          "Lengua Extranjera II",
+          "Unidades curriculares optativas"
+        ]
+      }
+    }
+  ],
+  "materias": [
+    {
+      "nombre": "Abordajes interdisciplinarios de la Filosofía",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Acompañamiento a la Lengua Española",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "América Latina de 1830 a comienzos del siglo XXI",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "América y América Latina hasta 1830",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Análisis estadístico de bases sociales y ambientales",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Análisis I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Análisis II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Análisis III",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Análisis y reflexión acerca de prácticas inclusivas vinculadas a la educación en Química",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Anatomía y Fisiología aplicada a la danza",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Aprendizaje integrado de lengua a través de contenidos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Aprendizaje reflexivo de una lengua lejana: Alemán",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Aprendizaje, neurociencias y procesos socioafectivos",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Artes del espectáculo",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Artes y lenguajes contemporáneos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Aspectos Literarios",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Astrofísica",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Astrofísica solar",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Astronomía Fundamental y Mecánica Celeste",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Astronomía General",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Astronomía moderna y contemporánea",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Base de Datos",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Biología Animal I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Biología Animal II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Biología celular",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Biología Evolutiva",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Biología Humana",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Biología Vegetal I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Biología Vegetal II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Bioquímica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Cálculo de varias variables",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Cálculo diferencial e integral para Astronomía",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Cartografía y SIG aplicado a la docencia",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Cartografía y Sistemas de Información Geográfica",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Ciencia Política",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Ciencias Planetarias",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Ciudadanía Digital",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Ciudadanía y DDHH – perspectiva histórica y jurídica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Ciudadanía y DDHH – perspectiva socio-filosófica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Civilizaciones actuales y Globalización",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Computación y tecnologías en ciencias",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Conceptos Fundamentales del Derecho",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Corrientes Literarias",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Creación Filosófica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Creación y puesta en escena I",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Creación y puesta en escena II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Danza e inclusión educativa I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Danza e inclusión educativa II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "De las Primeras Civilizaciones a la Edad Moderna",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Derecho Comercial",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Derecho Financiero",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Derecho Internacional Público",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Derecho Laboral",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Derecho Penal",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Derecho Privado I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Derecho Privado II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Derecho Público I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Derecho Público II. Constitución Nacional y Gobierno Uruguayo",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Desarrollo Humano Integral",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Desarrollo web",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Didáctica de la Fonética y Evaluación",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Didáctica de la fonética, fonología y evaluación",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Didáctica de la lengua alemana y evaluación",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Didáctica de la lengua y evaluación",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Didáctica Práctica Docente I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Didáctica Práctica Docente II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Didáctica Práctica Docente III",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Dificultades de aprendizaje en el aula de Física. Estudio de casos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Dinámicas socioeconómicas globales",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Diseño e implementación de proyectos multidisciplinarios desde el espacio de observatorio",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Diseño I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Diseño II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Diseño III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Diseño IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Ecología",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Educación e Inclusión (Optativa)",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Educación en Derechos Humanos (Optativa)",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Educación para la Salud",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Educación Sexual Integral (Optativa)",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Educación somática",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Educación, Sociedad y Cultura",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "El Lenguaje de la Química",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Epistemología",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Epistemología de la Historia y su enseñanza",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Escritura y texto literario en la educación media",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Estética",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Estética Literaria",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Estilística y Análisis de Textos I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Estilística y Análisis de Textos II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Estrategias de Aprendizaje y de Enseñanza de la Matemática",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Ética",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Evolución del pensamiento matemático",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Expresión corporal",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Filosofía de la Educación",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Filosofía del Derecho",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Filosofía Política",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Física moderna para Astronomía",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Física moderna y contemporánea",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Física para Química",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Fisicoquímica I",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Fisicoquímica II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Fluidos, Física térmica y Ondas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Fonética y Fonología",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Fonética y Fonología I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Fonética y fonología II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Fundamentos de electromagnetismo",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Fundamentos de la Matemática I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Fundamentos de la Matemática II",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Género, relaciones amorosas y familia",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Genética",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Geografía de América Latina",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Geografía de Italia",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Geografía de los Países Desarrollados",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Geografía de los Países en Desarrollo y PMA",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Geografía del Uruguay I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Geografía del Uruguay II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Geografía Física 1. Dinámicas de la biósfera, climatología y biogeografía",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Geografía Física 2. Hidrología y geomorfología",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Geografía Humana y Económica",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Geometría",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Geometría y Álgebra Lineal I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Geometría y Álgebra Lineal II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Gramática del Lenguaje Visual",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Gramática Española",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Gramática Española I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Gramática Española II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Gramática Española III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Gramática Española IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Gramática Histórica I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Gramática Histórica II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Heurística",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia de la Civilización Italiana I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia de la Civilización Italiana II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia de la Civilización Italiana III",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia de la cultura y civilización en Francés y las sociedades francófonas II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia de la cultura y la civilización en Francia y las sociedades francófonas I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía Antigua y Medieval",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía Contemporánea I - Filosofía analítica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía Contemporánea II - Fenomenología, hermenéutica y teoría crítica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía en América Latina",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía en el Uruguay",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia de la Filosofía Moderna",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia de la Música I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia de la Música II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia de las Expresiones Artísticas",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia del Arte",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia del Arte I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia del Arte II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia del Derecho",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia del Pensamiento Político y Social",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia del Uruguay de 1830 a 1930",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia del Uruguay de 1930 a comienzos del siglo XXI",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia General de las Artes",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Historia Local",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia Universal S. XX y XXI",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Historia Universal. Siglos XVII, XVIII, XIX",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia y teoría de la danza I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Historia y teoría de la danza II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historia y teoría de las danzas de tradición popular",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Historiografía y Filosofía de la Historia",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Identidad cultural I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Identidad cultural II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Imagen A",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Imagen B",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Imagen I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Imagen II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Imagen III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Informática de Soporte",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Ingeniería de Software",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Innovación en educación literaria",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Inteligencia Artificial",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Introducción a la Fonética y Fonología",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Introducción a la Topología",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Introducción al Cálculo",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Introducción al Cálculo vectorial",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Introducción al campo profesional",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Investigación Educativa Aplicada: desarrollo y evaluación de proyectos",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Investigación Educativa Aplicada: diseño de proyectos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Investigación en la Enseñanza de las Ciencias Biológicas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "La Educación y sus transformaciones en la historia",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "La evolución histórica de la terminología jurídica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "La naturaleza epistemológica de la Física. Las concepciones e interdisciplinariedad",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "La región del Río de la Plata hasta 1830",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Laboratorios de fenómenos clásicos",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Las tecnologías de la Información y el Derecho",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Latín",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Latín I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Latín II",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lectura y escritura académica en Cs. Experimentales",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Legislación y Administración de la Enseñanza",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Española I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua Española II",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera I",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera I. Inglés",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera I. Portugués",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera II. Inglés",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Extranjera II. Portugués",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Francesa I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua Francesa II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua Francesa III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua Francesa IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua Italiana I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua Italiana II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua Italiana III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y cultura alemana I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua y cultura alemana II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua y cultura alemana III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y cultura alemana IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Inglesa I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Inglesa II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Inglesa III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Inglesa IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Portuguesa",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Portuguesa II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Portuguesa III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y Cultura Portuguesa IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua y literatura alemana I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Lengua y literatura alemana II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y literatura alemana III",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lengua y Literatura I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lengua y Literatura II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lenguaje Audiovisual (Optativa)",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lenguaje en las aplicaciones de la Matemática",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lenguaje en resolución de problemas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lingüística",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Lingüística General",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lingüística I",
+      "anios": [
+        "2º Año",
+        "3º Año"
+      ],
+      "anio": "2º y 3º Año"
+    },
+    {
+      "nombre": "Lingüística II",
+      "anios": [
+        "2º Año",
+        "4º Año"
+      ],
+      "anio": "2º y 4º Año"
+    },
+    {
+      "nombre": "Lingüística III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lingüística IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Literatura de la Lengua Francesa I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Literatura de la Lengua Francesa II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura de la Lengua Francesa III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura de la Lengua Francesa IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Literatura en Lengua Española I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura en Lengua Española II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Española I - Medieval",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura Española II - Del Siglo de Oro a la Ilustración",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura Española III - Romanticismo a la actualidad",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Grecolatina",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Literatura Iberoamericana I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Iberoamericana II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Literatura Italiana I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura Italiana II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura Italiana III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Medieval y Renacentista",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Literatura Universal I - Barroco e Ilustración",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Literatura Universal II - Siglo XIX a la actualidad",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Uruguaya I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Literatura Uruguaya II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Literatura y lenguaje digital",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Lógica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Lógica para Informática",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Los Seres Vivos en su ambiente",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Marco Jurídico de los Derechos Humanos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Matemática Discreta",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Matemática para Química",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Mecánica newtoniana aplicada a la Astronomía",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Metafísica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Metodología de enseñanza para Observatorio Astronómico",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Metodología de la educación a distancia y REA",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Metodología de la investigación en educación y didáctica de la Química",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Metodología de la investigación literaria",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Metodologías de las Danzas I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Metodologías de las Danzas II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Metodologías de las Danzas III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Metodologías de las Danzas IV",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Métodos y lenguaje filosóficos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Modelado computacional en Física",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Música e Inclusión Educativa",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Música Latinoamericana",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Música Uruguaya",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Música y Danza",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Música y recreación",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Narrativa transmedia",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Organización y Dirección de Coros I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Organización y Dirección de Coros II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Organología",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Pedagogía",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Pedagogía Audiovisual (Optativa)",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Pensamiento computacional",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Política, Estado y ciudadanía I",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Política, Estado y ciudadanía II",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Prácticas de Observación en situaciones especiales de enseñanza",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Prácticas e Innovaciones en la enseñanza de la Historia y las Ciencias Sociales y Humanas",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Prácticas observacionales",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Principios de conservación en Mecánica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Principios fundamentales del Derecho",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Probabilidad y Estadística",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Probabilidad y Estadística I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Probabilidad y Estadística II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Problemas del discurso sociológicos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Problemas epistemológicos y pensamiento científico",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Procesos económicos contemporáneos",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Procesos sociales contemporáneos",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Profundización",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Profundización de estrategias activas en Astronomía",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Profundización en Física clásica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Profundización en metodologías activas para el aprendizaje de la Filosofía",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Programación I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Programación II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Proyecto de Física",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Proyecto didáctico de extensión: Pensamiento computacional, Programación y Robótica Educativa",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Psicología de la Educación",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Psicología del Desarrollo",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Público III - Administrativo",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Química Ambiental y Toxicológica",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Química de las Biomoléculas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Química experimental dimensión analítica",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Química General I y su enseñanza",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Química General II y su Enseñanza",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Química Inorgánica I",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Química Inorgánica II",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Química Orgánica",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Recursos audiovisuales y modelado computacional en Química",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Robótica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Seminario de análisis y reflexión sobre las prácticas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Seminario de Derecho Procesal",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Seminario de Derechos Humanos",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Seminario de investigación interdisciplinario con énfasis en problemáticas",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Seminario Taller de Investigación Histórico-Educativa",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Sistema Educativo Nacional: marco normativo y gestión institucional",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Sistema Educativo Nacional: Políticas Educativas",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Sistemas lineales",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Sistemas Operativos",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Sociología de la comunicación",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Sociología de la Educación 1: Teoría Sociológica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Sociología del trabajo y ocio",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Sociología I. Abordaje epistemológico. Teoría social",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Sociología II. Organización social y categorías sociales fundamentales",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Sociología III",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Sociología IV",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Sociología latinoamericana y uruguaya",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Sociología V",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Sociología VI",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Solfeo y Acústica",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Solfeo y Armonía I",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Solfeo y Armonía II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Taller cartográfico de apoyo a la práctica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de análisis y producción de materiales didácticos",
+      "anios": [
+        "3º Año",
+        "4º Año"
+      ],
+      "anio": "3º y 4º Año"
+    },
+    {
+      "nombre": "Taller de apoyo a la Didáctica de las actividades integradoras de campo",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Taller de enseñanza por competencias",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de escritura académica en alemán",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de escritura académica en Inglés",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de escritura académica en portugués",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de oralidad. Sociedad y cultura contemporánea francesa",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Taller de Producción Escrita",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Taller de producción oral",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Taller de recreación musical y práctica instrumental",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Taller integrador II. Proyecto de desarrollo de aplicaciones y videojuegos",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Taller integrados de Sistemas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Técnicas instrumentales",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Técnicas y medios de la visualidad",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Técnicas y recursos de la plástica",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Tecnología educativa para la enseñanza de las Cs. Biológicas",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Tecnologías multimediales",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Teoría de las Artes",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Teoría de los métodos e investigación social",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Teoría Literaria",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Teoría social I",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Teoría social II",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Teoría social III",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Teoría social IV",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    },
+    {
+      "nombre": "Teoría y métodos de la geografía",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Teorías pedagógicas",
+      "anios": [
+        "1º Año"
+      ],
+      "anio": "1º Año"
+    },
+    {
+      "nombre": "Termodinámica y nociones de electromagnetismo para Astronomía",
+      "anios": [
+        "2º Año"
+      ],
+      "anio": "2º Año"
+    },
+    {
+      "nombre": "Unidades curriculares optativas",
+      "anios": [
+        "4º Año"
+      ],
+      "anio": "4º Año"
+    },
+    {
+      "nombre": "Uso de simuladores y apps. en Astronomía",
+      "anios": [
+        "3º Año"
+      ],
+      "anio": "3º Año"
+    }
+  ]
+}

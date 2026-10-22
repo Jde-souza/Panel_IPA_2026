@@ -14,7 +14,16 @@ if %ERRORLEVEL% NEQ 0 (
 )
 
 echo.
-echo [2/4] Actualizando Inasistencias Docentes...
+echo [2/6] Actualizando Carreras y Materias (Plan CFE)...
+node extract_carreras.js
+if %ERRORLEVEL% NEQ 0 (
+    echo [ERROR] Fallo la extraccion de carreras y materias.
+    pause
+    exit /b 2
+)
+
+echo.
+echo [3/6] Actualizando Inasistencias Docentes...
 node extract_inasistencias.js
 if %ERRORLEVEL% NEQ 0 (
     echo [ERROR] Fallo la extraccion de inasistencias.

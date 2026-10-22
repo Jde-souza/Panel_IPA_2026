@@ -184,84 +184,233 @@
     <div class="p-6 overflow-y-auto" style="background: var(--bg-body)">
       <form (ngSubmit)="saveRecord()" #form="ngForm" class="space-y-4">
         
+        <!-- Fila 1: Especialidad, Grupo, Semestre -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Especialidad -->
           <div>
             <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Especialidad</label>
-            <input type="text" [(ngModel)]="newRecord.especialidad" name="especialidad" required list="especialidadesList"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                   style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-            <datalist id="especialidadesList">
-              <option *ngFor="let e of especialidades" [value]="e"></option>
-            </datalist>
+            <div class="relative">
+              <select [(ngModel)]="newRecord.especialidad" (ngModelChange)="onModalEspChange()" name="especialidad" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="" disabled>Selecciona una especialidad...</option>
+                <optgroup *ngFor="let grp of getModalEspecialidadesAgrupadas()" [label]="grp.label">
+                  <option *ngFor="let e of grp.items" [value]="e">{{ e }}</option>
+                </optgroup>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
           </div>
+
+          <!-- Grupo -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Grupo</label>
-            <input type="text" [(ngModel)]="newRecord.grupo" name="grupo" required
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Grupo</label>
+              <button *ngIf="customMode['grupo']" type="button" (click)="toggleCustomField('grupo', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista
+              </button>
+            </div>
+            <div *ngIf="!customMode['grupo']" class="relative">
+              <select [(ngModel)]="newRecord.grupo" (ngModelChange)="onModalGrupoChange($event)" name="grupo" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="" disabled>Selecciona un grupo...</option>
+                <optgroup *ngFor="let ag of getModalGruposAgrupados()" [label]="ag.label">
+                  <option *ngFor="let g of ag.grupos" [value]="g">{{ g }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otro grupo (escribir manualmente)...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['grupo']" type="text" [(ngModel)]="newRecord.grupo" name="grupoCustom" placeholder="Ej: 1°A" required
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
           </div>
+
+          <!-- Semestre -->
           <div>
             <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Semestre</label>
-            <select [(ngModel)]="newRecord.semestre" name="semestre" required
-                    class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none"
-                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-              <option value="sem1">1º Semestre</option>
-              <option value="sem2">2º Semestre</option>
-            </select>
+            <div class="relative">
+              <select [(ngModel)]="newRecord.semestre" name="semestre" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="sem1">1º Semestre</option>
+                <option value="sem2">2º Semestre</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Fila 2: Materia (Subcategoría) y Docente -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Materia (Subcategoría) -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Materia (Subcategoría)</label>
-            <input type="text" [(ngModel)]="newRecord.materia" name="materia" required list="materiasList"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Materia (Subcategoría)</label>
+              <button *ngIf="customMode['materia']" type="button" (click)="toggleCustomField('materia', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista CFE
+              </button>
+            </div>
+            <div *ngIf="!customMode['materia']" class="relative">
+              <select [(ngModel)]="newRecord.materia" (ngModelChange)="onModalMateriaChange($event)" name="materia" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="" disabled>Selecciona una unidad curricular...</option>
+                <optgroup *ngFor="let mg of getModalMateriasAgrupadas()" [label]="mg.label">
+                  <option *ngFor="let m of mg.materias" [value]="m">{{ m }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otra materia (escribir manualmente)...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['materia']" type="text" [(ngModel)]="newRecord.materia" name="materiaCustom" placeholder="Nombre de la unidad curricular..." required
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-            <datalist id="materiasList">
-              <option *ngFor="let m of getMateriasForNewRecord()" [value]="m"></option>
-            </datalist>
           </div>
+
+          <!-- Docente -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Docente</label>
-            <input type="text" [(ngModel)]="newRecord.docente" name="docente"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Docente</label>
+              <button *ngIf="customMode['docente']" type="button" (click)="toggleCustomField('docente', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista docente
+              </button>
+            </div>
+            <div *ngIf="!customMode['docente']" class="relative">
+              <select [(ngModel)]="newRecord.docente" (ngModelChange)="onSelectCheckCustom('docente', $event)" name="docente"
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="">Sin asignar / Vacante</option>
+                <optgroup *ngFor="let dg of getModalDocentesAgrupados()" [label]="dg.label">
+                  <option *ngFor="let d of dg.docentes" [value]="d">{{ d }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otro docente (escribir manualmente)...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['docente']" type="text" [(ngModel)]="newRecord.docente" name="docenteCustom" placeholder="Apellido, Nombre del docente..."
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
           </div>
         </div>
 
+        <!-- Fila 3: Día, Hora Inicio, Hora Fin, Salón -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <!-- Día -->
           <div>
             <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Día</label>
-            <select [(ngModel)]="newRecord.dia" name="dia" required
-                    class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
-                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-              <option value="1">Lunes</option>
-              <option value="2">Martes</option>
-              <option value="3">Miércoles</option>
-              <option value="4">Jueves</option>
-              <option value="5">Viernes</option>
-            </select>
+            <div class="relative">
+              <select [(ngModel)]="newRecord.dia" name="dia" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="1">Lunes</option>
+                <option value="2">Martes</option>
+                <option value="3">Miércoles</option>
+                <option value="4">Jueves</option>
+                <option value="5">Viernes</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
           </div>
+
+          <!-- Hora Inicio -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Hora Inicio</label>
-            <input type="text" [(ngModel)]="newRecord.hora_inicio" name="hora_inicio" placeholder="08:00" required
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Hora Inicio</label>
+              <button *ngIf="customMode['hora_inicio']" type="button" (click)="toggleCustomField('hora_inicio', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista
+              </button>
+            </div>
+            <div *ngIf="!customMode['hora_inicio']" class="relative">
+              <select [(ngModel)]="newRecord.hora_inicio" (ngModelChange)="onModalHoraInicioChange($event)" name="hora_inicio" required
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="" disabled>Inicio...</option>
+                <optgroup *ngFor="let hg of getModalHorasInicioAgrupadas()" [label]="hg.label">
+                  <option *ngFor="let h of hg.horas" [value]="h">{{ h }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otra hora...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['hora_inicio']" type="text" [(ngModel)]="newRecord.hora_inicio" name="horaInicioCustom" placeholder="08:00" required
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
           </div>
+
+          <!-- Hora Fin -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Hora Fin</label>
-            <input type="text" [(ngModel)]="newRecord.hora_fin" name="hora_fin" placeholder="09:30"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Hora Fin</label>
+              <button *ngIf="customMode['hora_fin']" type="button" (click)="toggleCustomField('hora_fin', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista
+              </button>
+            </div>
+            <div *ngIf="!customMode['hora_fin']" class="relative">
+              <select [(ngModel)]="newRecord.hora_fin" (ngModelChange)="onSelectCheckCustom('hora_fin', $event)" name="hora_fin"
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="">Fin...</option>
+                <optgroup *ngFor="let hg of getModalHorasFinAgrupadas()" [label]="hg.label">
+                  <option *ngFor="let h of hg.horas" [value]="h">{{ h }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otra hora...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['hora_fin']" type="text" [(ngModel)]="newRecord.hora_fin" name="horaFinCustom" placeholder="09:30"
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
           </div>
+
+          <!-- Salón -->
           <div>
-            <label class="block text-sm font-bold mb-1" style="color: var(--text-main)">Salón</label>
-            <input type="text" [(ngModel)]="newRecord.salon" name="salon" placeholder="Ej: Laboratorio B" list="salonesList"
-                   class="w-full px-3 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
+            <div class="flex justify-between items-center mb-1">
+              <label class="block text-sm font-bold" style="color: var(--text-main)">Salón</label>
+              <button *ngIf="customMode['salon']" type="button" (click)="toggleCustomField('salon', false)"
+                      class="text-[11px] font-bold hover:underline" style="color: var(--primary-color)">
+                Ver lista
+              </button>
+            </div>
+            <div *ngIf="!customMode['salon']" class="relative">
+              <select [(ngModel)]="newRecord.salon" (ngModelChange)="onSelectCheckCustom('salon', $event)" name="salon"
+                      class="w-full pl-3 pr-9 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500 appearance-none cursor-pointer font-medium transition-all"
+                      style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+                <option value="">Sin asignar / A confirmar</option>
+                <optgroup *ngFor="let sg of getModalSalonesAgrupados()" [label]="sg.label">
+                  <option *ngFor="let s of sg.salones" [value]="s">{{ s }}</option>
+                </optgroup>
+                <option value="__custom__">+ Otro salón (escribir manualmente)...</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3" style="color: var(--text-muted);">
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+              </div>
+            </div>
+            <input *ngIf="customMode['salon']" type="text" [(ngModel)]="newRecord.salon" name="salonCustom" placeholder="Ej: SALON 102"
+                   class="w-full px-3 py-2.5 rounded-xl border focus:outline-none focus:ring-2 focus:ring-sky-500"
                    style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
-            <datalist id="salonesList">
-              <option *ngFor="let s of configSalones" [value]="s"></option>
-            </datalist>
           </div>
         </div>
 

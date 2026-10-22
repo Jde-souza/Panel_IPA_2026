@@ -792,3 +792,27 @@ app-footer {
 .skip-link:focus {
     top: 0;
 }
+
+@media print {
+    app-header,
+    app-sidebar,
+    app-footer,
+    .mobile-bottom-nav,
+    .no-print {
+        display: none !important;
+    }
+
+    .grid-container {
+        display: block !important;
+    }
+
+    .main-content {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+}

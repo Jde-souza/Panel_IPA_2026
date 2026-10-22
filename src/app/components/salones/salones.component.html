@@ -1,0 +1,993 @@
+<div class="salones-page-wrapper fade-in">
+
+  <!-- LOADING SPINNER -->
+  <div *ngIf="isLoading" class="flex flex-col justify-center items-center py-24 gap-4 no-print">
+    <i class="fa-solid fa-circle-notch fa-spin text-4xl" style="color: var(--primary-color)"></i>
+    <p class="text-sm font-bold" style="color: var(--text-muted)">Sincronizando estado de salones y horarios en tiempo real...</p>
+  </div>
+
+  <!-- =====================================================================
+       VISTA 1: PANTALLA DE ESCANEO QR / DETALLE EN VIVO DE UN SALÓN (/salon/:nombre)
+       ===================================================================== -->
+  <div *ngIf="!isLoading && activeSalon && activeSalonLiveStatus as live" class="no-print space-y-6">
+
+    <!-- Barra superior de navegación y herramientas -->
+    <div class="flex items-center justify-between gap-3 flex-wrap">
+      <div class="flex items-center gap-2.5 flex-wrap">
+        <button
+          type="button"
+          (click)="backToSalonesDirectory()"
+          class="px-4 py-2.5 rounded-xl font-bold text-xs border flex items-center gap-2 transition-all hover:opacity-90"
+          style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Todos los Salones</span>
+        </button>
+
+        <!-- Selector rápido para cambiar de salón -->
+        <div class="relative">
+          <select
+            [ngModel]="activeSalon.nombre"
+            (ngModelChange)="router.navigate(['/salon', $event])"
+            aria-label="Cambiar de salón"
+            class="px-3.5 py-2.5 rounded-xl font-bold text-xs border focus:outline-none"
+            style="background: var(--surface); color: var(--text-heading); border-color: var(--border-color);">
+            <option *ngFor="let s of salonesCatalog" [value]="s.nombre">
+              {{ s.nombre }} ({{ s.piso }})
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2.5 flex-wrap">
+        <!-- Selector de Semestre -->
+        <div class="inline-flex p-1 rounded-xl border" style="background: var(--surface); border-color: var(--border-color);">
+          <button
+            type="button"
+            (click)="semestreActivo = 'sem1'"
+            class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+            [ngStyle]="semestreActivo === 'sem1'
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff'}
+              : {'color': 'var(--text-muted)'}">
+            Semestre 1
+          </button>
+          <button
+            type="button"
+            (click)="semestreActivo = 'sem2'"
+            class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+            [ngStyle]="semestreActivo === 'sem2'
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff'}
+              : {'color': 'var(--text-muted)'}">
+            Semestre 2
+          </button>
+        </div>
+
+        <!-- Botón Cartel QR de Puerta -->
+        <button
+          type="button"
+          (click)="openQrGeneratorModal(activeSalon, 'single')"
+          class="px-4 py-2.5 rounded-xl font-extrabold text-xs text-white flex items-center gap-2 shadow-md transition-all hover:-translate-y-0.5"
+          style="background: var(--primary-color)">
+          <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+          <span>Cartel QR de Puerta</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- CABECERA DEL SALÓN + RELOJ EN VIVO -->
+    <div class="rounded-3xl p-6 md:p-8 border relative overflow-hidden"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b"
+           style="border-color: var(--border-color)">
+        <div class="flex items-start sm:items-center gap-4">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 text-2xl font-extrabold"
+               style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+            <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full"
+                    style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+                {{ activeSalon.piso || 'Planta General' }}
+              </span>
+              <span *ngIf="activeSalon.capacidad" class="text-xs font-bold px-2.5 py-0.5 rounded-full border"
+                    style="background: var(--bg-body); border-color: var(--border-color); color: var(--text-muted)">
+                <i class="fa-solid fa-users mr-1" aria-hidden="true"></i> {{ activeSalon.capacidad }} lugares
+              </span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mt-1" style="color: var(--text-heading)">
+              {{ activeSalon.nombre }}
+            </h2>
+            <p *ngIf="activeSalon.recursos" class="text-xs md:text-sm mt-1 flex items-center gap-1.5" style="color: var(--text-muted)">
+              <i class="fa-solid fa-plug-circle-check" style="color: var(--primary-color)" aria-hidden="true"></i>
+              <span>Equipamiento: {{ activeSalon.recursos }}</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Reloj actual y conmutador de simulación -->
+        <div class="flex flex-col sm:items-end gap-2">
+          <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-2xl border text-xs font-extrabold"
+               style="background: var(--bg-body); border-color: var(--border-color); color: var(--text-heading)">
+            <span class="w-2.5 h-2.5 rounded-full animate-pulse"
+                  [ngStyle]="{'background': live.enUsoAhora ? '#10b981' : 'var(--primary-color)'}"></span>
+            <i class="fa-regular fa-clock" style="color: var(--primary-color)" aria-hidden="true"></i>
+            <span>{{ formattedActiveTime }}</span>
+          </div>
+
+          <button
+            type="button"
+            (click)="useCustomTime = !useCustomTime"
+            class="text-xs font-bold underline transition-opacity opacity-75 hover:opacity-100"
+            style="color: var(--primary-color)">
+            {{ useCustomTime ? 'Volver a hora actual en vivo' : 'Simular otro día u hora' }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de simulación opcional -->
+      <div *ngIf="useCustomTime"
+           class="mt-4 p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3 fade-in"
+           style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.25);">
+        <div class="flex items-center gap-2 text-xs font-extrabold" style="color: var(--text-heading)">
+          <i class="fa-solid fa-clock-rotate-left" style="color: var(--primary-color)" aria-hidden="true"></i>
+          <span>Modo prueba de horario: elegí día y hora para verificar qué verán al escanear el QR</span>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <select
+            [(ngModel)]="customDayIndex"
+            (ngModelChange)="selectedDayTab = +$event"
+            aria-label="Día simulado"
+            class="px-3 py-1.5 rounded-xl border text-xs font-bold"
+            style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+            <option *ngFor="let d of dias; let i = index" [ngValue]="d">{{ diasNombres[i] }}</option>
+          </select>
+          <input
+            type="time"
+            [(ngModel)]="customTimeStr"
+            aria-label="Hora simulada"
+            class="px-3 py-1.5 rounded-xl border text-xs font-bold"
+            style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);" />
+        </div>
+      </div>
+
+      <!-- =================================================================
+           BLOQUE PRINCIPAL: HORARIO ACTUAL EN ESTE SALÓN (LO PRIMERO AL ESCANEAR)
+           ================================================================= -->
+      <div class="mt-6">
+
+        <!-- CASO A: SALÓN EN CLASE AHORA MISMO -->
+        <div *ngIf="live.enUsoAhora" class="space-y-4">
+          <div *ngFor="let actual of live.clasesActuales"
+               class="rounded-3xl p-6 md:p-7 border-2 relative overflow-hidden transition-all"
+               style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.10), rgba(0, 174, 239, 0.08)); border-color: rgba(16, 185, 129, 0.45);">
+
+            <div class="flex items-center justify-between gap-2 flex-wrap mb-4">
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider text-white shadow-sm"
+                    style="background: #10b981">
+                <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                <span>En clase ahora</span>
+              </span>
+
+              <span class="text-sm font-extrabold px-3.5 py-1.5 rounded-xl border"
+                    style="background: var(--surface); border-color: var(--border-color); color: var(--text-heading)">
+                <i class="fa-regular fa-clock mr-1.5" style="color: #10b981" aria-hidden="true"></i>
+                {{ actual.hora_inicio }} a {{ actual.hora_fin }} hs
+                <span *ngIf="actual.remainingMinutes !== undefined" class="ml-1 text-xs font-bold" style="color: var(--text-muted)">
+                  (restan {{ actual.remainingMinutes }} min)
+                </span>
+              </span>
+            </div>
+
+            <!-- Materia, Especialidad, Grupo y Docente -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+              <div class="md:col-span-2">
+                <span class="text-xs font-extrabold uppercase tracking-wider block" style="color: var(--primary-color)">
+                  {{ actual.especialidad }} • Grupo {{ actual.grupo }}
+                </span>
+                <h3 class="text-2xl md:text-3xl font-extrabold mt-1 leading-tight" style="color: var(--text-heading)">
+                  {{ actual.materia }}
+                </h3>
+                <p class="text-base font-bold mt-2 flex items-center gap-2" style="color: var(--text-main)">
+                  <i class="fa-solid fa-chalkboard-user" style="color: var(--primary-color)" aria-hidden="true"></i>
+                  <span>Docente: {{ actual.docente }}</span>
+                </p>
+              </div>
+
+              <!-- Progreso del bloque horario -->
+              <div class="p-4 rounded-2xl border" style="background: var(--surface); border-color: var(--border-color);">
+                <div class="flex justify-between text-xs font-extrabold mb-2" style="color: var(--text-muted)">
+                  <span>Transcurso del módulo</span>
+                  <span style="color: #10b981">{{ actual.progressPercent }}%</span>
+                </div>
+                <div class="w-full h-2.5 rounded-full overflow-hidden" style="background: var(--bg-body)">
+                  <div class="h-full rounded-full transition-all duration-500"
+                       [style.width.%]="actual.progressPercent"
+                       style="background: linear-gradient(90deg, #10b981, var(--primary-color))"></div>
+                </div>
+                <div class="flex justify-between text-[11px] font-bold mt-2" style="color: var(--text-muted)">
+                  <span>Inicio {{ actual.hora_inicio }}</span>
+                  <span>Fin {{ actual.hora_fin }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alerta si el docente registra Inasistencia hoy -->
+            <div *ngIf="actual.docenteAusenteHoy"
+                 class="mt-4 p-3.5 rounded-2xl border flex items-center gap-3"
+                 style="background: rgba(239, 68, 68, 0.12); border-color: rgba(239, 68, 68, 0.35); color: #ef4444;">
+              <i class="fa-solid fa-triangle-exclamation text-lg shrink-0" aria-hidden="true"></i>
+              <div class="text-xs md:text-sm font-bold">
+                Atención: El docente {{ actual.docente }} registra una inasistencia activa en la fecha ({{ actual.causalInasistencia }}).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CASO B: SALÓN LIBRE AHORA MISMO -->
+        <div *ngIf="!live.enUsoAhora"
+             class="rounded-3xl p-6 md:p-7 border-2 transition-all"
+             style="background: var(--bg-body); border-color: var(--border-color);">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider"
+                    style="background: rgba(var(--primary-color-rgb), 0.14); color: var(--primary-color)">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                <span>Salón disponible en este momento</span>
+              </span>
+              <h3 class="text-xl md:text-2xl font-extrabold mt-3" style="color: var(--text-heading)">
+                No hay ninguna clase dictándose en este horario
+              </h3>
+              <p class="text-sm mt-1" style="color: var(--text-muted)">
+                Consultá a continuación cuál es la próxima actividad programada en {{ activeSalon.nombre }}.
+              </p>
+            </div>
+
+            <!-- Tarjeta de Próxima Clase -->
+            <div *ngIf="live.proximaClase as prox"
+                 class="p-4 md:p-5 rounded-2xl border min-w-[270px] md:max-w-sm"
+                 style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+              <div class="flex items-center justify-between gap-2 mb-1.5">
+                <span class="text-[11px] font-extrabold uppercase tracking-wider" style="color: var(--primary-color)">
+                  Próxima clase en este salón
+                </span>
+                <span class="text-xs font-extrabold px-2 py-0.5 rounded-lg"
+                      style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+                  {{ prox.daysUntil === 0 ? 'Hoy ' + prox.hora_inicio : getDayName(prox.dia) + ' ' + prox.hora_inicio }}
+                </span>
+              </div>
+              <h4 class="text-base font-extrabold leading-snug" style="color: var(--text-heading)">
+                {{ prox.materia }}
+              </h4>
+              <p class="text-xs font-bold mt-1" style="color: var(--text-main)">
+                {{ prox.especialidad }} • Grupo {{ prox.grupo }}
+              </p>
+              <p class="text-xs mt-1" style="color: var(--text-muted)">
+                <i class="fa-solid fa-user-tie mr-1" aria-hidden="true"></i> {{ prox.docente }} ({{ prox.hora }})
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anticipo de siguiente clase cuando el salón está ocupado ahora -->
+        <div *ngIf="live.enUsoAhora && live.proximaClase as sig"
+             class="mt-3 px-5 py-3.5 rounded-2xl border flex items-center justify-between flex-wrap gap-2"
+             style="background: var(--bg-body); border-color: var(--border-color);">
+          <div class="flex items-center gap-2.5 text-xs md:text-sm">
+            <i class="fa-solid fa-forward-step" style="color: var(--primary-color)" aria-hidden="true"></i>
+            <span class="font-bold" style="color: var(--text-muted)">Siguiente en este salón:</span>
+            <strong style="color: var(--text-heading)">{{ sig.materia }}</strong>
+            <span class="font-semibold" style="color: var(--text-main)">({{ sig.especialidad }} - {{ sig.grupo }})</span>
+          </div>
+          <span class="text-xs font-extrabold px-2.5 py-1 rounded-lg"
+                style="background: var(--surface); color: var(--primary-color); border: 1px solid var(--border-color)">
+            {{ sig.daysUntil === 0 ? 'Hoy ' + sig.hora : getDayName(sig.dia) + ' ' + sig.hora }} — {{ sig.docente }}
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =================================================================
+         BLOQUE 2: CRONOGRAMA DEL DÍA EN ESTE SALÓN
+         ================================================================= -->
+    <div class="rounded-3xl p-6 md:p-8 border"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+          <h3 class="text-xl font-extrabold flex items-center gap-2.5" style="color: var(--text-heading)">
+            <i class="fa-solid fa-list-check" style="color: var(--primary-color)" aria-hidden="true"></i>
+            <span>Horarios del Salón en el Día ({{ getDayName(selectedDayTab) }})</span>
+          </h3>
+          <p class="text-xs md:text-sm mt-1" style="color: var(--text-muted)">
+            Secuencia completa de clases asignadas a {{ activeSalon.nombre }} durante la jornada seleccionada.
+          </p>
+        </div>
+
+        <!-- Selector rápido de día Lunes a Viernes -->
+        <div class="inline-flex p-1 rounded-2xl border flex-wrap gap-1"
+             style="background: var(--bg-body); border-color: var(--border-color);">
+          <button
+            *ngFor="let d of dias; let i = index"
+            type="button"
+            (click)="selectedDayTab = d"
+            class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition-all"
+            [ngStyle]="selectedDayTab === d
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff'}
+              : {'color': 'var(--text-muted)'}">
+            {{ diasNombres[i] }}
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="clasesDelDiaSalonActivo.length === 0"
+           class="py-10 text-center rounded-2xl border"
+           style="background: var(--bg-body); border-color: var(--border-color); color: var(--text-muted)">
+        <i class="fa-regular fa-calendar-xmark text-3xl mb-2 opacity-40" aria-hidden="true"></i>
+        <p class="text-sm font-bold">No hay clases registradas en {{ activeSalon.nombre }} para el día {{ getDayName(selectedDayTab) }}.</p>
+      </div>
+
+      <div *ngIf="clasesDelDiaSalonActivo.length > 0" class="space-y-3">
+        <div *ngFor="let c of clasesDelDiaSalonActivo"
+             class="p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all"
+             [ngStyle]="c.status === 'en_curso'
+               ? {'background': 'rgba(16, 185, 129, 0.08)', 'border-color': '#10b981'}
+               : c.status === 'pasada'
+               ? {'background': 'var(--bg-body)', 'border-color': 'var(--border-color)', 'opacity': '0.68'}
+               : {'background': 'var(--bg-body)', 'border-color': 'var(--border-color)'}">
+
+          <div class="flex items-start sm:items-center gap-4">
+            <!-- Rango horario -->
+            <div class="px-3.5 py-2 rounded-xl border text-center shrink-0 min-w-[110px]"
+                 style="background: var(--surface); border-color: var(--border-color);">
+              <span class="text-xs font-extrabold block" style="color: var(--text-heading)">{{ c.hora_inicio }} - {{ c.hora_fin }}</span>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider"
+                    [ngStyle]="{
+                      'color': c.status === 'en_curso' ? '#10b981' : c.status === 'pasada' ? 'var(--text-muted)' : 'var(--primary-color)'
+                    }">
+                {{ c.status === 'en_curso' ? '● En curso' : c.status === 'pasada' ? 'Finalizada' : 'Próxima' }}
+              </span>
+            </div>
+
+            <!-- Datos de la clase -->
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--primary-color)">
+                  {{ c.especialidad }} • Grupo {{ c.grupo }}
+                </span>
+                <span *ngIf="c.docenteAusenteHoy"
+                      class="text-[11px] font-extrabold px-2 py-0.5 rounded-full"
+                      style="background: rgba(239, 68, 68, 0.15); color: #ef4444">
+                  <i class="fa-solid fa-user-slash mr-1" aria-hidden="true"></i> Docente con inasistencia
+                </span>
+              </div>
+              <h4 class="text-base font-extrabold mt-0.5" style="color: var(--text-heading)">{{ c.materia }}</h4>
+              <p class="text-xs font-semibold mt-0.5" style="color: var(--text-muted)">
+                <i class="fa-solid fa-chalkboard-user mr-1" aria-hidden="true"></i> {{ c.docente }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Enlace al horario completo de ese grupo -->
+          <div class="flex items-center justify-end shrink-0">
+            <a routerLink="/horarios"
+               class="px-3.5 py-2 rounded-xl text-xs font-extrabold border inline-flex items-center gap-1.5 transition-all hover:opacity-90"
+               style="background: var(--surface); color: var(--text-main); border-color: var(--border-color); text-decoration: none;">
+              <span>Horario del grupo</span>
+              <i class="fa-solid fa-arrow-right text-[10px]" style="color: var(--primary-color)" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===============================================================
+           BOTÓN Y PANEL DE INFORMACIÓN AMPLIADA DE HORARIO (SEMANAL COMPLETO)
+           =============================================================== -->
+      <div class="mt-7 pt-6 border-t" style="border-color: var(--border-color)">
+        <button
+          type="button"
+          (click)="toggleExpandedSchedule()"
+          [attr.aria-expanded]="showExpandedSchedule"
+          class="w-full py-4 px-6 rounded-2xl font-extrabold text-sm border-2 flex items-center justify-between gap-4 transition-all"
+          style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.35); color: var(--text-heading);">
+          <div class="flex items-center gap-3 text-left">
+            <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-white"
+                 style="background: var(--primary-color)">
+              <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="block text-base font-extrabold" style="color: var(--text-heading)">
+                {{ showExpandedSchedule ? 'Ocultar Información Ampliada de Horario' : 'Ver Información Ampliada de Horario (Grilla Semanal Lunes a Viernes)' }}
+              </span>
+              <span class="block text-xs font-medium" style="color: var(--text-muted)">
+                Consultá todos los turnos, grupos y especialidades que utilizan {{ activeSalon.nombre }} en la semana ({{ live.totalClasesSemestre }} bloques en el semestre).
+              </span>
+            </div>
+          </div>
+          <i class="fa-solid text-lg shrink-0"
+             [ngClass]="showExpandedSchedule ? 'fa-chevron-up' : 'fa-chevron-down'"
+             style="color: var(--primary-color)" aria-hidden="true"></i>
+        </button>
+
+        <!-- GRILLA SEMANAL AMPLIADA DEL SALÓN -->
+        <div *ngIf="showExpandedSchedule" class="mt-6 space-y-5 fade-in">
+          <div class="flex items-center justify-between flex-wrap gap-3">
+            <h4 class="text-lg font-extrabold" style="color: var(--text-heading)">
+              Ocupación Semanal Completa — {{ activeSalon.nombre }} ({{ semestreActivo === 'sem1' ? 'Primer Semestre' : 'Segundo Semestre' }})
+            </h4>
+
+            <!-- Filtro por Turno -->
+            <div class="inline-flex p-1 rounded-xl border flex-wrap gap-1"
+                 style="background: var(--bg-body); border-color: var(--border-color);">
+              <button type="button" (click)="turnoFilter = 'todos'"
+                      class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+                      [ngStyle]="turnoFilter === 'todos' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+                Todos los turnos
+              </button>
+              <button type="button" (click)="turnoFilter = 'manana'"
+                      class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+                      [ngStyle]="turnoFilter === 'manana' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+                Mañana
+              </button>
+              <button type="button" (click)="turnoFilter = 'tarde'"
+                      class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+                      [ngStyle]="turnoFilter === 'tarde' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+                Tarde
+              </button>
+              <button type="button" (click)="turnoFilter = 'noche'"
+                      class="px-3 py-1.5 rounded-lg text-xs font-extrabold transition-all"
+                      [ngStyle]="turnoFilter === 'noche' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+                Noche
+              </button>
+            </div>
+          </div>
+
+          <!-- Tabla Semanal en Desktop -->
+          <div *ngIf="horasSemanalSalonActivo.length > 0" class="hidden lg:block overflow-x-auto rounded-2xl border" style="border-color: var(--border-color)">
+            <table class="w-full border-collapse text-left">
+              <thead>
+                <tr style="background: var(--bg-body); border-bottom: 1px solid var(--border-color);">
+                  <th class="p-3.5 text-xs font-extrabold uppercase tracking-wider w-32" style="color: var(--text-muted)">Horario</th>
+                  <th *ngFor="let dName of diasNombres" class="p-3.5 text-xs font-extrabold uppercase tracking-wider" style="color: var(--text-muted)">
+                    {{ dName }}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let h of horasSemanalSalonActivo" class="border-b" style="border-color: var(--border-color)">
+                  <td class="p-3 font-extrabold text-xs whitespace-nowrap align-top" style="color: var(--text-heading); background: var(--bg-body);">
+                    {{ h }}
+                  </td>
+                  <td *ngFor="let d of dias" class="p-2.5 align-top min-w-[160px]">
+                    <div *ngFor="let item of getClasesEnGrillaSalon(h, d)"
+                         class="p-2.5 rounded-xl border mb-1.5 last:mb-0"
+                         style="background: var(--bg-body); border-color: var(--border-color);">
+                      <span class="text-[10px] font-extrabold uppercase tracking-wider block" style="color: var(--primary-color)">
+                        {{ item.especialidad }} • {{ item.grupo }}
+                      </span>
+                      <strong class="text-xs font-extrabold block mt-0.5" style="color: var(--text-heading)">{{ item.materia }}</strong>
+                      <span class="text-[11px] block mt-0.5" style="color: var(--text-muted)">{{ item.docente }}</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Vista por Día en Móvil / Tablet -->
+          <div *ngIf="horasSemanalSalonActivo.length > 0" class="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div *ngFor="let d of dias; let idx = index"
+                 class="rounded-2xl border p-4"
+                 style="background: var(--bg-body); border-color: var(--border-color);">
+              <h5 class="text-sm font-extrabold uppercase tracking-wider mb-3 pb-2 border-b"
+                  style="color: var(--primary-color); border-color: var(--border-color)">
+                {{ diasNombres[idx] }}
+              </h5>
+              <div *ngIf="getClasesPorDiaAmpliado(d).length === 0" class="text-xs italic py-2" style="color: var(--text-muted)">
+                Sin clases en este turno
+              </div>
+              <div class="space-y-2.5">
+                <div *ngFor="let item of getClasesPorDiaAmpliado(d)"
+                     class="p-3 rounded-xl border"
+                     style="background: var(--surface); border-color: var(--border-color);">
+                  <div class="flex items-center justify-between text-xs font-extrabold">
+                    <span style="color: var(--primary-color)">{{ item.hora }}</span>
+                    <span style="color: var(--text-muted)">{{ item.especialidad }} • {{ item.grupo }}</span>
+                  </div>
+                  <div class="text-sm font-extrabold mt-1" style="color: var(--text-heading)">{{ item.materia }}</div>
+                  <div class="text-xs mt-0.5" style="color: var(--text-muted)">{{ item.docente }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =====================================================================
+       VISTA 2: DIRECTORIO GENERAL DE SALONES EN VIVO Y GENERADOR QR (/salones)
+       ===================================================================== -->
+  <div *ngIf="!isLoading && !activeSalon" class="no-print space-y-8">
+
+    <!-- Encabezado de la sección -->
+    <div class="section-header flex justify-between items-start flex-wrap gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider mb-2"
+             style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+          <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+          <span>Estado en Tiempo Real y Cartelería QR</span>
+        </div>
+        <h2 class="text-3xl font-extrabold" style="color: var(--text-heading)">Salones en Vivo y Códigos QR</h2>
+        <p class="mt-1" style="color: var(--text-muted)">
+          Consultá qué se está dictando ahora mismo en cada aula o generá los carteles QR listos para pegar en las puertas.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3 flex-wrap">
+        <button
+          type="button"
+          (click)="useCustomTime = !useCustomTime"
+          class="px-4 py-2.5 rounded-xl font-bold text-xs border flex items-center gap-2 transition-all"
+          style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          <i class="fa-regular fa-clock" style="color: var(--primary-color)" aria-hidden="true"></i>
+          <span>{{ formattedActiveTime }}</span>
+        </button>
+
+        <button
+          type="button"
+          (click)="openQrGeneratorModal(undefined, 'all')"
+          class="px-5 py-2.5 rounded-xl font-extrabold text-sm text-white flex items-center gap-2 shadow-lg transition-all hover:-translate-y-0.5"
+          style="background: var(--primary-color)">
+          <i class="fa-solid fa-print" aria-hidden="true"></i>
+          <span>Imprimir Carteles QR de Salones</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de simulación horaria opcional en el directorio -->
+    <div *ngIf="useCustomTime"
+         class="p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3 fade-in"
+         style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.25);">
+      <div class="flex items-center gap-2 text-xs font-extrabold" style="color: var(--text-heading)">
+        <i class="fa-solid fa-clock-rotate-left" style="color: var(--primary-color)" aria-hidden="true"></i>
+        <span>Simulando estado de todos los salones para:</span>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <select
+          [(ngModel)]="customDayIndex"
+          class="px-3 py-1.5 rounded-xl border text-xs font-bold"
+          style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+          <option *ngFor="let d of dias; let i = index" [ngValue]="d">{{ diasNombres[i] }}</option>
+        </select>
+        <input
+          type="time"
+          [(ngModel)]="customTimeStr"
+          class="px-3 py-1.5 rounded-xl border text-xs font-bold"
+          style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);" />
+        <button
+          type="button"
+          (click)="useCustomTime = false"
+          class="px-3 py-1.5 rounded-xl text-xs font-bold border"
+          style="background: var(--surface); color: var(--primary-color); border-color: var(--border-color);">
+          Usar hora real
+        </button>
+      </div>
+    </div>
+
+    <!-- KPIs de Ocupación Instantánea -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div class="rounded-3xl p-5 border flex items-center gap-4"
+           style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0"
+             style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+          <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider" style="color: var(--text-muted)">Total Salones</span>
+          <p class="text-2xl font-extrabold" style="color: var(--text-heading)">{{ salonesCatalog.length }}</p>
+        </div>
+      </div>
+
+      <div class="rounded-3xl p-5 border flex items-center gap-4 cursor-pointer transition-all"
+           (click)="selectedEstadoFilter = selectedEstadoFilter === 'ocupados' ? 'todos' : 'ocupados'"
+           style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0"
+             style="background: rgba(16, 185, 129, 0.14); color: #10b981">
+          <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider" style="color: var(--text-muted)">En Clase Ahora</span>
+          <p class="text-2xl font-extrabold" style="color: #10b981">{{ countOcupadosAhora }}</p>
+        </div>
+      </div>
+
+      <div class="rounded-3xl p-5 border flex items-center gap-4 cursor-pointer transition-all"
+           (click)="selectedEstadoFilter = selectedEstadoFilter === 'libres' ? 'todos' : 'libres'"
+           style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+        <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0"
+             style="background: rgba(56, 189, 248, 0.14); color: var(--primary-color)">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider" style="color: var(--text-muted)">Libres Ahora</span>
+          <p class="text-2xl font-extrabold" style="color: var(--text-heading)">{{ countLibresAhora }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de búsqueda y filtros por Piso y Estado -->
+    <div class="rounded-3xl p-5 border flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div class="relative flex-grow">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-sm"
+           style="color: var(--primary-color)" aria-hidden="true"></i>
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          placeholder="Buscar por número de salón, materia actual, docente o equipamiento..."
+          aria-label="Buscar salón"
+          class="w-full pl-10 pr-4 py-2.5 rounded-xl border text-sm font-medium focus:outline-none"
+          style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);" />
+      </div>
+
+      <div class="flex items-center gap-3 flex-wrap">
+        <select
+          [(ngModel)]="selectedPisoFilter"
+          aria-label="Filtrar por piso"
+          class="px-3.5 py-2.5 rounded-xl border text-xs font-extrabold"
+          style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+          <option value="Todos">Todos los pisos</option>
+          <option *ngFor="let p of pisosDisponibles" [value]="p">{{ p }}</option>
+        </select>
+
+        <div class="inline-flex p-1 rounded-xl border" style="background: var(--bg-body); border-color: var(--border-color);">
+          <button type="button" (click)="selectedEstadoFilter = 'todos'"
+                  class="px-3 py-1.5 rounded-lg text-xs font-extrabold"
+                  [ngStyle]="selectedEstadoFilter === 'todos' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+            Todos
+          </button>
+          <button type="button" (click)="selectedEstadoFilter = 'ocupados'"
+                  class="px-3 py-1.5 rounded-lg text-xs font-extrabold"
+                  [ngStyle]="selectedEstadoFilter === 'ocupados' ? {'background': '#10b981', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+            En clase
+          </button>
+          <button type="button" (click)="selectedEstadoFilter = 'libres'"
+                  class="px-3 py-1.5 rounded-lg text-xs font-extrabold"
+                  [ngStyle]="selectedEstadoFilter === 'libres' ? {'background': 'var(--primary-color)', 'color': '#fff'} : {'color': 'var(--text-muted)'}">
+            Libres
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grilla de Salones en Vivo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div *ngFor="let item of filteredSalonesLiveList"
+           class="salon-live-card rounded-3xl p-6 border flex flex-col justify-between transition-all"
+           style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+
+        <div>
+          <!-- Cabecera de tarjeta -->
+          <div class="flex items-start justify-between gap-2 mb-4">
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider" style="color: var(--text-muted)">
+                {{ item.salon.piso }}
+                <ng-container *ngIf="item.salon.capacidad"> • {{ item.salon.capacidad }} pers.</ng-container>
+              </span>
+              <h3 class="text-xl font-extrabold mt-0.5" style="color: var(--text-heading)">
+                {{ item.salon.nombre }}
+              </h3>
+            </div>
+
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold flex items-center gap-1.5 shrink-0"
+                  [ngStyle]="item.enUsoAhora
+                    ? {'background': 'rgba(16, 185, 129, 0.14)', 'color': '#10b981'}
+                    : {'background': 'rgba(var(--primary-color-rgb), 0.12)', 'color': 'var(--primary-color)'}">
+              <span class="w-2 h-2 rounded-full"
+                    [ngStyle]="{'background': item.enUsoAhora ? '#10b981' : 'var(--primary-color)'}"></span>
+              {{ item.enUsoAhora ? 'En clase ahora' : 'Libre ahora' }}
+            </span>
+          </div>
+
+          <!-- Estado Horario Actual dentro de la tarjeta -->
+          <div *ngIf="item.enUsoAhora && item.clasesActuales[0] as act"
+               class="p-4 rounded-2xl border mb-4"
+               style="background: rgba(16, 185, 129, 0.07); border-color: rgba(16, 185, 129, 0.35);">
+            <div class="flex items-center justify-between text-xs font-extrabold mb-1">
+              <span style="color: #10b981">{{ act.hora }} hs</span>
+              <span style="color: var(--primary-color)">{{ act.especialidad }} • {{ act.grupo }}</span>
+            </div>
+            <h4 class="text-base font-extrabold leading-snug" style="color: var(--text-heading)">{{ act.materia }}</h4>
+            <p class="text-xs font-semibold mt-1" style="color: var(--text-main)">
+              <i class="fa-solid fa-chalkboard-user mr-1" aria-hidden="true"></i> {{ act.docente }}
+            </p>
+          </div>
+
+          <!-- Si está libre, mostrar próxima clase -->
+          <div *ngIf="!item.enUsoAhora"
+               class="p-4 rounded-2xl border mb-4"
+               style="background: var(--bg-body); border-color: var(--border-color);">
+            <ng-container *ngIf="item.proximaClase as prox; else sinClasesSemestre">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider block" style="color: var(--primary-color)">
+                Próxima clase ({{ prox.daysUntil === 0 ? 'Hoy ' + prox.hora_inicio : getDayName(prox.dia) + ' ' + prox.hora_inicio }})
+              </span>
+              <h4 class="text-sm font-extrabold mt-0.5" style="color: var(--text-heading)">{{ prox.materia }}</h4>
+              <p class="text-xs mt-0.5" style="color: var(--text-muted)">
+                {{ prox.especialidad }} ({{ prox.grupo }}) — {{ prox.docente }}
+              </p>
+            </ng-container>
+            <ng-template #sinClasesSemestre>
+              <span class="text-xs italic" style="color: var(--text-muted)">Sin clases asignadas en este semestre.</span>
+            </ng-template>
+          </div>
+        </div>
+
+        <!-- Acciones: Abrir vista de puerta o Imprimir QR -->
+        <div class="pt-3 border-t flex items-center justify-between gap-2" style="border-color: var(--border-color)">
+          <button
+            type="button"
+            (click)="openQrGeneratorModal(item.salon, 'single')"
+            class="px-3.5 py-2 rounded-xl text-xs font-extrabold border flex items-center gap-1.5 transition-all hover:opacity-90"
+            style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+            <i class="fa-solid fa-qrcode" style="color: var(--primary-color)" aria-hidden="true"></i>
+            <span>Cartel QR</span>
+          </button>
+
+          <button
+            type="button"
+            (click)="openSalonDetail(item.salon)"
+            class="px-4 py-2 rounded-xl text-xs font-extrabold text-white flex items-center gap-1.5 shadow-sm transition-all hover:-translate-y-0.5"
+            style="background: var(--primary-color)">
+            <span>Ver Horario en Vivo</span>
+            <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL Y ÁREA DE IMPRESIÓN DE CARTELES QR PARA PUERTAS
+       ===================================================================== -->
+  <div *ngIf="showQrModal"
+       class="qr-modal-backdrop fixed inset-0 z-[9998] flex items-center justify-center p-4 fade-in"
+       style="background: rgba(5, 10, 24, 0.72); backdrop-filter: blur(6px);"
+       (click)="closeQrModal()"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="qr-modal-title">
+
+    <div class="qr-modal-dialog w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl p-6 md:p-8 border shadow-2xl"
+         style="background: var(--surface); border-color: var(--border-color);"
+         (click)="$event.stopPropagation()">
+
+      <!-- Controles de configuración del QR (NO se imprimen en papel) -->
+      <div class="no-print pb-6 mb-6 border-b space-y-5" style="border-color: var(--border-color)">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl shrink-0"
+                 style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+              <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 id="qr-modal-title" class="text-xl md:text-2xl font-extrabold" style="color: var(--text-heading)">
+                Generador e Impresión de Códigos QR para Puertas
+              </h3>
+              <p class="text-xs md:text-sm" style="color: var(--text-muted)">
+                Al escanear el código pegado en la puerta, el celular muestra el horario actual del salón y su grilla semanal.
+              </p>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            (click)="closeQrModal()"
+            class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 hover:bg-black/10"
+            style="color: var(--text-muted)"
+            aria-label="Cerrar generador QR">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Opciones: Qué salones incluir, Formato de hoja y URL base -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+          <!-- 1. Alcance (Salón individual, por piso o todos) -->
+          <div class="p-4 rounded-2xl border" style="background: var(--bg-body); border-color: var(--border-color);">
+            <label class="block text-xs font-extrabold uppercase tracking-wider mb-2" style="color: var(--text-muted)">
+              1. Salones a imprimir
+            </label>
+            <select
+              [(ngModel)]="qrScope"
+              (ngModelChange)="rebuildQrPrintList()"
+              class="w-full px-3 py-2 rounded-xl border text-xs font-extrabold mb-2"
+              style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+              <option value="single">Un salón específico</option>
+              <option value="piso">Todos los salones de un piso</option>
+              <option value="all">Todos los salones ({{ salonesCatalog.length }})</option>
+            </select>
+
+            <select
+              *ngIf="qrScope === 'single'"
+              [(ngModel)]="qrSingleSalon"
+              (ngModelChange)="rebuildQrPrintList()"
+              class="w-full px-3 py-2 rounded-xl border text-xs font-bold"
+              style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+              <option *ngFor="let s of salonesCatalog" [ngValue]="s">{{ s.nombre }} ({{ s.piso }})</option>
+            </select>
+
+            <select
+              *ngIf="qrScope === 'piso'"
+              [(ngModel)]="qrSelectedPiso"
+              (ngModelChange)="rebuildQrPrintList()"
+              class="w-full px-3 py-2 rounded-xl border text-xs font-bold"
+              style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+              <option value="Todos">Todos los pisos</option>
+              <option *ngFor="let p of pisosDisponibles" [value]="p">{{ p }}</option>
+            </select>
+          </div>
+
+          <!-- 2. Formato de Impresión -->
+          <div class="p-4 rounded-2xl border" style="background: var(--bg-body); border-color: var(--border-color);">
+            <label class="block text-xs font-extrabold uppercase tracking-wider mb-2" style="color: var(--text-muted)">
+              2. Formato de Papel A4
+            </label>
+            <div class="space-y-2">
+              <button
+                type="button"
+                (click)="qrPrintFormat = 'poster'"
+                class="w-full p-2.5 rounded-xl border text-left text-xs font-extrabold flex items-center gap-2.5 transition-all"
+                [ngStyle]="qrPrintFormat === 'poster'
+                  ? {'background': 'var(--primary-color)', 'color': '#fff', 'border-color': 'var(--primary-color)'}
+                  : {'background': 'var(--surface)', 'color': 'var(--text-main)', 'border-color': 'var(--border-color)'}">
+                <i class="fa-solid fa-file-image text-sm" aria-hidden="true"></i>
+                <div>
+                  <span class="block">Cartel Grande de Puerta</span>
+                  <span class="text-[10px] opacity-80 font-normal">1 cartel grande por hoja A4</span>
+                </div>
+              </button>
+
+              <button
+                type="button"
+                (click)="qrPrintFormat = 'grid'"
+                class="w-full p-2.5 rounded-xl border text-left text-xs font-extrabold flex items-center gap-2.5 transition-all"
+                [ngStyle]="qrPrintFormat === 'grid'
+                  ? {'background': 'var(--primary-color)', 'color': '#fff', 'border-color': 'var(--primary-color)'}
+                  : {'background': 'var(--surface)', 'color': 'var(--text-main)', 'border-color': 'var(--border-color)'}">
+                <i class="fa-solid fa-table-cells text-sm" aria-hidden="true"></i>
+                <div>
+                  <span class="block">Grilla Compacta (Recortable)</span>
+                  <span class="text-[10px] opacity-80 font-normal">Varios códigos QR por hoja A4</span>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Dominio / URL Base y Botón Imprimir -->
+          <div class="p-4 rounded-2xl border flex flex-col justify-between"
+               style="background: var(--bg-body); border-color: var(--border-color);">
+            <div>
+              <label class="block text-xs font-extrabold uppercase tracking-wider mb-1.5" style="color: var(--text-muted)">
+                3. Dirección web base del QR
+              </label>
+              <input
+                type="text"
+                [(ngModel)]="qrBaseUrl"
+                (ngModelChange)="rebuildQrPrintList()"
+                placeholder="https://panel-ipa.edu.uy"
+                class="w-full px-3 py-2 rounded-xl border text-xs font-bold"
+                style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);" />
+              <p class="text-[11px] mt-1" style="color: var(--text-muted)">
+                Cada QR apunta a <code>/salon/[Nombre]</code>.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              (click)="printQrCards()"
+              class="mt-3 w-full py-2.5 px-4 rounded-xl font-extrabold text-xs text-white flex items-center justify-center gap-2 shadow-md transition-all hover:-translate-y-0.5"
+              style="background: var(--primary-color)">
+              <i class="fa-solid fa-print" aria-hidden="true"></i>
+              <span>Imprimir ({{ qrItemsToPrint.length }})</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ÁREA IMPRIMIBLE: CARTELES QR -->
+      <div class="qr-print-area" [ngClass]="qrPrintFormat === 'poster' ? 'print-mode-poster space-y-8' : 'print-mode-grid grid grid-cols-1 sm:grid-cols-2 gap-6'">
+
+        <div *ngFor="let s of qrItemsToPrint"
+             class="qr-printable-card rounded-3xl border-2 p-6 md:p-8 text-center flex flex-col items-center justify-between bg-white text-slate-900"
+             [ngClass]="qrPrintFormat === 'poster' ? 'poster-card max-w-xl mx-auto' : 'grid-card border-dashed'">
+
+          <!-- Encabezado Institucional del Cartel -->
+          <div class="w-full pb-4 border-b-2 border-slate-200 flex items-center justify-between text-left">
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#003087] block">
+                ANEP • CFE • Instituto de Profesores Artigas
+              </span>
+              <span class="text-xs font-bold text-slate-500">
+                Sistema de Información Horaria en Tiempo Real
+              </span>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-[#003087] text-white">
+              {{ s.piso }}
+            </span>
+          </div>
+
+          <!-- Nombre / Número del Salón en Grande -->
+          <div class="my-5">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#00aeef] block">
+              Identificación de Aula / Espacio
+            </span>
+            <h2 class="text-4xl md:text-5xl font-black tracking-tight text-[#003087] mt-1">
+              {{ s.nombre }}
+            </h2>
+            <p *ngIf="s.capacidad || s.recursos" class="text-xs font-bold text-slate-600 mt-1.5">
+              <ng-container *ngIf="s.capacidad">Capacidad: {{ s.capacidad }} personas</ng-container>
+              <ng-container *ngIf="s.capacidad && s.recursos"> • </ng-container>
+              <ng-container *ngIf="s.recursos">{{ s.recursos }}</ng-container>
+            </p>
+          </div>
+
+          <!-- Imagen del Código QR -->
+          <div class="p-4 rounded-3xl border-2 border-[#003087]/20 bg-white shadow-sm inline-block my-2">
+            <img
+              *ngIf="s.qrDataUrl"
+              [src]="s.qrDataUrl"
+              [alt]="'Código QR para ' + s.nombre"
+              class="mx-auto"
+              [ngClass]="qrPrintFormat === 'poster' ? 'w-60 h-60' : 'w-40 h-40'" />
+          </div>
+
+          <!-- Instrucciones al pie del cartel -->
+          <div class="mt-4 max-w-md mx-auto">
+            <p class="text-sm font-extrabold text-[#003087]">
+              Escaneá este código QR con la cámara de tu celular
+            </p>
+            <p class="text-xs text-slate-600 mt-1">
+              Consultá al instante <strong>qué clase se está dictando ahora mismo</strong>, el cronograma de hoy y la grilla semanal ampliada de {{ s.nombre }}.
+            </p>
+            <p class="text-[10px] font-mono text-slate-400 mt-2 break-all">
+              {{ s.scanUrl }}
+            </p>
+          </div>
+
+          <!-- Botones rápidos individuales (No salen al imprimir en papel) -->
+          <div class="no-print mt-5 pt-4 border-t border-slate-200 w-full flex items-center justify-center gap-2 flex-wrap">
+            <button
+              type="button"
+              (click)="downloadSingleQrPng(s)"
+              class="px-3 py-1.5 rounded-xl text-xs font-extrabold border border-slate-300 text-slate-700 hover:bg-slate-100 flex items-center gap-1.5">
+              <i class="fa-solid fa-download text-[#003087]" aria-hidden="true"></i>
+              <span>Descargar PNG</span>
+            </button>
+            <button
+              type="button"
+              (click)="copySalonLink(s)"
+              class="px-3 py-1.5 rounded-xl text-xs font-extrabold border border-slate-300 text-slate-700 hover:bg-slate-100 flex items-center gap-1.5">
+              <i class="fa-regular fa-copy text-[#003087]" aria-hidden="true"></i>
+              <span>Copiar enlace</span>
+            </button>
+            <button
+              type="button"
+              (click)="closeQrModal(); openSalonDetail(s)"
+              class="px-3 py-1.5 rounded-xl text-xs font-extrabold bg-[#003087] text-white flex items-center gap-1.5">
+              <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+              <span>Simular escaneo</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

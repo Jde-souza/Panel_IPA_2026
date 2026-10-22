@@ -1,0 +1,613 @@
+<div class="help-center-wrapper fade-in">
+
+  <!-- HERO & BUSCADOR PRINCIPAL -->
+  <section class="help-hero rounded-3xl p-6 md:p-10 mb-8 relative overflow-hidden border shadow-sm"
+           aria-labelledby="help-center-title">
+    <div class="hero-glow"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider mb-4 help-badge">
+        <i class="fa-solid fa-life-ring" aria-hidden="true"></i>
+        <span>Centro de Ayuda y Documentación — Panel IPA 2026</span>
+      </div>
+
+      <h2 id="help-center-title" class="text-3xl md:text-4xl font-extrabold tracking-tight" style="color: var(--text-heading)">
+        ¿En qué podemos ayudarte hoy?
+      </h2>
+      <p class="mt-3 text-base md:text-lg max-w-2xl mx-auto" style="color: var(--text-muted)">
+        Guías paso a paso para gestión administrativa (adscriptos y bedelía) y consultas académicas (horarios, mesas de examen, licencias y directorio docente).
+      </p>
+
+      <!-- Barra de búsqueda en tiempo real -->
+      <div class="mt-7 max-w-2xl mx-auto relative">
+        <div class="search-box-container flex items-center rounded-2xl border px-4 py-3.5 shadow-lg transition-all"
+             style="background: var(--surface); border-color: var(--border-color);">
+          <i class="fa-solid fa-magnifying-glass text-lg mr-3.5 shrink-0" style="color: var(--primary-color)" aria-hidden="true"></i>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Buscar por módulo, acción o duda (ej: autoguardado, próxima clase, salones por piso, tribunal)..."
+            aria-label="Buscar en el Centro de Ayuda"
+            class="w-full bg-transparent focus:outline-none text-base font-medium"
+            style="color: var(--text-main)"
+          />
+          <button
+            *ngIf="searchTerm"
+            type="button"
+            (click)="clearSearch()"
+            class="ml-2 w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-colors hover:bg-black/10"
+            style="color: var(--text-muted)"
+            aria-label="Limpiar búsqueda">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Etiquetas rápidas sugeridas -->
+        <div class="mt-4 flex items-center justify-center flex-wrap gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider mr-1" style="color: var(--text-muted)">
+            Búsquedas frecuentes:
+          </span>
+          <button
+            *ngFor="let tag of quickSearchTags"
+            type="button"
+            (click)="applyQuickTag(tag)"
+            class="text-xs font-bold px-3 py-1.5 rounded-full border transition-all"
+            [ngClass]="{ 'tag-active': searchTerm.toLowerCase() === tag.toLowerCase() }"
+            style="background: var(--surface); border-color: var(--border-color); color: var(--text-main);">
+            {{ tag }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Selector de Enfoque / Perfil -->
+      <div class="mt-7 pt-6 border-t flex flex-col sm:flex-row items-center justify-center gap-3"
+           style="border-color: var(--border-color)">
+        <span class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--text-muted)">
+          Mostrar contenido para:
+        </span>
+        <div class="inline-flex p-1 rounded-2xl border flex-wrap justify-center gap-1"
+             style="background: var(--bg-body); border-color: var(--border-color);"
+             role="group"
+             aria-label="Filtrar por tipo de usuario">
+          <button
+            type="button"
+            (click)="setAudience('todos')"
+            class="px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2"
+            [ngStyle]="selectedAudience === 'todos'
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff', 'box-shadow': '0 4px 12px rgba(var(--primary-color-rgb), 0.35)'}
+              : {'color': 'var(--text-muted)'}">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <span>Vista Mixta (Todos)</span>
+          </button>
+          <button
+            type="button"
+            (click)="setAudience('consulta')"
+            class="px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2"
+            [ngStyle]="selectedAudience === 'consulta'
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff', 'box-shadow': '0 4px 12px rgba(var(--primary-color-rgb), 0.35)'}
+              : {'color': 'var(--text-muted)'}">
+            <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+            <span>Consultas (Estudiantes / Docentes)</span>
+          </button>
+          <button
+            type="button"
+            (click)="setAudience('gestion')"
+            class="px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2"
+            [ngStyle]="selectedAudience === 'gestion'
+              ? {'background': 'var(--primary-color)', 'color': '#ffffff', 'box-shadow': '0 4px 12px rgba(var(--primary-color-rgb), 0.35)'}
+              : {'color': 'var(--text-muted)'}">
+            <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+            <span>Gestión (Adscriptos / Bedelía)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTRO POR CATEGORÍAS / MÓDULOS -->
+  <section class="mb-9" aria-label="Categorías del Centro de Ayuda">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+      <h3 class="text-sm font-extrabold uppercase tracking-wider flex items-center gap-2" style="color: var(--text-muted)">
+        <i class="fa-solid fa-compass" style="color: var(--primary-color)" aria-hidden="true"></i>
+        <span>Explorar por Módulo del Sistema</span>
+      </h3>
+      <span class="text-xs font-bold px-3 py-1 rounded-full border"
+            style="background: var(--surface); border-color: var(--border-color); color: var(--text-muted)">
+        {{ totalResultsCount }} {{ totalResultsCount === 1 ? 'resultado disponible' : 'resultados disponibles' }}
+      </span>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <button
+        *ngFor="let cat of categorias"
+        type="button"
+        (click)="setCategory(cat.id)"
+        class="category-pill rounded-2xl p-3.5 text-left border transition-all flex items-center justify-between gap-2"
+        [ngClass]="{ 'active-cat': selectedCategory === cat.id }"
+        [attr.aria-pressed]="selectedCategory === cat.id">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 cat-icon-box">
+            <i [class]="cat.icono" aria-hidden="true"></i>
+          </div>
+          <span class="font-bold text-sm truncate" style="color: var(--text-heading)">{{ cat.nombre }}</span>
+        </div>
+        <span class="text-xs font-extrabold px-2 py-0.5 rounded-lg shrink-0 cat-count">
+          {{ getCategoryCount(cat.id) }}
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ESTADO VACÍO SI NO HAY RESULTADOS -->
+  <div *ngIf="totalResultsCount === 0"
+       class="rounded-3xl p-10 text-center border my-8"
+       style="background: var(--surface); border-color: var(--border-color);">
+    <div class="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-2xl"
+         style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+      <i class="fa-solid fa-magnifying-glass-minus" aria-hidden="true"></i>
+    </div>
+    <h3 class="text-xl font-extrabold" style="color: var(--text-heading)">
+      No encontramos guías ni respuestas para "{{ searchTerm }}"
+    </h3>
+    <p class="text-sm mt-2 max-w-md mx-auto" style="color: var(--text-muted)">
+      Probá con otros términos o restablecé los filtros de categoría y perfil para ver toda la documentación disponible.
+    </p>
+    <button
+      type="button"
+      (click)="resetAllFilters()"
+      class="mt-5 px-5 py-2.5 rounded-xl font-bold text-sm text-white inline-flex items-center gap-2 shadow-md transition-all hover:-translate-y-0.5"
+      style="background: var(--primary-color)">
+      <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+      <span>Restablecer filtros</span>
+    </button>
+  </div>
+
+  <!-- SECCIÓN 1: GUÍAS PASO A PASO POR MÓDULO -->
+  <section *ngIf="filteredGuias.length > 0" class="mb-12" aria-labelledby="guides-section-title">
+    <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+      <div>
+        <h3 id="guides-section-title" class="text-2xl font-extrabold flex items-center gap-2.5" style="color: var(--text-heading)">
+          <i class="fa-solid fa-book-open-reader" style="color: var(--primary-color)" aria-hidden="true"></i>
+          <span>Guías Paso a Paso</span>
+        </h3>
+        <p class="text-sm mt-1" style="color: var(--text-muted)">
+          Procedimientos detallados para aprovechar cada herramienta del Panel IPA 2026.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <article
+        *ngFor="let guia of filteredGuias"
+        class="guide-card rounded-3xl p-6 border flex flex-col justify-between transition-all"
+        style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+
+        <div>
+          <!-- Encabezado de tarjeta: Badges y Tiempo -->
+          <div class="flex items-center justify-between gap-2 flex-wrap mb-4">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full"
+                    style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+                {{ getCategoryName(guia.categoria) }}
+              </span>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full border"
+                    [ngStyle]="guia.audiencia === 'gestion'
+                      ? {'background': 'rgba(245, 158, 11, 0.12)', 'border-color': 'rgba(245, 158, 11, 0.3)', 'color': '#d97706'}
+                      : guia.audiencia === 'consulta'
+                      ? {'background': 'rgba(16, 185, 129, 0.12)', 'border-color': 'rgba(16, 185, 129, 0.3)', 'color': '#10b981'}
+                      : {'background': 'var(--bg-body)', 'border-color': 'var(--border-color)', 'color': 'var(--text-muted)'}">
+                <i class="fa-solid mr-1"
+                   [ngClass]="{
+                     'fa-user-gear': guia.audiencia === 'gestion',
+                     'fa-magnifying-glass': guia.audiencia === 'consulta',
+                     'fa-users': guia.audiencia === 'ambos'
+                   }" aria-hidden="true"></i>
+                {{ guia.audiencia === 'gestion' ? 'Gestión' : guia.audiencia === 'consulta' ? 'Consulta' : 'Consulta y Gestión' }}
+              </span>
+            </div>
+            <span class="text-xs font-semibold flex items-center gap-1.5" style="color: var(--text-muted)">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              {{ guia.tiempoLectura }}
+            </span>
+          </div>
+
+          <!-- Título y Resumen -->
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 text-xl"
+                 style="background: rgba(var(--primary-color-rgb), 0.1); color: var(--primary-color)">
+              <i [class]="guia.icono" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h4 class="text-lg font-extrabold leading-snug" style="color: var(--text-heading)">
+                {{ guia.titulo }}
+              </h4>
+              <p class="text-sm mt-1.5 leading-relaxed" style="color: var(--text-muted)">
+                {{ guia.resumen }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Vista desplegable inline de los pasos -->
+          <div *ngIf="isGuideExpanded(guia.id)" class="mt-5 pt-5 border-t space-y-3.5 fade-in"
+               style="border-color: var(--border-color)">
+            <div *ngFor="let paso of guia.pasos; let i = index"
+                 class="flex items-start gap-3.5 p-3.5 rounded-2xl border"
+                 style="background: var(--bg-body); border-color: var(--border-color);">
+              <div class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 text-xs font-extrabold text-white mt-0.5"
+                   style="background: var(--primary-color)">
+                {{ i + 1 }}
+              </div>
+              <div>
+                <h5 class="text-sm font-extrabold" style="color: var(--text-heading)">{{ paso.titulo }}</h5>
+                <p class="text-xs mt-1 leading-relaxed" style="color: var(--text-muted)">{{ paso.detalle }}</p>
+              </div>
+            </div>
+
+            <!-- Tip / Consejo -->
+            <div *ngIf="guia.consejo"
+                 class="p-3.5 rounded-2xl border flex items-start gap-3"
+                 style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.25);">
+              <i class="fa-solid fa-lightbulb mt-0.5 shrink-0" style="color: var(--primary-color)" aria-hidden="true"></i>
+              <p class="text-xs font-medium leading-relaxed" style="color: var(--text-main)">
+                <strong>Consejo práctico:</strong> {{ guia.consejo }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones de acción de la guía -->
+        <div class="mt-6 pt-4 border-t flex items-center justify-between gap-3 flex-wrap"
+             style="border-color: var(--border-color)">
+          <div class="flex items-center gap-2">
+            <button
+              type="button"
+              (click)="toggleGuideInline(guia.id)"
+              [attr.aria-expanded]="isGuideExpanded(guia.id)"
+              class="px-3.5 py-2 rounded-xl text-xs font-extrabold border transition-all flex items-center gap-2 hover:opacity-90"
+              style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+              <i class="fa-solid" [ngClass]="isGuideExpanded(guia.id) ? 'fa-chevron-up' : 'fa-list-ol'" aria-hidden="true"></i>
+              <span>{{ isGuideExpanded(guia.id) ? 'Ocultar pasos' : 'Ver ' + guia.pasos.length + ' pasos aquí' }}</span>
+            </button>
+
+            <button
+              type="button"
+              (click)="openGuideModal(guia)"
+              class="px-3.5 py-2 rounded-xl text-xs font-extrabold border transition-all flex items-center gap-1.5 hover:opacity-90"
+              style="background: transparent; color: var(--primary-color); border-color: rgba(var(--primary-color-rgb), 0.35);">
+              <i class="fa-solid fa-expand" aria-hidden="true"></i>
+              <span>Lectura ampliada</span>
+            </button>
+          </div>
+
+          <a *ngIf="guia.rutaModulo"
+             [routerLink]="guia.rutaModulo"
+             class="px-4 py-2 rounded-xl text-xs font-extrabold text-white flex items-center gap-2 shadow-sm transition-all hover:-translate-y-0.5"
+             style="background: var(--primary-color); text-decoration: none;">
+            <span>{{ guia.textoBotonModulo || 'Abrir módulo' }}</span>
+            <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: PREGUNTAS FRECUENTES (FAQ ACORDEÓN) -->
+  <section *ngIf="filteredFaqs.length > 0" class="mb-12" aria-labelledby="faq-section-title">
+    <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+      <div>
+        <h3 id="faq-section-title" class="text-2xl font-extrabold flex items-center gap-2.5" style="color: var(--text-heading)">
+          <i class="fa-solid fa-circle-question" style="color: var(--primary-color)" aria-hidden="true"></i>
+          <span>Preguntas Frecuentes (FAQ)</span>
+        </h3>
+        <p class="text-sm mt-1" style="color: var(--text-muted)">
+          Respuestas rápidas a las consultas más habituales sobre funcionamiento y sincronización de datos.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        (click)="expandAllFaqs()"
+        class="px-4 py-2 rounded-xl text-xs font-extrabold border transition-all flex items-center gap-2"
+        style="background: var(--surface); color: var(--text-main); border-color: var(--border-color);">
+        <i class="fa-solid" [ngClass]="areAllFilteredFaqsExpanded ? 'fa-compress' : 'fa-angles-down'" aria-hidden="true"></i>
+        <span>{{ areAllFilteredFaqsExpanded ? 'Contraer todas' : 'Expandir todas' }}</span>
+      </button>
+    </div>
+
+    <div class="space-y-3.5">
+      <div
+        *ngFor="let faq of filteredFaqs"
+        class="rounded-2xl border overflow-hidden transition-all"
+        style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+
+        <button
+          type="button"
+          (click)="toggleFaq(faq.id)"
+          [attr.aria-expanded]="isFaqExpanded(faq.id)"
+          class="w-full p-5 text-left flex items-center justify-between gap-4 transition-colors hover:bg-black/5">
+          <div class="flex items-start sm:items-center gap-3.5 min-w-0">
+            <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-sm font-extrabold"
+                 style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+              <i class="fa-solid fa-question" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="text-[11px] font-extrabold uppercase tracking-wider block mb-0.5"
+                    style="color: var(--primary-color)">
+                {{ getCategoryName(faq.categoria) }}
+              </span>
+              <h4 class="text-base font-extrabold leading-snug" style="color: var(--text-heading)">
+                {{ faq.pregunta }}
+              </h4>
+            </div>
+          </div>
+
+          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 border transition-transform"
+               [ngClass]="{ 'rotate-180': isFaqExpanded(faq.id) }"
+               style="border-color: var(--border-color); color: var(--text-muted)">
+            <i class="fa-solid fa-chevron-down text-xs" aria-hidden="true"></i>
+          </div>
+        </button>
+
+        <div *ngIf="isFaqExpanded(faq.id)"
+             class="px-5 pb-5 pt-2 border-t fade-in"
+             style="border-color: var(--border-color); background: var(--bg-body);">
+          <p class="text-sm leading-relaxed" style="color: var(--text-main)">
+            {{ faq.respuesta }}
+          </p>
+
+          <div *ngIf="faq.rutaRelacionada" class="mt-4 flex items-center justify-end">
+            <a [routerLink]="faq.rutaRelacionada"
+               class="inline-flex items-center gap-2 text-xs font-extrabold px-3.5 py-2 rounded-xl border transition-all hover:opacity-90"
+               style="background: var(--surface); color: var(--primary-color); border-color: var(--border-color); text-decoration: none;">
+              <span>{{ faq.textoRuta || 'Ir a la sección' }}</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: DIRECTORIO RÁPIDO DE INTERNOS, CONTACTO Y ATAJOS -->
+  <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8" aria-label="Soporte institucional e internos">
+
+    <!-- Tarjeta 1: Internos Telefónicos IPA -->
+    <div class="rounded-3xl p-6 border flex flex-col justify-between"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+               style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+            <i class="fa-solid fa-phone-Flip fa-phone" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold" style="color: var(--text-heading)">Internos del Instituto</h3>
+            <p class="text-xs" style="color: var(--text-muted)">Central telefónica: (+598) 2924 7239</p>
+          </div>
+        </div>
+
+        <div class="space-y-2.5 mt-4">
+          <div *ngFor="let item of internosIpa"
+               class="flex items-center justify-between p-3 rounded-2xl border"
+               style="background: var(--bg-body); border-color: var(--border-color);">
+            <div class="flex items-center gap-2.5">
+              <i [class]="item.icono + ' text-sm'" style="color: var(--primary-color)" aria-hidden="true"></i>
+              <span class="text-sm font-bold" style="color: var(--text-main)">{{ item.sector }}</span>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold"
+                  style="background: rgba(var(--primary-color-rgb), 0.15); color: var(--primary-color)">
+              Int. {{ item.interno }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        (click)="copyToClipboard('+598 2924 7239', 'Teléfono central del IPA')"
+        class="mt-5 w-full py-2.5 px-4 rounded-xl border text-xs font-extrabold flex items-center justify-center gap-2 transition-all hover:opacity-90"
+        style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+        <span>Copiar teléfono central</span>
+      </button>
+    </div>
+
+    <!-- Tarjeta 2: Canales Oficiales y Correo -->
+    <div class="rounded-3xl p-6 border flex flex-col justify-between"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+               style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold" style="color: var(--text-heading)">Canales Institucionales</h3>
+            <p class="text-xs" style="color: var(--text-muted)">Accesos directos a plataformas CFE / ANEP</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 mt-4">
+          <div class="p-3.5 rounded-2xl border flex items-center justify-between gap-2"
+               style="background: var(--bg-body); border-color: var(--border-color);">
+            <div class="min-w-0">
+              <span class="text-[11px] font-bold uppercase tracking-wider block" style="color: var(--text-muted)">Correo Oficial IPA</span>
+              <span class="text-sm font-extrabold truncate block" style="color: var(--text-heading)">ipa&#64;cfe.edu.uy</span>
+            </div>
+            <button
+              type="button"
+              (click)="copyToClipboard('ipa@cfe.edu.uy', 'Correo institucional')"
+              class="px-3 py-1.5 rounded-xl text-xs font-extrabold border shrink-0 transition-all hover:opacity-90"
+              style="background: var(--surface); color: var(--primary-color); border-color: var(--border-color);">
+              <i class="fa-regular fa-copy mr-1" aria-hidden="true"></i> Copiar
+            </button>
+          </div>
+
+          <a href="https://sge.cfe.edu.uy/web/login" target="_blank" rel="noopener noreferrer"
+             class="p-3.5 rounded-2xl border flex items-center justify-between transition-all hover:opacity-90"
+             style="background: var(--bg-body); border-color: var(--border-color); text-decoration: none;">
+            <div>
+              <span class="text-sm font-extrabold block" style="color: var(--text-heading)">Sistema de Gestión Estudiantil (SGE)</span>
+              <span class="text-xs" style="color: var(--text-muted)">Inscripciones a cursos, exámenes y escolaridades</span>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs" style="color: var(--primary-color)" aria-hidden="true"></i>
+          </a>
+
+          <a routerLink="/doe"
+             class="p-3.5 rounded-2xl border flex items-center justify-between transition-all hover:opacity-90"
+             style="background: var(--bg-body); border-color: var(--border-color); text-decoration: none;">
+            <div>
+              <span class="text-sm font-extrabold block" style="color: var(--text-heading)">Directorio de Adscriptos (DOE)</span>
+              <span class="text-xs" style="color: var(--text-muted)">Consultá correos de bedelía por carrera y turno</span>
+            </div>
+            <i class="fa-solid fa-chevron-right text-xs" style="color: var(--primary-color)" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-5 text-xs flex items-center gap-2" style="color: var(--text-muted)">
+        <i class="fa-solid fa-location-dot" style="color: var(--primary-color)" aria-hidden="true"></i>
+        <span>Av. Libertador Brig. Gral. Lavalleja 2025, Montevideo</span>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3: Atajos y Accesibilidad Rápida -->
+    <div class="rounded-3xl p-6 border flex flex-col justify-between"
+         style="background: var(--surface); border-color: var(--border-color); box-shadow: var(--shadow-card);">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+               style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+            <i class="fa-solid fa-keyboard" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-extrabold" style="color: var(--text-heading)">Atajos y Comodidad</h3>
+            <p class="text-xs" style="color: var(--text-muted)">Funciones rápidas integradas en el panel</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 mt-4 text-sm">
+          <li class="p-3 rounded-2xl border flex items-center justify-between gap-2"
+              style="background: var(--bg-body); border-color: var(--border-color);">
+            <span class="font-medium" style="color: var(--text-main)">Cerrar cualquier ventana modal</span>
+            <kbd class="px-2.5 py-1 rounded-lg text-xs font-extrabold border"
+                 style="background: var(--surface); border-color: var(--border-color); color: var(--text-heading)">
+              Esc
+            </kbd>
+          </li>
+          <li class="p-3 rounded-2xl border flex items-center justify-between gap-2"
+              style="background: var(--bg-body); border-color: var(--border-color);">
+            <span class="font-medium" style="color: var(--text-main)">Saltar al contenido principal</span>
+            <kbd class="px-2.5 py-1 rounded-lg text-xs font-extrabold border"
+                 style="background: var(--surface); border-color: var(--border-color); color: var(--text-heading)">
+              Tab
+            </kbd>
+          </li>
+          <li class="p-3 rounded-2xl border flex items-center justify-between gap-2"
+              style="background: var(--bg-body); border-color: var(--border-color);">
+            <span class="font-medium" style="color: var(--text-main)">Guardado en Configuración</span>
+            <span class="text-xs font-extrabold px-2.5 py-1 rounded-lg"
+                  style="background: rgba(16, 185, 129, 0.15); color: #10b981">
+              Automático
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-5 p-3.5 rounded-2xl border text-xs leading-relaxed"
+           style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.25); color: var(--text-main);">
+        <i class="fa-solid fa-circle-check mr-1" style="color: var(--primary-color)" aria-hidden="true"></i>
+        Optimizado para lectores de pantalla (región <strong>ARIA Live</strong> activa) y pantallas móviles con barra de navegación inferior.
+      </div>
+    </div>
+
+  </section>
+
+  <!-- MODAL DE LECTURA AMPLIADA DE GUÍA -->
+  <div *ngIf="selectedGuideModal as modal"
+       class="fixed inset-0 z-[9998] flex items-center justify-center p-4 fade-in"
+       style="background: rgba(5, 10, 24, 0.65); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);"
+       (click)="closeGuideModal()"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-guide-title">
+    <div class="w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-3xl p-6 md:p-8 shadow-2xl border relative"
+         style="background: var(--surface); border-color: var(--border-color);"
+         (click)="$event.stopPropagation()">
+
+      <div class="flex items-start justify-between gap-4 pb-5 border-b" style="border-color: var(--border-color)">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 text-xl"
+               style="background: rgba(var(--primary-color-rgb), 0.12); color: var(--primary-color)">
+            <i [class]="modal.icono" aria-hidden="true"></i>
+          </div>
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider" style="color: var(--primary-color)">
+              {{ getCategoryName(modal.categoria) }} • Lectura {{ modal.tiempoLectura }}
+            </span>
+            <h3 id="modal-guide-title" class="text-xl md:text-2xl font-extrabold mt-1" style="color: var(--text-heading)">
+              {{ modal.titulo }}
+            </h3>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          (click)="closeGuideModal()"
+          class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors hover:bg-black/10"
+          style="color: var(--text-muted)"
+          aria-label="Cerrar guía">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p class="text-sm md:text-base mt-5 leading-relaxed" style="color: var(--text-muted)">
+        {{ modal.resumen }}
+      </p>
+
+      <div class="mt-6 space-y-4">
+        <div *ngFor="let paso of modal.pasos; let i = index"
+             class="flex items-start gap-4 p-4 rounded-2xl border"
+             style="background: var(--bg-body); border-color: var(--border-color);">
+          <div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-sm font-extrabold text-white"
+               style="background: var(--primary-color)">
+            {{ i + 1 }}
+          </div>
+          <div>
+            <h4 class="text-base font-extrabold" style="color: var(--text-heading)">{{ paso.titulo }}</h4>
+            <p class="text-sm mt-1 leading-relaxed" style="color: var(--text-main)">{{ paso.detalle }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="modal.consejo"
+           class="mt-6 p-4 rounded-2xl border flex items-start gap-3"
+           style="background: rgba(var(--primary-color-rgb), 0.08); border-color: rgba(var(--primary-color-rgb), 0.25);">
+        <i class="fa-solid fa-lightbulb text-lg mt-0.5 shrink-0" style="color: var(--primary-color)" aria-hidden="true"></i>
+        <p class="text-sm leading-relaxed" style="color: var(--text-main)">
+          <strong>Consejo institucional:</strong> {{ modal.consejo }}
+        </p>
+      </div>
+
+      <div class="mt-7 pt-5 border-t flex items-center justify-end gap-3 flex-wrap"
+           style="border-color: var(--border-color)">
+        <button
+          type="button"
+          (click)="closeGuideModal()"
+          class="px-5 py-2.5 rounded-xl font-bold text-sm border transition-all"
+          style="background: var(--bg-body); color: var(--text-main); border-color: var(--border-color);">
+          Cerrar
+        </button>
+        <a *ngIf="modal.rutaModulo"
+           [routerLink]="modal.rutaModulo"
+           (click)="closeGuideModal()"
+           class="px-5 py-2.5 rounded-xl font-bold text-sm text-white flex items-center gap-2 shadow-md transition-all hover:-translate-y-0.5"
+           style="background: var(--primary-color); text-decoration: none;">
+          <span>{{ modal.textoBotonModulo || 'Ir al módulo' }}</span>
+          <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>

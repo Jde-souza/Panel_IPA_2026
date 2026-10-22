@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataService } from '../../data.service';
 import { AlertService } from '../../services/alert.service';
 import { firstValueFrom } from 'rxjs';
@@ -32,6 +33,7 @@ export interface Salon {
 export class SettingsComponent implements OnInit, OnDestroy {
   private dataService = inject(DataService);
   private alertService = inject(AlertService);
+  private router = inject(Router);
 
   isLoading = true;
   isSaving = false;
@@ -57,6 +59,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   ];
 
   filtroAnioTab: string = 'Todos';
+  filtroMateriaGlobal: string = '';
+  filtroEspecialidad: string = '';
 
   especialidades: Especialidad[] = [];
   salones: Salon[] = [];
@@ -439,10 +443,25 @@ export class SettingsComponent implements OnInit, OnDestroy {
     return ['1º Año', '2º Año', '3º Año', '4º Año', 'Varios años', 'Todos los años'];
   }
 
+  get especialidadesFiltradas() {
+    const search = this.filtroEspecialidad.trim().toLowerCase();
+    return this.especialidades
+      .map((esp, index) => ({ esp, index }))
+      .filter(item => {
+        if (!search) return true;
+        return (
+          item.esp.nombre.toLowerCase().includes(search) ||
+          item.esp.materias.some(m => m.toLowerCase().includes(search))
+        );
+      });
+  }
+
   getMateriasByGrupoAnio(grupo: string) {
     return this.materiasGlobales
       .map((materia, index) => ({ materia, index }))
       .filter(item => {
+        const search = this.filtroMateriaGlobal.trim().toLowerCase();
+        if (search && !item.materia.nombre.toLowerCase().includes(search)) return false;
         const anios = item.materia.anios || this.opcionesAniosBase;
         if (this.filtroAnioTab !== 'Todos' && !anios.includes(this.filtroAnioTab)) {
           return false;
@@ -557,5 +576,19 @@ export class SettingsComponent implements OnInit, OnDestroy {
       return this.salones.map((s, index) => ({ salon: s, index })).filter(item => !item.salon.piso);
     }
     return this.salones.map((s, index) => ({ salon: s, index })).filter(item => item.salon.piso === piso);
+  }
+
+  openQrForSalon(nombre: string, event: Event) {
+    event.stopPropagation();
+    this.router.navigate(['/salones'], { queryParams: { qrSalon: nombre } });
+  }
+
+  openLiveSalon(nombre: string, event: Event) {
+    event.stopPropagation();
+    this.router.navigate(['/salon', nombre]);
+  }
+
+  openAllQrs() {
+    this.router.navigate(['/salones'], { queryParams: { qrAll: '1' } });
   }
 }

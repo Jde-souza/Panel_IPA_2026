@@ -7,11 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "extract:news": "node extract_news.js",
+    "extract:carreras": "node extract_carreras.js",
     "extract:inasistencias": "node extract_inasistencias.js",
     "extract:horarios": "node extract_horarios.js",
     "extract:agenda": "node extract_agenda.js",
     "extract:examenes": "node extract_examenes.js",
-    "update:all": "npm run extract:news && npm run extract:inasistencias && npm run extract:horarios && npm run extract:agenda && npm run extract:examenes && npm run build"
+    "update:all": "npm run extract:news && npm run extract:carreras && npm run extract:inasistencias && npm run extract:horarios && npm run extract:agenda && npm run extract:examenes && npm run build"
   },
   "private": true,
   "packageManager": "npm@10.2.4",
@@ -22,8 +23,10 @@
     "@angular/forms": "^21.2.0",
     "@angular/platform-browser": "^21.2.0",
     "@angular/router": "^21.2.0",
+    "@types/qrcode": "^1.5.6",
     "axios": "^1.13.6",
     "cheerio": "^1.2.0",
+    "qrcode": "^1.5.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "xlsx": "^0.18.5"

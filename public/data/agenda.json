@@ -9322,7 +9322,9 @@
     "grupos": [
       "3ºC",
       "1ºA",
-      "1ºB"
+      "1ºB",
+      "TPE 1",
+      "TPE 2"
     ],
     "caracter": "Int",
     "observacion": "Renuncia 9/02/26",
@@ -9358,10 +9360,24 @@
       },
       {
         "dia": 1,
+        "hora": "18:20-19:40",
+        "salon": "SALON 112",
+        "grupo": "TPE 1",
+        "asignatura": "Taller de Producción Escrita -TPE-"
+      },
+      {
+        "dia": 1,
         "hora": "19:00-19:40",
         "salon": "S/D",
         "grupo": "1ºB",
         "asignatura": "Educación y sus transformaciones en la historia"
+      },
+      {
+        "dia": 1,
+        "hora": "19:40-21:00",
+        "salon": "SALON 112",
+        "grupo": "TPE 2",
+        "asignatura": "Taller de Producción Escrita -TPE-"
       },
       {
         "dia": 2,
@@ -10794,7 +10810,8 @@
     "grupos": [
       "1ºB",
       "2ºB",
-      "4ºB"
+      "4ºB",
+      "-"
     ],
     "caracter": "EF.",
     "observacion": "Pase en funciones",
@@ -10855,6 +10872,13 @@
         "salon": "S/D",
         "grupo": "2ºB",
         "asignatura": "Psicología de la Educación"
+      },
+      {
+        "dia": 2,
+        "hora": "18:30-20:45",
+        "salon": "SALON 7",
+        "grupo": "-",
+        "asignatura": "Pedagogía Audiovisual"
       },
       {
         "dia": 2,
@@ -10925,6 +10949,13 @@
         "salon": "S/D",
         "grupo": "1ºB",
         "asignatura": "Introducción al campo profesional   José López"
+      },
+      {
+        "dia": 4,
+        "hora": "18:30-20:45",
+        "salon": "SALON 204",
+        "grupo": "-",
+        "asignatura": "Lenguaje Audiovisual"
       },
       {
         "dia": 4,
@@ -11402,11 +11433,45 @@
       "Lengua Española 1",
       "Lengua Española 2"
     ],
-    "grupos": [],
+    "grupos": [
+      "TPE 6",
+      "TPE 7",
+      "ALE 1",
+      "ALE 2"
+    ],
     "caracter": "Int.",
     "observacion": "",
     "isTachado": false,
-    "horarios": []
+    "horarios": [
+      {
+        "dia": 2,
+        "hora": "15:00-16:30",
+        "salon": "SALON 103",
+        "grupo": "TPE 6",
+        "asignatura": "Taller de Producción Escrita -TPE-"
+      },
+      {
+        "dia": 2,
+        "hora": "16:30-18:00",
+        "salon": "SALON 103",
+        "grupo": "TPE 7",
+        "asignatura": "Taller de Producción Escrita -TPE-"
+      },
+      {
+        "dia": 2,
+        "hora": "18:00-19:30",
+        "salon": "SALON B",
+        "grupo": "ALE 1",
+        "asignatura": "Acompañamiento Lengua Española -ALE-"
+      },
+      {
+        "dia": 5,
+        "hora": "18:00-19:30",
+        "salon": "SALON 204",
+        "grupo": "ALE 2",
+        "asignatura": "Acompañamiento Lengua Española -ALE-"
+      }
+    ]
   },
   {
     "nombre": "Monica, Otero Marquez",
@@ -15299,7 +15364,8 @@
       "1ºB",
       "2ºC",
       "1ºD",
-      "2ºB"
+      "2ºB",
+      "-"
     ],
     "caracter": "supl",
     "observacion": "Lic médica hasta 29/7",
@@ -15465,6 +15531,13 @@
         "salon": "SALON 14",
         "grupo": "2ºA",
         "asignatura": "Geografía Física 2 Hidrología y geomorfología  Pizarro"
+      },
+      {
+        "dia": 2,
+        "hora": "13:30-15:45",
+        "salon": "SALON 102",
+        "grupo": "-",
+        "asignatura": "Lenguaje Audiovisual"
       },
       {
         "dia": 2,
@@ -18290,12 +18363,31 @@
       "1ºA",
       "1ºB",
       "2ºB",
-      "4ºB"
+      "4ºB",
+      "TPE 9",
+      "TPE 10",
+      "ALE 5",
+      "ALE 6",
+      "ALE 7"
     ],
     "caracter": "supl",
     "observacion": "",
     "isTachado": false,
     "horarios": [
+      {
+        "dia": 1,
+        "hora": "08:00-09:30",
+        "salon": "SALON 116",
+        "grupo": "TPE 9",
+        "asignatura": "Taller de Producción Escrita -TPE-"
+      },
+      {
+        "dia": 1,
+        "hora": "09:30-11:00",
+        "salon": "SALON 116",
+        "grupo": "ALE 5",
+        "asignatura": "Acompañamiento Lengua Española -ALE-"
+      },
       {
         "dia": 1,
         "hora": "11:55-12:40",
@@ -18316,6 +18408,13 @@
         "salon": "S/D",
         "grupo": "1ºA",
         "asignatura": "Lengua Española 2"
+      },
+      {
+        "dia": 1,
+        "hora": "14:15-15:45",
+        "salon": "SALON 116",
+        "grupo": "ALE 7",
+        "asignatura": "Acompañamiento Lengua Española -ALE-"
       },
       {
         "dia": 1,
@@ -18393,6 +18492,20 @@
         "salon": "S/D",
         "grupo": "4ºB",
         "asignatura": "Metodología de la investigación literaria"
+      },
+      {
+        "dia": 4,
+        "hora": "11:10-12:40",
+        "salon": "SALON 205",
+        "grupo": "TPE 10",
+        "asignatura": "Taller de Producción Escrita -TPE-"
+      },
+      {
+        "dia": 4,
+        "hora": "12:40-14:10",
+        "salon": "SALON 205",
+        "grupo": "ALE 6",
+        "asignatura": "Acompañamiento Lengua Española -ALE-"
       },
       {
         "dia": 4,
