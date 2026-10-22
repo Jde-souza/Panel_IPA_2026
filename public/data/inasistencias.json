@@ -10173,9 +10173,45 @@
     "apellido": "Díaz",
     "inicio": "21/10/2026",
     "fin": "21/10/2026",
-    "grupos": "4to b ingles",
+    "grupos": "4A ingles",
     "asignaturas": [
       "Lingüística"
+    ]
+  },
+  {
+    "timestamp": "22/10/2026 10:03:35",
+    "email": "normadiazsosa.prof@gmail.com",
+    "nombre": "Norma",
+    "apellido": "Díaz",
+    "inicio": "22/10/2026",
+    "fin": "22/10/2026",
+    "grupos": "4A Inglés",
+    "asignaturas": [
+      "Lingüística 2"
+    ]
+  },
+  {
+    "timestamp": "22/10/2026 10:46:44",
+    "email": "annabella.zapattini@gmail.com",
+    "nombre": "Annabella",
+    "apellido": "Zapattini",
+    "inicio": "23/10/2026",
+    "fin": "23/10/2026",
+    "grupos": "3A Matemática",
+    "asignaturas": [
+      "Evolución del Pensamiento Matemático"
+    ]
+  },
+  {
+    "timestamp": "22/10/2026 13:06:32",
+    "email": "fiorellabacigalupe@gmail.com",
+    "nombre": "Fiorella",
+    "apellido": "Bacigalupe",
+    "inicio": "22/10/2026",
+    "fin": "22/10/2026",
+    "grupos": "1° B Español",
+    "asignaturas": [
+      "Latín II"
     ]
   },
   {
