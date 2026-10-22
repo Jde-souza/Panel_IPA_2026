@@ -55,4 +55,4 @@ El proyecto cuenta con 5 scripts de extracción en Node.js ubicados en la raíz 
 
 * **`iniciar.bat`:** Abre dos ventanas de consola en Windows: una ejecutando `cd backend && npm run dev` y otra ejecutando `npm start` (Angular CLI).
 * **`update_all_data.bat`:** Ejecuta en secuencia `extract_news.js`, `extract_inasistencias.js`, `extract_horarios.js`, `extract_agenda.js` y finalmente compila la aplicación con `npm run build`.
-* **`.github/workflows/update-news.yml` y `webpack.yml`:** Workflows de GitHub Actions para actualizar automáticamente las noticias/llamados y desplegar/compilar el proyecto.
+* **`.github/workflows/update-news.yml` y `build.yml`:** Workflows de GitHub Actions para actualizar automáticamente las noticias/llamados y compilar/validar la aplicación Angular en CI.
